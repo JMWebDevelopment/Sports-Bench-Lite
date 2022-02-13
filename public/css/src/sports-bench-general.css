@@ -1,0 +1,10 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+@import "_font-awesome.css";
+
+@media (--small-down) {
+
+	.sb-show-for-medium {
+		display: none;
+	}
+}

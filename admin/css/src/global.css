@@ -1,0 +1,245 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+@import "_font-awesome.css";
+
+.sports-bench {
+
+	& div {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	& h1 {
+		@mixin chivo 40px, var(--color-black), 700, none;
+		margin: 0 0 4rem;
+	}
+
+	& h2 {
+		@mixin chivo 35px, var(--color-black), 700, none;
+		margin: 0 0 2rem;
+	}
+
+	& h3 {
+		@mixin chivo 30px, var(--color-black), 700, none;
+		margin: 0 0 2rem;
+	}
+
+	& h4 {
+		@mixin chivo 28px, var(--color-black), 400, none;
+		margin: 0 0 4rem;
+	}
+
+	& h5 {
+		@mixin chivo 24px, var(--color-black), 400, none;
+		margin: 0 0 2rem;
+	}
+
+	& h6 {
+		@mixin chivo 20px, var(--color-black), 400, none;
+		margin: 0 0 2rem;
+	}
+
+	& p {
+		@mixin nunito 18px, var(--color-black), 400, none;
+		margin: 0 0 2rem;
+	}
+
+	& textarea,
+	& [type="text"],
+	& [type="password"],
+	& [type="date"],
+	& [type="datetime"],
+	& [type="datetime-local"],
+	& [type="month"],
+	& [type="week"],
+	& [type="email"],
+	& [type="number"],
+	& [type="search"],
+	& [type="tel"],
+	& [type="time"],
+	& [type="url"],
+	& [type="color"] {
+		background-color: var(--color-white);
+		border: 1px solid var(--color-black);
+		color: var(--color-black);
+		border-radius: 3px;
+		padding: 5px 10px;
+		width: 100%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		height: 37px;
+		@mixin nunito 18px, var(--color-black), 400, none;
+		-webkit-transition: 800ms ease all;
+		-moz-transition: 800ms ease all;
+		-ms-transition: 800ms ease all;
+		-o-transition: 800ms ease all;
+		transition: 800ms ease all;
+
+		&:focus {
+			border: 1px solid var(--color-dark-grey);
+			outline: none;
+		}
+	}
+
+	& textarea {
+		height: auto;
+	}
+
+	& select {
+		background-color: var(--color-white);
+		border: 1px solid var(--color-black);
+		color: var(--color-black);
+		border-radius: 3px;
+		width: 100%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		height: 37px;
+		@mixin nunito 18px, var(--color-black), 400, none;
+		-webkit-transition: 800ms ease all;
+		-moz-transition: 800ms ease all;
+		-ms-transition: 800ms ease all;
+		-o-transition: 800ms ease all;
+		transition: 800ms ease all;
+
+		&:focus {
+			border: 1px solid var(--color-dark-grey);
+		}
+	}
+
+	& ::-moz-placeholder {
+		color: var(--color-black);
+		opacity: 1;
+	}
+
+	& ::-webkit-input-placeholder {
+		color: var(--color-black);
+	}
+
+	& label {
+		@mixin nunito 18px, var(--color-black), 400, none;
+		text-align: left;
+		display: block;
+	}
+
+	& input[type="radio"] + label {
+		display: inline;
+	}
+
+	& button,
+	& input[type="button"],
+	& input[type="reset"],
+	& input[type="submit"],
+	& textarea:focus,
+	& .button {
+		border: 1px solid var(--color-black);
+		background-color: var(--color-black);
+		color: var(--color-white);
+		font-weight: 700;
+		transition: all 300ms linear;
+		font-size: 14px;
+		@mixin chivo 18px, var(--color-white), 400, none;
+		padding: 10px 15px;
+		text-align: center;
+		min-width: 285px;
+		line-height: 1;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			color: var(--color-off-block);
+			padding: 10px 15px;
+			cursor: pointer;
+		}
+
+		&.off-black {
+			border-color: var(--color-off-black);
+			background-color: var(--color-off-black);
+			color: var(--color-off-white);
+
+			&:hover,
+			&:focus {
+				background-color: transparent;
+				color: var(--color-off-block);
+			}
+		}
+
+		&.white {
+			border-color: var(--color-white);
+			background-color: var(--color-white);
+			color: var(--color-black);
+
+			&:hover,
+			&:focus {
+				background-color: transparent;
+				color: var(--color-white);
+			}
+		}
+
+		&.red {
+			border-color: var(--color-red);
+			background-color: var(--color-red);
+			color: var(--color-off-white);
+
+			&:hover,
+			&:focus {
+				background-color: transparent;
+				color: var(--color-red);
+			}
+		}
+	}
+
+
+	& .wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+
+		& .top-row {
+			display: flex;
+			flex-wrap: wrap;
+			padding-bottom: 4rem;
+
+			& .left {
+				flex-basis: 75%;
+				display: flex;
+				align-items: center;
+
+				& h1 {
+					margin: 0;
+					padding: 0;
+				}
+			}
+
+			& .right {
+				flex-basis: 25%;
+				display: flex;
+				align-items: center;
+
+				& .button {
+					width: 100%;
+					min-width: 0;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+}
+
+.sports-bench-header {
+	background-color: var(--color-off-black);
+	height: 130px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
+
+	& img {
+		max-width: 113px;
+	}
+
+	& .wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 100%;
+	}
+}

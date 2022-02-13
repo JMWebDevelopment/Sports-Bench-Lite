@@ -1,0 +1,199 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.admin_page_sports-bench-edit-game-form,
+.games_page_sports-bench-add-game-form {
+
+	& #wpcontent {
+		padding-left: 0;
+	}
+
+	& #wpfooter {
+		position: relative;
+	}
+
+	& .sports-bench {
+
+		& .wrap {
+
+			& h2,
+			& h3 {
+				margin-top: 1rem;
+			}
+
+			& .game-form-container-teams {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 4rem;
+
+				& .field {
+					flex-basis: 50%;
+					padding: 0 1rem;
+				}
+			}
+
+			& button {
+				text-align: center;
+
+				&.add-game-event {
+					margin-bottom: 3rem;
+				}
+			}
+
+			& .game-form-container-details {
+				display: flex;
+				flex-wrap: wrap;
+
+				& .left {
+					flex-basis: 66.7%;
+					padding: 0 10px;
+				}
+
+				& .right {
+					flex-basis: 33.3%;
+					padding: 0 10px;
+
+					& .game-details {
+						background-color: var(--color-white);
+						border: 1px solid var(--color-off-black);
+						border-radius: 5px;
+						padding: 10px;
+						margin-bottom: 1rem;
+						text-align: center;
+
+						& h2 {
+							line-height: 1.1;
+							margin-top: 0;
+						}
+
+						& p {
+							margin-bottom: 5px;
+						}
+
+						& #neutral-site-fields {
+							display: none;
+						}
+					}
+				}
+			}
+
+			& .game-form-container-game-events {
+				margin-bottom: 2rem;
+			}
+
+			& input[type="submit"] {
+				min-width: 0;
+				width: 100%;
+				padding: 10px 15px;
+				font-size: 18px;
+				text-align: center;
+				background: #007cba;
+				border-color: #007cba;
+				height: auto;
+
+				&:hover,
+				&:focus {
+					background-color: var(--color-white);
+					color: #007cba;
+				}
+			}
+
+			& .form-table {
+
+				&#score-line {
+					margin-bottom: 3rem;
+				}
+
+				&#match-events,
+				&#match-goals,
+				&#match-penalties {
+
+					& .remove-game-event,
+					& .remove-game-goal,
+					& .remove-game-penalty {
+						min-width: 0;
+						border: 0;
+						background-color: transparent;
+						color: var(--color-red);
+					}
+				}
+
+				& th {
+					@mixin nunito 18px, var(--color-black), 700, none;
+					padding: 20px 10px 20px 10px;
+
+					&.center {
+						text-align: center;
+					}
+
+					&.remove {
+						width: 5%;
+					}
+				}
+
+				& td {
+					@mixin nunito 18px, var(--color-black), 400, none;
+
+					&.remove {
+						width: 5%;
+					}
+
+					& .primary-player-label,
+					& .secondary-player-label {
+						display: none;
+
+						&.show {
+							display: inline;
+						}
+					}
+
+
+					& .showed-label {
+
+						& + br {
+							display: none;
+						}
+					}
+				}
+			}
+
+			& #away-team-stats,
+			& #home-team-stats {
+				background-color: var(--color-white);
+				border: 1px solid var(--color-off-black);
+				border-radius: 5px;
+				padding: 10px;
+				margin-bottom: 2rem;
+				overflow-x: scroll;
+
+				& .remove-away-player,
+				& .remove-home-player {
+					min-width: 0;
+					border: 0;
+					background-color: transparent;
+					color: var(--color-red);
+				}
+
+				& .baseball-player-stats {
+					width: 1330px;
+
+					& .player-name {
+						width: 20%;
+					}
+				}
+
+				& .basketball-player-stats,
+				& .football-player-stats,
+				& .hockey-player-stats,
+				& .rugby-player-stats,
+				& .volleyball-player-stats {
+					width: 1700px;
+
+					& .player-name {
+						width: 15%;
+					}
+				}
+			}
+		}
+	}
+}

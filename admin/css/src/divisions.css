@@ -1,0 +1,141 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.teams_page_sports-bench-divisions {
+
+	& #wpcontent {
+		padding-left: 0;
+	}
+
+	& .sports-bench {
+
+		& .wrap {
+
+			& .top-row {
+
+				& .full-width {
+
+					& h1 {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			& .divisions-container {
+				display: flex;
+				flex-wrap: wrap;
+
+				& .divisions-left {
+					flex-basis: 50%;
+					padding: 0 1rem;
+
+					& .wp-picker-container {
+						display: block;
+						text-align: left;
+						box-sizing: unset;
+
+						& div {
+							box-sizing: unset;
+						}
+
+						& .wp-color-result.button {
+							font-size: 18px;
+							padding: 0 0 0 30px;
+							min-width: 0;
+							width: 100%;
+
+							&:hover,
+							&:focus {
+								padding: 0 0 0 30px;
+							}
+						}
+					}
+
+					& input[type="submit"] {
+						min-width: 0;
+						width: 100%;
+						padding: 10px 15px;
+						font-size: 18px;
+						text-align: center;
+						background: #007cba;
+						border-color: #007cba;
+						height: auto;
+
+						&:hover,
+						&:focus {
+							background-color: var(--color-white);
+							color: #007cba;
+						}
+					}
+				}
+
+				& .divisions-right {
+					flex-basis: 50%;
+					padding: 0 1rem;
+
+					& .teams-table {
+
+						& thead {
+							background-color: var(--color-off-black);
+
+							& tr {
+								border-left: 2px solid var(--color-off-black);
+
+								& th {
+									@mixin chivo 18px, var(--color-white), 700, none;
+									padding: 10px;
+									text-align: center;
+
+									&:first-child {
+										text-align: left;
+									}
+								}
+							}
+						}
+
+						& tbody {
+
+							& tr {
+								background-color: var(--color-white);
+
+								&:nth-child(even) {
+									background-color: var(--color-light-grey);
+								}
+
+								& td {
+									@mixin chivo 18px, var(--color-black), 400, none;
+									padding: 20px 10px;
+									text-align: center;
+									vertical-align: middle;
+
+									&:first-child {
+										text-align: left;
+										display: flex;
+										align-items: center;
+									}
+
+									& img {
+										max-height: 54px;
+										margin-right: 10px;
+									}
+
+									& .button {
+										min-width: 0;
+									}
+
+									&.edit-column {
+										width: 8%;
+									}
+
+									&.delete-column {
+										width: 10%;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

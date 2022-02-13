@@ -1,0 +1,35 @@
+/* stylelint-disable */
+@define-mixin chivo $font-size: 18px, $color: $off-black, $font-weight: 400, $text-transform: none {
+	font-family: Chivo, serif;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+@define-mixin nunito $font-size: 18px, $color: $off-black, $font-weight: 400, $text-transform: none {
+	font-family: Nunito, sans-serif;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+@define-mixin boxShadow $horizontal, $vertical, $blur, $spread, $rgba {
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $rgba;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $rgba;
+    box-shadow: $horizontal $vertical $blur $spread $rgba;
+}
+
+@define-mixin font_awesome $icon {
+	content: $icon;
+	font-family: FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@define-mixin text-shadow $x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4) {
+    text-shadow: $x $y $blur $color;
+}
+/* stylelint-enable */

@@ -1,0 +1,80 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.toplevel_page_sports-bench-brackets {
+
+	& #wpcontent {
+		padding-left: 0;
+	}
+
+	& .sports-bench {
+
+		& .wrap {
+
+			& .brackets-listing {
+
+				& .brackets-table {
+
+					& thead {
+						background-color: var(--color-off-black);
+
+						& tr {
+							border-left: 2px solid var(--color-off-black);
+
+							& th {
+								@mixin chivo 18px, var(--color-white), 700, none;
+								padding: 10px;
+								text-align: center;
+
+								&:first-child {
+									text-align: left;
+								}
+							}
+						}
+					}
+
+					& tbody {
+
+						& tr {
+							background-color: var(--color-white);
+
+							&:nth-child(even) {
+								background-color: var(--color-light-grey);
+							}
+
+							& td {
+								@mixin chivo 18px, var(--color-black), 400, none;
+								padding: 20px 10px;
+								text-align: center;
+								vertical-align: middle;
+
+								&:first-child {
+									text-align: left;
+									display: flex;
+									align-items: center;
+								}
+
+								& img {
+									max-height: 54px;
+									margin-right: 10px;
+								}
+
+								& .button {
+									min-width: 0;
+								}
+
+								&.edit-column {
+									width: 8%;
+								}
+
+								&.delete-column {
+									width: 10%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

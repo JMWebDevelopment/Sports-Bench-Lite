@@ -1,0 +1,109 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+& #team-schedule {
+
+	& thead {
+
+		& tr {
+
+			& th {
+
+			}
+		}
+	}
+
+	& tbody {
+
+		& tr {
+
+			&:nth-child(even) {
+				background-color: var(--color-off-white);
+			}
+
+			& td {
+				font-size: 14px;
+				padding: 5px 3px;
+
+				& img {
+					max-height: 25px;
+				}
+			}
+		}
+	}
+}
+
+.sports_bench_team_schedule_widget {
+
+	& #team-schedule {
+
+		& thead {
+
+			& tr {
+
+				& th {
+
+				}
+			}
+		}
+
+		& tbody {
+
+			& tr {
+
+				&:nth-child(even) {
+					background-color: var(--color-off-white);
+				}
+
+				& td {
+					font-size: 14px;
+					padding: 5px 3px;
+
+					& img {
+						max-height: 25px;
+					}
+				}
+			}
+		}
+	}
+
+	& .button {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.team-schedule-block {
+
+	& #team-schedule {
+
+		& thead {
+
+			& tr {
+
+				& th {
+
+				}
+			}
+		}
+
+		& tbody {
+
+			& tr {
+
+				&:nth-child(even) {
+					background-color: var(--color-off-white);
+				}
+
+				& td {
+					font-size: 14px;
+					padding: 5px 3px;
+
+					& img {
+						max-height: 25px;
+					}
+				}
+			}
+		}
+	}
+}

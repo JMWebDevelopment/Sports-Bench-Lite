@@ -1,0 +1,70 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.sports-bench-shortcode-game {
+	padding: 1rem;
+
+	& .score-info {
+		display: flex;
+		flex-wrap: wrap;
+
+		& .time {
+			flex-basis: 100%;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 700;
+		}
+
+		& .away-team,
+		& .home-team {
+			flex-basis: 50%;
+			padding: 0 1rem;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+
+			& img {
+				max-height: 100px;
+				width: auto;
+				margin-bottom: 1rem;
+			}
+
+			& .team-name {
+				font-size: 24px;
+				font-weight: 700;
+				margin-bottom: 1rem;
+			}
+
+			& .team-score {
+				font-size: 30px;
+				font-weight: 700;
+				margin-bottom: 1rem;
+				margin-top: auto;
+			}
+		}
+	}
+
+	& .location {
+		text-align: center;
+	}
+
+	& .button {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media (--small-down) {
+
+	.sports-bench-shortcode-game {
+
+		& .score-info {
+
+			& .away-team,
+			& .home-team {
+				flex-basis: 100%;
+				padding: 1rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.toplevel_page_sports-bench-options {
+
+	& #wpcontent {
+		padding-left: 0;
+	}
+
+	& .sports-bench {
+
+		& .wrap {
+
+			& #sports-bench-options-container {
+				background-color: var(--color-white);
+				border: 1px solid var(--color-black);
+				border-radius: 5px;
+				display: flex;
+				flex-wrap: wrap;
+				overflow: hidden;
+
+				& .tabs {
+					flex-basis: 25%;
+					background-color: var(--color-light-grey);
+
+					& .tab {
+						text-align: center;
+						border-bottom: 1px solid var(--color-black);
+
+						& .tab-title {
+							margin-bottom: 0;
+							padding: 1rem;
+
+							& a {
+								@mixin chivo 24px, var(--color-black), 700, none;
+
+								&:hover,
+								&:focus {
+									color: var(--color-dark-grey);
+								}
+							}
+
+							&:hover,
+							&:focus {
+								background-color: var(--color-white);
+
+								& a {
+									color: var(--color-dark-grey);
+								}
+							}
+
+						}
+
+						&.current-tab {
+
+							& .tab-title {
+								background-color: var(--color-white);
+
+								& a {
+									color: var(--color-dark-grey);
+								}
+							}
+						}
+
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
+				}
+
+				& .main-area {
+					flex-basis: 75%;
+					padding: 1rem;
+
+					& h2 {
+						margin-top: 1rem;
+						margin-bottom: 2rem;
+					}
+
+					& .buttons-grid {
+						display: flex;
+						flex-wrap: wrap;
+
+						& .button-item {
+							flex-basis: 50%;
+							padding: 0 1rem 1rem;
+
+							& .button {
+								text-align: center;
+							}
+						}
+					}
+
+					& .import-table-section-body {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+}

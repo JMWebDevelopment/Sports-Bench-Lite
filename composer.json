@@ -1,0 +1,42 @@
+{
+  "name": "jmwebdevelopment/sports-bench-plugin",
+  "description": "Creating and keeping up with sports league stats on the internet can be a hassle. Fortunately, the Sports Bench plugin takes all of the hard work away from you. After a simple five-minute (or less) setup, you're ready to start entering teams, players, games and even division and then watch the plugin do all of the other stuff for you. Sports Bench takes care of accumulating the stats you enter as well as the standings and schedules. The plugin has the ability to display the standings, a scoreboard of all game for the current season and statistical leaderboards. Show off game stats next to a recap of a game. Easily create pages for teams and players. And shortcodes allow you to show game, player or team information in any post. And if you use the Sports Bench theme, all of this comes with minimal front-end coding work for you. You have enough to worry about with managing your sports league; let us take care of the hard part.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0",
+  "require-dev": {
+    "php": ">=7.0",
+    "wp-coding-standards/wpcs": "^2",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "phpunit/phpunit": "^6",
+    "brain/monkey": "^2",
+    "phpcompatibility/php-compatibility": "^9"
+  },
+  "config": {
+    "platform": {
+      "php": "7.0"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "WP_Rig\\WP_Rig\\": "inc"
+    }
+  },
+  "scripts": {
+    "install-codestandards": [
+      "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    ],
+    "phpcbf-dev": "\"vendor/bin/phpcbf\"",
+    "run-phpcbf": [
+      "@phpcbf-dev"
+    ],
+    "phpcs-dev": "\"vendor/bin/phpcs\"",
+    "run-phpcs": [
+      "@phpcs-dev"
+    ],
+    "phpunit-dev": "\"vendor/bin/phpunit\"",
+    "phpunit-integration-dev": "\"vendor/bin/phpunit\" -c \"phpunit.integration.xml.dist\""
+  }
+}

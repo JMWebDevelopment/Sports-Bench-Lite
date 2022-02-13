@@ -1,0 +1,104 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.admin_page_sports-bench-edit-player-form,
+.players_page_sports-bench-add-player-form {
+
+	& #wpcontent {
+		padding-left: 0;
+	}
+
+	& .sports-bench {
+
+		& .wrap {
+
+			& .form-container {
+				display: flex;
+				flex-wrap: wrap;
+
+				& .form-left {
+					flex-basis: 66.7%;
+					padding: 0 1rem;
+				}
+
+				& .form-right {
+					flex-basis: 33.3%;
+					padding: 0 1rem;
+
+					& .form-right-inner {
+						background-color: var(--color-white);
+						border: 1px solid var(--color-off-black);
+						border-radius: 5px;
+						padding: 10px;
+						margin-bottom: 1rem;
+						text-align: center;
+
+						& .photo-field {
+
+							&:first-child {
+								margin-bottom: 1rem;
+							}
+						}
+
+						& #placeholder-photo {
+							max-width: 60%;
+							margin: 0 auto 1rem;
+							text-align: center;
+						}
+
+						& button {
+							min-width: 0;
+							width: 100%;
+							padding: 10px 15px;
+							font-size: 18px;
+							text-align: center;
+						}
+
+						& #removelogo,
+						& #removephoto {
+							background-color: var(--color-red);
+							border-color: var(--color-red);
+							color: var(--color-white);
+							line-height: 2.15384615;
+
+							&:hover,
+							&:focus {
+								background-color: var(--color-white);
+								color: var(--color-red);
+							}
+						}
+					}
+
+					& input[type="submit"] {
+						min-width: 0;
+						width: 100%;
+						padding: 10px 15px;
+						font-size: 18px;
+						text-align: center;
+						background: #007cba;
+						border-color: #007cba;
+						height: auto;
+
+						&:hover,
+						&:focus {
+							background-color: var(--color-white);
+							color: #007cba;
+						}
+					}
+				}
+			}
+
+			& .fields-container {
+				margin-bottom: 2rem;
+				display: flex;
+				flex-wrap: wrap;
+
+				& .one-column {
+					flex-basis: 50%;
+					padding: 0 1rem;
+					box-sizing: border-box;
+				}
+			}
+		}
+	}
+}

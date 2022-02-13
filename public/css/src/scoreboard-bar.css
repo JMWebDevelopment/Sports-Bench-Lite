@@ -1,0 +1,134 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+#scoreboard-bar {
+	display: flex;
+	flex-wrap: wrap;
+	height: 90px;
+	box-sizing: border-box;
+
+	& div {
+		box-sizing: border-box;
+	}
+
+	& .scoreboard-navigation {
+		flex-basis: 8.33%;
+
+		& button {
+			width: 100%;
+			height: 90px;
+			border: 0;
+			border-radius: 0;
+			font-size: 50px;
+			background-color: var(--color-black);
+			min-width: 0;
+
+			&:hover,
+			&:focus {
+				background-color: var(--color-dark-grey);
+			}
+		}
+	}
+
+	& #scoreboard-main {
+		flex: 1;
+		overflow: hidden;
+
+		& #scoreboard-inner {
+			position: relative;
+
+			& .scoreboard-game {
+				width: 250px;
+				float: left;
+				position: relative;
+				background-color: var(--color-white);
+				border-right: 1px solid var(--color-black);
+				border-left: 1px solid var(--color-black);
+
+				& .scoreboard-table {
+
+					& .team-row {
+						height: 30px;
+						display: flex;
+						flex-wrap: wrap;
+
+						&:nth-child(even) {
+							background-color: var(--color-off-white);
+						}
+
+						& .team-logo {
+							flex-basis: 39px;
+							justify-content: center;
+							padding: 2px 0;
+							display: flex;
+							align-items: center;
+
+							& img {
+								height: 25px;
+							}
+						}
+
+						& .team-location {
+							flex: 1;
+							display: flex;
+							align-items: center;
+						}
+
+						& .team-score {
+							flex-basis: 19px;
+							justify-content: center;
+							padding: 0 2px;
+							display: flex;
+							align-items: center;
+						}
+					}
+
+					& .game-info-row {
+						height: 30px;
+						display: flex;
+						align-items: center;
+						justify-content: right;
+						background-color: var(--color-off-black);
+						color: var(--color-white);
+
+						& #time {
+							text-align: right;
+							padding: 0 2px;
+						}
+					}
+				}
+
+				& .recap-overlay {
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					top: 0;
+					left: 0;
+					background-color: var(--color-off-black);
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					display: none;
+
+					& a {
+						color: var(--color-white);
+
+						&:hover,
+						&:focus {
+							color: var(--color-light-grey);
+						}
+					}
+				}
+
+				&:hover {
+
+					& .recap-overlay {
+						display: flex;
+					}
+				}
+			}
+		}
+	}
+
+}

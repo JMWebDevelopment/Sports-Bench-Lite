@@ -1,0 +1,61 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+#sports_bench_standings_dashboard_widget {
+
+	& .standings {
+		width: 100%;
+		border-collapse: collapse;
+
+		& thead {
+
+			& tr {
+
+				& th {
+					text-align: center;
+					font-size: 18px;
+
+					&.left {
+						text-align: left;
+					}
+				}
+			}
+		}
+
+		& tbody {
+
+			& tr {
+
+				& td {
+					font-size: 16px;
+
+					&.center {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+#sports_bench_games_dashboard_widget {
+
+	& h3 {
+		font-weight: 700;
+	}
+
+	& .games-table {
+		margin-bottom: 1rem;
+		border-collapse: collapse;
+		width: 100%;
+
+		& td {
+			vertical-align: middle;
+			padding: 5px 2px;
+		}
+
+		& img {
+			width: 25px;
+		}
+	}
+}

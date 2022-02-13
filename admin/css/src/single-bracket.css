@@ -1,0 +1,113 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.playoffs_page_sports-bench-add-bracket-form,
+.admin_page_sports-bench-edit-bracket-form {
+
+	& #wpcontent {
+		padding-left: 0;
+	}
+
+	& .sports-bench {
+
+		& .wrap {
+
+			& input[type="submit"] {
+				min-width: 0;
+				width: 100%;
+				padding: 10px 15px;
+				font-size: 18px;
+				text-align: center;
+				background: #007cba;
+				border-color: #007cba;
+				height: auto;
+
+				&:hover,
+				&:focus {
+					background-color: var(--color-white);
+					color: #007cba;
+				}
+			}
+
+			& .form-top-container {
+				display: flex;
+				flex-wrap: wrap;
+
+				& .full-width {
+					flex-basis: 100%;
+					padding: 0 1rem;
+				}
+
+				& .field {
+					flex-basis: 25%;
+					padding: 0 1rem;
+
+					&.button-column {
+						display: flex;
+						align-items: flex-end;
+					}
+				}
+
+				& button {
+					min-width: 0;
+					width: 100%;
+					padding: 10px 15px;
+					font-size: 18px;
+					text-align: center;
+					line-height: 1;
+					margin-bottom: 5px;
+				}
+			}
+
+			& .form-series-container {
+				padding-top: 4rem;
+
+				& .playoff-matchups-container {
+					display: flex;
+					flex-wrap: wrap;
+					margin-bottom: 4rem;
+
+					& .playoff-matchup {
+						flex-basis: 50%;
+						padding: 0 1rem;
+						margin-bottom: 2rem;
+
+						& .playoff-series-inner {
+							padding: 10px;
+							background-color: var(--color-white);
+							border: 1px solid var(--color-black);
+							border-radius: 5px;
+
+							& .form-table {
+
+								& thead {
+
+									& tr {
+
+										& th {
+											padding: 20px 10px;
+											@mixin nunito 18px, var(--color-black), 700, none;
+
+											&.seed,
+											&.score {
+												width: 15%;
+											}
+										}
+									}
+								}
+							}
+
+							& .series-games {
+
+								& table {
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

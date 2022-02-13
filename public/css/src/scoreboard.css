@@ -1,0 +1,160 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.sports-bench-scoreboard-page {
+
+	& .sports-bench-scoreboard-date-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+
+		& #scoreboard-page-left-container,
+		& #scoreboard-page-right-container {
+			flex-basis: 39px;
+
+			& button {
+				min-width: 0;
+			}
+		}
+
+		& #scoreboard-title {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			& .scoreboard-widget-title {
+				margin-bottom: 0;
+				text-align: center;
+			}
+
+			& #widget-hidden-date {
+				display: none;
+			}
+		}
+	}
+
+	& #scoreboard-page-body {
+		display: flex;
+		flex-wrap: wrap;
+
+		& .scoreboard-game {
+			flex-basis: 50%;
+			padding: 1rem;
+			border-bottom: 1px solid var(--color-light-grey);
+
+			&:nth-child(odd) {
+				border-right: 1px solid var(--color-light-grey);
+			}
+
+			& .game-inner {
+				padding-bottom: 1rem;
+
+				& .scoreboard-table {
+					margin-bottom: 1rem;
+
+					& .team-row {
+						height: 45px;
+						display: flex;
+						flex-wrap: wrap;
+
+						&:nth-child(even) {
+							background-color: var(--color-off-white);
+						}
+
+						& .team-logo {
+							flex-basis: 50px;
+							justify-content: center;
+							padding: 0 5px;
+							display: flex;
+							align-items: center;
+
+							& img {
+								height: 40px;
+							}
+						}
+
+						& .team-location {
+							flex: 1;
+							display: flex;
+							align-items: center;
+							font-size: 20px;
+							padding: 0 5px;
+						}
+
+						& .team-score {
+							flex-basis: 19px;
+							justify-content: center;
+							padding: 0 5px;
+							display: flex;
+							align-items: center;
+							font-size: 20px;
+						}
+					}
+
+					& .game-info-row {
+						height: 45px;
+						display: flex;
+						align-items: center;
+						justify-content: right;
+						background-color: var(--color-off-black);
+						color: var(--color-white);
+
+						& #time {
+							text-align: right;
+							padding: 0 10px;
+							font-size: 20px;
+						}
+					}
+				}
+
+				& p {
+					margin-bottom: 1rem;
+				}
+
+				& .recap-section {
+					background-color: var(--color-black);
+					display: flex;
+					flex: wrap;
+
+					& .recap-element {
+						flex: 1;
+						text-align: center;
+						height: 45px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+
+						& a {
+							color: var(--color-white);
+
+							&:hover,
+							&:focus {
+								color: var(--color-light-grey);
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 650px) {
+
+	.sports-bench-scoreboard-page {
+
+		& #scoreboard-page-body {
+
+			& .scoreboard-game {
+				margin-bottom: 2rem;
+				flex-basis: 100%;
+
+				&:nth-child(odd) {
+					border-right: 0;
+				}
+			}
+		}
+	}
+}

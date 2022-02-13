@@ -1,0 +1,151 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.sports-bench-player-page {
+
+	& #sports-bench-player-id {
+		display: none;
+	}
+
+	& #player-info {
+		display: flex;
+		flex-wrap: wrap;
+
+		& h2 {
+			flex-basis: 100%;
+		}
+
+		& .player-photo {
+			flex-basis: 33.3%;
+			padding: 0 1rem;
+		}
+
+		& .player-details {
+			flex-basis: 66.7%;
+			padding: 0 1rem;
+
+			& p {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	& #player-stats {
+
+		& table {
+
+			& thead {
+
+				& tr {
+
+					& th {
+						text-align: center;
+
+						&.left {
+							text-align: left;
+						}
+					}
+				}
+			}
+
+			& tbody {
+
+				& tr {
+
+					& td {
+						vertical-align: middle;
+
+						& img {
+							max-height: 25px;
+						}
+
+						&.center {
+							text-align: center;
+						}
+
+						&.player-name {
+
+							&:hover {
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#team-players {
+	display: flex;
+	flex-wrap: wrap;
+
+	& .player {
+		flex-basis: 50%;
+		padding: 1rem;
+		border-bottom: 1px solid var(--color-light-grey);
+		text-align: center;
+
+		&:nth-child(odd) {
+			border-right: 1px solid var(--color-light-grey);
+		}
+
+		& img {
+			max-height: 150px;
+			margin: 0 auto;
+		}
+
+		& p {
+			text-align: left;
+			margin-bottom: 1rem;
+
+			&.playername {
+				font-size: 24px;
+				font-weight: 700;
+			}
+		}
+
+		& .button {
+			width: 100%;
+		}
+
+	}
+}
+
+@media (--small-down) {
+
+	#team-players {
+
+		& .player {
+			flex-basis: 10%;
+
+			&:nth-child(odd) {
+				border-right: 0;
+			}
+		}
+	}
+
+	.sports-bench-player-page {
+
+		& #sports-bench-player-id {
+			display: none;
+		}
+
+		& #player-info {
+			display: flex;
+			flex-wrap: wrap;
+
+			& h2 {
+				flex-basis: 100%;
+			}
+
+			& .player-photo {
+				flex-basis: 100%;
+			}
+
+			& .player-details {
+				flex-basis: 100%;
+			}
+		}
+	}
+}

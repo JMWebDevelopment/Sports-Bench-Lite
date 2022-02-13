@@ -1,0 +1,48 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.list-division-teams {
+	display: flex;
+	flex-wrap: wrap;
+
+	& .team-info {
+		flex-basis: 50%;
+		padding: 1rem;
+		border-bottom: 1px solid var(--color-light-grey);
+		text-align: center;
+
+		&:nth-child(odd) {
+			border-right: 1px solid var(--color-light-grey);
+		}
+
+		& img {
+			max-height: 150px;
+			margin: 0 auto;
+		}
+
+		& p {
+			text-align: left;
+		}
+
+		& .button {
+			width: 100%;
+		}
+
+	}
+}
+
+@media (--small-down) {
+
+	.list-division-teams {
+		display: flex;
+		flex-wrap: wrap;
+
+		& .team-info {
+			flex-basis: 10%;
+
+			&:nth-child(odd) {
+				border-right: 0;
+			}
+		}
+	}
+}

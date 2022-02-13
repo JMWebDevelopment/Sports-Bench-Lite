@@ -1,0 +1,68 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.sports-bench-player-shortcode {
+	background-color: var(--color-white);
+	padding: 1rem;
+
+	& #sports-bench-player-id {
+		display: none;
+	}
+
+	& .player-top-info {
+		display: flex;
+		flex-wrap: wrap;
+
+		& .player-photo {
+			flex-basis: 33.3%;
+			padding: 0 1rem;
+		}
+
+		& .player-info {
+			flex-basis: 66.7%;
+			padding: 0 1rem;
+
+			& p {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	& .career-stats {
+
+		& table {
+
+			& thead {
+
+				& tr {
+
+					& th {
+						text-align: center;
+
+						&.left {
+							text-align: left;
+						}
+					}
+				}
+			}
+
+			& tbody {
+
+				& tr {
+
+					& td {
+						vertical-align: middle;
+
+						& img {
+							max-height: 25px;
+						}
+
+						&.center {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}

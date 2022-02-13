@@ -1,0 +1,201 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.game-box-score {
+	display: flex;
+	flex-wrap: wrap;
+
+	& .box-score-section {
+		flex-basis: 50%;
+		padding: 1rem;
+		overflow-x: scroll;
+
+		&#score-info {
+
+			& .linescore {
+
+				& thead {
+
+					& tr {
+
+						& th {
+							text-align: center;
+							font-size: 16px;
+						}
+					}
+				}
+
+				& tbody {
+
+					& tr {
+
+						& td {
+
+							& img {
+								max-height: 25px;
+							}
+
+							&.score {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+
+			& .game-events {
+
+				& thead {
+
+					& tr {
+
+						& th {
+
+							&.score {
+								text-align: center;
+								width: 45px;
+							}
+
+							& img {
+								max-height: 25px;
+								margin-right: 5px;
+							}
+						}
+					}
+				}
+
+				& tbody {
+
+					& tr {
+
+						& td {
+
+							&.score {
+								text-align: center;
+							}
+
+							& img {
+								max-height: 25px;
+								margin-right: 5px;
+							}
+
+							& .event-id {
+								display: none;
+							}
+
+							& .yellow {
+								color: #e3db00;
+							}
+
+							& .red {
+								color: #e30000;
+							}
+						}
+					}
+				}
+
+				&.baseball {
+
+					& thead {
+
+						& tr {
+
+							& th {
+
+								& img {
+									max-height: 25px;
+									margin-bottom: 5px;
+									margin-right: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&#team-stats {
+
+			& .team-stats {
+
+				& thead {
+
+					& tr {
+
+						& th {
+							text-align: center;
+							font-size: 16px;
+
+							& img {
+								max-height: 30px;
+							}
+						}
+					}
+				}
+
+				& tbody {
+
+					& tr {
+
+						& td {
+							font-size: 16px;
+
+							&.stat {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&#away-stats,
+		&#home-stats {
+
+			& .individual-stats {
+
+				& thead {
+
+					& tr {
+
+						& th {
+							text-align: center;
+							font-size: 16px;
+						}
+					}
+				}
+
+				& tbody {
+
+					& tr {
+
+						& td {
+							font-size: 16px;
+
+							&.stat {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+
+			& .sports-bench-abbreviations {
+				font-size: 16px;
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width: 650px) {
+
+	.game-box-score {
+		display: flex;
+		flex-wrap: wrap;
+
+		& .box-score-section {
+			flex-basis: 100%;
+		}
+	}
+}

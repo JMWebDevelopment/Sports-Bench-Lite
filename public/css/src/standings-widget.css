@@ -1,0 +1,36 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.sports_bench_standings_widget {
+
+	& .standings {
+
+		& thead {
+
+			& tr {
+
+				& th {
+					text-align: center;
+				}
+			}
+		}
+
+		& tbody {
+
+			& tr {
+
+				& td {
+
+					&.center {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+
+	& .button {
+		width: 100%;
+		text-align: center;
+	}
+}
