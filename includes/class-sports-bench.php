@@ -121,7 +121,6 @@ class Sports_Bench {
 	private function load_classes() {
 
 		// Base classes.
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-bracket.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-database.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-display.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-division.php';
@@ -129,9 +128,7 @@ class Sports_Bench {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-games.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-player.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-players.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-playoffs.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-scoreboard.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-series.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-standings.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-stats.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/base/class-team.php';
@@ -139,7 +136,6 @@ class Sports_Bench {
 
 		// Screen classes.
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/screens/class-screen.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/screens/admin/class-brackets-screen.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/screens/admin/class-divisions-screen.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/screens/admin/class-games-screen.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/screens/admin/class-options-screen.php';
@@ -149,13 +145,11 @@ class Sports_Bench {
 
 		// REST API classes.
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-rest-api.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-bracket-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-division-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-game-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-game-info-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-game-stats-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-player-rest-api.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-series-rest-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/classes/rest-api/class-team-rest-api.php';
 
 		// Sports Classes.

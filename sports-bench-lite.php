@@ -15,7 +15,7 @@
  * @subpackage Sports_Bench_Lite/includes
  */
 
-namespace Sports_Bench_Lite;
+namespace Sports_Bench;
 
 // If this file is called directly, then about execution.
 if ( ! defined( 'WPINC' ) ) {
