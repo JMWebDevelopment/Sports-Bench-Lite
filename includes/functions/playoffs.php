@@ -13,8 +13,6 @@
  * @author     Jacob Martella <me@jacobmartella.com>
  */
 
-use Sports_Bench\Classes\Base\Bracket;
-
 /**
  * Displays the HTML for a playoff bracket.
  *
@@ -24,6 +22,5 @@ use Sports_Bench\Classes\Base\Bracket;
  * @return string              The HTML for the playoff bracket.
  */
 function sports_bench_show_playoff_bracket( $bracket_id ) {
-	$bracket = new Bracket( $bracket_id );
-	return $bracket->show_playoff_bracket();
+	return '';
 }

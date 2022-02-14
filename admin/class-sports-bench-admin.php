@@ -18,7 +18,6 @@ namespace Sports_Bench;
 use Sports_Bench\Classes\Base\Database;
 use Sports_Bench\Classes\Base\Game;
 use Sports_Bench\Classes\Base\Team;
-use Sports_Bench\Classes\Screens\Admin\BracketsScreen;
 
 /**
  * Runs the admin side.
@@ -95,14 +94,6 @@ class Sports_Bench_Admin {
 			wp_enqueue_style( 'sports-bench-divisions', plugin_dir_url( __FILE__ ) . 'css/divisions.min.css', [], $this->version, 'all' );
 		}
 
-		if ( $this->is_sports_bench_page( 'sports-bench-brackets' ) ) {
-			wp_enqueue_style( 'sports-bench-brackets-listing', plugin_dir_url( __FILE__ ) . 'css/brackets-listing.min.css', [], $this->version, 'all' );
-		}
-
-		if ( $this->is_sports_bench_page( 'sports-bench-add-bracket-form' ) || $this->is_sports_bench_page( 'sports-bench-edit-bracket-form' ) ) {
-			wp_enqueue_style( 'sports-bench-brackets-single', plugin_dir_url( __FILE__ ) . 'css/single-bracket.min.css', [], $this->version, 'all' );
-		}
-
 		if ( $this->is_sports_bench_page( 'sports-bench-games' ) ) {
 			wp_enqueue_style( 'sports-bench-games-listing', plugin_dir_url( __FILE__ ) . 'css/games-listing.min.css', [], $this->version, 'all' );
 		}
@@ -148,23 +139,6 @@ class Sports_Bench_Admin {
 		if ( $this->is_sports_bench_page( 'sports-bench-divisions' ) ) {
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_script( 'sports-bench-divisions', plugin_dir_url( __FILE__ ) . 'js/divisions-admin.min.js', [], $this->version, 'all' );
-		}
-
-		if ( $this->is_sports_bench_page( 'sports-bench-add-bracket-form' ) || $this->is_sports_bench_page( 'sports-bench-edit-bracket-form' ) ) {
-			wp_enqueue_script( 'sports-bench-load-bracket', plugin_dir_url( __FILE__ ) . 'js/load-bracket.min.js', [], $this->version, 'all' );
-			$args = [
-				'nonce' => wp_create_nonce( 'sports-bench-load-bracket' ),
-				'url'   => admin_url( 'admin-ajax.php' ),
-			];
-			wp_localize_script( 'sports-bench-load-bracket', 'sbloadbracket', $args );
-			wp_enqueue_script( 'sports-bench-load-bracket-series-games', plugin_dir_url( __FILE__ ) . 'js/load-bracket-series-games.min.js', [], $this->version, 'all' );
-			$args = [
-				'nonce'       => wp_create_nonce( 'sports-bench-load-bracket-series-games' ),
-				'url'         => admin_url( 'admin-ajax.php' ),
-				'rest_url'    => get_home_url() . '/wp-json/',
-				'select_game' => __( 'Select a Game', 'sports-bench' ),
-			];
-			wp_localize_script( 'sports-bench-load-bracket-series-games', 'sbloadbracketseriesgames', $args );
 		}
 
 		if ( $this->is_sports_bench_page( 'sports-bench-add-game-form' ) || $this->is_sports_bench_page( 'sports-bench-edit-game-form' ) ) {
@@ -343,41 +317,6 @@ class Sports_Bench_Admin {
 			[ $this, 'add_edit_game_page']
 		);
 
-		// Brackets pages.
-		add_menu_page(
-			__( 'Playoffs', 'sports-bench' ),
-			__( 'Playoffs', 'sports-bench' ),
-			'edit_posts',
-			'sports-bench-brackets',
-			[ $this, 'brackets_listing_page'],
-			'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTAuNzUgNDU0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzIzMWYyMDt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTExLjM4LDEyOC43NnY0OS42NWMwLDMxLjY2LTIwLDY0LjItNTQuODksODkuMy0yNy44NSwyMC4xMi02MS44MSwzMi44OS05Ny41NCwzNy0yNy44NCw0Ni4yLTYwLjM5LDY1LjI2LTYwLjM5LDY1LjI2djYzLjg1aDQyLjU2YzMxLjMxLDAsNTYuNzYsMTguMzUsNTYuNzYsNDkuNjV2MTAuNjRhMTAuNjcsMTAuNjcsMCwwLDEtMTAuNjUsMTAuNjRIMTI0Ljc3YTEwLjY3LDEwLjY3LDAsMCwxLTEwLjY1LTEwLjY0VjQ4My40NGMwLTMxLjMsMjUuNDUtNDkuNjUsNTYuNzYtNDkuNjVoNDIuNTZWMzY5Ljk0cy0zMi41NS0xOS4wNi02MC4zOS02NS4yNmMtMzUuNjQtNC4wOC02OS42MS0xNi44NS05Ny41NC0zN0MyMC41OCwyNDIuNjEuNjIsMjEwLjA3LjYyLDE3OC40MVYxMjguNzZhMjEuMjQsMjEuMjQsMCwwLDEsMjEuMjktMjEuMjloOTIuMjFWNzJhMjEuMjQsMjEuMjQsMCwwLDEsMjEuMjktMjEuMjlIMzc2LjU5QTIxLjI0LDIxLjI0LDAsMCwxLDM5Ny44OCw3MnYzNS40Nmg5Mi4yMUEyMS4yNCwyMS4yNCwwLDAsMSw1MTEuMzgsMTI4Ljc2Wk0xMjUuNjUsMjQwLjY2YTMxOSwzMTksMCwwLDEtMTEuMzUtNzYuNDRINTcuMzh2MTQuMTljMCwxMC4yOSw5LjY2LDI3LjY3LDMxLjMsNDMuMjdBMTQyLjc4LDE0Mi43OCwwLDAsMCwxMjUuNjUsMjQwLjY2Wm0zMjktNzYuNDRoLTU3YTMxOC41MywzMTguNTMsMCwwLDEtMTEuMzUsNzYuNDQsMTQzLjM1LDE0My4zNSwwLDAsMCwzNy4wNi0xOWMxNS42MS0xMS4yNiwzMS4zLTI5LDMxLjMtNDMuMjdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC42MyAtNTAuNzIpIi8+PC9zdmc+',
-			6
-		);
-		add_submenu_page(
-			'sports-bench-brackets',
-			__( 'Playoffs', 'sports-bench' ),
-			__( 'All Playoffs', 'sports-bench' ),
-			'edit_posts',
-			'sports-bench-brackets',
-			[ $this, 'brackets_listing_page']
-		);
-		add_submenu_page(
-			'',
-			__( 'Edit Bracket', 'sports-bench' ),
-			'',
-			'edit_posts',
-			'sports-bench-edit-bracket-form',
-			[ $this, 'add_edit_bracket_page']
-		);
-		add_submenu_page(
-			'sports-bench-brackets',
-			__( 'Add New Bracket', 'sports-bench' ),
-			__( 'Add New', 'sports-bench' ),
-			'edit_posts',
-			'sports-bench-add-bracket-form',
-			[ $this, 'add_edit_bracket_page']
-		);
-
 		// Sports Bench options pages.
 		add_menu_page(
 			__( 'Sports Bench', 'sports-bench' ),
@@ -445,24 +384,6 @@ class Sports_Bench_Admin {
 	}
 
 	/**
-	 * Loads the partial for the playoff brackets listing page.
-	 *
-	 * @since 2.0.0
-	 */
-	public function brackets_listing_page() {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/playoffs/brackets-listing.php';
-	}
-
-	/**
-	 * Loads the partial for the add/edit bracket page.
-	 *
-	 * @since 2.0.0
-	 */
-	public function add_edit_bracket_page() {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/playoffs/add-edit-bracket.php';
-	}
-
-	/**
 	 * Loads the partial for the games listing page.
 	 *
 	 * @since 2.0.0
@@ -487,26 +408,6 @@ class Sports_Bench_Admin {
 	 */
 	public function options_page() {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/options/options-page.php';
-	}
-
-	/**
-	 * Loads a bracket based on the given inputs.
-	 *
-	 * @since 2.0.0
-	 */
-	public function load_bracket() {
-		$teams       = $_POST['num_teams'];
-		$elimination = $_POST['bracket_format'];
-		$season      = '';
-		$bracket     = new BracketsScreen();
-
-		ob_start();
-
-		$bracket->display_new_series( $teams, $elimination, $season );
-
-		$data = ob_get_clean();
-		wp_send_json_success( $data );
-		wp_die();
 	}
 
 	/**

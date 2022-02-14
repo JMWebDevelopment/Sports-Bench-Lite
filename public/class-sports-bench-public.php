@@ -22,7 +22,6 @@ use Sports_Bench\Classes\Base\Stats;
 use Sports_Bench\Classes\Base\Teams;
 use Sports_Bench\Classes\Base\Player;
 use Sports_Bench\Classes\Base\Players;
-use Sports_Bench\Classes\Base\Playoffs;
 use Sports_Bench\Classes\Base\Team;
 
 /**
@@ -78,21 +77,16 @@ class Sports_Bench_Public {
 		wp_enqueue_style( 'sports-bench-scoreboard-bar-styles', plugin_dir_url( __FILE__ ) . 'css/scoreboard-bar.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-scoreboard-widget-styles', plugin_dir_url( __FILE__ ) . 'css/scoreboard-widget.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-scoreboard-styles', plugin_dir_url( __FILE__ ) . 'css/scoreboard.min.css', [], $this->version, 'all' );
-		wp_enqueue_style( 'sports-bench-list-divisions-styles', plugin_dir_url( __FILE__ ) . 'css/list-divisions.min.css', [], $this->version, 'all' );
-		wp_enqueue_style( 'sports-bench-team-schedule', plugin_dir_url( __FILE__ ) . 'css/team-schedule.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-team-block', plugin_dir_url( __FILE__ ) . 'css/team-block.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-teams', plugin_dir_url( __FILE__ ) . 'css/teams.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-player-block', plugin_dir_url( __FILE__ ) . 'css/player-block.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-player-page', plugin_dir_url( __FILE__ ) . 'css/player-page.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-game-block', plugin_dir_url( __FILE__ ) . 'css/game-block.min.css', [], $this->version, 'all' );
-		wp_enqueue_style( 'sports-bench-rivalry-block', plugin_dir_url( __FILE__ ) . 'css/rivalry-block.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-box-score', plugin_dir_url( __FILE__ ) . 'css/box-score.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-standings', plugin_dir_url( __FILE__ ) . 'css/standings.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-standings-widget', plugin_dir_url( __FILE__ ) . 'css/standings-widget.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-stats', plugin_dir_url( __FILE__ ) . 'css/stats.min.css', [], $this->version, 'all' );
 		wp_enqueue_style( 'sports-bench-stats-widget', plugin_dir_url( __FILE__ ) . 'css/stats-widget.min.css', [], $this->version, 'all' );
-		wp_enqueue_style( 'sports-bench-stat-search', plugin_dir_url( __FILE__ ) . 'css/stat-search.min.css', [], $this->version, 'all' );
-		wp_enqueue_style( 'sports-bench-brackets', plugin_dir_url( __FILE__ ) . 'css/brackets.min.css', [], $this->version, 'all' );
 	}
 
 	/**
@@ -158,20 +152,6 @@ class Sports_Bench_Public {
 		];
 		wp_localize_script( 'sports-bench-stats', 'sbloadstats', $args );
 
-		wp_enqueue_script( 'sports-bench-search-stats', plugin_dir_url( __FILE__ ) . 'js/search-stats.min.js', [], $this->version, 'all' );
-		wp_script_add_data( 'sports-bench-search-stats', 'async', true );
-		wp_script_add_data( 'sports-bench-search-stats', 'precache', true );
-		$args = [
-			'nonce'    => wp_create_nonce( 'sports-bench-search-stats' ),
-			'url'      => admin_url( 'admin-ajax.php' ),
-			'rest_url' => get_home_url() . '/wp-json/',
-		];
-		wp_localize_script( 'sports-bench-search-stats', 'sbsearchstats', $args );
-
-		wp_enqueue_script( 'sports-bench-series-details', plugin_dir_url( __FILE__ ) . 'js/series-details.min.js', [], $this->version, 'all' );
-		wp_script_add_data( 'sports-bench-series-details', 'async', true );
-		wp_script_add_data( 'sports-bench-series-details', 'precache', true );
-
 		wp_enqueue_script( 'sports-bench-box-score', plugin_dir_url( __FILE__ ) . 'js/box-score.min.js', [], $this->version, 'all' );
 		wp_script_add_data( 'sports-bench-box-score', 'async', true );
 		wp_script_add_data( 'sports-bench-box-score', 'precache', true );
@@ -192,12 +172,10 @@ class Sports_Bench_Public {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/widgets/scoreboard-widget.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/widgets/standings-widget.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/widgets/stats-widget.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/widgets/team-schedule-widget.php';
 
 		register_widget( 'Sports_Bench_Scoreboard_Widget' );
 		register_widget( 'Sports_Bench_Standings_Widget' );
 		register_widget( 'Sports_Bench_Stats_Widget' );
-		register_widget( 'Sports_Bench_Team_Schedule_Widget' );
 	}
 
 	/**
@@ -213,13 +191,8 @@ class Sports_Bench_Public {
 		add_shortcode( 'sports-bench-stats', 'sports_bench_stats_shortcode' );
 		add_shortcode( 'sports-bench-player', 'sports_bench_player_shortcode' );
 		add_shortcode( 'sports-bench-player-page', 'sports_bench_player_page_shortcode' );
-		add_shortcode( 'sports-bench-bracket', 'sports_bench_brackets_shortcode' );
-		add_shortcode( 'sports-bench-list-division', 'sports_bench_list_teams_by_division' );
-		add_shortcode( 'sports-bench-rivalry', 'sports_bench_rivalry_shortcode' );
 		add_shortcode( 'sports-bench-team', 'sports_bench_team_shortcode' );
 		add_shortcode( 'sports-bench-team-page', 'sports_bench_team_page_shortcode' );
-		add_shortcode( 'sports-bench-game-recap', 'sports_bench_game_recap_shortcode' );
-		add_shortcode( 'sports-bench-stat-search', 'sports_bench_stat_search_shortcode' );
 	}
 
 	/**
@@ -410,20 +383,6 @@ class Sports_Bench_Public {
 		$this->loader->add_action( 'wp_ajax_sports_bench_load_stats', $stats, 'sports_bench_statistics' );
 		$this->loader->add_action( 'wp_ajax_nopriv_sports_bench_load_stats', $stats, 'sports_bench_statistics' );
 		$this->loader->add_filter( 'sports_bench_stat_leader_table', $stats, 'sports_bench_do_stat_leader_table', 10, 4 );
-		$this->loader->add_filter( 'sports_bench_stat_search_table', $stats, 'sports_bench_do_stat_search_table', 10, 3 );
-		$this->loader->add_action( 'wp_ajax_sports_bench_search_stats', $stats, 'search_stats' );
-		$this->loader->add_action( 'wp_ajax_nopriv_sports_bench_search_stats', $stats, 'search_stats' );
-		$this->loader->run();
-	}
-
-	/**
-	 * Runs all of the playoff hooks.
-	 *
-	 * @since 2.0.0
-	 */
-	public function run_playoffs() {
-		$playoffs = new Playoffs();
-		$this->loader->add_filter( 'sports_bench_playoff_series', $playoffs, 'sports_bench_do_playoff_series', 10, 9 );
 		$this->loader->run();
 	}
 

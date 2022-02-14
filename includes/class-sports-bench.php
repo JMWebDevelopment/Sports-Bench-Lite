@@ -234,7 +234,6 @@ class Sports_Bench {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/games.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/display.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/players.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/playoffs.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/scoreboard.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/standings.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/functions/stats.php';
@@ -243,17 +242,12 @@ class Sports_Bench {
 		// Shortcodes.
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/box-score.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/game.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/game-recap.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/scoreboard.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/standings.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/stats.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/player.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/player-stat-search.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/player-page.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/playoff-bracket.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/rivalry.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/team.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/team-listing.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/team-page.php';
 	}
 
@@ -347,7 +341,6 @@ class Sports_Bench {
 		$public->run_games();
 		$public->run_standings();
 		$public->run_stats();
-		$public->run_playoffs();
 	}
 
 	/**
