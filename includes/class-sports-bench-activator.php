@@ -57,9 +57,13 @@ class Sports_Bench_Activator {
 	 * @param string $version      The current version number of the plugin.
 	 */
 	public function activate( $version ) {
-		$this->set_sport();
+		if ( is_plugin_active( 'sports-bench/sports-bench.php' ) ) {
+			deactivate_plugins( 'sports-bench/sports-bench.php' );
+		} else {
+			$this->set_sport();
+			$this->create_db();
+		}
 		$this->set_version_number();
-		$this->create_db();
 	}
 
 	/**
@@ -68,7 +72,13 @@ class Sports_Bench_Activator {
 	 * @since 2.0.0
 	 */
 	private function set_sport() {
-		add_option( 'sports-bench-sport', 'baseball' );
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'sb_teams';
+		$query      = $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_name ) );
+
+		if ( $wpdb->get_var( $query ) != $table_name ) {
+			add_option( 'sports-bench-sport', 'baseball' );
+		}
 	}
 
 	/**
@@ -86,14 +96,18 @@ class Sports_Bench_Activator {
 	 * @since 2.0.0
 	 */
 	private function create_db() {
-		$this->add_teams_table();
-		$this->add_players_table();
-		$this->add_divisions_table();
-		$this->add_games_table();
-		$this->add_game_info_table();
-		$this->add_game_stats_table();
-		$this->add_playoff_brackets_table();
-		$this->add_playoff_series_table();
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'sb_teams';
+		$query      = $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_name ) );
+
+		if ( $wpdb->get_var( $query ) != $table_name ) {
+			$this->add_teams_table();
+			$this->add_players_table();
+			$this->add_divisions_table();
+			$this->add_games_table();
+			$this->add_game_info_table();
+			$this->add_game_stats_table();
+		}
 	}
 
 	/**
@@ -303,55 +317,6 @@ class Sports_Bench_Activator {
 					game_player_pitch_count INTEGER NOT NULL,
 					game_player_decision TEXT,
 					PRIMARY KEY (game_stats_player_id)
-			)";
-		dbDelta( $sql );
-	}
-
-	/**
-	 * Creates the playoff brackets table.
-	 *
-	 * @since 2.0.0
-	 */
-	private function add_playoff_brackets_table() {
-		global $wpdb;
-		$charset_collate = $wpdb->get_charset_collate();
-		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-
-		$table_name = $wpdb->prefix . 'sb_playoff_brackets';
-		$sql        = "CREATE TABLE $table_name (
-					bracket_id INTEGER NOT NULL AUTO_INCREMENT,
-					num_teams INTEGER NOT NULL,
-					bracket_format TEXT NOT NULL,
-					bracket_title TEXT NOT NULL,
-					bracket_season TEXT NOT NULL,
-					PRIMARY KEY (bracket_id)
-			)";
-		dbDelta( $sql );
-	}
-
-	/**
-	 * Creates the playoff series table.
-	 *
-	 * @since 2.0.0
-	 */
-	private function add_playoff_series_table() {
-		global $wpdb;
-		$charset_collate = $wpdb->get_charset_collate();
-		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-
-		$table_name = $wpdb->prefix . 'sb_playoff_series';
-		$sql        = "CREATE TABLE $table_name (
-					series_id INTEGER NOT NULL AUTO_INCREMENT,
-					bracket_id INTEGER NOT NULL,
-					series_format TEXT NOT NULL,
-					playoff_round TEXT NOT NULL,
-					team_one_id INTEGER NOT NULL,
-					team_one_seed INTEGER NOT NULL,
-					team_two_id INTEGER NOT NULL,
-					team_two_seed INTEGER NOT NULL,
-					game_ids TEXT NOT NULL,
-					opposite_series INTEGER NOT NULL,
-					PRIMARY KEY (series_id)
 			)";
 		dbDelta( $sql );
 	}

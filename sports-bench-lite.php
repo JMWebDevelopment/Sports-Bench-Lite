@@ -34,7 +34,7 @@ if ( ! defined( 'SB_TABLE_PREFIX' ) ) {
  *
  * @since 2.0.0
  */
-function activate_sports_bench() {
+function activate_sports_bench_lite() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench-activator.php';
 	$activator = new Sports_Bench_Activator( '2.1.1' );
 	$activator->activate( '2.1.1' );
@@ -46,20 +46,22 @@ function activate_sports_bench() {
  *
  * @since 2.0.0
  */
-function deactivate_sports_bench() {
+function deactivate_sports_bench_lite() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench-deactivator.php';
 	$deactivator = new Sports_Bench_Deactivator( '2.1.1' );
 	$deactivator->deactivate();
 }
 
-register_activation_hook( __FILE__, __NAMESPACE__ . '\activate_sports_bench' );
-register_deactivation_hook( __FILE__, __NAMESPACE__ . '\deactivate_sports_bench' );
+register_activation_hook( __FILE__, __NAMESPACE__ . '\activate_sports_bench_lite' );
+register_deactivation_hook( __FILE__, __NAMESPACE__ . '\deactivate_sports_bench_lite' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench.php';
+if ( ! class_exists( 'Sports_Bench\Sports_Bench' ) ) {
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench.php';
+}
 
 /**
  * Begins execution of the plugin.
@@ -70,7 +72,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench.php';
  *
  * @since    2.0.0
  */
-function run_sports_bench() {
+function run_sports_bench_lite() {
 
 	$spmm = new Sports_Bench();
 	$spmm->run();
@@ -78,4 +80,4 @@ function run_sports_bench() {
 }
 
 // Call the above function to begin execution of the plugin.
-run_sports_bench();
+run_sports_bench_lite();
