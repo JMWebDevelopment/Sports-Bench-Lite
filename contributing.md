@@ -1,7 +1,26 @@
 # Contributing
 
-While I do all of the development work on Sports Bench solo, there are two ways that you can contribute to Sports Bench.
+Sports Bench Lite is an open source project built for the WordPress community. Contributors and contributions welcome. If you have found a problem or want to suggest an improvement or new feature, please file an issue being careful to follow the provided template. If you want to contribute code to the plugin, please follow the instructions below:
 
-First, if you run into any issues or errors while trying to use the plugin, you can report that error by submitting a bug report through the ["Report a Problem" page](https://sportsbenchwp.com/report-a-problem/) on the website.
+## Workflow
+1. Set up a local development environment with a WordPress site running on your computer.
+1. Fork the Sports Bench Lite repository.
+1. Clone the forked repository to your computer.
+1. Create a new branch for your changes.
+1. Run the Sports Bench Lite plugin as you normally would.
+1. Make code changes as necessary.
+1. Commit changes within the new branch.
+1. Push the new branch to your forked repository.
+1. Submit a Pull Request to the Sports Bench Lite repository explaining your changes and referencing any related issues.
 
-And second, if you have an idea for a new feature that you would like to see added to the plugin, you can submit a feature request through the ["Feature Request" page](https://sportsbenchwp.com/feature-request/) on the website.
+## Guidelines for pull requests
+Keep pull requests as concise as possible. If you're addressing a bug, only submit the fixes for that bug.
+
+## Branch naming convention
+Name your branches with prefixes and descriptions: [type]/[change]. Examples:
+
+add/ = add a new feature
+hot-fix/ = a fix that needs to be implemented right away (to fix a breaking change)
+fix/ = a fix to a bug that can wait until the next release cycle
+try/ = experimental feature, testing out an idea
+update/ = update an existing feature or component

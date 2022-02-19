@@ -102,7 +102,6 @@ class Sports_Bench {
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sports-bench-i18n.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sports-bench-setup.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sports-bench-updater.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-sports-bench-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-sports-bench-public.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sports-bench-database.php';

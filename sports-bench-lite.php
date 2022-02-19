@@ -3,7 +3,7 @@
  * Plugin Name:       Sports Bench Lite
  * Plugin URI:        https://sportsbenchwp.com
  * Description:       Creating and keeping up with sports league stats on the internet can be a hassle. Fortunately, the Sports Bench plugin takes all of the hard work away from you. After a simple five-minute (or less) setup, you're ready to start entering teams, players, games and even division and then watch the plugin do all of the other stuff for you. Sports Bench takes care of accumulating the stats you enter as well as the standings and schedules. The plugin has the ability to display the standings, a scoreboard of all game for the current season and statistical leaderboards. Show off game stats next to a recap of a game. Easily create pages for teams and players. And shortcodes allow you to show game, player or team information in any post. And if you use the Sports Bench theme, all of this comes with minimal front-end coding work for you. You have enough to worry about with managing your sports league; let us take care of the hard part.
- * Version:           2.1.1
+ * Version:           2.1.2
  * Author:            Jacob Martella Web Development
  * Author URI:        https://jacobmartella.com
  * Text Domain:       sports-bench
@@ -36,8 +36,8 @@ if ( ! defined( 'SB_TABLE_PREFIX' ) ) {
  */
 function activate_sports_bench_lite() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench-activator.php';
-	$activator = new Sports_Bench_Activator( '2.1.1' );
-	$activator->activate( '2.1.1' );
+	$activator = new Sports_Bench_Activator( '2.1.2' );
+	$activator->activate( '2.1.2' );
 }
 
 /**
@@ -48,7 +48,7 @@ function activate_sports_bench_lite() {
  */
 function deactivate_sports_bench_lite() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sports-bench-deactivator.php';
-	$deactivator = new Sports_Bench_Deactivator( '2.1.1' );
+	$deactivator = new Sports_Bench_Deactivator( '2.1.2' );
 	$deactivator->deactivate();
 }
 
