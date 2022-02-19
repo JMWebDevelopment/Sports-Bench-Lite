@@ -61,15 +61,8 @@ $parent_theme = $theme->parent();
 					}
 					?>
 
-					<div class="tab <?php echo esc_attr( $screen->tab_active_class( 'import' ) ); ?>">
-						<p class="tab-title"><a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-options' ) ); ?>&tab=import"><?php esc_html_e( 'Import', 'sports-bench' ); ?></a></p>
-					</div>
-
-					<div class="tab <?php echo esc_attr( $screen->tab_active_class( 'export' ) ); ?>">
-						<p class="tab-title"><a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-options' ) ); ?>&tab=export"><?php esc_html_e( 'Export', 'sports-bench' ); ?></a></p>
-					</div>
 					<div class="tab <?php echo esc_attr( $screen->tab_active_class( 'licenses' ) ); ?>">
-						<p class="tab-title"><a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-options' ) ); ?>&tab=licenses"><?php esc_html_e( 'Licenses', 'sports-bench' ); ?></a></p>
+						<p class="tab-title"><a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-options' ) ); ?>&tab=licenses"><?php esc_html_e( 'Upgrade to Premium', 'sports-bench' ); ?></a></p>
 					</div>
 					<div class="tab <?php echo esc_attr( $screen->tab_active_class( 'support' ) ); ?>">
 						<p class="tab-title"><a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-options' ) ); ?>&tab=support"><?php esc_html_e( 'Support', 'sports-bench' ); ?></a></p>

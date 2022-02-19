@@ -168,6 +168,14 @@ class Sports_Bench_Admin {
 			//wp_enqueue_style( 'sports-bench-page-admin-style', plugins_url( 'css/sports-bench-page-backend.min.css', __FILE__ ) );
 			wp_enqueue_script( 'sports-bench-page-admin-script', plugin_dir_url( __FILE__ ) . 'js/custom-fields.min.js', [], $this->version, 'all' );
 		}
+
+		if ( is_admin() ) {
+			wp_enqueue_script( 'sports-bench-lite-upgrade-notice', plugin_dir_url( __FILE__ ) . 'js/lite-upgrade-notice.min.js', [], $this->version, 'all' );
+			$args = [
+				'url'           => admin_url( 'admin-ajax.php' )
+			];
+			wp_localize_script( 'sports-bench-lite-upgrade-notice', 'sbliteupgrade', $args );
+		}
 	}
 
 	/**
@@ -2095,5 +2103,22 @@ class Sports_Bench_Admin {
 			echo '<p>' . esc_html__( 'Please add in your Sports Bench Plugin license key on the', 'sports-bench' ) . ' <a href="' . esc_attr( get_admin_url( null, '/admin.php?page=sports-bench-options' ) ) . '&tab=import">' . esc_html__( 'licenses page.', 'sports-bench' ) . '</a></p>';
 			echo '</div>';
 		}
+	}
+
+	public function add_upgrade_admin_notice() {
+		if ( get_option( 'sports-bench-lite-upgrade-notice' ) ) {
+			return;
+		}
+
+		?>
+		<div class="updated notice notice-warning sports-bench-lite-upgrade-notice is-dismissible">
+			<p><?php echo wp_kses_post( __( 'Want more features for your sports website, like playoffs, stat searching, import, export and more? Consider <a href="https://sportsbenchwp.com" target="_blank">purchasing the full Sports Bench plugin</a> to get access to those features and premium support!', 'sports-bench' ) ); ?></p>
+		</div>
+		<?php
+	}
+
+	public function dismiss_upgrade_notice() {
+		error_log( 'creating dismissed option' );
+		update_option( 'sports-bench-lite-upgrade-notice', true );
 	}
 }

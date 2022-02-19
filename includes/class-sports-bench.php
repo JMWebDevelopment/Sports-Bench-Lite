@@ -298,6 +298,9 @@ class Sports_Bench {
 		$this->loader->add_action( 'admin_post_generate_csv', $admin, 'print_csv' );
 		$this->loader->add_action( 'wp_dashboard_setup', $admin, 'add_dashboard_widget' );
 		$this->loader->add_action( 'wp_ajax_sportsbench_tinymce', $admin, 'ajax_tinymce' );
+		$this->loader->add_action( 'admin_notices', $admin, 'add_upgrade_admin_notice' );
+		$this->loader->add_action( 'wp_ajax_sports_bench_lite_dismiss_upgrade_notice', $admin, 'dismiss_upgrade_notice' );
+		$this->loader->add_action( 'wp_ajax_nopriv_sports_bench_lite_dismiss_upgrade_notice', $admin, 'dismiss_upgrade_notice' );
 
 		$team = new Classes\Screens\Admin\TeamsScreen();
 		$this->loader->add_action( 'sports_bench_new_team_fields', $team, 'sports_bench_do_default_new_team_fields' );
