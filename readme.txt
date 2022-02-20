@@ -47,6 +47,19 @@ Check out what you can do with Sports Bench by <a href="https://sportsbenchwp.co
 = Upgrade to the Sports Bench Premium Plugin =
 Want to get access to more blocks, as well as playoffs, stat search and other cool features? Consider <a href="https://sportsbenchwp.com" target="_blank">upgrading to the Sports Bench Premium plugin</a> where you'll get those cool new features as well as premium support for the plugin.
 
+== Frequently Asked Questions ==
+= Does Sports Bench support multiple sports on the same site? =
+Sports Bench only supports one sport on a site at the same time. That’s just how the plugin is written. If you would like to show multiple sports, you could create a WordPress Multisite install, with a different sport on each subsite (similar to the demos).
+
+= Is the Sports Bench plugin compatible with my theme? =
+Ideally it should be compatible with your theme. But that is also dependent on how your theme is created. If the theme is built up-to-WordPress standards (which includes any themes in the WordPress theme directory), then you shouldn’t have any issues. But the theme isn’t built right, you might run into issues.
+
+= I want to extend the plugin to match what I need. How do I do that? =
+Sports Bench already does a lot of what you need for your website. But if you need to extend it even further, be sure to check out the Documentation for the classes, functions and filters you need to customize the plugin.
+
+= What sports does Sports Bench support? =
+Sports Bench currently supports baseball, basketball, football, hockey, rugby, soccer and volleyball. More sports might be added over time.
+
 == Installation ==
 1. In the WordPress Dashboard, go to “Plugins” -> “Add New” and search for “Sports Bench Lite” and click install and activate, OR download the zip file of the plugin and go to “Plugins” -> “Add New” and click \"Upload Plugin\" and upload the zip file.
 2. Once the plugin has been activated, you can click on "Sports Bench" in the left hand menu in the dashboard to set up the settings. Please note that when you set the sport for your website, you should not change it as it will rewrite the game tables and wipe out that data.
@@ -54,4 +67,3 @@ Want to get access to more blocks, as well as playoffs, stat search and other co
 == Changelog ==
 = 2.1.2 - February 25, 2022 =
 - Initial release into the WP plugin directory.
-

@@ -21,7 +21,7 @@ Creating and keeping up with sports league stats on the internet can be a hassle
 
 **Tested up to:** 5.8
 
-**Stable tag:** 2.1.1
+**Stable tag:** 2.1.2
 
 ## Support
 If you have a question or even a feature request, you can check out [the Sports Bench forums](https://sportsbenchwp.com/forums/), or fill out a ["Report an Issue" form](https://sportsbenchwp.com/report-a-problem/) or a ["Feature Request" form](https://sportsbenchwp.com/feature-request/) to get in contact with me.
@@ -34,15 +34,14 @@ So now you've purchased the plugin. How do you get it up to your WordPress site?
 
 ## Via WordPress Admin
 This is the easiest and suggested way to upload your copy of the plugin to your site.
-- In the WordPress admin area, go to Plugins->Add New. Then hit "Upload Plugin" at the top of the subsequent page.
-- Select the zipped plugin directory you downloaded (i.e. sports-bench-1.2.1.zip) and hit "Install Now".
-- After the plugin is installed, click "Activate" to start using the plugin.
+1. In the WordPress Dashboard, go to “Plugins” -> “Add New” and search for “Sports Bench Lite” and click install and activate, OR download the zip file of the plugin and go to “Plugins” -> “Add New” and click \"Upload Plugin\" and upload the zip file.
+2. Once the plugin has been activated, you can click on "Sports Bench" in the left hand menu in the dashboard to set up the settings. Please note that when you set the sport for your website, you should not change it as it will rewrite the game tables and wipe out that data.
 
 ## Via FTP Upload
-- Unzip the zipped plugin directory you downloaded (i.e. sports-bench-1.1.2.zip).
-- Upload the sports-bench directory inside the now-unzipped directory to the plugins directory on your site (located inside of the wp-content directory).
-- In the WordPress admin area, go to the Plugins page and hit "Activate" underneath the Sports Bench listing on the page to begin using the theme.
-- Go to the "Setup" section of this ReadMe file to get the plugin rolling for your use.
+1. Go to "Plugins" and "Add New". Then hit the "Upload Plugin".
+2. Upload the zip file for the plugin.
+3. Activate the plugin after it has been installed.
+4. Once the plugin has been activated, you can click on "Sports Bench" in the left hand menu in the dashboard to set up the settings. Please note that when you set the sport for your website, you should not change it as it will rewrite the game tables and wipe out that data.
 
 ## Contributing
 [Learn how to contribute](contributing.md)
