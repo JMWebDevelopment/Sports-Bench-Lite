@@ -65,5 +65,5 @@ Sports Bench currently supports baseball, basketball, football, hockey, rugby, s
 2. Once the plugin has been activated, you can click on "Sports Bench" in the left hand menu in the dashboard to set up the settings. Please note that when you set the sport for your website, you should not change it as it will rewrite the game tables and wipe out that data.
 
 == Changelog ==
-= 2.1.2 - February 25, 2022 =
+= 2.1.2 - February 28, 2022 =
 - Initial release into the WP plugin directory.

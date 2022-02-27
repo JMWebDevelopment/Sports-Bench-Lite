@@ -1,4 +1,4 @@
-# Sports Bench - Plugin
+# Sports Bench Lite
 
 **Plugin URI:** https://sportsbenchwp.com/
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Sports Bench\n"
-"POT-Creation-Date: 2021-12-08 19:34-0600\n"
-"PO-Revision-Date: 2021-12-08 19:34-0600\n"
+"Project-Id-Version: Sports Bench Lite\n"
+"POT-Creation-Date: 2022-02-26 15:22-0600\n"
+"PO-Revision-Date: 2022-02-26 16:09-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -10,10 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: sports-bench.php\n"
+"X-Poedit-WPHeader: sports-bench-lite.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -23,26 +23,16 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: admin/class-sports-bench-admin.php:165
-#: admin/class-sports-bench-admin.php:583
-#: admin/partials/posts/post-meta-box.php:28
-#: admin/partials/posts/post-meta-box.php:66 blocks/game-recap/index.js:213
-#: blocks/game/index.js:213 includes/class-sports-bench-setup.php:160
-#: includes/class-sports-bench-setup.php:247 includes/functions/window.php:49
-#, fuzzy
-msgid "Select a Game"
-msgstr "Seleziona un gioco"
-
-#: admin/class-sports-bench-admin.php:177 blocks/player/index.js:213
+#: admin/class-sports-bench-admin.php:151 blocks/player/index.js:213
 #: includes/functions/window.php:65
 #, fuzzy
 msgid "Select a Player"
 msgstr "Seleziona un giocatore"
 
-#: admin/class-sports-bench-admin.php:235
-#: admin/class-sports-bench-admin.php:236
-#: admin/class-sports-bench-admin.php:245
-#: admin/class-sports-bench-admin.php:1083 admin/partials/options/export.php:24
+#: admin/class-sports-bench-admin.php:217
+#: admin/class-sports-bench-admin.php:218
+#: admin/class-sports-bench-admin.php:227
+#: admin/class-sports-bench-admin.php:992
 #: admin/partials/teams/add-edit-team.php:38
 #: admin/partials/teams/teams-listing.php:42
 #: includes/class-sports-bench-setup.php:55
@@ -50,7 +40,7 @@ msgstr "Seleziona un giocatore"
 msgid "Teams"
 msgstr "Teams"
 
-#: admin/class-sports-bench-admin.php:246
+#: admin/class-sports-bench-admin.php:228
 #: includes/classes/screens/admin/class-games-screen.php:169
 #: includes/classes/screens/admin/class-games-screen.php:190
 #: includes/classes/screens/admin/class-games-screen.php:211
@@ -59,34 +49,34 @@ msgstr "Teams"
 msgid "All Teams"
 msgstr "Tutte le squadre"
 
-#: admin/class-sports-bench-admin.php:253
+#: admin/class-sports-bench-admin.php:235
 #: admin/partials/teams/add-edit-team.php:42
 #: admin/partials/teams/teams-listing.php:46
 msgid "Add New Team"
 msgstr "Aggiungi nuova squadra"
 
-#: admin/class-sports-bench-admin.php:254
-#: admin/class-sports-bench-admin.php:297
-#: admin/class-sports-bench-admin.php:332
-#: admin/class-sports-bench-admin.php:375
+#: admin/class-sports-bench-admin.php:236
+#: admin/class-sports-bench-admin.php:279
+#: admin/class-sports-bench-admin.php:314
 msgid "Add New"
 msgstr "Aggiungi Nuovo"
 
-#: admin/class-sports-bench-admin.php:261
+#: admin/class-sports-bench-admin.php:243
+#: public/class-sports-bench-public.php:407
 msgid "Edit Team"
 msgstr "Modifica Team"
 
-#: admin/class-sports-bench-admin.php:269
-#: admin/class-sports-bench-admin.php:270
+#: admin/class-sports-bench-admin.php:251
+#: admin/class-sports-bench-admin.php:252
 #: admin/partials/divisions/divisions-listing.php:42
 #, fuzzy
 msgid "Divisions/Conferences"
 msgstr "Divisioni/Conferenze"
 
-#: admin/class-sports-bench-admin.php:278
-#: admin/class-sports-bench-admin.php:279
-#: admin/class-sports-bench-admin.php:288
-#: admin/class-sports-bench-admin.php:1090 admin/partials/options/export.php:21
+#: admin/class-sports-bench-admin.php:260
+#: admin/class-sports-bench-admin.php:261
+#: admin/class-sports-bench-admin.php:270
+#: admin/class-sports-bench-admin.php:999
 #: admin/partials/players/add-edit-player.php:39
 #: admin/partials/players/players-listing.php:42
 #: includes/class-sports-bench-setup.php:66
@@ -97,106 +87,93 @@ msgstr "Divisioni/Conferenze"
 msgid "Players"
 msgstr "Giocatori"
 
-#: admin/class-sports-bench-admin.php:289
+#: admin/class-sports-bench-admin.php:271
 msgid "All Players"
 msgstr "Tutti i giocatori"
 
-#: admin/class-sports-bench-admin.php:296
+#: admin/class-sports-bench-admin.php:278
 #: admin/partials/players/add-edit-player.php:43
 #: admin/partials/players/players-listing.php:46
 msgid "Add New Player"
 msgstr "Aggiungi nuovo giocatore"
 
-#: admin/class-sports-bench-admin.php:304
+#: admin/class-sports-bench-admin.php:286
+#: public/class-sports-bench-public.php:420
 msgid "Edit Player"
 msgstr "Modifica giocatore"
 
-#: admin/class-sports-bench-admin.php:313
-#: admin/class-sports-bench-admin.php:314
-#: admin/class-sports-bench-admin.php:323
-#: admin/class-sports-bench-admin.php:1097
-#: admin/class-sports-bench-admin.php:1889
+#: admin/class-sports-bench-admin.php:295
+#: admin/class-sports-bench-admin.php:296
+#: admin/class-sports-bench-admin.php:305
+#: admin/class-sports-bench-admin.php:1006
+#: admin/class-sports-bench-admin.php:1798
 #: admin/partials/games/add-edit-game.php:40
 #: admin/partials/games/games-listing.php:42
-#: admin/partials/options/export.php:18
 msgid "Games"
 msgstr "Giochi"
 
-#: admin/class-sports-bench-admin.php:324
+#: admin/class-sports-bench-admin.php:306
 msgid "All Games"
 msgstr "Tutti i Giochi"
 
-#: admin/class-sports-bench-admin.php:331
+#: admin/class-sports-bench-admin.php:313
 #: admin/partials/games/add-edit-game.php:44
 #: admin/partials/games/games-listing.php:46
 msgid "Add New Game"
 msgstr "Aggiungi Nuovo Gioco"
 
-#: admin/class-sports-bench-admin.php:339
-#: admin/class-sports-bench-admin.php:2084
-#: admin/class-sports-bench-admin.php:2164
+#: admin/class-sports-bench-admin.php:321
+#: admin/class-sports-bench-admin.php:1934
+#: admin/class-sports-bench-admin.php:1969
+#: admin/class-sports-bench-admin.php:1993
+#: admin/class-sports-bench-admin.php:2028
+#: public/class-sports-bench-public.php:433
 msgid "Edit Game"
 msgstr "Modifica Gioco"
 
-#: admin/class-sports-bench-admin.php:348
-#: admin/class-sports-bench-admin.php:349
-#: admin/class-sports-bench-admin.php:358
-#, fuzzy
-msgid "Playoffs"
-msgstr "Playoffs"
-
-#: admin/class-sports-bench-admin.php:359
-#, fuzzy
-msgid "All Playoffs"
-msgstr "Tutti i playoff"
-
-#: admin/class-sports-bench-admin.php:366
-#, fuzzy
-msgid "Edit Bracket"
-msgstr "Modifica staffa"
-
-#: admin/class-sports-bench-admin.php:374
-#: admin/partials/playoffs/add-edit-bracket.php:43
-#: admin/partials/playoffs/brackets-listing.php:46
-#, fuzzy
-msgid "Add New Bracket"
-msgstr "Aggiungi una nuova staffa"
-
-#. Plugin Name of the plugin/theme
-#: admin/class-sports-bench-admin.php:383
-#: admin/class-sports-bench-admin.php:384
-#: admin/class-sports-bench-admin.php:1070
+#: admin/class-sports-bench-admin.php:330
+#: admin/class-sports-bench-admin.php:331
+#: admin/class-sports-bench-admin.php:979
 #: blocks/class-sports-bench-blocks.php:103
 msgid "Sports Bench"
 msgstr "Sports Bench"
 
-#: admin/class-sports-bench-admin.php:393
-#: admin/class-sports-bench-admin.php:394
+#: admin/class-sports-bench-admin.php:340
+#: admin/class-sports-bench-admin.php:341
 #: admin/partials/options/options-page.php:36
 msgid "Sports Bench Options"
 msgstr "Opzioni di Sports Bench"
 
-#: admin/class-sports-bench-admin.php:541
+#: admin/class-sports-bench-admin.php:450
 #: includes/class-sports-bench-setup.php:129
 msgid "Sports Bench Information"
 msgstr "Informazioni sulle Sports Bench"
 
-#: admin/class-sports-bench-admin.php:542
+#: admin/class-sports-bench-admin.php:451
 #, fuzzy
 msgid "Standings Information"
 msgstr "Informazioni sulla classifica"
 
-#: admin/class-sports-bench-admin.php:543
+#: admin/class-sports-bench-admin.php:452
 msgid "Statistics"
 msgstr "Statistiche"
 
-#: admin/class-sports-bench-admin.php:663
+#: admin/class-sports-bench-admin.php:492
+#: admin/partials/posts/post-meta-box.php:28
+#: admin/partials/posts/post-meta-box.php:66 blocks/game/index.js:213
+#: includes/class-sports-bench-setup.php:160
+#: includes/class-sports-bench-setup.php:247 includes/functions/window.php:49
+#, fuzzy
+msgid "Select a Game"
+msgstr "Seleziona un gioco"
+
+#: admin/class-sports-bench-admin.php:572
 #: admin/partials/posts/standings-meta-box.php:20
 #, fuzzy
 msgid "Goals For"
 msgstr "Obiettivi per"
 
-#: admin/class-sports-bench-admin.php:664
+#: admin/class-sports-bench-admin.php:573
 #: admin/partials/posts/standings-meta-box.php:21
 #: includes/classes/sports/hockey/class-hockey-teams.php:101
 #: includes/classes/sports/soccer/class-soccer-teams.php:119
@@ -204,15 +181,15 @@ msgstr "Obiettivi per"
 msgid "Goals Against"
 msgstr "Obiettivi contro"
 
-#: admin/class-sports-bench-admin.php:665
+#: admin/class-sports-bench-admin.php:574
 #: admin/partials/posts/standings-meta-box.php:22
 #, fuzzy
 msgid "Goal Differential"
 msgstr "Differenziale di gol"
 
-#: admin/class-sports-bench-admin.php:666
-#: admin/class-sports-bench-admin.php:676
-#: admin/class-sports-bench-admin.php:686
+#: admin/class-sports-bench-admin.php:575
+#: admin/class-sports-bench-admin.php:585
+#: admin/class-sports-bench-admin.php:595
 #: admin/partials/posts/standings-meta-box.php:23
 #: admin/partials/posts/standings-meta-box.php:33
 #: admin/partials/posts/standings-meta-box.php:43
@@ -220,9 +197,9 @@ msgstr "Differenziale di gol"
 msgid "Home Record"
 msgstr "Home Record"
 
-#: admin/class-sports-bench-admin.php:667
-#: admin/class-sports-bench-admin.php:677
-#: admin/class-sports-bench-admin.php:687
+#: admin/class-sports-bench-admin.php:576
+#: admin/class-sports-bench-admin.php:586
+#: admin/class-sports-bench-admin.php:596
 #: admin/partials/posts/standings-meta-box.php:24
 #: admin/partials/posts/standings-meta-box.php:34
 #: admin/partials/posts/standings-meta-box.php:44
@@ -230,9 +207,9 @@ msgstr "Home Record"
 msgid "Away Record"
 msgstr "Record in trasferta"
 
-#: admin/class-sports-bench-admin.php:668
-#: admin/class-sports-bench-admin.php:678
-#: admin/class-sports-bench-admin.php:688
+#: admin/class-sports-bench-admin.php:577
+#: admin/class-sports-bench-admin.php:587
+#: admin/class-sports-bench-admin.php:597
 #: admin/partials/posts/standings-meta-box.php:25
 #: admin/partials/posts/standings-meta-box.php:35
 #: admin/partials/posts/standings-meta-box.php:45
@@ -242,12 +219,12 @@ msgstr "Record in trasferta"
 msgid "Division"
 msgstr "Reparto"
 
-#: admin/class-sports-bench-admin.php:668
-#: admin/class-sports-bench-admin.php:669
-#: admin/class-sports-bench-admin.php:678
-#: admin/class-sports-bench-admin.php:679
-#: admin/class-sports-bench-admin.php:688
-#: admin/class-sports-bench-admin.php:689
+#: admin/class-sports-bench-admin.php:577
+#: admin/class-sports-bench-admin.php:578
+#: admin/class-sports-bench-admin.php:587
+#: admin/class-sports-bench-admin.php:588
+#: admin/class-sports-bench-admin.php:597
+#: admin/class-sports-bench-admin.php:598
 #: admin/partials/posts/standings-meta-box.php:25
 #: admin/partials/posts/standings-meta-box.php:26
 #: admin/partials/posts/standings-meta-box.php:35
@@ -257,9 +234,9 @@ msgstr "Reparto"
 msgid "Record"
 msgstr "Registra"
 
-#: admin/class-sports-bench-admin.php:669
-#: admin/class-sports-bench-admin.php:679
-#: admin/class-sports-bench-admin.php:689
+#: admin/class-sports-bench-admin.php:578
+#: admin/class-sports-bench-admin.php:588
+#: admin/class-sports-bench-admin.php:598
 #: admin/partials/posts/standings-meta-box.php:26
 #: admin/partials/posts/standings-meta-box.php:36
 #: admin/partials/posts/standings-meta-box.php:46
@@ -270,31 +247,31 @@ msgstr "Registra"
 msgid "Conference"
 msgstr "Conferenza"
 
-#: admin/class-sports-bench-admin.php:673
+#: admin/class-sports-bench-admin.php:582
 #: admin/partials/posts/standings-meta-box.php:30
 #, fuzzy
 msgid "Runs For"
-msgstr "Corre:"
+msgstr "Corre per"
 
-#: admin/class-sports-bench-admin.php:674
+#: admin/class-sports-bench-admin.php:583
 #: admin/partials/posts/standings-meta-box.php:31
 #, fuzzy
 msgid "Runs Against"
 msgstr "Corse contro"
 
-#: admin/class-sports-bench-admin.php:675
+#: admin/class-sports-bench-admin.php:584
 #: admin/partials/posts/standings-meta-box.php:32
 #, fuzzy
 msgid "Run Differential"
 msgstr "Esegui differenziale"
 
-#: admin/class-sports-bench-admin.php:683
+#: admin/class-sports-bench-admin.php:592
 #: admin/partials/posts/standings-meta-box.php:40
 #, fuzzy
 msgid "Points For"
 msgstr "Punti per"
 
-#: admin/class-sports-bench-admin.php:684
+#: admin/class-sports-bench-admin.php:593
 #: admin/partials/posts/standings-meta-box.php:41
 #: includes/classes/sports/basketball/class-basketball-teams.php:161
 #: includes/classes/sports/football/class-football-teams.php:162
@@ -303,13 +280,13 @@ msgstr "Punti per"
 msgid "Points Against"
 msgstr "Punti contro"
 
-#: admin/class-sports-bench-admin.php:685
+#: admin/class-sports-bench-admin.php:594
 #: admin/partials/posts/standings-meta-box.php:42
 #, fuzzy
 msgid "Point Differential"
 msgstr "Differenziale di punti"
 
-#: admin/class-sports-bench-admin.php:757
+#: admin/class-sports-bench-admin.php:666
 #: admin/partials/posts/stats-meta-box.php:20
 #: includes/classes/base/class-stats.php:1942
 #: includes/classes/base/class-stats.php:2583
@@ -318,8 +295,8 @@ msgstr "Differenziale di punti"
 msgid "At Bats"
 msgstr "Ai pipistrelli"
 
-#: admin/class-sports-bench-admin.php:758
-#: admin/class-sports-bench-admin.php:845
+#: admin/class-sports-bench-admin.php:667
+#: admin/class-sports-bench-admin.php:754
 #: admin/partials/posts/stats-meta-box.php:21
 #: admin/partials/posts/stats-meta-box.php:108
 #: includes/classes/base/class-games.php:407
@@ -342,7 +319,7 @@ msgstr "Ai pipistrelli"
 msgid "Hits"
 msgstr "Visite"
 
-#: admin/class-sports-bench-admin.php:759
+#: admin/class-sports-bench-admin.php:668
 #: admin/partials/posts/stats-meta-box.php:22
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -353,7 +330,7 @@ msgstr "Visite"
 msgid "Batting Average"
 msgstr "Media di battuta"
 
-#: admin/class-sports-bench-admin.php:760
+#: admin/class-sports-bench-admin.php:669
 #: admin/partials/posts/stats-meta-box.php:23
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -366,7 +343,7 @@ msgstr "Media di battuta"
 msgid "Runs"
 msgstr "Runs"
 
-#: admin/class-sports-bench-admin.php:761
+#: admin/class-sports-bench-admin.php:670
 #: admin/partials/posts/stats-meta-box.php:24
 #: includes/classes/base/class-stats.php:1946
 #: includes/classes/base/class-stats.php:2587
@@ -381,7 +358,7 @@ msgstr "Runs"
 msgid "RBI"
 msgstr "RBI"
 
-#: admin/class-sports-bench-admin.php:762
+#: admin/class-sports-bench-admin.php:671
 #: admin/partials/posts/stats-meta-box.php:25
 #: includes/classes/base/class-stats.php:52
 #: includes/classes/base/class-stats.php:1947
@@ -394,7 +371,7 @@ msgstr "RBI"
 msgid "Doubles"
 msgstr "Doppio"
 
-#: admin/class-sports-bench-admin.php:763
+#: admin/class-sports-bench-admin.php:672
 #: admin/partials/posts/stats-meta-box.php:26
 #: includes/classes/base/class-stats.php:52
 #: includes/classes/base/class-stats.php:1948
@@ -407,7 +384,7 @@ msgstr "Doppio"
 msgid "Triples"
 msgstr "Tris"
 
-#: admin/class-sports-bench-admin.php:764
+#: admin/class-sports-bench-admin.php:673
 #: admin/partials/posts/stats-meta-box.php:27
 #: includes/classes/base/class-stats.php:52
 #: includes/classes/base/class-stats.php:1949
@@ -418,7 +395,7 @@ msgstr "Tris"
 msgid "Home Runs"
 msgstr "Corse in casa"
 
-#: admin/class-sports-bench-admin.php:765
+#: admin/class-sports-bench-admin.php:674
 #: admin/partials/posts/stats-meta-box.php:28
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -429,7 +406,7 @@ msgstr "Corse in casa"
 msgid "Strikeouts"
 msgstr "Strikeout"
 
-#: admin/class-sports-bench-admin.php:766
+#: admin/class-sports-bench-admin.php:675
 #: admin/partials/posts/stats-meta-box.php:29
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -440,7 +417,7 @@ msgstr "Strikeout"
 msgid "Walks"
 msgstr "Passeggiate"
 
-#: admin/class-sports-bench-admin.php:767
+#: admin/class-sports-bench-admin.php:676
 #: admin/partials/posts/stats-meta-box.php:30
 #: includes/classes/base/class-stats.php:52
 #: includes/classes/base/class-stats.php:1952
@@ -450,14 +427,14 @@ msgstr "Passeggiate"
 msgid "Hit By Pitch"
 msgstr "Colpito da un lancio"
 
-#: admin/class-sports-bench-admin.php:768
+#: admin/class-sports-bench-admin.php:677
 #: admin/partials/posts/stats-meta-box.php:31
 #: includes/classes/base/class-stats.php:1953
 #: includes/classes/base/class-stats.php:2594
 msgid "Wins"
 msgstr "Vinte"
 
-#: admin/class-sports-bench-admin.php:769
+#: admin/class-sports-bench-admin.php:678
 #: admin/partials/posts/stats-meta-box.php:32
 #: includes/classes/base/class-games.php:413
 #: includes/classes/base/class-games.php:417
@@ -478,7 +455,7 @@ msgstr "Vinte"
 msgid "Saves"
 msgstr "Salva"
 
-#: admin/class-sports-bench-admin.php:770
+#: admin/class-sports-bench-admin.php:679
 #: admin/partials/posts/stats-meta-box.php:33
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -489,7 +466,7 @@ msgstr "Salva"
 msgid "Innings Pitched"
 msgstr "Inning lanciati"
 
-#: admin/class-sports-bench-admin.php:771
+#: admin/class-sports-bench-admin.php:680
 #: admin/partials/posts/stats-meta-box.php:34
 #: includes/classes/base/class-stats.php:1956
 #: includes/classes/base/class-stats.php:2597
@@ -498,7 +475,7 @@ msgstr "Inning lanciati"
 msgid "Pitcher Strikeouts"
 msgstr "Strikeout del lanciatore"
 
-#: admin/class-sports-bench-admin.php:772
+#: admin/class-sports-bench-admin.php:681
 #: admin/partials/posts/stats-meta-box.php:35
 #: includes/classes/base/class-stats.php:1957
 #: includes/classes/base/class-stats.php:2598
@@ -507,7 +484,7 @@ msgstr "Strikeout del lanciatore"
 msgid "Pitcher Walks"
 msgstr "Passeggiate del lanciatore"
 
-#: admin/class-sports-bench-admin.php:773
+#: admin/class-sports-bench-admin.php:682
 #: admin/partials/posts/stats-meta-box.php:36
 #: includes/classes/base/class-stats.php:1958
 #: includes/classes/base/class-stats.php:2599
@@ -516,7 +493,7 @@ msgstr "Passeggiate del lanciatore"
 msgid "Hit Batters"
 msgstr "Batterie colpite"
 
-#: admin/class-sports-bench-admin.php:774
+#: admin/class-sports-bench-admin.php:683
 #: admin/partials/posts/stats-meta-box.php:37
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -527,7 +504,7 @@ msgstr "Batterie colpite"
 msgid "Runs Allowed"
 msgstr "Corse concesse"
 
-#: admin/class-sports-bench-admin.php:775
+#: admin/class-sports-bench-admin.php:684
 #: admin/partials/posts/stats-meta-box.php:38
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -538,7 +515,7 @@ msgstr "Corse concesse"
 msgid "Earned Runs"
 msgstr "Corse guadagnate"
 
-#: admin/class-sports-bench-admin.php:776
+#: admin/class-sports-bench-admin.php:685
 #: admin/partials/posts/stats-meta-box.php:39
 #: includes/classes/base/class-stats.php:1961
 #: includes/classes/base/class-stats.php:2602
@@ -549,7 +526,7 @@ msgstr "Corse guadagnate"
 msgid "ERA"
 msgstr "ERA"
 
-#: admin/class-sports-bench-admin.php:777
+#: admin/class-sports-bench-admin.php:686
 #: admin/partials/posts/stats-meta-box.php:40
 #: includes/classes/base/class-games.php:407
 #: includes/classes/base/class-stats.php:52
@@ -560,7 +537,7 @@ msgstr "ERA"
 msgid "Hits Allowed"
 msgstr "Colpi consentiti"
 
-#: admin/class-sports-bench-admin.php:778
+#: admin/class-sports-bench-admin.php:687
 #: admin/partials/posts/stats-meta-box.php:41
 #: includes/classes/base/class-stats.php:1963
 #: includes/classes/base/class-stats.php:2604
@@ -569,7 +546,7 @@ msgstr "Colpi consentiti"
 msgid "Home Runs Allowed"
 msgstr "Home Runs consentiti"
 
-#: admin/class-sports-bench-admin.php:779
+#: admin/class-sports-bench-admin.php:688
 #: admin/partials/posts/stats-meta-box.php:42
 #: includes/classes/base/class-stats.php:52
 #: includes/classes/base/class-stats.php:1964
@@ -579,7 +556,7 @@ msgstr "Home Runs consentiti"
 msgid "Pitch Count"
 msgstr "Conteggio dei tiri"
 
-#: admin/class-sports-bench-admin.php:783
+#: admin/class-sports-bench-admin.php:692
 #: admin/partials/posts/stats-meta-box.php:46
 #: includes/classes/base/class-stats.php:1968
 #: includes/classes/base/class-stats.php:2609
@@ -587,7 +564,7 @@ msgstr "Conteggio dei tiri"
 msgid "Starts"
 msgstr "Inizio"
 
-#: admin/class-sports-bench-admin.php:784
+#: admin/class-sports-bench-admin.php:693
 #: admin/partials/posts/stats-meta-box.php:47
 #: includes/classes/base/class-games.php:409
 #: includes/classes/base/class-games.php:417
@@ -607,10 +584,10 @@ msgstr "Inizio"
 msgid "Minutes"
 msgstr "Minuti"
 
-#: admin/class-sports-bench-admin.php:785
-#: admin/class-sports-bench-admin.php:840
-#: admin/class-sports-bench-admin.php:862
-#: admin/class-sports-bench-admin.php:871
+#: admin/class-sports-bench-admin.php:694
+#: admin/class-sports-bench-admin.php:749
+#: admin/class-sports-bench-admin.php:771
+#: admin/class-sports-bench-admin.php:780
 #: admin/partials/posts/stats-meta-box.php:48
 #: admin/partials/posts/stats-meta-box.php:103
 #: admin/partials/posts/stats-meta-box.php:125
@@ -647,7 +624,7 @@ msgstr "Minuti"
 msgid "Points"
 msgstr "Punti"
 
-#: admin/class-sports-bench-admin.php:786
+#: admin/class-sports-bench-admin.php:695
 #: admin/partials/posts/stats-meta-box.php:49
 #: includes/classes/base/class-stats.php:1971
 #: includes/classes/base/class-stats.php:2612
@@ -656,7 +633,7 @@ msgstr "Punti"
 msgid "Points Per Game"
 msgstr "Punti per partita"
 
-#: admin/class-sports-bench-admin.php:787
+#: admin/class-sports-bench-admin.php:696
 #: admin/partials/posts/stats-meta-box.php:50
 #: includes/classes/base/class-stats.php:1972
 #: includes/classes/base/class-stats.php:2613
@@ -665,7 +642,7 @@ msgstr "Punti per partita"
 msgid "Shooting Percentage"
 msgstr "Percentuale di tiro"
 
-#: admin/class-sports-bench-admin.php:788
+#: admin/class-sports-bench-admin.php:697
 #: admin/partials/posts/stats-meta-box.php:51
 #: includes/classes/base/class-stats.php:1973
 #: includes/classes/base/class-stats.php:2614
@@ -674,16 +651,16 @@ msgstr "Percentuale di tiro"
 msgid "Free Throw Percentage"
 msgstr "Percentuale di tiri liberi"
 
-#: admin/class-sports-bench-admin.php:789
+#: admin/class-sports-bench-admin.php:698
 #: admin/partials/posts/stats-meta-box.php:52
 #: includes/classes/base/class-stats.php:1974
 #: includes/classes/base/class-stats.php:2615
 #: public/partials/widgets/stats-widget.php:231
 #, fuzzy
 msgid "3-Point Percentage"
-msgstr "Percentuale da 3 punti"
+msgstr "percentuale da 3 punti"
 
-#: admin/class-sports-bench-admin.php:790
+#: admin/class-sports-bench-admin.php:699
 #: admin/partials/posts/stats-meta-box.php:53
 #: includes/classes/base/class-games.php:409
 #: includes/classes/base/class-stats.php:54
@@ -697,7 +674,7 @@ msgstr "Percentuale da 3 punti"
 msgid "Offensive Rebounds"
 msgstr "Rimbalzi offensivi"
 
-#: admin/class-sports-bench-admin.php:791
+#: admin/class-sports-bench-admin.php:700
 #: admin/partials/posts/stats-meta-box.php:54
 #: includes/classes/base/class-games.php:409
 #: includes/classes/base/class-stats.php:54
@@ -711,7 +688,7 @@ msgstr "Rimbalzi offensivi"
 msgid "Defensive Rebounds"
 msgstr "Rimbalzi difensivi"
 
-#: admin/class-sports-bench-admin.php:792
+#: admin/class-sports-bench-admin.php:701
 #: admin/partials/posts/stats-meta-box.php:55
 #: includes/classes/base/class-stats.php:54
 #: includes/classes/base/class-stats.php:1977
@@ -722,10 +699,10 @@ msgstr "Rimbalzi difensivi"
 msgid "Total Rebounds"
 msgstr "Rimbalzi totali"
 
-#: admin/class-sports-bench-admin.php:793
-#: admin/class-sports-bench-admin.php:839
-#: admin/class-sports-bench-admin.php:858
-#: admin/class-sports-bench-admin.php:890
+#: admin/class-sports-bench-admin.php:702
+#: admin/class-sports-bench-admin.php:748
+#: admin/class-sports-bench-admin.php:767
+#: admin/class-sports-bench-admin.php:799
 #: admin/partials/posts/stats-meta-box.php:56
 #: admin/partials/posts/stats-meta-box.php:102
 #: admin/partials/posts/stats-meta-box.php:121
@@ -772,7 +749,7 @@ msgstr "Rimbalzi totali"
 msgid "Assists"
 msgstr "Assist"
 
-#: admin/class-sports-bench-admin.php:794
+#: admin/class-sports-bench-admin.php:703
 #: admin/partials/posts/stats-meta-box.php:57
 #: includes/classes/base/class-games.php:409
 #: includes/classes/base/class-stats.php:54
@@ -786,8 +763,8 @@ msgstr "Assist"
 msgid "Steals"
 msgstr "Ruba"
 
-#: admin/class-sports-bench-admin.php:795
-#: admin/class-sports-bench-admin.php:881
+#: admin/class-sports-bench-admin.php:704
+#: admin/class-sports-bench-admin.php:790
 #: admin/partials/posts/stats-meta-box.php:58
 #: admin/partials/posts/stats-meta-box.php:144
 #: includes/classes/base/class-games.php:409
@@ -811,9 +788,9 @@ msgstr "Ruba"
 #: public/partials/widgets/stats-widget.php:237
 #: public/partials/widgets/stats-widget.php:323
 msgid "Blocks"
-msgstr "Settori"
+msgstr "Blocchi"
 
-#: admin/class-sports-bench-admin.php:796
+#: admin/class-sports-bench-admin.php:705
 #: admin/partials/posts/stats-meta-box.php:59
 #: includes/classes/base/class-games.php:409
 #: includes/classes/base/class-stats.php:54
@@ -830,8 +807,8 @@ msgstr "Settori"
 msgid "Turnovers"
 msgstr "Turnover"
 
-#: admin/class-sports-bench-admin.php:797
-#: admin/class-sports-bench-admin.php:893
+#: admin/class-sports-bench-admin.php:706
+#: admin/class-sports-bench-admin.php:802
 #: admin/partials/posts/stats-meta-box.php:60
 #: admin/partials/posts/stats-meta-box.php:156
 #: includes/classes/base/class-games.php:409
@@ -858,8 +835,8 @@ msgstr "Turnover"
 msgid "Fouls"
 msgstr "Falli"
 
-#: admin/class-sports-bench-admin.php:798
-#: admin/class-sports-bench-admin.php:841
+#: admin/class-sports-bench-admin.php:707
+#: admin/class-sports-bench-admin.php:750
 #: admin/partials/posts/stats-meta-box.php:61
 #: admin/partials/posts/stats-meta-box.php:104
 #: includes/classes/base/class-games.php:409
@@ -876,7 +853,7 @@ msgstr "Falli"
 msgid "Plus/Minus"
 msgstr "Più/Meno"
 
-#: admin/class-sports-bench-admin.php:802
+#: admin/class-sports-bench-admin.php:711
 #: admin/partials/posts/stats-meta-box.php:65
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -890,7 +867,7 @@ msgstr "Più/Meno"
 msgid "Completions"
 msgstr "Completamenti"
 
-#: admin/class-sports-bench-admin.php:803
+#: admin/class-sports-bench-admin.php:712
 #: admin/partials/posts/stats-meta-box.php:66
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -904,7 +881,7 @@ msgstr "Completamenti"
 msgid "Attempts"
 msgstr "Numero di tentativi"
 
-#: admin/class-sports-bench-admin.php:804
+#: admin/class-sports-bench-admin.php:713
 #: admin/partials/posts/stats-meta-box.php:67
 #: includes/classes/base/class-stats.php:1989
 #: includes/classes/base/class-stats.php:2630
@@ -913,7 +890,7 @@ msgstr "Numero di tentativi"
 msgid "Completion Percentage"
 msgstr "Percentuale di completamento"
 
-#: admin/class-sports-bench-admin.php:805
+#: admin/class-sports-bench-admin.php:714
 #: admin/partials/posts/stats-meta-box.php:68
 #: includes/classes/base/class-stats.php:1990
 #: includes/classes/base/class-stats.php:2631
@@ -922,7 +899,7 @@ msgstr "Percentuale di completamento"
 msgid "Passing Yards"
 msgstr "Iarde di passaggio"
 
-#: admin/class-sports-bench-admin.php:806
+#: admin/class-sports-bench-admin.php:715
 #: admin/partials/posts/stats-meta-box.php:69
 #: includes/classes/base/class-stats.php:1991
 #: includes/classes/base/class-stats.php:2632
@@ -931,8 +908,8 @@ msgstr "Iarde di passaggio"
 msgid "Passing Touchdowns"
 msgstr "Touchdown su passaggio"
 
-#: admin/class-sports-bench-admin.php:807
-#: admin/class-sports-bench-admin.php:820
+#: admin/class-sports-bench-admin.php:716
+#: admin/class-sports-bench-admin.php:729
 #: admin/partials/posts/stats-meta-box.php:70
 #: admin/partials/posts/stats-meta-box.php:83
 #: includes/classes/base/class-games.php:411
@@ -952,7 +929,7 @@ msgstr "Touchdown su passaggio"
 msgid "Interceptions"
 msgstr "Intercettazioni"
 
-#: admin/class-sports-bench-admin.php:808
+#: admin/class-sports-bench-admin.php:717
 #: admin/partials/posts/stats-meta-box.php:71
 #: includes/classes/base/class-stats.php:1993
 #: includes/classes/base/class-stats.php:2634
@@ -964,7 +941,7 @@ msgstr "Intercettazioni"
 msgid "Rushes"
 msgstr "Giornalieri"
 
-#: admin/class-sports-bench-admin.php:809
+#: admin/class-sports-bench-admin.php:718
 #: admin/partials/posts/stats-meta-box.php:72
 #: includes/classes/base/class-stats.php:1994
 #: includes/classes/base/class-stats.php:2635
@@ -974,7 +951,7 @@ msgstr "Giornalieri"
 msgid "Rushing Yards"
 msgstr "Iarde di corsa"
 
-#: admin/class-sports-bench-admin.php:810
+#: admin/class-sports-bench-admin.php:719
 #: admin/partials/posts/stats-meta-box.php:73
 #: includes/classes/base/class-stats.php:1995
 #: includes/classes/base/class-stats.php:2636
@@ -983,7 +960,7 @@ msgstr "Iarde di corsa"
 msgid "Rushing Touchdowns"
 msgstr "Touchdown in corsa"
 
-#: admin/class-sports-bench-admin.php:811
+#: admin/class-sports-bench-admin.php:720
 #: admin/partials/posts/stats-meta-box.php:74
 #: includes/classes/base/class-stats.php:1996
 #: includes/classes/base/class-stats.php:2637
@@ -992,7 +969,7 @@ msgstr "Touchdown in corsa"
 msgid "Rushing Fumbles"
 msgstr "Fumbles in corsa"
 
-#: admin/class-sports-bench-admin.php:812
+#: admin/class-sports-bench-admin.php:721
 #: admin/partials/posts/stats-meta-box.php:75
 #: includes/classes/base/class-stats.php:1997
 #: includes/classes/base/class-stats.php:2638
@@ -1005,7 +982,7 @@ msgstr "Fumbles in corsa"
 msgid "Catches"
 msgstr "Cattura"
 
-#: admin/class-sports-bench-admin.php:813
+#: admin/class-sports-bench-admin.php:722
 #: admin/partials/posts/stats-meta-box.php:76
 #: includes/classes/base/class-stats.php:1998
 #: includes/classes/base/class-stats.php:2639
@@ -1014,7 +991,7 @@ msgstr "Cattura"
 msgid "Receiving Yards"
 msgstr "Ricezione di yard"
 
-#: admin/class-sports-bench-admin.php:814
+#: admin/class-sports-bench-admin.php:723
 #: admin/partials/posts/stats-meta-box.php:77
 #: includes/classes/base/class-stats.php:1999
 #: includes/classes/base/class-stats.php:2640
@@ -1023,7 +1000,7 @@ msgstr "Ricezione di yard"
 msgid "Receiving Touchdowns"
 msgstr "Touchdown in ricezione"
 
-#: admin/class-sports-bench-admin.php:815
+#: admin/class-sports-bench-admin.php:724
 #: admin/partials/posts/stats-meta-box.php:78
 #: includes/classes/base/class-stats.php:2000
 #: includes/classes/base/class-stats.php:2641
@@ -1032,7 +1009,7 @@ msgstr "Touchdown in ricezione"
 msgid "Receiving Fumbles"
 msgstr "Ricezione di fumble"
 
-#: admin/class-sports-bench-admin.php:816
+#: admin/class-sports-bench-admin.php:725
 #: admin/partials/posts/stats-meta-box.php:79
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1046,7 +1023,7 @@ msgstr "Ricezione di fumble"
 msgid "Tackles"
 msgstr "Falli"
 
-#: admin/class-sports-bench-admin.php:817
+#: admin/class-sports-bench-admin.php:726
 #: admin/partials/posts/stats-meta-box.php:80
 #: includes/classes/base/class-stats.php:2002
 #: includes/classes/base/class-stats.php:2643
@@ -1055,7 +1032,7 @@ msgstr "Falli"
 msgid "Tackles For Loss"
 msgstr "Tackles for Loss"
 
-#: admin/class-sports-bench-admin.php:818
+#: admin/class-sports-bench-admin.php:727
 #: admin/partials/posts/stats-meta-box.php:81
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1070,7 +1047,7 @@ msgstr "Tackles for Loss"
 msgid "Sacks"
 msgstr "Sacchi"
 
-#: admin/class-sports-bench-admin.php:819
+#: admin/class-sports-bench-admin.php:728
 #: admin/partials/posts/stats-meta-box.php:82
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1081,7 +1058,7 @@ msgstr "Sacchi"
 msgid "Pass Breakups"
 msgstr "Rotture di passaggi"
 
-#: admin/class-sports-bench-admin.php:821
+#: admin/class-sports-bench-admin.php:730
 #: admin/partials/posts/stats-meta-box.php:84
 #: includes/classes/base/class-stats.php:2006
 #: includes/classes/base/class-stats.php:2647
@@ -1090,7 +1067,7 @@ msgstr "Rotture di passaggi"
 msgid "Defensive Touchdowns"
 msgstr "Touchdown difensivi"
 
-#: admin/class-sports-bench-admin.php:822
+#: admin/class-sports-bench-admin.php:731
 #: admin/partials/posts/stats-meta-box.php:85
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1105,7 +1082,7 @@ msgstr "Touchdown difensivi"
 msgid "Forced Fumbles"
 msgstr "Fumble forzati"
 
-#: admin/class-sports-bench-admin.php:823
+#: admin/class-sports-bench-admin.php:732
 #: admin/partials/posts/stats-meta-box.php:86
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1120,7 +1097,7 @@ msgstr "Fumble forzati"
 msgid "Fumbles Recovered"
 msgstr "Fumble recuperati"
 
-#: admin/class-sports-bench-admin.php:824
+#: admin/class-sports-bench-admin.php:733
 #: admin/partials/posts/stats-meta-box.php:87
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1131,7 +1108,7 @@ msgstr "Fumble recuperati"
 msgid "Blocked Kicks"
 msgstr "Calci bloccati"
 
-#: admin/class-sports-bench-admin.php:825
+#: admin/class-sports-bench-admin.php:734
 #: admin/partials/posts/stats-meta-box.php:88
 #: includes/classes/base/class-stats.php:2010
 #: includes/classes/base/class-stats.php:2651
@@ -1140,7 +1117,7 @@ msgstr "Calci bloccati"
 msgid "Defensive Return Yards"
 msgstr "Metri di ritorno difensivo"
 
-#: admin/class-sports-bench-admin.php:826
+#: admin/class-sports-bench-admin.php:735
 #: admin/partials/posts/stats-meta-box.php:89
 #: includes/classes/base/class-stats.php:2011
 #: includes/classes/base/class-stats.php:2652
@@ -1149,7 +1126,7 @@ msgstr "Metri di ritorno difensivo"
 msgid "Made Field Goals"
 msgstr "Tiri di campo fatti"
 
-#: admin/class-sports-bench-admin.php:827
+#: admin/class-sports-bench-admin.php:736
 #: admin/partials/posts/stats-meta-box.php:90
 #: includes/classes/base/class-stats.php:2012
 #: includes/classes/base/class-stats.php:2653
@@ -1158,7 +1135,7 @@ msgstr "Tiri di campo fatti"
 msgid "Field Goal Percentage"
 msgstr "Percentuale di Field Goal"
 
-#: admin/class-sports-bench-admin.php:828
+#: admin/class-sports-bench-admin.php:737
 #: admin/partials/posts/stats-meta-box.php:91
 #: includes/classes/base/class-stats.php:2013
 #: includes/classes/base/class-stats.php:2654
@@ -1167,7 +1144,7 @@ msgstr "Percentuale di Field Goal"
 msgid "Made Extra Points"
 msgstr "Punti extra realizzati"
 
-#: admin/class-sports-bench-admin.php:829
+#: admin/class-sports-bench-admin.php:738
 #: admin/partials/posts/stats-meta-box.php:92
 #: includes/classes/base/class-stats.php:2014
 #: includes/classes/base/class-stats.php:2655
@@ -1176,7 +1153,7 @@ msgstr "Punti extra realizzati"
 msgid "Extra Point Percentage"
 msgstr "Percentuale di punti extra"
 
-#: admin/class-sports-bench-admin.php:830
+#: admin/class-sports-bench-admin.php:739
 #: admin/partials/posts/stats-meta-box.php:93
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1191,7 +1168,7 @@ msgstr "Percentuale di punti extra"
 msgid "Touchbacks"
 msgstr "Touchback"
 
-#: admin/class-sports-bench-admin.php:831
+#: admin/class-sports-bench-admin.php:740
 #: admin/partials/posts/stats-meta-box.php:94
 #: includes/classes/base/class-stats.php:2016
 #: includes/classes/base/class-stats.php:2657
@@ -1204,7 +1181,7 @@ msgstr "Touchback"
 msgid "Returns"
 msgstr "Resi"
 
-#: admin/class-sports-bench-admin.php:832
+#: admin/class-sports-bench-admin.php:741
 #: admin/partials/posts/stats-meta-box.php:95
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -1219,7 +1196,7 @@ msgstr "Resi"
 msgid "Return Yards"
 msgstr "Iarde di ritorno"
 
-#: admin/class-sports-bench-admin.php:833
+#: admin/class-sports-bench-admin.php:742
 #: admin/partials/posts/stats-meta-box.php:96
 #: includes/classes/base/class-stats.php:2018
 #: includes/classes/base/class-stats.php:2659
@@ -1228,7 +1205,7 @@ msgstr "Iarde di ritorno"
 msgid "Return Touchdowns"
 msgstr "Touchdown di ritorno"
 
-#: admin/class-sports-bench-admin.php:834
+#: admin/class-sports-bench-admin.php:743
 #: admin/partials/posts/stats-meta-box.php:97
 #: includes/classes/base/class-stats.php:2019
 #: includes/classes/base/class-stats.php:2660
@@ -1237,8 +1214,8 @@ msgstr "Touchdown di ritorno"
 msgid "Return Fumbles"
 msgstr "Ritorno di fumble"
 
-#: admin/class-sports-bench-admin.php:838
-#: admin/class-sports-bench-admin.php:889
+#: admin/class-sports-bench-admin.php:747
+#: admin/class-sports-bench-admin.php:798
 #: admin/partials/posts/stats-meta-box.php:101
 #: admin/partials/posts/stats-meta-box.php:152
 #: includes/classes/base/class-games.php:413
@@ -1267,8 +1244,8 @@ msgstr "Ritorno di fumble"
 msgid "Goals"
 msgstr "Goal"
 
-#: admin/class-sports-bench-admin.php:842
-#: admin/class-sports-bench-admin.php:892
+#: admin/class-sports-bench-admin.php:751
+#: admin/class-sports-bench-admin.php:801
 #: admin/partials/posts/stats-meta-box.php:105
 #: admin/partials/posts/stats-meta-box.php:155
 #: includes/classes/base/class-games.php:413
@@ -1287,7 +1264,7 @@ msgstr "Goal"
 msgid "Shots on Goal"
 msgstr "Tiri in porta"
 
-#: admin/class-sports-bench-admin.php:843
+#: admin/class-sports-bench-admin.php:752
 #: admin/partials/posts/stats-meta-box.php:106
 #: includes/classes/base/class-stats.php:58
 #: includes/classes/base/class-stats.php:2028
@@ -1306,7 +1283,7 @@ msgstr "Tiri in porta"
 msgid "Penalties"
 msgstr "Rigori"
 
-#: admin/class-sports-bench-admin.php:844
+#: admin/class-sports-bench-admin.php:753
 #: admin/partials/posts/stats-meta-box.php:107
 #: includes/classes/base/class-games.php:413
 #: includes/classes/base/class-stats.php:58
@@ -1321,7 +1298,7 @@ msgstr "Rigori"
 msgid "Penalty Minutes"
 msgstr "Minuti di penalità"
 
-#: admin/class-sports-bench-admin.php:846
+#: admin/class-sports-bench-admin.php:755
 #: admin/partials/posts/stats-meta-box.php:109
 #: includes/classes/base/class-games.php:413
 #: includes/classes/base/class-stats.php:58
@@ -1335,7 +1312,7 @@ msgstr "Minuti di penalità"
 msgid "Shifts"
 msgstr "Lavoro a turni"
 
-#: admin/class-sports-bench-admin.php:847
+#: admin/class-sports-bench-admin.php:756
 #: admin/partials/posts/stats-meta-box.php:110
 #: includes/classes/base/class-games.php:413
 #: includes/classes/base/class-stats.php:58
@@ -1348,7 +1325,7 @@ msgstr "Lavoro a turni"
 msgid "Time on Ice"
 msgstr "Tempo sul ghiaccio"
 
-#: admin/class-sports-bench-admin.php:848
+#: admin/class-sports-bench-admin.php:757
 #: admin/partials/posts/stats-meta-box.php:111
 #: includes/classes/base/class-stats.php:2033
 #: includes/classes/base/class-stats.php:2674
@@ -1361,7 +1338,7 @@ msgstr "Tempo sul ghiaccio"
 msgid "Faceoffs"
 msgstr "Faceoffs"
 
-#: admin/class-sports-bench-admin.php:849
+#: admin/class-sports-bench-admin.php:758
 #: admin/partials/posts/stats-meta-box.php:112
 #: includes/classes/base/class-stats.php:2034
 #: includes/classes/base/class-stats.php:2675
@@ -1369,8 +1346,8 @@ msgstr "Faceoffs"
 msgid "Faceoff Wins"
 msgstr "Vittorie Faceoff"
 
-#: admin/class-sports-bench-admin.php:850
-#: admin/class-sports-bench-admin.php:895
+#: admin/class-sports-bench-admin.php:759
+#: admin/class-sports-bench-admin.php:804
 #: admin/partials/posts/stats-meta-box.php:113
 #: admin/partials/posts/stats-meta-box.php:158
 #: includes/classes/base/class-games.php:413
@@ -1395,8 +1372,8 @@ msgstr "Vittorie Faceoff"
 msgid "Shots Faced"
 msgstr "Colpi affrontati"
 
-#: admin/class-sports-bench-admin.php:851
-#: admin/class-sports-bench-admin.php:896
+#: admin/class-sports-bench-admin.php:760
+#: admin/class-sports-bench-admin.php:805
 #: admin/partials/posts/stats-meta-box.php:114
 #: admin/partials/posts/stats-meta-box.php:159
 #: includes/classes/base/class-stats.php:2036
@@ -1411,8 +1388,8 @@ msgstr "Colpi affrontati"
 msgid "Shots Saved"
 msgstr "Colpi salvati"
 
-#: admin/class-sports-bench-admin.php:852
-#: admin/class-sports-bench-admin.php:897
+#: admin/class-sports-bench-admin.php:761
+#: admin/class-sports-bench-admin.php:806
 #: admin/partials/posts/stats-meta-box.php:115
 #: admin/partials/posts/stats-meta-box.php:160
 #: includes/classes/base/class-games.php:413
@@ -1437,8 +1414,8 @@ msgstr "Colpi salvati"
 msgid "Goals Allowed"
 msgstr "Gol concessi"
 
-#: admin/class-sports-bench-admin.php:853
-#: admin/class-sports-bench-admin.php:898
+#: admin/class-sports-bench-admin.php:762
+#: admin/class-sports-bench-admin.php:807
 #: admin/partials/posts/stats-meta-box.php:116
 #: admin/partials/posts/stats-meta-box.php:161
 #: includes/classes/base/class-stats.php:58
@@ -1453,7 +1430,7 @@ msgstr "Gol concessi"
 msgid "Goals Against Average"
 msgstr "Obiettivi contro la media"
 
-#: admin/class-sports-bench-admin.php:857
+#: admin/class-sports-bench-admin.php:766
 #: admin/partials/posts/stats-meta-box.php:120
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1470,7 +1447,7 @@ msgstr "Obiettivi contro la media"
 msgid "Tries"
 msgstr "Tentativi"
 
-#: admin/class-sports-bench-admin.php:859
+#: admin/class-sports-bench-admin.php:768
 #: admin/partials/posts/stats-meta-box.php:122
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1487,7 +1464,7 @@ msgstr "Tentativi"
 msgid "Conversions"
 msgstr "Conversioni"
 
-#: admin/class-sports-bench-admin.php:860
+#: admin/class-sports-bench-admin.php:769
 #: admin/partials/posts/stats-meta-box.php:123
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1503,9 +1480,9 @@ msgstr "Conversioni"
 #: public/partials/widgets/stats-widget.php:302
 #, fuzzy
 msgid "Penalty Goals"
-msgstr "Goal su rigore:"
+msgstr "Gol di rigore"
 
-#: admin/class-sports-bench-admin.php:861
+#: admin/class-sports-bench-admin.php:770
 #: admin/partials/posts/stats-meta-box.php:124
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1520,7 +1497,7 @@ msgstr "Goal su rigore:"
 msgid "Drop Kicks"
 msgstr "Calci a goccia"
 
-#: admin/class-sports-bench-admin.php:863
+#: admin/class-sports-bench-admin.php:772
 #: admin/partials/posts/stats-meta-box.php:126
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1532,9 +1509,9 @@ msgstr "Calci a goccia"
 #: public/partials/widgets/stats-widget.php:305
 #, fuzzy
 msgid "Penalties Conceded"
-msgstr "Rigori Concessi:"
+msgstr "Penalità concesse"
 
-#: admin/class-sports-bench-admin.php:864
+#: admin/class-sports-bench-admin.php:773
 #: admin/partials/posts/stats-meta-box.php:127
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1549,7 +1526,7 @@ msgstr "Rigori Concessi:"
 msgid "Meters Run"
 msgstr "Corsa a metri"
 
-#: admin/class-sports-bench-admin.php:865
+#: admin/class-sports-bench-admin.php:774
 #: admin/partials/posts/stats-meta-box.php:128
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1569,7 +1546,7 @@ msgstr "Corsa a metri"
 msgid "Red Cards"
 msgstr "Cartellini Rossi"
 
-#: admin/class-sports-bench-admin.php:866
+#: admin/class-sports-bench-admin.php:775
 #: admin/partials/posts/stats-meta-box.php:129
 #: includes/classes/base/class-games.php:415
 #: includes/classes/base/class-stats.php:60
@@ -1589,7 +1566,7 @@ msgstr "Cartellini Rossi"
 msgid "Yellow Cards"
 msgstr "Cartellini Gialli"
 
-#: admin/class-sports-bench-admin.php:870
+#: admin/class-sports-bench-admin.php:779
 #: admin/partials/posts/stats-meta-box.php:133
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1600,7 +1577,7 @@ msgstr "Cartellini Gialli"
 msgid "Sets Played"
 msgstr "Set giocati"
 
-#: admin/class-sports-bench-admin.php:872
+#: admin/class-sports-bench-admin.php:781
 #: admin/partials/posts/stats-meta-box.php:135
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1618,7 +1595,7 @@ msgstr "Set giocati"
 msgid "Kills"
 msgstr "Uccide"
 
-#: admin/class-sports-bench-admin.php:873
+#: admin/class-sports-bench-admin.php:782
 #: admin/partials/posts/stats-meta-box.php:136
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1634,9 +1611,9 @@ msgstr "Uccide"
 #: public/partials/widgets/stats-widget.php:315
 #, fuzzy
 msgid "Hitting Errors"
-msgstr "Errori:"
+msgstr "Errori di battuta"
 
-#: admin/class-sports-bench-admin.php:874
+#: admin/class-sports-bench-admin.php:783
 #: admin/partials/posts/stats-meta-box.php:137
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1652,9 +1629,9 @@ msgstr "Errori:"
 #: public/partials/widgets/stats-widget.php:316
 #, fuzzy
 msgid "Attacks"
-msgstr "Attacchi:"
+msgstr "Attacchi"
 
-#: admin/class-sports-bench-admin.php:875
+#: admin/class-sports-bench-admin.php:784
 #: admin/partials/posts/stats-meta-box.php:138
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1663,9 +1640,9 @@ msgstr "Attacchi:"
 #: public/partials/widgets/stats-widget.php:317
 #, fuzzy
 msgid "Hitting Percentage"
-msgstr "Percentuale di tiro:"
+msgstr "Percentuale di battuta"
 
-#: admin/class-sports-bench-admin.php:876
+#: admin/class-sports-bench-admin.php:785
 #: admin/partials/posts/stats-meta-box.php:139
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1680,7 +1657,7 @@ msgstr "Percentuale di tiro:"
 msgid "Set Attempts"
 msgstr "Tentativi di set"
 
-#: admin/class-sports-bench-admin.php:877
+#: admin/class-sports-bench-admin.php:786
 #: admin/partials/posts/stats-meta-box.php:140
 #: includes/classes/base/class-stats.php:2075
 #: includes/classes/base/class-stats.php:2716
@@ -1689,7 +1666,7 @@ msgstr "Tentativi di set"
 msgid "Setting Errors"
 msgstr "Errori di impostazione"
 
-#: admin/class-sports-bench-admin.php:878
+#: admin/class-sports-bench-admin.php:787
 #: admin/partials/posts/stats-meta-box.php:141
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1703,7 +1680,7 @@ msgstr "Errori di impostazione"
 msgid "Serves"
 msgstr "Porzioni"
 
-#: admin/class-sports-bench-admin.php:879
+#: admin/class-sports-bench-admin.php:788
 #: admin/partials/posts/stats-meta-box.php:142
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1714,7 +1691,7 @@ msgstr "Porzioni"
 msgid "Serving Errors"
 msgstr "Errori di servizio"
 
-#: admin/class-sports-bench-admin.php:880
+#: admin/class-sports-bench-admin.php:789
 #: admin/partials/posts/stats-meta-box.php:143
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1731,7 +1708,7 @@ msgstr "Errori di servizio"
 msgid "Aces"
 msgstr "Aces"
 
-#: admin/class-sports-bench-admin.php:882
+#: admin/class-sports-bench-admin.php:791
 #: admin/partials/posts/stats-meta-box.php:145
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1746,7 +1723,7 @@ msgstr "Aces"
 msgid "Block Attempts"
 msgstr "Tentativi di blocco"
 
-#: admin/class-sports-bench-admin.php:883
+#: admin/class-sports-bench-admin.php:792
 #: admin/partials/posts/stats-meta-box.php:146
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1757,7 +1734,7 @@ msgstr "Tentativi di blocco"
 msgid "Blocking Errors"
 msgstr "Errori di blocco"
 
-#: admin/class-sports-bench-admin.php:884
+#: admin/class-sports-bench-admin.php:793
 #: admin/partials/posts/stats-meta-box.php:147
 #: includes/classes/base/class-games.php:419
 #: includes/classes/base/class-stats.php:64
@@ -1774,7 +1751,7 @@ msgstr "Errori di blocco"
 msgid "Digs"
 msgstr "Scava"
 
-#: admin/class-sports-bench-admin.php:885
+#: admin/class-sports-bench-admin.php:794
 #: admin/partials/posts/stats-meta-box.php:148
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:275
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:357
@@ -1784,7 +1761,7 @@ msgstr "Scava"
 msgid "Receiving Errors"
 msgstr "Errori di ricezione"
 
-#: admin/class-sports-bench-admin.php:891
+#: admin/class-sports-bench-admin.php:800
 #: admin/partials/posts/stats-meta-box.php:154
 #: includes/classes/base/class-games.php:413
 #: includes/classes/base/class-games.php:417
@@ -1804,7 +1781,7 @@ msgstr "Errori di ricezione"
 msgid "Shots"
 msgstr "Colpi"
 
-#: admin/class-sports-bench-admin.php:894
+#: admin/class-sports-bench-admin.php:803
 #: admin/partials/posts/stats-meta-box.php:157
 #: includes/classes/base/class-games.php:417
 #: includes/classes/base/class-stats.php:62
@@ -1819,27 +1796,15 @@ msgstr "Colpi"
 msgid "Fouls Suffered"
 msgstr "Falli subiti"
 
-#: admin/class-sports-bench-admin.php:966 admin/partials/options/pages.php:101
+#: admin/class-sports-bench-admin.php:875 admin/partials/options/pages.php:101
 msgid "None"
 msgstr "Nessuna"
 
-#: admin/class-sports-bench-admin.php:1028
+#: admin/class-sports-bench-admin.php:937
 #: includes/classes/base/class-stats.php:2149
 #: includes/classes/base/class-stats.php:2767
 #: includes/classes/base/class-stats.php:2769
 #: includes/classes/base/class-teams.php:755
-#: includes/classes/screens/admin/class-brackets-screen.php:643
-#: includes/classes/screens/admin/class-brackets-screen.php:810
-#: includes/classes/screens/admin/class-brackets-screen.php:978
-#: includes/classes/screens/admin/class-brackets-screen.php:1146
-#: includes/classes/screens/admin/class-brackets-screen.php:1314
-#: includes/classes/screens/admin/class-brackets-screen.php:1482
-#: includes/classes/screens/admin/class-brackets-screen.php:1808
-#: includes/classes/screens/admin/class-brackets-screen.php:2082
-#: includes/classes/screens/admin/class-brackets-screen.php:2357
-#: includes/classes/screens/admin/class-brackets-screen.php:2632
-#: includes/classes/screens/admin/class-brackets-screen.php:2907
-#: includes/classes/screens/admin/class-brackets-screen.php:3182
 #: includes/classes/screens/admin/class-players-screen.php:58
 #: includes/classes/screens/admin/class-teams-screen.php:56
 #: includes/classes/screens/admin/class-teams-screen.php:151
@@ -1869,7 +1834,7 @@ msgstr "Nessuna"
 msgid "Team"
 msgstr "Team"
 
-#: admin/class-sports-bench-admin.php:1035
+#: admin/class-sports-bench-admin.php:944
 #: includes/classes/base/class-stats.php:2150
 #: includes/classes/base/class-teams.php:575
 #: includes/classes/screens/admin/class-players-screen.php:57
@@ -1937,160 +1902,206 @@ msgstr "Team"
 msgid "Player"
 msgstr "Giocatore"
 
-#: admin/class-sports-bench-admin.php:1042
-#: admin/partials/posts/post-meta-box.php:103
-#: includes/classes/screens/admin/class-brackets-screen.php:635
-#: includes/classes/screens/admin/class-brackets-screen.php:802
-#: includes/classes/screens/admin/class-brackets-screen.php:970
-#: includes/classes/screens/admin/class-brackets-screen.php:1138
-#: includes/classes/screens/admin/class-brackets-screen.php:1306
-#: includes/classes/screens/admin/class-brackets-screen.php:1474
-#: includes/classes/screens/admin/class-brackets-screen.php:1800
-#: includes/classes/screens/admin/class-brackets-screen.php:2074
-#: includes/classes/screens/admin/class-brackets-screen.php:2349
-#: includes/classes/screens/admin/class-brackets-screen.php:2624
-#: includes/classes/screens/admin/class-brackets-screen.php:2899
-#: includes/classes/screens/admin/class-brackets-screen.php:3174
-#: includes/functions/window.php:156
+#: admin/class-sports-bench-admin.php:951
+#: admin/partials/posts/post-meta-box.php:103 includes/functions/window.php:156
 msgid "Game"
 msgstr "Partita"
 
-#: admin/class-sports-bench-admin.php:1049
+#: admin/class-sports-bench-admin.php:958
 #, fuzzy
 msgid "Playoff Bracket"
 msgstr "Fascia dei playoff"
 
-#: admin/class-sports-bench-admin.php:1076
+#: admin/class-sports-bench-admin.php:985
 msgid "Options"
 msgstr "Opzioni"
 
-#: admin/class-sports-bench-admin.php:1104
-#: admin/partials/playoffs/add-edit-bracket.php:39
-#: admin/partials/playoffs/brackets-listing.php:42
+#: admin/class-sports-bench-admin.php:1013
 msgid "Brackets"
 msgstr "Mensole"
 
-#: admin/class-sports-bench-admin.php:1888
+#: admin/class-sports-bench-admin.php:1797
 #: includes/classes/base/class-teams.php:845 includes/functions/window.php:161
 msgid "Standings"
 msgstr "Classifiche"
 
-#: admin/class-sports-bench-admin.php:1947
+#: admin/class-sports-bench-admin.php:1856
 #: public/partials/widgets/standings-widget.php:178
 #: public/partials/widgets/standings-widget.php:247
 #, fuzzy
 msgid "Entire League"
 msgstr "Tutta la Lega"
 
-#: admin/class-sports-bench-admin.php:1948
+#: admin/class-sports-bench-admin.php:1857
 #: public/partials/widgets/standings-widget.php:179
 #: public/partials/widgets/standings-widget.php:248
 #, fuzzy
 msgid "Conference Standings"
 msgstr "Classifica della conferenza"
 
-#: admin/class-sports-bench-admin.php:1949
+#: admin/class-sports-bench-admin.php:1858
 #: public/partials/widgets/standings-widget.php:180
 #: public/partials/widgets/standings-widget.php:249
 #, fuzzy
 msgid "Division Standings"
 msgstr "Classifica della divisione"
 
-#: admin/class-sports-bench-admin.php:1967
+#: admin/class-sports-bench-admin.php:1876
 #, fuzzy
 msgid "Standings Options"
 msgstr "Opzioni di classifica"
 
-#: admin/class-sports-bench-admin.php:1969
+#: admin/class-sports-bench-admin.php:1878
 #: public/partials/widgets/standings-widget.php:213
 #, fuzzy
 msgid "Standings Set to Show:"
 msgstr "Classifica impostata per mostrare:"
 
-#: admin/class-sports-bench-admin.php:2016
+#: admin/class-sports-bench-admin.php:1927
 #: includes/classes/base/class-teams.php:408
 #, fuzzy
 msgid "Upcoming Games"
 msgstr "Giochi in arrivo"
 
-#: admin/class-sports-bench-admin.php:2047
-#: admin/class-sports-bench-admin.php:2127
-#: includes/classes/base/class-scoreboard.php:369
-#: includes/classes/base/class-scoreboard.php:745
-msgid "Week"
-msgstr "Settimana"
+#: admin/class-sports-bench-admin.php:1931
+#: admin/class-sports-bench-admin.php:1990
+#: includes/classes/screens/admin/class-games-screen.php:60
+msgid "Date/Time"
+msgstr "Data/Ora"
 
-#: admin/class-sports-bench-admin.php:2058
-#: admin/class-sports-bench-admin.php:2138
-#: blocks/class-sports-bench-blocks.php:572
-#: public/partials/shortcodes/game.php:53
+#: admin/class-sports-bench-admin.php:1932
+#: admin/class-sports-bench-admin.php:1991
+#: includes/classes/screens/admin/class-games-screen.php:448
+#: includes/classes/screens/admin/class-games-screen.php:610
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:74
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:195
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:1409
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:1534
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:76
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:204
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:978
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:1110
+#: includes/classes/sports/football/class-football-admin-game.php:76
+#: includes/classes/sports/football/class-football-admin-game.php:204
+#: includes/classes/sports/football/class-football-admin-game.php:2481
+#: includes/classes/sports/football/class-football-admin-game.php:2613
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:76
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:204
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:1299
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:1431
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:75
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:198
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:1114
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:1241
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:75
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:183
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:1203
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:1315
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:76
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:201
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:831
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:960
+msgid "Away Team"
+msgstr "Aversario"
+
+#: admin/class-sports-bench-admin.php:1933
+#: admin/class-sports-bench-admin.php:1992
+#: includes/classes/screens/admin/class-games-screen.php:464
+#: includes/classes/screens/admin/class-games-screen.php:626
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:81
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:196
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:1416
+#: includes/classes/sports/baseball/class-baseball-admin-game.php:1535
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:85
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:205
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:987
+#: includes/classes/sports/basketball/class-basketball-admin-game.php:1111
+#: includes/classes/sports/football/class-football-admin-game.php:85
+#: includes/classes/sports/football/class-football-admin-game.php:205
+#: includes/classes/sports/football/class-football-admin-game.php:2490
+#: includes/classes/sports/football/class-football-admin-game.php:2614
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:85
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:205
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:1308
+#: includes/classes/sports/hockey/class-hockey-admin-game.php:1432
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:83
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:199
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:1122
+#: includes/classes/sports/rugby/class-rugby-admin-game.php:1242
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:83
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:184
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:1211
+#: includes/classes/sports/soccer/class-soccer-admin-game.php:1316
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:85
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:202
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:840
+#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:961
 #, fuzzy
-msgid "FINAL"
-msgstr "Finale"
+msgid "Home Team"
+msgstr "Squadra di casa"
 
-#: admin/class-sports-bench-admin.php:2060
-#: admin/class-sports-bench-admin.php:2140
-msgid "LIVE"
-msgstr "VIVO"
-
-#: admin/class-sports-bench-admin.php:2062
-#: admin/class-sports-bench-admin.php:2142
-#, fuzzy
-msgid "SCHEDULED"
-msgstr "Programmato"
-
-#: admin/class-sports-bench-admin.php:2096
+#: admin/class-sports-bench-admin.php:1986
 #, fuzzy
 msgid "Recent Games"
 msgstr "Giochi recenti"
 
-#: admin/class-sports-bench-admin.php:2165
-msgid "View Game"
-msgstr "Mostra il gioco Game"
-
-#: admin/class-sports-bench-admin.php:2199
+#: admin/class-sports-bench-admin.php:2066
 #, fuzzy
 msgid "Game Options"
 msgstr "Opzioni di gioco"
 
-#: admin/class-sports-bench-admin.php:2203
+#: admin/class-sports-bench-admin.php:2070
 #, fuzzy
 msgid "Number of upcoming games to show:"
 msgstr "Numero di giochi imminenti da mostrare:"
 
-#: admin/class-sports-bench-admin.php:2207
+#: admin/class-sports-bench-admin.php:2074
 #, fuzzy
 msgid "Number of recent games to show:"
 msgstr "Numero di partite recenti da mostrare:"
 
-#: admin/class-sports-bench-admin.php:2221
+#: admin/class-sports-bench-admin.php:2088
 msgid "You are not allowed to be here"
 msgstr "Non sei autorizzato a essere qui."
 
-#: admin/class-sports-bench-admin.php:2236
+#: admin/class-sports-bench-admin.php:2103
+#, fuzzy
 msgid "Please add in your Sports Bench Plugin license key on the"
 msgstr ""
 "Per favore, aggiungi la tua chiave di licenza di Sports Bench Plugin nella "
 "sezione"
 
-#: admin/class-sports-bench-admin.php:2236
+#: admin/class-sports-bench-admin.php:2103
+#, fuzzy
 msgid "licenses page."
 msgstr "pagina delle licenze."
 
+#: admin/class-sports-bench-admin.php:2115
+#: admin/partials/options/licenses.php:118
+#, fuzzy
+msgid ""
+"Want more features for your sports website, like playoffs, stat searching, "
+"import, export and more? Consider <a href=\"https://sportsbenchwp.com\" "
+"target=\"_blank\">purchasing the full Sports Bench plugin</a> to get access "
+"to those features and premium support!"
+msgstr ""
+"Vuoi più funzioni per il tuo sito web sportivo, come i playoff, la ricerca "
+"delle statistiche, l'importazione, l'esportazione e altro ancora? "
+"Considerare l'<a href=\"https://sportsbenchwp.com\" target=\"_blank"
+"\">acquisto del plugin Sports Bench completo</a> per ottenere l'accesso a "
+"queste caratteristiche e supporto premium!"
+
 #: admin/partials/options/display.php:104
-#: admin/partials/options/licenses.php:116
 msgid "Display Options"
 msgstr "Opzioni di Visualizzazione"
 
 #: admin/partials/options/display.php:114
-#: admin/partials/options/general.php:114
-#: admin/partials/options/licenses.php:141 admin/partials/options/pages.php:120
+#: admin/partials/options/general.php:114 admin/partials/options/pages.php:120
 msgid "Option"
 msgstr "Opzione"
 
 #: admin/partials/options/display.php:115
-#: admin/partials/options/general.php:115
-#: admin/partials/options/licenses.php:142 admin/partials/options/pages.php:121
+#: admin/partials/options/general.php:115 admin/partials/options/pages.php:121
 msgid "Field"
 msgstr "Campo"
 
@@ -2116,8 +2127,6 @@ msgstr "Guida alle abbreviazioni del display:"
 
 #: admin/partials/options/display.php:148
 #: admin/partials/options/general.php:162 admin/partials/options/pages.php:182
-#: includes/classes/screens/admin/class-brackets-screen.php:228
-#: includes/classes/screens/admin/class-brackets-screen.php:301
 #: includes/classes/screens/admin/class-divisions-screen.php:219
 #: includes/classes/screens/admin/class-divisions-screen.php:281
 #: includes/classes/screens/admin/class-games-screen.php:549
@@ -2143,47 +2152,6 @@ msgstr "Guida alle abbreviazioni del display:"
 #, fuzzy
 msgid "Save"
 msgstr "Salva"
-
-#: admin/partials/options/export.php:17
-#: includes/classes/screens/admin/class-divisions-screen.php:62
-#, fuzzy
-msgid "Divisions"
-msgstr "Divisioni"
-
-#: admin/partials/options/export.php:19
-#, fuzzy
-msgid "Game Info"
-msgstr "Info sul gioco"
-
-#: admin/partials/options/export.php:20
-#, fuzzy
-msgid "Game Stats"
-msgstr "Statistiche di gioco"
-
-#: admin/partials/options/export.php:22 includes/functions/window.php:163
-#, fuzzy
-msgid "Playoff Brackets"
-msgstr "Fasce dei playoff"
-
-#: admin/partials/options/export.php:23
-#, fuzzy
-msgid "Playoff Series"
-msgstr "Serie di playoff"
-
-#: admin/partials/options/export.php:31
-#: admin/partials/options/options-page.php:69
-msgid "Export"
-msgstr "Esporta"
-
-#: admin/partials/options/export.php:35
-#, fuzzy
-msgid "Please select a table to export as a CSV file."
-msgstr "Seleziona una tabella da esportare come file CSV."
-
-#: admin/partials/options/export.php:45
-#, fuzzy
-msgid "Generate & Download CSV File"
-msgstr "Genera e scarica il file CSV"
 
 #: admin/partials/options/general.php:104
 msgid "General Options"
@@ -2243,186 +2211,10 @@ msgstr "Settimana corrente:"
 msgid "Display basketball scoreline by half:"
 msgstr "Visualizza il punteggio della pallacanestro per metà:"
 
-#: admin/partials/options/import.php:78
+#: admin/partials/options/licenses.php:116
 #, fuzzy
-msgid ""
-"There has been an error uploading the csv file. Please make sure the file "
-"has an extension of csv and re-upload the file."
-msgstr ""
-"Si è verificato un errore nel caricamento del file csv. Assicurati che il "
-"file abbia un'estensione csv e ricarica il file."
-
-#: admin/partials/options/import.php:97
-#: admin/partials/options/options-page.php:65
-msgid "Import"
-msgstr "Importa"
-
-#: admin/partials/options/import.php:99
-#, fuzzy
-msgid ""
-"If you've already got a database for your sports league that you want to "
-"bring over to this site, you can import it as a csv here. Please note that "
-"you'll need a separate csv for each of the tables listed below. You'll also "
-"need the csv to have to correct column headings listed for each column. The "
-"rows don't necessarily need values for the columns, but the columns need to "
-"be there in order for the import to work."
-msgstr ""
-"Se hai già un database per la tua lega sportiva che vuoi portare su questo "
-"sito, puoi importarlo come csv qui. Nota che avrai bisogno di un csv "
-"separato per ciascuna delle tabelle elencate qui sotto. Avrai anche bisogno "
-"che il csv abbia le corrette intestazioni di colonna elencate per ogni "
-"colonna. Le righe non hanno necessariamente bisogno di valori per le "
-"colonne, ma le colonne devono essere presenti affinché l'importazione "
-"funzioni."
-
-#: admin/partials/options/import.php:107
-#, fuzzy
-msgid "Add Divisions"
-msgstr "Aggiungere le divisioni"
-
-#: admin/partials/options/import.php:113
-#, fuzzy
-msgid "Here are the column headers you will need for your division csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"di divisione:"
-
-#: admin/partials/options/import.php:121 admin/partials/options/import.php:151
-#: admin/partials/options/import.php:181 admin/partials/options/import.php:211
-#: admin/partials/options/import.php:241 admin/partials/options/import.php:271
-#: admin/partials/options/import.php:301 admin/partials/options/import.php:331
-#, fuzzy
-msgid "File to Upload"
-msgstr "File da caricare"
-
-#: admin/partials/options/import.php:126 admin/partials/options/import.php:156
-#: admin/partials/options/import.php:186 admin/partials/options/import.php:216
-#: admin/partials/options/import.php:246 admin/partials/options/import.php:276
-#: admin/partials/options/import.php:306 admin/partials/options/import.php:336
-msgid "Upload CSV"
-msgstr "Carica file CSV"
-
-#: admin/partials/options/import.php:137
-#, fuzzy
-msgid "Add Games"
-msgstr "Aggiungi giochi"
-
-#: admin/partials/options/import.php:143
-#, fuzzy
-msgid "Here are the column headers you will need for your game csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"di gioco:"
-
-#: admin/partials/options/import.php:167
-#, fuzzy
-msgid "Add Game Events"
-msgstr "Aggiungere eventi di gioco"
-
-#: admin/partials/options/import.php:173
-#, fuzzy
-msgid ""
-"Here are the column headers you will need for your game events csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"degli eventi di gioco:"
-
-#: admin/partials/options/import.php:197
-#, fuzzy
-msgid "Add Game Stats"
-msgstr "Aggiungi statistiche di gioco"
-
-#: admin/partials/options/import.php:203
-#, fuzzy
-msgid "Here are the column headers you will need for your game stats csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"delle statistiche di gioco:"
-
-#: admin/partials/options/import.php:227
-#, fuzzy
-msgid "Add Players"
-msgstr "Aggiungere giocatori"
-
-#: admin/partials/options/import.php:233
-#, fuzzy
-msgid "Here are the column headers you will need for your player csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"del giocatore:"
-
-#: admin/partials/options/import.php:257
-#, fuzzy
-msgid "Add Playoff Brackets"
-msgstr "Aggiungi staffe di playoff"
-
-#: admin/partials/options/import.php:263
-#, fuzzy
-msgid ""
-"Here are the column headers you will need for your playoff bracket csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"dei playoff bracket:"
-
-#: admin/partials/options/import.php:287
-#, fuzzy
-msgid "Add Playoff Series"
-msgstr "Aggiungi serie di playoff"
-
-#: admin/partials/options/import.php:293
-#, fuzzy
-msgid ""
-"Here are the column headers you will need for your playoff series csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il vostro file csv "
-"delle serie di playoff:"
-
-#: admin/partials/options/import.php:317
-#, fuzzy
-msgid "Add Teams"
-msgstr "Aggiungi squadre"
-
-#: admin/partials/options/import.php:323
-#, fuzzy
-msgid "Here are the column headers you will need for your teams csv file:"
-msgstr ""
-"Ecco le intestazioni di colonna di cui avrete bisogno per il file csv delle "
-"vostre squadre:"
-
-#: admin/partials/options/licenses.php:147
-msgid "License Key:"
-msgstr "Chiave di Licenza:"
-
-#: admin/partials/options/licenses.php:157
-msgid "active"
-msgstr "attivo"
-
-#: admin/partials/options/licenses.php:158
-msgid "Deactivate License"
-msgstr "Disattiva Licenza"
-
-#: admin/partials/options/licenses.php:162
-msgid "Activate License"
-msgstr "Attiva Licenza"
-
-#: admin/partials/options/licenses.php:170
-#, fuzzy
-msgid ""
-"Because you purchased Sports Bench before version 2.0 you are eligible for a "
-"free lifetime license. Please"
-msgstr ""
-"Poiché hai acquistato Sports Bench prima della versione 2.0 hai diritto a "
-"una licenza gratuita a vita. Per favore"
-
-#: admin/partials/options/licenses.php:170
-#, fuzzy
-msgid "fill out this form"
-msgstr "compila questo modulo"
-
-#: admin/partials/options/licenses.php:170
-#, fuzzy
-msgid "to obtain your free license."
-msgstr "per ottenere la tua licenza gratuita."
+msgid "Upgrade to the Premium Sports Bench Plugin"
+msgstr "Aggiornamento al plugin Premium Sports Bench"
 
 #: admin/partials/options/options-page.php:43
 msgid "General"
@@ -2440,11 +2232,11 @@ msgstr "Visualizza"
 msgid "Theme Options"
 msgstr "Opzioni Tema"
 
-#: admin/partials/options/options-page.php:72
-msgid "Licenses"
-msgstr "Licenze"
+#: admin/partials/options/options-page.php:65
+msgid "Upgrade to Premium"
+msgstr "Aggiorna a Premium"
 
-#: admin/partials/options/options-page.php:75
+#: admin/partials/options/options-page.php:68
 #: admin/partials/options/support.php:19
 msgid "Support"
 msgstr "Supporto"
@@ -2554,8 +2346,7 @@ msgstr "Tutorial"
 msgid "Blog"
 msgstr "Blog"
 
-#: admin/partials/posts/post-meta-box.php:20 blocks/game-recap/index.js:211
-#: blocks/game/index.js:211 blocks/team-schedule/index.js:205
+#: admin/partials/posts/post-meta-box.php:20 blocks/game/index.js:211
 #: includes/class-sports-bench-setup.php:152
 #: includes/classes/rest-api/class-game-rest-api.php:879
 #: includes/classes/rest-api/class-game-rest-api.php:890
@@ -2586,12 +2377,12 @@ msgstr "Nessuna"
 #: admin/partials/posts/post-meta-box.php:98
 #, fuzzy
 msgid "Preview: "
-msgstr "ANTEPRIMA"
+msgstr "Anteprima"
 
 #: admin/partials/posts/post-meta-box.php:99
 #, fuzzy
 msgid "Recap: "
-msgstr "RIEPILOGO"
+msgstr "Ricapitolazione"
 
 #: admin/partials/posts/standings-meta-box.php:72
 #, fuzzy
@@ -2609,7 +2400,7 @@ msgstr "Lega"
 #: admin/partials/posts/standings-meta-box.php:75
 #, fuzzy
 msgid "Standings: "
-msgstr "Classifiche"
+msgstr "Classifica"
 
 #: admin/partials/posts/standings-meta-box.php:82
 #, fuzzy
@@ -2637,64 +2428,6 @@ msgstr "Aggiungi Articolo"
 msgid "Select a Stat"
 msgstr "Seleziona una statistica"
 
-#: blocks/box-score/index.js:15 blocks/box-score/index.js:23
-msgid "Sports Bench Box Score"
-msgstr "Sports Bench Box Score"
-
-#: blocks/box-score/index.js:18 blocks/brackets/index.js:30
-#: blocks/game-recap/index.js:33 blocks/game/index.js:32
-#: blocks/list-division/index.js:30 blocks/player-page/index.js:18
-#: blocks/player/index.js:33 blocks/rivalry/index.js:31
-#: blocks/scoreboard/index.js:17 blocks/standings/index.js:30
-#: blocks/stat-search/index.js:18 blocks/stats/index.js:31
-#: blocks/team-page/index.js:18 blocks/team-schedule/index.js:31
-#: blocks/team/index.js:28
-msgid "Sports"
-msgstr "Sport"
-
-#: blocks/box-score/index.js:18 blocks/brackets/index.js:30
-#: blocks/game-recap/index.js:33 blocks/game/index.js:32
-#: blocks/list-division/index.js:30 blocks/player-page/index.js:18
-#: blocks/player/index.js:33 blocks/rivalry/index.js:31
-#: blocks/scoreboard/index.js:17 blocks/standings/index.js:30
-#: blocks/stat-search/index.js:18 blocks/stats/index.js:31
-#: blocks/team-page/index.js:18 blocks/team-schedule/index.js:31
-#: blocks/team/index.js:28
-msgid "Bench"
-msgstr "Panca"
-
-#: blocks/box-score/index.js:18 blocks/stat-search/index.js:18
-#: blocks/stats/index.js:31
-msgid "stats"
-msgstr "statistiche"
-
-#: blocks/box-score/index.js:24
-#, fuzzy
-msgid ""
-"The box score block isn't editable. You can see what it looks like on the "
-"front end."
-msgstr ""
-"Il blocco del punteggio del box non è modificabile. Puoi vedere come appare "
-"sul front-end."
-
-#: blocks/brackets/index.js:30
-#, fuzzy
-msgid "bracket"
-msgstr "staffa"
-
-#: blocks/brackets/index.js:132
-msgid "Sports Bench Bracket"
-msgstr "Staffa per Sports Bench"
-
-#: blocks/brackets/index.js:133
-#, fuzzy
-msgid ""
-"The bracket block isn't editable. You can see what it looks like on the "
-"front end."
-msgstr ""
-"Il blocco di parentesi non è modificabile. Si può vedere come appare nella "
-"parte anteriore."
-
 #: blocks/class-sports-bench-blocks.php:506
 #: includes/classes/screens/admin/class-players-screen.php:574
 #: includes/classes/screens/admin/class-players-screen.php:670
@@ -2711,41 +2444,44 @@ msgstr "Informazioni sul giocatore"
 msgid "Career Stats"
 msgstr "Statistiche della carriera"
 
+#: blocks/class-sports-bench-blocks.php:572
+#: public/partials/shortcodes/game.php:53
+#, fuzzy
+msgid "FINAL"
+msgstr "FINALE"
+
 #: blocks/class-sports-bench-blocks.php:702
 #: blocks/class-sports-bench-blocks.php:704
-#: public/partials/shortcodes/rivalry.php:83
-#: public/partials/shortcodes/rivalry.php:85
 #, fuzzy
 msgid "lead the all-time series"
 msgstr "conducono la serie di tutti i tempi"
 
 #: blocks/class-sports-bench-blocks.php:706
-#: public/partials/shortcodes/rivalry.php:87
 #, fuzzy
 msgid "The all-time series is tied"
 msgstr "La serie di tutti i tempi è pari"
 
-#: blocks/game-recap/index.js:30 blocks/game-recap/index.js:222
-msgid "Sports Bench Game Recap"
-msgstr "Sports Bench Game Recap"
-
-#: blocks/game-recap/index.js:33 blocks/game/index.js:32
-#, fuzzy
-msgid "game"
-msgstr "Partita"
-
-#: blocks/game-recap/index.js:223
-#, fuzzy
-msgid ""
-"The game recap block isn't editable. You can select the game in the block "
-"attributes in the right-hand column of the editor."
-msgstr ""
-"Il blocco di riepilogo del gioco non è modificabile. Puoi selezionare la "
-"partita negli attributi del blocco nella colonna di destra dell'editor."
-
 #: blocks/game/index.js:29 blocks/game/index.js:222
 msgid "Sports Bench Game"
 msgstr "Sports Bench gioco"
+
+#: blocks/game/index.js:32 blocks/player-page/index.js:18
+#: blocks/player/index.js:33 blocks/scoreboard/index.js:17
+#: blocks/standings/index.js:30 blocks/stats/index.js:31
+#: blocks/team-page/index.js:18 blocks/team/index.js:28
+msgid "Sports"
+msgstr "Sport"
+
+#: blocks/game/index.js:32 blocks/player-page/index.js:18
+#: blocks/player/index.js:33 blocks/scoreboard/index.js:17
+#: blocks/standings/index.js:30 blocks/stats/index.js:31
+#: blocks/team-page/index.js:18 blocks/team/index.js:28
+msgid "Bench"
+msgstr "Bench"
+
+#: blocks/game/index.js:32
+msgid "game"
+msgstr "partita"
 
 #: blocks/game/index.js:223
 #, fuzzy
@@ -2760,30 +2496,6 @@ msgstr ""
 #, fuzzy
 msgid "Aborted"
 msgstr "Abortito"
-
-#: blocks/list-division/index.js:30
-#, fuzzy
-msgid "division"
-msgstr "Reparto"
-
-#: blocks/list-division/index.js:128
-#, fuzzy
-msgid "Select a Division/Conference"
-msgstr "Seleziona una Divisione/Conferenza"
-
-#: blocks/list-division/index.js:137
-msgid "Sports Bench List Teams by Division"
-msgstr "Sports Bench List Squadre per Divisione"
-
-#: blocks/list-division/index.js:138
-#, fuzzy
-msgid ""
-"The list teams by division block isn't editable. You can select the division "
-"to show in the block attributes in the right-hand column of the editor."
-msgstr ""
-"Il blocco delle squadre per divisione non è modificabile. Puoi selezionare "
-"la divisione da mostrare negli attributi del blocco nella colonna di destra "
-"dell'editor."
 
 #: blocks/player-page/index.js:15 blocks/player-page/index.js:23
 msgid "Sports Bench Player Page"
@@ -2806,32 +2518,8 @@ msgstr ""
 msgid "Sports Bench Player"
 msgstr "Giocatore di Sports Bench"
 
-#: blocks/player/index.js:211 blocks/team-schedule/index.js:203
-#: blocks/team/index.js:127 includes/classes/base/class-players.php:346
-#: includes/classes/screens/admin/class-brackets-screen.php:656
-#: includes/classes/screens/admin/class-brackets-screen.php:679
-#: includes/classes/screens/admin/class-brackets-screen.php:823
-#: includes/classes/screens/admin/class-brackets-screen.php:846
-#: includes/classes/screens/admin/class-brackets-screen.php:991
-#: includes/classes/screens/admin/class-brackets-screen.php:1014
-#: includes/classes/screens/admin/class-brackets-screen.php:1159
-#: includes/classes/screens/admin/class-brackets-screen.php:1182
-#: includes/classes/screens/admin/class-brackets-screen.php:1327
-#: includes/classes/screens/admin/class-brackets-screen.php:1350
-#: includes/classes/screens/admin/class-brackets-screen.php:1495
-#: includes/classes/screens/admin/class-brackets-screen.php:1518
-#: includes/classes/screens/admin/class-brackets-screen.php:1821
-#: includes/classes/screens/admin/class-brackets-screen.php:1844
-#: includes/classes/screens/admin/class-brackets-screen.php:2095
-#: includes/classes/screens/admin/class-brackets-screen.php:2118
-#: includes/classes/screens/admin/class-brackets-screen.php:2370
-#: includes/classes/screens/admin/class-brackets-screen.php:2393
-#: includes/classes/screens/admin/class-brackets-screen.php:2645
-#: includes/classes/screens/admin/class-brackets-screen.php:2668
-#: includes/classes/screens/admin/class-brackets-screen.php:2920
-#: includes/classes/screens/admin/class-brackets-screen.php:2943
-#: includes/classes/screens/admin/class-brackets-screen.php:3195
-#: includes/classes/screens/admin/class-brackets-screen.php:3218
+#: blocks/player/index.js:211 blocks/team/index.js:127
+#: includes/classes/base/class-players.php:346
 #: includes/classes/screens/admin/class-games-screen.php:450
 #: includes/classes/screens/admin/class-games-screen.php:466
 #: includes/classes/screens/admin/class-games-screen.php:612
@@ -2839,10 +2527,9 @@ msgstr "Giocatore di Sports Bench"
 #: includes/classes/screens/admin/class-players-screen.php:626
 #: includes/classes/screens/admin/class-players-screen.php:721
 #: includes/functions/window.php:116
-#: public/partials/widgets/team-schedule-widget.php:116
 #, fuzzy
 msgid "Select a Team"
-msgstr "Seleziona Reparto"
+msgstr "Seleziona una squadra"
 
 #: blocks/player/index.js:223
 #, fuzzy
@@ -2852,39 +2539,6 @@ msgid ""
 msgstr ""
 "Il blocco del giocatore non è modificabile. Puoi selezionare il giocatore da "
 "mostrare negli attributi del blocco nella colonna di destra dell'editor."
-
-#: blocks/rivalry/index.js:28 blocks/rivalry/index.js:198
-msgid "Sports Bench Rivalry"
-msgstr "Rivalità della Sports Bench"
-
-#: blocks/rivalry/index.js:31
-#, fuzzy
-msgid "rivalry"
-msgstr "rivalità"
-
-#: blocks/rivalry/index.js:178 includes/functions/window.php:266
-#, fuzzy
-msgid "Number of Recent Games"
-msgstr "Numero di partite recenti"
-
-#: blocks/rivalry/index.js:186
-#, fuzzy
-msgid "Select the First Team"
-msgstr "Seleziona la prima squadra"
-
-#: blocks/rivalry/index.js:188
-#, fuzzy
-msgid "Select the Second Team"
-msgstr "Seleziona la seconda squadra"
-
-#: blocks/rivalry/index.js:199
-#, fuzzy
-msgid ""
-"The rivalry block isn't editable. You can select the teams and the number of "
-"games in the block attributes in the right-hand column."
-msgstr ""
-"Il blocco rivalità non è modificabile. Puoi selezionare le squadre e il "
-"numero di partite negli attributi del blocco nella colonna di destra."
 
 #: blocks/scoreboard/index.js:14 blocks/scoreboard/index.js:22
 #: public/partials/widgets/scoreboard-widget.php:35
@@ -2913,7 +2567,7 @@ msgstr "Classifica delle Sports Bench"
 #: blocks/standings/index.js:30
 #, fuzzy
 msgid "standings"
-msgstr "Classifiche"
+msgstr "classifica"
 
 #: blocks/standings/index.js:150
 #, fuzzy
@@ -2935,22 +2589,13 @@ msgstr ""
 "da visualizzare nella classifica negli attributi del blocco nella colonna di "
 "destra."
 
-#: blocks/stat-search/index.js:15 blocks/stat-search/index.js:23
-msgid "Sports Bench Stat Search"
-msgstr "Ricerca delle statistiche della Sports Bench"
-
-#: blocks/stat-search/index.js:24
-#, fuzzy
-msgid ""
-"The stat search block isn't editable. You can see what it looks like on the "
-"front end."
-msgstr ""
-"Il blocco di ricerca delle statistiche non è modificabile. Puoi vedere come "
-"appare sul front-end."
-
 #: blocks/stats/index.js:28 blocks/stats/index.js:238
 msgid "Sports Bench Stats"
 msgstr "Statistiche della Sports Bench"
+
+#: blocks/stats/index.js:31
+msgid "stats"
+msgstr "statistiche"
 
 #: blocks/stats/index.js:229
 #, fuzzy
@@ -2984,25 +2629,6 @@ msgstr ""
 "Il blocco della pagina della squadra non è modificabile. Puoi vedere come "
 "appare sul front-end."
 
-#: blocks/team-schedule/index.js:28 blocks/team-schedule/index.js:214
-#: public/partials/widgets/team-schedule-widget.php:36
-msgid "Sports Bench Team Schedule"
-msgstr "Sports Bench Programma della Panchina"
-
-#: blocks/team-schedule/index.js:31
-msgid "schedule"
-msgstr "programma"
-
-#: blocks/team-schedule/index.js:215
-#, fuzzy
-msgid ""
-"The team schedule block isn't editable. You can select the team and the "
-"season in the block attributes in the right-hand column of the editor."
-msgstr ""
-"Il blocco del calendario della squadra non è modificabile. Può selezionare "
-"la squadra e la stagione negli attributi del blocco nella colonna di destra "
-"dell'editor."
-
 #: blocks/team/index.js:25 blocks/team/index.js:136
 msgid "Sports Bench Team"
 msgstr "Squadra della Sports Bench"
@@ -3015,213 +2641,6 @@ msgid ""
 msgstr ""
 "Il blocco della squadra non è modificabile. Puoi selezionare la squadra da "
 "mostrare negli attributi del blocco nella colonna di destra."
-
-#: includes/class-sports-bench-setup.php:365
-#: includes/class-sports-bench-setup.php:414
-#: includes/class-sports-bench-setup.php:476
-msgid "An error occurred, please try again."
-msgstr "Si è verificato un errore. Per favore riprovare."
-
-#: includes/class-sports-bench-setup.php:379
-#, php-format
-msgid "Your license key expired on %s."
-msgstr "La vostra chiave di licenza è scaduta il %s."
-
-#: includes/class-sports-bench-setup.php:387
-msgid "Your license key has been disabled."
-msgstr "La vostra chiave di licenza è stata disabilitata."
-
-#: includes/class-sports-bench-setup.php:399
-msgid "Your license is not active for this URL."
-msgstr "La vostra licenza non è attiva per questo URL."
-
-#: includes/class-sports-bench-setup.php:404
-#, php-format
-msgid "This appears to be an invalid license key for %s."
-msgstr "Questa sembra essere una chiave di licenza non valida per %s."
-
-#: includes/class-sports-bench-setup.php:409
-msgid "Your license key has reached its activation limit."
-msgstr ""
-"La vostra chiave di licenza ha raggiunto il proprio limite di attivazioni."
-
-#: includes/class-sports-bench-updater.php:266
-#, php-format
-msgid ""
-"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr ""
-"C’è una nuova versione disponibile di %1$s. %2$sVedi versione %3$s dettagli"
-"%4$s."
-
-#: includes/class-sports-bench-updater.php:274
-#, php-format
-msgid ""
-"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
-"or %5$supdate now%6$s."
-msgstr ""
-"C'è una nuova versione di %1$s disponibile. %2$sVedi versione %3$s dettagli"
-"%4$s o %5$saggiorna adesso%6$s."
-
-#: includes/class-sports-bench-updater.php:521
-msgid "You do not have permission to install plugin updates"
-msgstr "Non hai il permesso di installare gli aggiornamenti dei plugin"
-
-#: includes/class-sports-bench-updater.php:521
-#: includes/classes/rest-api/class-game-info-rest-api.php:152
-#: includes/classes/rest-api/class-game-info-rest-api.php:175
-#: includes/classes/rest-api/class-game-info-rest-api.php:197
-#: includes/classes/rest-api/class-game-info-rest-api.php:219
-#: includes/classes/rest-api/class-game-stats-rest-api.php:148
-#: includes/classes/rest-api/class-game-stats-rest-api.php:169
-#: includes/classes/rest-api/class-game-stats-rest-api.php:188
-#: includes/classes/rest-api/class-game-stats-rest-api.php:208
-msgid "Error"
-msgstr "Errore"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:718
-#: includes/classes/screens/admin/class-brackets-screen.php:885
-#: includes/classes/screens/admin/class-brackets-screen.php:1053
-#: includes/classes/screens/admin/class-brackets-screen.php:1221
-#: includes/classes/screens/admin/class-brackets-screen.php:1389
-#: includes/classes/screens/admin/class-brackets-screen.php:1557
-#: includes/classes/screens/admin/class-brackets-screen.php:1883
-#: includes/classes/screens/admin/class-brackets-screen.php:2157
-#: includes/classes/screens/admin/class-brackets-screen.php:2432
-#: includes/classes/screens/admin/class-brackets-screen.php:2707
-#: includes/classes/screens/admin/class-brackets-screen.php:2982
-#: includes/classes/screens/admin/class-brackets-screen.php:3257
-#, fuzzy
-msgid "Game One"
-msgstr "Gioco Uno"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:727
-#: includes/classes/screens/admin/class-brackets-screen.php:894
-#: includes/classes/screens/admin/class-brackets-screen.php:1062
-#: includes/classes/screens/admin/class-brackets-screen.php:1230
-#: includes/classes/screens/admin/class-brackets-screen.php:1398
-#: includes/classes/screens/admin/class-brackets-screen.php:1566
-#: includes/classes/screens/admin/class-brackets-screen.php:1906
-#: includes/classes/screens/admin/class-brackets-screen.php:2180
-#: includes/classes/screens/admin/class-brackets-screen.php:2455
-#: includes/classes/screens/admin/class-brackets-screen.php:2730
-#: includes/classes/screens/admin/class-brackets-screen.php:3005
-#: includes/classes/screens/admin/class-brackets-screen.php:3280
-#, fuzzy
-msgid "Game Two"
-msgstr "Gioco due"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:736
-#: includes/classes/screens/admin/class-brackets-screen.php:903
-#: includes/classes/screens/admin/class-brackets-screen.php:1071
-#: includes/classes/screens/admin/class-brackets-screen.php:1239
-#: includes/classes/screens/admin/class-brackets-screen.php:1407
-#: includes/classes/screens/admin/class-brackets-screen.php:1575
-#: includes/classes/screens/admin/class-brackets-screen.php:1930
-#: includes/classes/screens/admin/class-brackets-screen.php:2204
-#: includes/classes/screens/admin/class-brackets-screen.php:2479
-#: includes/classes/screens/admin/class-brackets-screen.php:2754
-#: includes/classes/screens/admin/class-brackets-screen.php:3029
-#: includes/classes/screens/admin/class-brackets-screen.php:3304
-msgid "Game Three"
-msgstr "Gioco tre"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:745
-#: includes/classes/screens/admin/class-brackets-screen.php:912
-#: includes/classes/screens/admin/class-brackets-screen.php:1080
-#: includes/classes/screens/admin/class-brackets-screen.php:1248
-#: includes/classes/screens/admin/class-brackets-screen.php:1416
-#: includes/classes/screens/admin/class-brackets-screen.php:1584
-#: includes/classes/screens/admin/class-brackets-screen.php:1954
-#: includes/classes/screens/admin/class-brackets-screen.php:2228
-#: includes/classes/screens/admin/class-brackets-screen.php:2503
-#: includes/classes/screens/admin/class-brackets-screen.php:2778
-#: includes/classes/screens/admin/class-brackets-screen.php:3053
-#: includes/classes/screens/admin/class-brackets-screen.php:3328
-#, fuzzy
-msgid "Game Four"
-msgstr "Gioco Quattro"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:754
-#: includes/classes/screens/admin/class-brackets-screen.php:921
-#: includes/classes/screens/admin/class-brackets-screen.php:1089
-#: includes/classes/screens/admin/class-brackets-screen.php:1257
-#: includes/classes/screens/admin/class-brackets-screen.php:1425
-#: includes/classes/screens/admin/class-brackets-screen.php:1593
-#: includes/classes/screens/admin/class-brackets-screen.php:1978
-#: includes/classes/screens/admin/class-brackets-screen.php:2252
-#: includes/classes/screens/admin/class-brackets-screen.php:2527
-#: includes/classes/screens/admin/class-brackets-screen.php:2802
-#: includes/classes/screens/admin/class-brackets-screen.php:3077
-#: includes/classes/screens/admin/class-brackets-screen.php:3352
-msgid "Game Five"
-msgstr "Gioco cinque"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:763
-#: includes/classes/screens/admin/class-brackets-screen.php:930
-#: includes/classes/screens/admin/class-brackets-screen.php:1098
-#: includes/classes/screens/admin/class-brackets-screen.php:1266
-#: includes/classes/screens/admin/class-brackets-screen.php:1434
-#: includes/classes/screens/admin/class-brackets-screen.php:1602
-#: includes/classes/screens/admin/class-brackets-screen.php:2002
-#: includes/classes/screens/admin/class-brackets-screen.php:2276
-#: includes/classes/screens/admin/class-brackets-screen.php:2551
-#: includes/classes/screens/admin/class-brackets-screen.php:2826
-#: includes/classes/screens/admin/class-brackets-screen.php:3101
-#: includes/classes/screens/admin/class-brackets-screen.php:3376
-#, fuzzy
-msgid "Game Six"
-msgstr "Gioco sei"
-
-#: includes/classes/base/class-bracket.php:265
-#: includes/classes/screens/admin/class-brackets-screen.php:772
-#: includes/classes/screens/admin/class-brackets-screen.php:939
-#: includes/classes/screens/admin/class-brackets-screen.php:1107
-#: includes/classes/screens/admin/class-brackets-screen.php:1275
-#: includes/classes/screens/admin/class-brackets-screen.php:1443
-#: includes/classes/screens/admin/class-brackets-screen.php:1611
-#: includes/classes/screens/admin/class-brackets-screen.php:2026
-#: includes/classes/screens/admin/class-brackets-screen.php:2300
-#: includes/classes/screens/admin/class-brackets-screen.php:2575
-#: includes/classes/screens/admin/class-brackets-screen.php:2850
-#: includes/classes/screens/admin/class-brackets-screen.php:3125
-#: includes/classes/screens/admin/class-brackets-screen.php:3400
-#, fuzzy
-msgid "Game Seven"
-msgstr "Gioco Sette"
-
-#: includes/classes/base/class-bracket.php:266
-#, fuzzy
-msgid "First Round"
-msgstr "Primo turno"
-
-#: includes/classes/base/class-bracket.php:266
-#, fuzzy
-msgid "Second Round"
-msgstr "Secondo turno"
-
-#: includes/classes/base/class-bracket.php:266
-#, fuzzy
-msgid "Third Round"
-msgstr "Terzo turno"
-
-#: includes/classes/base/class-bracket.php:266
-#, fuzzy
-msgid "Fourth Round"
-msgstr "Quarto turno"
-
-#: includes/classes/base/class-bracket.php:266
-msgid "Fifth Round"
-msgstr "Quinto turno"
-
-#: includes/classes/base/class-bracket.php:266
-msgid "Sixth Round"
-msgstr "Sesto turno"
 
 #: includes/classes/base/class-display.php:264
 #: includes/classes/base/class-games.php:218
@@ -3262,7 +2681,6 @@ msgid "Recent Results"
 msgstr "Risultati recenti"
 
 #: includes/classes/base/class-games.php:222
-#: includes/classes/base/class-playoffs.php:113
 #: includes/classes/base/class-teams.php:250
 #: includes/classes/base/class-teams.php:353 includes/functions/window.php:170
 #, fuzzy
@@ -3335,7 +2753,7 @@ msgstr "Tackles for Loss"
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:1117
 #, fuzzy
 msgid "Field Goals Made"
-msgstr "Tiri di campo fatti"
+msgstr "Tiri in porta realizzati"
 
 #: includes/classes/base/class-games.php:411
 #: includes/classes/base/class-stats.php:56
@@ -3445,11 +2863,6 @@ msgstr "Agente libero"
 msgid "View Player"
 msgstr "Vedi giocatore"
 
-#: includes/classes/base/class-playoffs.php:83
-#, fuzzy
-msgid "View Matchup Details"
-msgstr "Visualizza i dettagli dell'incontro"
-
 #: includes/classes/base/class-scoreboard.php:65
 #, fuzzy
 msgid "Move Scoreboard Left"
@@ -3493,6 +2906,11 @@ msgstr ""
 msgid "Load Earlier Games"
 msgstr "Caricare i giochi precedenti"
 
+#: includes/classes/base/class-scoreboard.php:369
+#: includes/classes/base/class-scoreboard.php:745
+msgid "Week"
+msgstr "Settimana"
+
 #: includes/classes/base/class-scoreboard.php:391
 #: includes/classes/base/class-scoreboard.php:763
 #, fuzzy
@@ -3502,50 +2920,6 @@ msgstr "Carica i prossimi giochi"
 #: includes/classes/base/class-scoreboard.php:680
 msgid "Week "
 msgstr "Settimana "
-
-#: includes/classes/base/class-series.php:274
-#: includes/classes/base/class-series.php:276
-#: includes/classes/base/class-series.php:280
-#: includes/classes/base/class-series.php:282
-#: includes/classes/base/class-series.php:311
-#: includes/classes/base/class-series.php:313
-#: includes/classes/base/class-series.php:376
-#: includes/classes/base/class-series.php:380
-#: includes/classes/base/class-series.php:385
-#: includes/classes/base/class-series.php:389
-#: includes/classes/base/class-series.php:394
-#: includes/classes/base/class-series.php:398
-msgid "advances "
-msgstr "anticipi "
-
-#: includes/classes/base/class-series.php:296
-#: includes/classes/base/class-series.php:298
-#: includes/classes/base/class-series.php:354
-#: includes/classes/base/class-series.php:356
-#: includes/classes/base/class-series.php:367
-#: includes/classes/base/class-series.php:369
-msgid "leads "
-msgstr "contatti "
-
-#: includes/classes/base/class-series.php:300
-#: includes/classes/base/class-series.php:358
-#: includes/classes/base/class-series.php:371
-msgid "Series tied "
-msgstr "Serie legato "
-
-#: includes/classes/base/class-series.php:318
-#: includes/classes/base/class-series.php:324
-#: includes/classes/base/class-series.php:332
-#: includes/classes/base/class-series.php:338
-msgid "advances on PKs, "
-msgstr "anticipi su PKs, "
-
-#: includes/classes/base/class-series.php:320
-#: includes/classes/base/class-series.php:326
-#: includes/classes/base/class-series.php:334
-#: includes/classes/base/class-series.php:340
-msgid "advances on shootout, "
-msgstr "anticipi su sparatoria, "
 
 #: includes/classes/base/class-standings.php:91
 #: includes/classes/base/class-standings.php:664
@@ -3814,8 +3188,6 @@ msgstr "Gioco singolo"
 #: includes/classes/base/class-stats.php:2750
 #: includes/classes/base/class-stats.php:2776
 #: includes/classes/base/class-stats.php:2778
-#: includes/classes/screens/admin/class-brackets-screen.php:208
-#: includes/classes/screens/admin/class-brackets-screen.php:278
 msgid "Season"
 msgstr "Stagione"
 
@@ -3904,7 +3276,6 @@ msgid "Head Coach"
 msgstr "Capo allenatore"
 
 #: includes/classes/base/class-teams.php:148
-#: public/partials/widgets/team-schedule-widget.php:89
 msgid "View Team"
 msgstr "Visualizza team"
 
@@ -3919,18 +3290,6 @@ msgstr "Data"
 
 #: includes/classes/base/class-teams.php:227
 #: includes/classes/base/class-teams.php:333
-#: includes/classes/screens/admin/class-brackets-screen.php:644
-#: includes/classes/screens/admin/class-brackets-screen.php:811
-#: includes/classes/screens/admin/class-brackets-screen.php:979
-#: includes/classes/screens/admin/class-brackets-screen.php:1147
-#: includes/classes/screens/admin/class-brackets-screen.php:1315
-#: includes/classes/screens/admin/class-brackets-screen.php:1483
-#: includes/classes/screens/admin/class-brackets-screen.php:1809
-#: includes/classes/screens/admin/class-brackets-screen.php:2083
-#: includes/classes/screens/admin/class-brackets-screen.php:2358
-#: includes/classes/screens/admin/class-brackets-screen.php:2633
-#: includes/classes/screens/admin/class-brackets-screen.php:2908
-#: includes/classes/screens/admin/class-brackets-screen.php:3183
 msgid "Score"
 msgstr "Punteggio"
 
@@ -3972,7 +3331,6 @@ msgid "Roster"
 msgstr "Roster"
 
 #: includes/classes/base/class-teams.php:811
-#: public/partials/widgets/team-schedule-widget.php:62
 msgid "Schedule"
 msgstr "Programma"
 
@@ -3980,10 +3338,6 @@ msgstr "Programma"
 msgid "Team Info"
 msgstr "Info Squadra"
 
-#: includes/classes/rest-api/class-bracket-rest-api.php:150
-#: includes/classes/rest-api/class-bracket-rest-api.php:174
-#: includes/classes/rest-api/class-bracket-rest-api.php:196
-#: includes/classes/rest-api/class-bracket-rest-api.php:218
 #: includes/classes/rest-api/class-division-rest-api.php:154
 #: includes/classes/rest-api/class-division-rest-api.php:177
 #: includes/classes/rest-api/class-division-rest-api.php:199
@@ -3996,67 +3350,12 @@ msgstr "Info Squadra"
 #: includes/classes/rest-api/class-player-rest-api.php:167
 #: includes/classes/rest-api/class-player-rest-api.php:187
 #: includes/classes/rest-api/class-player-rest-api.php:207
-#: includes/classes/rest-api/class-series-rest-api.php:142
-#: includes/classes/rest-api/class-series-rest-api.php:163
-#: includes/classes/rest-api/class-series-rest-api.php:183
-#: includes/classes/rest-api/class-series-rest-api.php:203
 #: includes/classes/rest-api/class-team-rest-api.php:144
 #: includes/classes/rest-api/class-team-rest-api.php:165
 #: includes/classes/rest-api/class-team-rest-api.php:185
 #: includes/classes/rest-api/class-team-rest-api.php:205
 msgid "message"
 msgstr "messaggio"
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:411
-#, fuzzy
-msgid "The id for the bracket."
-msgstr "L'id per la staffa."
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:440
-#, fuzzy
-msgid ""
-"There was an error creating the bracket. Please check your data and try "
-"again."
-msgstr ""
-"C'è stato un errore nel creare la staffa. Per favore controlla i tuoi dati e "
-"riprova."
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:443
-#, fuzzy
-msgid ""
-"This bracket has already been created in the database. Maybe try bracket the "
-"series."
-msgstr ""
-"Questa parentesi è già stata creata nel database. Magari prova a mettere una "
-"parentesi alla serie."
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:467
-#, fuzzy
-msgid ""
-"There was an error updating the bracket. Please check your data and try "
-"again."
-msgstr ""
-"C'è stato un errore nell'aggiornamento della staffa. Per favore controlla i "
-"tuoi dati e riprova."
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:470
-#, fuzzy
-msgid "This bracket does not exist. Try adding the bracket first."
-msgstr "Questa staffa non esiste. Prova ad aggiungere prima la staffa."
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:495
-#, fuzzy
-msgid ""
-"There was an error deleting the bracket. Please check your data and try "
-"again."
-msgstr ""
-"C'è stato un errore nella cancellazione della parentesi. Per favore "
-"controlla i tuoi dati e riprova."
-
-#: includes/classes/rest-api/class-bracket-rest-api.php:500
-#, fuzzy
-msgid "This bracket does not exist."
-msgstr "Questa staffa non esiste."
 
 #: includes/classes/rest-api/class-division-rest-api.php:414
 #, fuzzy
@@ -4108,6 +3407,17 @@ msgstr ""
 #, fuzzy
 msgid "This division does not exist."
 msgstr "Questa divisione non esiste."
+
+#: includes/classes/rest-api/class-game-info-rest-api.php:152
+#: includes/classes/rest-api/class-game-info-rest-api.php:175
+#: includes/classes/rest-api/class-game-info-rest-api.php:197
+#: includes/classes/rest-api/class-game-info-rest-api.php:219
+#: includes/classes/rest-api/class-game-stats-rest-api.php:148
+#: includes/classes/rest-api/class-game-stats-rest-api.php:169
+#: includes/classes/rest-api/class-game-stats-rest-api.php:188
+#: includes/classes/rest-api/class-game-stats-rest-api.php:208
+msgid "Error"
+msgstr "Errore"
 
 #: includes/classes/rest-api/class-game-info-rest-api.php:444
 #: includes/classes/rest-api/class-game-rest-api.php:792
@@ -4200,8 +3510,8 @@ msgstr "Questo gioco non esiste. Prova prima ad aggiungere il gioco."
 msgid ""
 "There was an error deleting the game. Please check your data and try again."
 msgstr ""
-"Si è verificato un errore durante la cancellazione del gioco. Per favore "
-"controlla i tuoi dati e riprova."
+"Si è verificato un errore nell'eliminazione del gioco. Per favore controlla "
+"i tuoi dati e riprova."
 
 #: includes/classes/rest-api/class-game-rest-api.php:857
 #, fuzzy
@@ -4299,54 +3609,6 @@ msgstr ""
 msgid "This player does not exist."
 msgstr "Questo giocatore non esiste."
 
-#: includes/classes/rest-api/class-series-rest-api.php:433
-#, fuzzy
-msgid "The id for the series."
-msgstr "L'id della serie."
-
-#: includes/classes/rest-api/class-series-rest-api.php:453
-#, fuzzy
-msgid ""
-"There was an error creating the series. Please check your data and try again."
-msgstr ""
-"Si è verificato un errore nella creazione della serie. Per favore controlla "
-"i tuoi dati e riprova."
-
-#: includes/classes/rest-api/class-series-rest-api.php:456
-#, fuzzy
-msgid ""
-"This series has already been created in the database. Maybe try updating the "
-"series."
-msgstr ""
-"Questa serie è già stata creata nel database. Magari prova ad aggiornare la "
-"serie."
-
-#: includes/classes/rest-api/class-series-rest-api.php:472
-#, fuzzy
-msgid ""
-"There was an error updating the series. Please check your data and try again."
-msgstr ""
-"Si è verificato un errore nell'aggiornamento della serie. Per favore "
-"controlla i tuoi dati e riprova."
-
-#: includes/classes/rest-api/class-series-rest-api.php:475
-#, fuzzy
-msgid "This series does not exist. Try adding the series first."
-msgstr "Questa serie non esiste. Prova prima ad aggiungere la serie."
-
-#: includes/classes/rest-api/class-series-rest-api.php:492
-#, fuzzy
-msgid ""
-"There was an error deleting the series. Please check your data and try again."
-msgstr ""
-"Si è verificato un errore nell'eliminazione della serie. Per favore "
-"controlla i tuoi dati e riprova."
-
-#: includes/classes/rest-api/class-series-rest-api.php:497
-#, fuzzy
-msgid "This series does not exist."
-msgstr "Questa serie non esiste."
-
 #: includes/classes/rest-api/class-team-rest-api.php:555
 #, fuzzy
 msgid "The id for the team."
@@ -4395,395 +3657,10 @@ msgstr ""
 msgid "This team does not exist."
 msgstr "Questa squadra non esiste."
 
-#: includes/classes/screens/admin/class-brackets-screen.php:57
-msgid "Title"
-msgstr "Titolo"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:58
+#: includes/classes/screens/admin/class-divisions-screen.php:62
 #, fuzzy
-msgid "Edit Bracket Column"
-msgstr "Modifica colonna di parentesi"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:59
-#, fuzzy
-msgid "Delete Bracket Column"
-msgstr "Cancellare la colonna della staffa"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:67
-#: includes/classes/screens/admin/class-divisions-screen.php:105
-#: includes/classes/screens/admin/class-games-screen.php:80
-#: includes/classes/screens/admin/class-players-screen.php:77
-#: includes/classes/screens/admin/class-teams-screen.php:70
-msgid "Edit"
-msgstr "Modifica"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:68
-#: includes/classes/screens/admin/class-divisions-screen.php:106
-#: includes/classes/screens/admin/class-games-screen.php:81
-#: includes/classes/screens/admin/class-players-screen.php:78
-#: includes/classes/screens/admin/class-teams-screen.php:71
-msgid "Delete"
-msgstr "Elimina"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:75
-#, fuzzy
-msgid "There are no brackets in the database."
-msgstr "Non ci sono parentesi nel database."
-
-#: includes/classes/screens/admin/class-brackets-screen.php:177
-#: includes/classes/screens/admin/class-brackets-screen.php:247
-#, fuzzy
-msgid "Bracket Title:"
-msgstr "Titolo della staffa:"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:182
-#: includes/classes/screens/admin/class-brackets-screen.php:252
-#, fuzzy
-msgid "Number of Teams:"
-msgstr "Numero di squadre:"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:184
-#: includes/classes/screens/admin/class-brackets-screen.php:254
-#, fuzzy
-msgid "Number of Teams"
-msgstr "Numero di squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:185
-#: includes/classes/screens/admin/class-brackets-screen.php:255
-#, fuzzy
-msgid "2 Teams"
-msgstr "2 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:186
-#: includes/classes/screens/admin/class-brackets-screen.php:256
-#, fuzzy
-msgid "4 Teams"
-msgstr "4 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:187
-#: includes/classes/screens/admin/class-brackets-screen.php:257
-#, fuzzy
-msgid "6 Teams"
-msgstr "6 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:188
-#: includes/classes/screens/admin/class-brackets-screen.php:258
-#, fuzzy
-msgid "8 Teams"
-msgstr "8 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:189
-#: includes/classes/screens/admin/class-brackets-screen.php:259
-#, fuzzy
-msgid "12 Teams"
-msgstr "12 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:190
-#: includes/classes/screens/admin/class-brackets-screen.php:260
-#, fuzzy
-msgid "16 Teams"
-msgstr "16 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:191
-#: includes/classes/screens/admin/class-brackets-screen.php:261
-#, fuzzy
-msgid "32 Teams"
-msgstr "32 squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:192
-#: includes/classes/screens/admin/class-brackets-screen.php:262
-#, fuzzy
-msgid "64 Teams"
-msgstr "64 Squadre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:197
-#: includes/classes/screens/admin/class-brackets-screen.php:267
-#, fuzzy
-msgid "Bracket Format:"
-msgstr "Formato staffa:"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:199
-#: includes/classes/screens/admin/class-brackets-screen.php:269
-#: includes/classes/screens/admin/class-brackets-screen.php:697
-#: includes/classes/screens/admin/class-brackets-screen.php:864
-#: includes/classes/screens/admin/class-brackets-screen.php:1032
-#: includes/classes/screens/admin/class-brackets-screen.php:1200
-#: includes/classes/screens/admin/class-brackets-screen.php:1368
-#: includes/classes/screens/admin/class-brackets-screen.php:1536
-#: includes/classes/screens/admin/class-brackets-screen.php:1862
-#: includes/classes/screens/admin/class-brackets-screen.php:2136
-#: includes/classes/screens/admin/class-brackets-screen.php:2411
-#: includes/classes/screens/admin/class-brackets-screen.php:2686
-#: includes/classes/screens/admin/class-brackets-screen.php:2961
-#: includes/classes/screens/admin/class-brackets-screen.php:3236
-msgid "Format"
-msgstr "Formato"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:200
-#: includes/classes/screens/admin/class-brackets-screen.php:270
-#, fuzzy
-msgid "Single Elimination"
-msgstr "Eliminazione singola"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:201
-#: includes/classes/screens/admin/class-brackets-screen.php:271
-#, fuzzy
-msgid "Double Elimination"
-msgstr "Doppia eliminazione"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:206
-#: includes/classes/screens/admin/class-brackets-screen.php:276
-msgid "Season:"
-msgstr "Stagione:"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:221
-#: includes/classes/screens/admin/class-brackets-screen.php:291
-#, fuzzy
-msgid "Create Bracket"
-msgstr "Crea staffa"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:626
-#: includes/classes/screens/admin/class-brackets-screen.php:1788
-#, fuzzy
-msgid "First Round Matchups"
-msgstr "Incontri del primo turno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:642
-#: includes/classes/screens/admin/class-brackets-screen.php:809
-#: includes/classes/screens/admin/class-brackets-screen.php:977
-#: includes/classes/screens/admin/class-brackets-screen.php:1145
-#: includes/classes/screens/admin/class-brackets-screen.php:1313
-#: includes/classes/screens/admin/class-brackets-screen.php:1481
-#: includes/classes/screens/admin/class-brackets-screen.php:1807
-#: includes/classes/screens/admin/class-brackets-screen.php:2081
-#: includes/classes/screens/admin/class-brackets-screen.php:2356
-#: includes/classes/screens/admin/class-brackets-screen.php:2631
-#: includes/classes/screens/admin/class-brackets-screen.php:2906
-#: includes/classes/screens/admin/class-brackets-screen.php:3181
-msgid "Seed"
-msgstr "Seme"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:650
-#: includes/classes/screens/admin/class-brackets-screen.php:673
-#: includes/classes/screens/admin/class-brackets-screen.php:817
-#: includes/classes/screens/admin/class-brackets-screen.php:840
-#: includes/classes/screens/admin/class-brackets-screen.php:985
-#: includes/classes/screens/admin/class-brackets-screen.php:1008
-#: includes/classes/screens/admin/class-brackets-screen.php:1153
-#: includes/classes/screens/admin/class-brackets-screen.php:1176
-#: includes/classes/screens/admin/class-brackets-screen.php:1321
-#: includes/classes/screens/admin/class-brackets-screen.php:1344
-#: includes/classes/screens/admin/class-brackets-screen.php:1489
-#: includes/classes/screens/admin/class-brackets-screen.php:1512
-#: includes/classes/screens/admin/class-brackets-screen.php:1815
-#: includes/classes/screens/admin/class-brackets-screen.php:2089
-#: includes/classes/screens/admin/class-brackets-screen.php:2364
-#: includes/classes/screens/admin/class-brackets-screen.php:2639
-#: includes/classes/screens/admin/class-brackets-screen.php:2914
-#: includes/classes/screens/admin/class-brackets-screen.php:3189
-#, fuzzy
-msgid "Team One Seed"
-msgstr "Seme della squadra uno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:654
-#: includes/classes/screens/admin/class-brackets-screen.php:677
-#: includes/classes/screens/admin/class-brackets-screen.php:821
-#: includes/classes/screens/admin/class-brackets-screen.php:844
-#: includes/classes/screens/admin/class-brackets-screen.php:989
-#: includes/classes/screens/admin/class-brackets-screen.php:1012
-#: includes/classes/screens/admin/class-brackets-screen.php:1157
-#: includes/classes/screens/admin/class-brackets-screen.php:1180
-#: includes/classes/screens/admin/class-brackets-screen.php:1325
-#: includes/classes/screens/admin/class-brackets-screen.php:1348
-#: includes/classes/screens/admin/class-brackets-screen.php:1493
-#: includes/classes/screens/admin/class-brackets-screen.php:1516
-#: includes/classes/screens/admin/class-brackets-screen.php:1819
-#: includes/classes/screens/admin/class-brackets-screen.php:2093
-#: includes/classes/screens/admin/class-brackets-screen.php:2368
-#: includes/classes/screens/admin/class-brackets-screen.php:2643
-#: includes/classes/screens/admin/class-brackets-screen.php:2918
-#: includes/classes/screens/admin/class-brackets-screen.php:3193
-#, fuzzy
-msgid "Team One"
-msgstr "Squadra Uno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:699
-#: includes/classes/screens/admin/class-brackets-screen.php:866
-#: includes/classes/screens/admin/class-brackets-screen.php:1034
-#: includes/classes/screens/admin/class-brackets-screen.php:1202
-#: includes/classes/screens/admin/class-brackets-screen.php:1370
-#: includes/classes/screens/admin/class-brackets-screen.php:1538
-#: includes/classes/screens/admin/class-brackets-screen.php:1864
-#: includes/classes/screens/admin/class-brackets-screen.php:2138
-#: includes/classes/screens/admin/class-brackets-screen.php:2413
-#: includes/classes/screens/admin/class-brackets-screen.php:2688
-#: includes/classes/screens/admin/class-brackets-screen.php:2963
-#: includes/classes/screens/admin/class-brackets-screen.php:3238
-#, fuzzy
-msgid "Select a Format"
-msgstr "Selezionare un formato"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:700
-#: includes/classes/screens/admin/class-brackets-screen.php:867
-#: includes/classes/screens/admin/class-brackets-screen.php:1035
-#: includes/classes/screens/admin/class-brackets-screen.php:1203
-#: includes/classes/screens/admin/class-brackets-screen.php:1371
-#: includes/classes/screens/admin/class-brackets-screen.php:1539
-#: includes/classes/screens/admin/class-brackets-screen.php:1865
-#: includes/classes/screens/admin/class-brackets-screen.php:2139
-#: includes/classes/screens/admin/class-brackets-screen.php:2414
-#: includes/classes/screens/admin/class-brackets-screen.php:2689
-#: includes/classes/screens/admin/class-brackets-screen.php:2964
-#: includes/classes/screens/admin/class-brackets-screen.php:3239
-#, fuzzy
-msgid "One Game"
-msgstr "Un gioco"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:701
-#: includes/classes/screens/admin/class-brackets-screen.php:868
-#: includes/classes/screens/admin/class-brackets-screen.php:1036
-#: includes/classes/screens/admin/class-brackets-screen.php:1204
-#: includes/classes/screens/admin/class-brackets-screen.php:1372
-#: includes/classes/screens/admin/class-brackets-screen.php:1540
-#: includes/classes/screens/admin/class-brackets-screen.php:1866
-#: includes/classes/screens/admin/class-brackets-screen.php:2140
-#: includes/classes/screens/admin/class-brackets-screen.php:2415
-#: includes/classes/screens/admin/class-brackets-screen.php:2690
-#: includes/classes/screens/admin/class-brackets-screen.php:2965
-#: includes/classes/screens/admin/class-brackets-screen.php:3240
-#, fuzzy
-msgid "Two Games"
-msgstr "Due giochi"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:702
-#: includes/classes/screens/admin/class-brackets-screen.php:869
-#: includes/classes/screens/admin/class-brackets-screen.php:1037
-#: includes/classes/screens/admin/class-brackets-screen.php:1205
-#: includes/classes/screens/admin/class-brackets-screen.php:1373
-#: includes/classes/screens/admin/class-brackets-screen.php:1541
-#: includes/classes/screens/admin/class-brackets-screen.php:1867
-#: includes/classes/screens/admin/class-brackets-screen.php:2141
-#: includes/classes/screens/admin/class-brackets-screen.php:2416
-#: includes/classes/screens/admin/class-brackets-screen.php:2691
-#: includes/classes/screens/admin/class-brackets-screen.php:2966
-#: includes/classes/screens/admin/class-brackets-screen.php:3241
-#, fuzzy
-msgid "Best of Three"
-msgstr "Il meglio di tre"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:703
-#: includes/classes/screens/admin/class-brackets-screen.php:870
-#: includes/classes/screens/admin/class-brackets-screen.php:1038
-#: includes/classes/screens/admin/class-brackets-screen.php:1206
-#: includes/classes/screens/admin/class-brackets-screen.php:1374
-#: includes/classes/screens/admin/class-brackets-screen.php:1542
-#: includes/classes/screens/admin/class-brackets-screen.php:1868
-#: includes/classes/screens/admin/class-brackets-screen.php:2142
-#: includes/classes/screens/admin/class-brackets-screen.php:2417
-#: includes/classes/screens/admin/class-brackets-screen.php:2692
-#: includes/classes/screens/admin/class-brackets-screen.php:2967
-#: includes/classes/screens/admin/class-brackets-screen.php:3242
-#, fuzzy
-msgid "Best of Five"
-msgstr "Il meglio di cinque"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:704
-#: includes/classes/screens/admin/class-brackets-screen.php:871
-#: includes/classes/screens/admin/class-brackets-screen.php:1039
-#: includes/classes/screens/admin/class-brackets-screen.php:1207
-#: includes/classes/screens/admin/class-brackets-screen.php:1375
-#: includes/classes/screens/admin/class-brackets-screen.php:1543
-#: includes/classes/screens/admin/class-brackets-screen.php:1869
-#: includes/classes/screens/admin/class-brackets-screen.php:2143
-#: includes/classes/screens/admin/class-brackets-screen.php:2418
-#: includes/classes/screens/admin/class-brackets-screen.php:2693
-#: includes/classes/screens/admin/class-brackets-screen.php:2968
-#: includes/classes/screens/admin/class-brackets-screen.php:3243
-#, fuzzy
-msgid "Best of Seven"
-msgstr "Il meglio di sette"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:711
-#: includes/classes/screens/admin/class-brackets-screen.php:878
-#: includes/classes/screens/admin/class-brackets-screen.php:1046
-#: includes/classes/screens/admin/class-brackets-screen.php:1214
-#: includes/classes/screens/admin/class-brackets-screen.php:1382
-#: includes/classes/screens/admin/class-brackets-screen.php:1550
-#: includes/classes/screens/admin/class-brackets-screen.php:1876
-#: includes/classes/screens/admin/class-brackets-screen.php:2150
-#: includes/classes/screens/admin/class-brackets-screen.php:2425
-#: includes/classes/screens/admin/class-brackets-screen.php:2700
-#: includes/classes/screens/admin/class-brackets-screen.php:2975
-#: includes/classes/screens/admin/class-brackets-screen.php:3250
-#, fuzzy
-msgid "Game Number"
-msgstr "Numero del gioco"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:712
-#: includes/classes/screens/admin/class-brackets-screen.php:879
-#: includes/classes/screens/admin/class-brackets-screen.php:1047
-#: includes/classes/screens/admin/class-brackets-screen.php:1215
-#: includes/classes/screens/admin/class-brackets-screen.php:1383
-#: includes/classes/screens/admin/class-brackets-screen.php:1551
-#: includes/classes/screens/admin/class-brackets-screen.php:1877
-#: includes/classes/screens/admin/class-brackets-screen.php:2151
-#: includes/classes/screens/admin/class-brackets-screen.php:2426
-#: includes/classes/screens/admin/class-brackets-screen.php:2701
-#: includes/classes/screens/admin/class-brackets-screen.php:2976
-#: includes/classes/screens/admin/class-brackets-screen.php:3251
-#, fuzzy
-msgid "Selected Game"
-msgstr "Gioco selezionato"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:794
-#: includes/classes/screens/admin/class-brackets-screen.php:2063
-#, fuzzy
-msgid "Second Round Matchups"
-msgstr "Incontri del secondo turno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:962
-#: includes/classes/screens/admin/class-brackets-screen.php:2338
-#, fuzzy
-msgid "Third Round Matchups"
-msgstr "Incontri del terzo turno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:1130
-#: includes/classes/screens/admin/class-brackets-screen.php:2613
-#, fuzzy
-msgid "Fourth Round Matchups"
-msgstr "Incontri del quarto turno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:1298
-#: includes/classes/screens/admin/class-brackets-screen.php:2888
-#, fuzzy
-msgid "Fifth Round Matchups"
-msgstr "Incontri del quinto turno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:1466
-#: includes/classes/screens/admin/class-brackets-screen.php:3163
-#, fuzzy
-msgid "Sixth Round Matchups"
-msgstr "Incontri del sesto turno"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:1838
-#: includes/classes/screens/admin/class-brackets-screen.php:2112
-#: includes/classes/screens/admin/class-brackets-screen.php:2387
-#: includes/classes/screens/admin/class-brackets-screen.php:2662
-#: includes/classes/screens/admin/class-brackets-screen.php:2937
-#: includes/classes/screens/admin/class-brackets-screen.php:3212
-#, fuzzy
-msgid "Team Two Seed"
-msgstr "Squadra Due Semi"
-
-#: includes/classes/screens/admin/class-brackets-screen.php:1842
-#: includes/classes/screens/admin/class-brackets-screen.php:2116
-#: includes/classes/screens/admin/class-brackets-screen.php:2391
-#: includes/classes/screens/admin/class-brackets-screen.php:2666
-#: includes/classes/screens/admin/class-brackets-screen.php:2941
-#: includes/classes/screens/admin/class-brackets-screen.php:3216
-#, fuzzy
-msgid "Team Two"
-msgstr "Squadra Due"
+msgid "Divisions"
+msgstr "Divisioni"
 
 #: includes/classes/screens/admin/class-divisions-screen.php:93
 msgid "Name"
@@ -4805,6 +3682,20 @@ msgstr "Modifica colonna della squadra"
 msgid "Delete Team Column"
 msgstr "Cancellare la colonna Team"
 
+#: includes/classes/screens/admin/class-divisions-screen.php:105
+#: includes/classes/screens/admin/class-games-screen.php:80
+#: includes/classes/screens/admin/class-players-screen.php:77
+#: includes/classes/screens/admin/class-teams-screen.php:70
+msgid "Edit"
+msgstr "Modifica"
+
+#: includes/classes/screens/admin/class-divisions-screen.php:106
+#: includes/classes/screens/admin/class-games-screen.php:81
+#: includes/classes/screens/admin/class-players-screen.php:78
+#: includes/classes/screens/admin/class-teams-screen.php:71
+msgid "Delete"
+msgstr "Elimina"
+
 #: includes/classes/screens/admin/class-divisions-screen.php:113
 #, fuzzy
 msgid "There are no divisions in the database."
@@ -4825,16 +3716,12 @@ msgstr "Divisione/Conferenza:"
 #: includes/classes/screens/admin/class-divisions-screen.php:264
 #, fuzzy
 msgid "Conference:"
-msgstr "Conferenza"
+msgstr "Conferenza:"
 
 #: includes/classes/screens/admin/class-divisions-screen.php:215
 #: includes/classes/screens/admin/class-divisions-screen.php:277
 msgid "Color:"
 msgstr "Colore:"
-
-#: includes/classes/screens/admin/class-games-screen.php:60
-msgid "Date/Time"
-msgstr "Data/Ora"
 
 #: includes/classes/screens/admin/class-games-screen.php:61
 #: includes/classes/screens/admin/class-teams-screen.php:58
@@ -4880,7 +3767,7 @@ msgstr "Team:"
 #: includes/classes/screens/admin/class-games-screen.php:188
 #, fuzzy
 msgid "Away Team:"
-msgstr "Aversario"
+msgstr "Squadra in trasferta:"
 
 #: includes/classes/screens/admin/class-games-screen.php:209
 #, fuzzy
@@ -4908,73 +3795,6 @@ msgstr "Vai al numero di pagina:"
 #: includes/classes/screens/admin/class-teams-screen.php:261
 msgid "Go"
 msgstr "Vai"
-
-#: includes/classes/screens/admin/class-games-screen.php:448
-#: includes/classes/screens/admin/class-games-screen.php:610
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:74
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:195
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:1409
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:1534
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:76
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:204
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:978
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:1110
-#: includes/classes/sports/football/class-football-admin-game.php:76
-#: includes/classes/sports/football/class-football-admin-game.php:204
-#: includes/classes/sports/football/class-football-admin-game.php:2481
-#: includes/classes/sports/football/class-football-admin-game.php:2613
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:76
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:204
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:1299
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:1431
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:75
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:198
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:1114
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:1241
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:75
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:183
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:1203
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:1315
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:76
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:201
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:831
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:960
-msgid "Away Team"
-msgstr "Aversario"
-
-#: includes/classes/screens/admin/class-games-screen.php:464
-#: includes/classes/screens/admin/class-games-screen.php:626
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:81
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:196
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:1416
-#: includes/classes/sports/baseball/class-baseball-admin-game.php:1535
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:85
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:205
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:987
-#: includes/classes/sports/basketball/class-basketball-admin-game.php:1111
-#: includes/classes/sports/football/class-football-admin-game.php:85
-#: includes/classes/sports/football/class-football-admin-game.php:205
-#: includes/classes/sports/football/class-football-admin-game.php:2490
-#: includes/classes/sports/football/class-football-admin-game.php:2614
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:85
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:205
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:1308
-#: includes/classes/sports/hockey/class-hockey-admin-game.php:1432
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:83
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:199
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:1122
-#: includes/classes/sports/rugby/class-rugby-admin-game.php:1242
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:83
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:184
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:1211
-#: includes/classes/sports/soccer/class-soccer-admin-game.php:1316
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:85
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:202
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:840
-#: includes/classes/sports/volleyball/class-volleyball-admin-game.php:961
-#, fuzzy
-msgid "Home Team"
-msgstr "Squadra di casa"
 
 #: includes/classes/screens/admin/class-options-screen.php:163
 #, fuzzy
@@ -5163,7 +3983,7 @@ msgstr "Allenatore capo della squadra:"
 #: includes/classes/screens/admin/class-teams-screen.php:749
 #, fuzzy
 msgid "Conference/Division:"
-msgstr "Elenco conferenze/divisioni"
+msgstr "Conferenza/Divisione:"
 
 #: includes/classes/screens/admin/class-teams-screen.php:591
 #: includes/classes/screens/admin/class-teams-screen.php:751
@@ -6370,7 +5190,7 @@ msgstr "Ai pipistrelli"
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:2329
 #, fuzzy
 msgid "Hits "
-msgstr "Visite"
+msgstr "Colpisce"
 
 #: includes/classes/sports/baseball/class-baseball-admin-game.php:337
 #: includes/classes/sports/baseball/class-baseball-admin-game.php:372
@@ -6892,7 +5712,7 @@ msgstr "Batterie colpite"
 #: includes/classes/sports/baseball/class-baseball-admin-game.php:2473
 #, fuzzy
 msgid "Home Runs Allowed "
-msgstr "Home Runs consentiti"
+msgstr "Home Runs concessi"
 
 #: includes/classes/sports/baseball/class-baseball-admin-game.php:447
 #: includes/classes/sports/baseball/class-baseball-admin-game.php:492
@@ -7081,7 +5901,7 @@ msgstr "Punteggio per quarto"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:820
 #, fuzzy
 msgid "1"
-msgstr "Un commento su &ldquo;%1$s&rdquo;"
+msgstr "1"
 
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:66
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:968
@@ -7316,7 +6136,7 @@ msgstr "Tiri liberi realizzati dalla squadra ospite"
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:1139
 #, fuzzy
 msgid "Home Team Free Throws Made "
-msgstr "Tiri liberi realizzati dalla squadra di casa"
+msgstr "Squadra di casa Tiri liberi fatti"
 
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:236
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:1142
@@ -7713,7 +6533,7 @@ msgstr "Minuti giocati"
 #: includes/classes/sports/football/class-football-admin-game.php:4992
 #, fuzzy
 msgid "Field Goals Made "
-msgstr "Tiri di campo fatti"
+msgstr "Tiri in porta realizzati"
 
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:338
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:361
@@ -7937,7 +6757,7 @@ msgstr "Ruba"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:1385
 #, fuzzy
 msgid "Blocks "
-msgstr "Settori"
+msgstr "Blocchi"
 
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:349
 #: includes/classes/sports/basketball/class-basketball-admin-game.php:372
@@ -8004,7 +6824,7 @@ msgstr "Più/Meno"
 #: includes/classes/sports/basketball/class-basketball-games.php:235
 #, fuzzy
 msgid "Field Goals:"
-msgstr "Obiettivi del campo"
+msgstr "Field Goals:"
 
 #: includes/classes/sports/basketball/class-basketball-games.php:240
 #, fuzzy
@@ -8014,12 +6834,12 @@ msgstr "Percentuale di FG:"
 #: includes/classes/sports/basketball/class-basketball-games.php:245
 #, fuzzy
 msgid "3-point Field Goals:"
-msgstr "Tiri da 3 punti:"
+msgstr "tiri da 3 punti:"
 
 #: includes/classes/sports/basketball/class-basketball-games.php:250
 #, fuzzy
 msgid "3-point FG Percentage:"
-msgstr "Percentuale di FG da 3 punti:"
+msgstr "percentuale di FG da 3 punti:"
 
 #: includes/classes/sports/basketball/class-basketball-games.php:255
 #, fuzzy
@@ -8040,7 +6860,7 @@ msgstr "Rimbalzi Off/Def:"
 #: includes/classes/sports/volleyball/class-volleyball-games.php:261
 #, fuzzy
 msgid "Assists:"
-msgstr "Assist"
+msgstr "Assist:"
 
 #: includes/classes/sports/basketball/class-basketball-games.php:275
 #, fuzzy
@@ -8051,7 +6871,7 @@ msgstr "Rubate:"
 #: includes/classes/sports/volleyball/class-volleyball-games.php:251
 #, fuzzy
 msgid "Blocks:"
-msgstr "Settori"
+msgstr "Blocchi:"
 
 #: includes/classes/sports/basketball/class-basketball-games.php:285
 #, fuzzy
@@ -8392,7 +7212,7 @@ msgstr "La squadra di casa restituisce i calci in yard"
 #: includes/classes/sports/football/class-football-admin-game.php:2671
 #, fuzzy
 msgid "Away Team Penalties "
-msgstr "Penalità della squadra in trasferta"
+msgstr "Sanzioni per la squadra in trasferta"
 
 #: includes/classes/sports/football/class-football-admin-game.php:263
 #: includes/classes/sports/football/class-football-admin-game.php:2672
@@ -8669,7 +7489,7 @@ msgstr "Completamenti"
 #: includes/classes/sports/football/class-football-admin-game.php:4241
 #, fuzzy
 msgid "Attempts "
-msgstr "Numero di tentativi"
+msgstr "Tentativi"
 
 #: includes/classes/sports/football/class-football-admin-game.php:387
 #: includes/classes/sports/football/class-football-admin-game.php:426
@@ -8713,7 +7533,7 @@ msgstr "Numero di tentativi"
 #: includes/classes/sports/football/class-football-admin-game.php:5178
 #, fuzzy
 msgid "Yards "
-msgstr "iarde"
+msgstr "Yards"
 
 #: includes/classes/sports/football/class-football-admin-game.php:388
 #: includes/classes/sports/football/class-football-admin-game.php:427
@@ -8805,7 +7625,7 @@ msgstr "Rushing"
 #: includes/classes/sports/football/class-football-admin-game.php:4426
 #, fuzzy
 msgid "Rushes "
-msgstr "Giornalieri"
+msgstr "Accorrete"
 
 #: includes/classes/sports/football/class-football-admin-game.php:483
 #: includes/classes/sports/football/class-football-admin-game.php:522
@@ -8897,7 +7717,7 @@ msgstr "Blocchi di calcio"
 #: includes/classes/sports/football/class-football-admin-game.php:4804
 #, fuzzy
 msgid "Tackles "
-msgstr "Falli"
+msgstr "Tackles"
 
 #: includes/classes/sports/football/class-football-admin-game.php:677
 #: includes/classes/sports/football/class-football-admin-game.php:716
@@ -9009,7 +7829,7 @@ msgstr "Blocchi di calcio"
 #: includes/classes/sports/football/class-football-admin-game.php:4813
 #, fuzzy
 msgid "Return Yards "
-msgstr "Yard di ritorno"
+msgstr "Iarde di ritorno"
 
 #: includes/classes/sports/football/class-football-admin-game.php:752
 #: includes/classes/sports/football/class-football-admin-game.php:1343
@@ -9019,7 +7839,7 @@ msgstr "Yard di ritorno"
 #: includes/classes/sports/football/class-football-teams.php:452
 #, fuzzy
 msgid "Kicking"
-msgstr "Calciando"
+msgstr "Calciare"
 
 #: includes/classes/sports/football/class-football-admin-game.php:757
 #: includes/classes/sports/football/class-football-admin-game.php:1348
@@ -9107,7 +7927,7 @@ msgstr "Touchback"
 #: includes/classes/sports/football/class-football-admin-game.php:5177
 #, fuzzy
 msgid "Returns "
-msgstr "Resi"
+msgstr "Restituisce"
 
 #: includes/classes/sports/football/class-football-games.php:212
 msgid "First Quarter"
@@ -9212,7 +8032,7 @@ msgstr "ATT"
 #: includes/classes/sports/football/class-football-teams.php:513
 #, fuzzy
 msgid "YARDS"
-msgstr "iarde"
+msgstr "YARDS"
 
 #: includes/classes/sports/football/class-football-players.php:78
 #: includes/classes/sports/football/class-football-teams.php:210
@@ -9235,7 +8055,7 @@ msgstr "Statistiche di corsa in carriera"
 #: includes/classes/sports/football/class-football-teams.php:267
 #, fuzzy
 msgid "RUSHES"
-msgstr "Giornalieri"
+msgstr "RUSHES"
 
 #: includes/classes/sports/football/class-football-players.php:129
 #: includes/classes/sports/football/class-football-players.php:179
@@ -9274,7 +8094,7 @@ msgstr "CATCHES"
 #: includes/classes/sports/football/class-football-players.php:226
 #, fuzzy
 msgid "Career Defensive Stats"
-msgstr "Statistiche difensive della carriera"
+msgstr "Statistiche difensive in carriera"
 
 #: includes/classes/sports/football/class-football-players.php:227
 #: includes/classes/sports/football/class-football-teams.php:386
@@ -9715,7 +8535,7 @@ msgstr "Faceoffs vinti"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:2192
 #, fuzzy
 msgid "Goals "
-msgstr "Goal"
+msgstr "Obiettivi"
 
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:455
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:475
@@ -9753,7 +8573,7 @@ msgstr "Tiri in porta"
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:2327
 #, fuzzy
 msgid "Penalties "
-msgstr "Rigori"
+msgstr "Sanzioni"
 
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:457
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:477
@@ -9781,7 +8601,7 @@ msgstr "Minuti di penalità"
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:2330
 #, fuzzy
 msgid "Shifts "
-msgstr "Lavoro a turni"
+msgstr "Turni"
 
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:460
 #: includes/classes/sports/hockey/class-hockey-admin-game.php:480
@@ -10524,7 +9344,7 @@ msgstr "Conversioni"
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:1860
 #, fuzzy
 msgid "Penalty Goals "
-msgstr "Goal su rigore:"
+msgstr "Gol di rigore"
 
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:429
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:445
@@ -10580,7 +9400,7 @@ msgstr "Corsa a metri"
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:1865
 #, fuzzy
 msgid "Yellow Cards "
-msgstr "Cartellini Gialli:"
+msgstr "Carte gialle"
 
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:434
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:450
@@ -10594,7 +9414,7 @@ msgstr "Cartellini Gialli:"
 #: includes/classes/sports/rugby/class-rugby-admin-game.php:1866
 #, fuzzy
 msgid "Red Cards "
-msgstr "Cartellini Rossi:"
+msgstr "Carte rosse"
 
 #: includes/classes/sports/rugby/class-rugby-games.php:272
 msgid "Tries:"
@@ -10603,7 +9423,7 @@ msgstr "Tentativi:"
 #: includes/classes/sports/rugby/class-rugby-games.php:277
 #, fuzzy
 msgid "Conversions:"
-msgstr "Conversioni"
+msgstr "Conversioni:"
 
 #: includes/classes/sports/rugby/class-rugby-games.php:282
 msgid "Penalty Goals:"
@@ -10621,7 +9441,7 @@ msgstr "Contatori:"
 #: includes/classes/sports/rugby/class-rugby-games.php:297
 #, fuzzy
 msgid "Kicks From Hand:"
-msgstr "Calci da metri a mano"
+msgstr "Calci dalla mano:"
 
 #: includes/classes/sports/rugby/class-rugby-games.php:302
 msgid "Passes:"
@@ -10634,7 +9454,7 @@ msgstr "Corre:"
 #: includes/classes/sports/rugby/class-rugby-games.php:317
 #, fuzzy
 msgid "Clean Breaks:"
-msgstr "Pulire le Pause"
+msgstr "Pause pulite:"
 
 #: includes/classes/sports/rugby/class-rugby-games.php:322
 msgid "Defenders Beaten:"
@@ -10655,7 +9475,7 @@ msgstr "Mauls:"
 #: includes/classes/sports/rugby/class-rugby-games.php:342
 #, fuzzy
 msgid "Turnovers Conceded:"
-msgstr "Fatturato Concesso"
+msgstr "Turnover concessi:"
 
 #: includes/classes/sports/rugby/class-rugby-games.php:347
 msgid "Scrums:"
@@ -10664,7 +9484,7 @@ msgstr "Scrums:"
 #: includes/classes/sports/rugby/class-rugby-games.php:352
 #, fuzzy
 msgid "Lineouts:"
-msgstr "Lineouts"
+msgstr "Rimesse laterali:"
 
 #: includes/classes/sports/rugby/class-rugby-games.php:357
 msgid "Penalties Conceded:"
@@ -10724,7 +9544,7 @@ msgstr "Y"
 #: includes/classes/sports/rugby/class-rugby-teams.php:107
 #, fuzzy
 msgid "Kicks from Hand"
-msgstr "Calci da metri a mano"
+msgstr "Calci dalla mano"
 
 #: includes/classes/sports/rugby/class-rugby-teams.php:113
 msgid "Passes"
@@ -10835,13 +9655,13 @@ msgstr "La squadra di casa si salva"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1426
 #, fuzzy
 msgid "Primary Player"
-msgstr "Scegli un giocatore"
+msgstr "Giocatore primario"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:287
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1427
 #, fuzzy
 msgid "Secondary Player"
-msgstr "Colore secondario:"
+msgstr "Giocatore secondario"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:314
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:363
@@ -10873,7 +9693,7 @@ msgstr "Gol (PK)"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1693
 #, fuzzy
 msgid "Penalty Kick Awarded To"
-msgstr "Yard di penalità"
+msgstr "Calcio di rigore assegnato a"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:317
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:366
@@ -10881,9 +9701,8 @@ msgstr "Yard di penalità"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1630
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1694
 #, fuzzy
-#| msgid "Free Kick Conceded"
 msgid "Corner Kick Conceeded"
-msgstr "Rigori Concessi"
+msgstr "Calcio d'angolo respinto"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:318
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:367
@@ -10892,7 +9711,7 @@ msgstr "Rigori Concessi"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1695
 #, fuzzy
 msgid "Foul"
-msgstr "Falli"
+msgstr "Fallo"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:319
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:368
@@ -10901,7 +9720,7 @@ msgstr "Falli"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1696
 #, fuzzy
 msgid "Shot Missed"
-msgstr "Colpi affrontati"
+msgstr "Colpo mancato"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:320
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:369
@@ -10910,7 +9729,7 @@ msgstr "Colpi affrontati"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1697
 #, fuzzy
 msgid "Shot Saved"
-msgstr "Colpi salvati"
+msgstr "Colpo salvato"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:321
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:370
@@ -10919,7 +9738,7 @@ msgstr "Colpi salvati"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1698
 #, fuzzy
 msgid "Offside"
-msgstr "Offsides"
+msgstr "Fuori campo"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:328
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:329
@@ -10932,9 +9751,8 @@ msgstr "Offsides"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1705
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1706
 #, fuzzy
-#| msgid "Score"
 msgid "Scorer"
-msgstr "Punteggio"
+msgstr "Scorer"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:330
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:379
@@ -10943,7 +9761,7 @@ msgstr "Punteggio"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1707
 #, fuzzy
 msgid "Player Awarded PK"
-msgstr "Pagina del giocatore"
+msgstr "Giocatore Premiato PK"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:331
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:380
@@ -10961,7 +9779,7 @@ msgstr "Giocatore che ha rifiutato il calcio d'angolo"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1709
 #, fuzzy
 msgid "Fouling Player"
-msgstr "Gioco di punteggio"
+msgstr "Fallo del giocatore"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:333
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:334
@@ -10975,7 +9793,7 @@ msgstr "Gioco di punteggio"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1711
 #, fuzzy
 msgid "Shooting Player"
-msgstr "Gioco di punteggio"
+msgstr "Giocatore di tiro"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:335
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:384
@@ -10984,7 +9802,7 @@ msgstr "Gioco di punteggio"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1712
 #, fuzzy
 msgid "Player Offside"
-msgstr "Fuorigioco della squadra in trasferta"
+msgstr "Giocatore in fuorigioco"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:336
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:385
@@ -10993,7 +9811,7 @@ msgstr "Fuorigioco della squadra in trasferta"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1713
 #, fuzzy
 msgid "Player Given Card"
-msgstr "Compleanno del giocatore:"
+msgstr "Carta data al giocatore"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:343
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:392
@@ -11020,7 +9838,7 @@ msgstr "Giocatore che ha rinunciato al PK"
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:1722
 #, fuzzy
 msgid "Fouled Player"
-msgstr "Aggiungi giocatore"
+msgstr "Giocatore con fallo"
 
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:346
 #: includes/classes/sports/soccer/class-soccer-admin-game.php:395
@@ -11065,7 +9883,7 @@ msgstr "Ancorine"
 #: includes/classes/sports/soccer/class-soccer-games.php:508
 #, fuzzy
 msgid "Penalty Kick won by"
-msgstr "Minuti di penalità"
+msgstr "Calcio di rigore vinto da"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:228
 #: includes/classes/sports/soccer/class-soccer-games.php:510
@@ -11078,26 +9896,25 @@ msgstr "ceduto da"
 #: includes/classes/sports/soccer/class-soccer-games.php:512
 #: includes/classes/sports/soccer/class-soccer-games.php:514
 #, fuzzy
-#| msgid "Free Kick Conceded"
 msgid "Corner kick conceeded by"
-msgstr "Rigori Concessi"
+msgstr "Calcio d'angolo concesso da"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:234
 #: includes/classes/sports/soccer/class-soccer-games.php:516
 msgid "on "
-msgstr "Pubblicato il "
+msgstr "su"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:236
 #: includes/classes/sports/soccer/class-soccer-games.php:518
 #, fuzzy
 msgid "Shot missed by"
-msgstr "Colpi affrontati"
+msgstr "Colpo mancato da"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:238
 #: includes/classes/sports/soccer/class-soccer-games.php:520
 #, fuzzy
 msgid "Shot saved: "
-msgstr "Colpi salvati"
+msgstr "Colpo salvato"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:240
 #: includes/classes/sports/soccer/class-soccer-games.php:522
@@ -11108,19 +9925,19 @@ msgstr "di "
 #: includes/classes/sports/soccer/class-soccer-games.php:524
 #, fuzzy
 msgid "Offside on"
-msgstr "Offsides"
+msgstr "Fuorigioco su"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:244
 #: includes/classes/sports/soccer/class-soccer-games.php:526
 #, fuzzy
 msgid "Yellow card to"
-msgstr "Cartonaș Galben"
+msgstr "Cartellino giallo a"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:246
 #: includes/classes/sports/soccer/class-soccer-games.php:528
 #, fuzzy
 msgid "Red card to"
-msgstr "Cartonaș Roșu"
+msgstr "Cartellino rosso a"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:297
 #, fuzzy
@@ -11135,7 +9952,7 @@ msgstr "Tiri in porta:"
 #: includes/classes/sports/soccer/class-soccer-games.php:307
 #, fuzzy
 msgid "Corners:"
-msgstr "Angoli"
+msgstr "Angoli:"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:312
 #, fuzzy
@@ -11150,12 +9967,12 @@ msgstr "Salva:"
 #: includes/classes/sports/soccer/class-soccer-games.php:327
 #, fuzzy
 msgid "Yellow cards:"
-msgstr "Cartellini Gialli:"
+msgstr "Cartellini gialli:"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:332
 #, fuzzy
 msgid "Red cards:"
-msgstr "Cartellini Rossi:"
+msgstr "Cartellini rossi:"
 
 #: includes/classes/sports/soccer/class-soccer-games.php:433
 #, fuzzy
@@ -11195,7 +10012,7 @@ msgstr "Squadra in trasferta Punteggio del secondo set"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:834
 #, fuzzy
 msgid "Away Team Third Set Score "
-msgstr "Punteggio del terzo set della squadra in trasferta"
+msgstr "Punteggio del terzo set della squadra ospite"
 
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:80
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:835
@@ -11368,7 +10185,7 @@ msgstr "Uccide"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:1378
 #, fuzzy
 msgid "Hitting Errors "
-msgstr "Errori:"
+msgstr "Errori di battuta"
 
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:289
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:310
@@ -11382,7 +10199,7 @@ msgstr "Errori:"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:1379
 #, fuzzy
 msgid "Attacks "
-msgstr "Attacchi:"
+msgstr "Attacchi"
 
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:290
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:311
@@ -11424,7 +10241,7 @@ msgstr "Impostare gli errori"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:1382
 #, fuzzy
 msgid "Serves "
-msgstr "Porzioni"
+msgstr "Serve"
 
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:293
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:314
@@ -11452,7 +10269,7 @@ msgstr "Errori di servizio"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:1384
 #, fuzzy
 msgid "Aces "
-msgstr "Aces:"
+msgstr "Assi"
 
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:296
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:317
@@ -11494,7 +10311,7 @@ msgstr "Errori di blocco"
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:1388
 #, fuzzy
 msgid "Digs "
-msgstr "Scava:"
+msgstr "Scavi"
 
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:299
 #: includes/classes/sports/volleyball/class-volleyball-admin-game.php:320
@@ -11587,7 +10404,7 @@ msgstr "ACE"
 #: includes/classes/sports/volleyball/class-volleyball-players.php:89
 #: includes/classes/sports/volleyball/class-volleyball-teams.php:170
 msgid "BA"
-msgstr "Laurea in arte"
+msgstr "BA"
 
 #: includes/classes/sports/volleyball/class-volleyball-players.php:90
 #: includes/classes/sports/volleyball/class-volleyball-teams.php:171
@@ -11633,6 +10450,11 @@ msgstr "Elenco conferenze/divisioni"
 #, fuzzy
 msgid "Scoreboard"
 msgstr "Tabellone segnapunti"
+
+#: includes/functions/window.php:163
+#, fuzzy
+msgid "Playoff Brackets"
+msgstr "Fasce dei playoff"
 
 #: includes/functions/window.php:164
 #, fuzzy
@@ -11702,6 +10524,11 @@ msgstr "Seleziona la prima squadra"
 #, fuzzy
 msgid "Select Second Team"
 msgstr "Seleziona la seconda squadra"
+
+#: includes/functions/window.php:266
+#, fuzzy
+msgid "Number of Recent Games"
+msgstr "Numero di partite recenti"
 
 #: includes/functions/window.php:299
 msgid "Cancel"
@@ -11780,18 +10607,14 @@ msgstr "Pagina Statistiche:"
 msgid "Faceoff WIns"
 msgstr "WIns Faceoff"
 
-#: public/partials/widgets/team-schedule-widget.php:39
-msgid "Display the season schedule for a team."
-msgstr "Mostra il calendario delle stagioni per una squadra."
-
-#: public/partials/widgets/team-schedule-widget.php:114
-msgid "Team Schedule to Show:"
-msgstr "Programma della squadra da mostrare:"
+#. Plugin Name of the plugin/theme
+msgid "Sports Bench Lite"
+msgstr "Sports Bench Lite"
 
 #. Plugin URI of the plugin/theme
 #, fuzzy
 msgid "https://sportsbenchwp.com"
-msgstr "https://sportsbencwp.com"
+msgstr "https://sportsbenchwp.com"
 
 #. Description of the plugin/theme
 #, fuzzy
@@ -11814,17 +10637,17 @@ msgstr ""
 "internet può essere una seccatura. Fortunatamente, il plugin Sports Bench ti "
 "toglie tutto il duro lavoro. Dopo una semplice configurazione di cinque "
 "minuti (o meno), sei pronto per iniziare a inserire squadre, giocatori, "
-"partite e persino la divisione e poi guardare il plugin fare tutto il resto "
-"per te. Sports Bench si occupa di accumulare le statistiche inserite, così "
-"come le classifiche e i calendari. Il plugin ha la capacità di visualizzare "
-"la classifica, un tabellone di tutte le partite per la stagione corrente e "
-"classifiche statistiche. Mostra le statistiche di gioco accanto al riassunto "
-"di una partita. Crea facilmente pagine per squadre e giocatori. E gli "
-"shortcodes ti permettono di mostrare informazioni su partite, giocatori o "
-"squadre in qualsiasi post. E se usi il tema Sports Bench, tutto questo viene "
-"fornito con un minimo lavoro di codifica front-end per te. Hai già "
-"abbastanza di cui preoccuparti nella gestione del tuo campionato sportivo; "
-"lascia che ci prendiamo cura della parte difficile."
+"partite e persino la divisione e poi guardare il plugin fare tutte le altre "
+"cose per te. Sports Bench si occupa di accumulare le statistiche inserite, "
+"così come le classifiche e i calendari. Il plugin ha la capacità di "
+"visualizzare la classifica, un tabellone di tutte le partite per la stagione "
+"corrente e classifiche statistiche. Mostra le statistiche di gioco accanto "
+"al riassunto di una partita. Crea facilmente pagine per squadre e giocatori. "
+"E gli shortcodes ti permettono di mostrare informazioni su partite, "
+"giocatori o squadre in qualsiasi post. E se usi il tema Sports Bench, tutto "
+"questo viene fornito con un minimo lavoro di codifica front-end per te. Hai "
+"già abbastanza di cui preoccuparti nella gestione del tuo campionato "
+"sportivo; lascia che ci prendiamo cura della parte difficile."
 
 #. Author of the plugin/theme
 #, fuzzy
@@ -11835,15 +10658,3 @@ msgstr "Jacob Martella Sviluppo Web"
 #, fuzzy
 msgid "https://jacobmartella.com"
 msgstr "https://jacobmartella.com"
-
-#, fuzzy
-#~ msgid "Match Event Assists "
-#~ msgstr "Assist agli eventi della partita"
-
-#, fuzzy
-#~ msgid "Use default font (Josefin Sans):"
-#~ msgstr "Usa il carattere predefinito (Josefin Sans):"
-
-#, fuzzy
-#~ msgid "How To's"
-#~ msgstr "Come fare"
