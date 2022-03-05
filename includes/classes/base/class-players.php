@@ -368,7 +368,7 @@ class Players {
 		check_ajax_referer( 'sports-bench-load-player-list-nonce', 'nonce' );
 
 		$html        = '';
-		$team_id     = $_POST['team_id'];
+		$team_id     = wp_filter_nohtml_kses( $_POST['team_id'] );
 		$team        = new Team( (int) $team_id );
 		$players     = $team->get_roster();
 		$num_players = count( $players );

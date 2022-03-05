@@ -210,7 +210,7 @@ class Sports_Bench_Setup {
 				$post_link                 = get_permalink( $post_id );
 				$table                     = $wpdb->prefix . 'sb_games';
 				$post_link['game_preview'] = $post_link;
-				$game_id                   = $_POST['sports_bench_game'];
+				$game_id                   = wp_filter_nohtml_kses( $_POST['sports_bench_game'] );
 				$wpdb->update( $table, $post_link, [ 'game_id' => $game_id ] );
 			}
 		} elseif ( isset( $_POST['sports_bench_game_preview_recap'] ) && 'recap' === $_POST['sports_bench_game_preview_recap'] ) {
@@ -226,7 +226,7 @@ class Sports_Bench_Setup {
 				$post_link               = get_permalink( $post_id );
 				$table                   = $wpdb->prefix . 'sb_games';
 				$post_link['game_recap'] = $post_link;
-				$game_id                 = $_POST['sports_bench_game'];
+				$game_id                 = wp_filter_nohtml_kses( $_POST['sports_bench_game'] );
 				$wpdb->update( $table, $post_link, [ 'game_id' => $game_id ] );
 			}
 		}

@@ -535,7 +535,7 @@ class Sports_Bench_Admin {
 				$post_link            = get_permalink( $post_id );
 				$table                = $wpdb->prefix . 'sb_games';
 				$link['game_preview'] = $post_link;
-				$game_id              = $_POST['sports_bench_game'];
+				$game_id              = wp_filter_nohtml_kses( $_POST['sports_bench_game'] );
 				$wpdb->update( $table, $link, ['game_id' => $game_id ] );
 			}
 		} elseif ( isset( $_POST['sports_bench_game_preview_recap'] ) and $_POST['sports_bench_game_preview_recap'] == 'recap' ) {
@@ -550,7 +550,7 @@ class Sports_Bench_Admin {
 				$post_link          = get_permalink( $post_id );
 				$table              = $wpdb->prefix . 'sb_games';
 				$link['game_recap'] = $post_link;
-				$game_id            = $_POST['sports_bench_game'];
+				$game_id            = wp_filter_nohtml_kses( $_POST['sports_bench_game'] );
 				$wpdb->update( $table, $link, ['game_id' => $game_id ] );
 			}
 		} else {

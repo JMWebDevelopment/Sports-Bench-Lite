@@ -618,9 +618,9 @@ class Scoreboard {
 	 */
 	public function widget_load_games() {
 		check_ajax_referer( 'sports-bench-load-games', 'nonce' );
-		$weekdate  = $_POST['weekdate'];
-		$current   = $_POST['current'];
-		$direction = $_POST['direction'];
+		$weekdate  = wp_filter_nohtml_kses( $_POST['weekdate'] );
+		$current   = wp_filter_nohtml_kses( $_POST['current'] );
+		$direction = wp_filter_nohtml_kses( $_POST['direction'] );
 
 		$data  = $this->load_new_games( $weekdate, $current, $direction );
 		$games = $data[0];
@@ -842,9 +842,9 @@ class Scoreboard {
 	 */
 	public function page_load_games() {
 		check_ajax_referer( 'sports-bench-load-games', 'nonce' );
-		$weekdate  = $_POST['weekdate'];
-		$current   = $_POST['current'];
-		$direction = $_POST['direction'];
+		$weekdate  = wp_filter_nohtml_kses( $_POST['weekdate'] );
+		$current   = wp_filter_nohtml_kses( $_POST['current'] );
+		$direction = wp_filter_nohtml_kses( $_POST['direction'] );
 
 		$data  = $this->load_new_games( $weekdate, $current, $direction );
 		$games = $data[0];

@@ -129,11 +129,11 @@ class SoccerPlayers extends Players {
 	 */
 	public function load_seasons() {
 		check_ajax_referer( 'sports-bench-load-seasons', 'nonce' );
-		$team    = $_POST['team'];
+		$team    = wp_filter_nohtml_kses( $_POST['team'] );
 		$team    = new Team( $team );
 		$team_id = $team->get_team_id();
-		$player  = (int) $_POST['player'];
-		$season  = $_POST['season'];
+		$player  = (int) wp_filter_nohtml_kses( $_POST['player'] );
+		$season  = wp_filter_nohtml_kses( $_POST['season'] );
 
 		ob_start();
 
@@ -168,7 +168,7 @@ class SoccerPlayers extends Players {
 			 * @param array  $POST         The incoming information from the AJAX call.
 			 * @return string              The HTML for the table.
 			 */
-			echo apply_filters( 'sports_bench_player_game_stats_table', '', $season, $team_id, 'soccer', $_POST );
+			echo apply_filters( 'sports_bench_player_game_stats_table', '', $season, $team_id, 'soccer', array_map_r('strip_tags', $_POST ) );
 		}
 
 		$data = ob_get_clean();

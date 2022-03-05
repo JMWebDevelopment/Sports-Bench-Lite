@@ -2098,8 +2098,8 @@ class Stats {
 	 */
 	public function sports_bench_statistics() {
 		check_ajax_referer( 'sports-bench-statistics', 'nonce' );
-		$stat   = $_POST['stat'];
-		$offset = $_POST['offset'];
+		$stat   = wp_filter_nohtml_kses( $_POST['stat'] );
+		$offset = wp_filter_nohtml_kses( $_POST['offset'] );
 		$season = get_option( 'sports-bench-season-year' );
 
 		$data = $this->get_more_stats_leaders( $stat, $season, $offset );
@@ -2224,15 +2224,15 @@ class Stats {
 	*/
 	public function search_stats() {
 		check_ajax_referer( 'sports-bench-search-stats', 'nonce' );
-		$first_name = $_POST['player_first_name'];
-		$last_name  = $_POST['player_last_name'];
-		$stat       = $_POST['stat'];
-		$stat_type  = $_POST['stat_type'];
-		$stat_total = $_POST['stat_total'];
-		$compare    = $_POST['compare'];
-		$offset     = $_POST['offset'];
-		$team_id    = $_POST['team'];
-		$season     = $_POST['season'];
+		$first_name = wp_filter_nohtml_kses( $_POST['player_first_name'] );
+		$last_name  = wp_filter_nohtml_kses( $_POST['player_last_name'] );
+		$stat       = wp_filter_nohtml_kses( $_POST['stat'] );
+		$stat_type  = wp_filter_nohtml_kses( $_POST['stat_type'] );
+		$stat_total = wp_filter_nohtml_kses( $_POST['stat_total'] );
+		$compare    = wp_filter_nohtml_kses( $_POST['compare'] );
+		$offset     = wp_filter_nohtml_kses( $_POST['offset'] );
+		$team_id    = wp_filter_nohtml_kses( $_POST['team'] );
+		$season     = wp_filter_nohtml_kses( $_POST['season'] );
 
 		/**
 		 * Determines how many players to get for the stat.
