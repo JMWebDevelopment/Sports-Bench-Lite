@@ -52,10 +52,10 @@ class Sports_Bench_Standings_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract( $args );
 
-		echo $args['before_widget'];
+		echo wp_kses_post( $args['before_widget'] );
 
 		if ( !empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		if ( 'conference' === $instance['division-conference'] ) {
@@ -162,7 +162,7 @@ class Sports_Bench_Standings_Widget extends WP_Widget {
 			echo '<a class="button standings-page-button" href="' . esc_attr( get_page_link( $instance['standings_page'] ) ) . '">' . esc_html__( 'View Full Standings', 'sports-bench' ) . '</a>';
 		}
 
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['after_widget'] );
 
 	}
 

@@ -148,7 +148,7 @@ class TeamsScreen extends Screen {
 					}
 					?>
 					<label for="team_search"><?php esc_html_e( 'Team Name:', 'sports-bench' ); ?></label>
-					<input type="text" class="search-input" id="team_search" name="team_search" placeholder="<?php esc_html_e( 'Team', 'sports-bench' ); ?>" value="<?php echo $team_search; ?>" />
+					<input type="text" class="search-input" id="team_search" name="team_search" placeholder="<?php esc_html_e( 'Team', 'sports-bench' ); ?>" value="<?php echo esc_attr( $team_search ); ?>" />
 				</div>
 
 				<div class="search-column">

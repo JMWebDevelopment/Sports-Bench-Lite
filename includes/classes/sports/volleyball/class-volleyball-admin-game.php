@@ -1052,7 +1052,7 @@ class VolleyballAdminGame {
 			$border_style = '';
 		}
 		?>
-		<div id="away-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="away-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<table id="away-player-stats" class="form-table volleyball-player-stats">
 				<thead>
@@ -1248,7 +1248,7 @@ class VolleyballAdminGame {
 			$border_style = '';
 		}
 		?>
-		<div id="home-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="home-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<table id="home-player-stats" class="form-table volleyball-player-stats">
 				<thead>

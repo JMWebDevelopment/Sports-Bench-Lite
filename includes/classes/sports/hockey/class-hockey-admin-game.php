@@ -1878,7 +1878,7 @@ class HockeyAdminGame {
 			$border_style = '';
 		}
 		?>
-		<div id="away-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="away-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<h3><?php esc_html_e( 'Players', 'sports-bench' ); ?></h3>
 			<table id="away-player-stats" class="form-table hockey-player-stats">
@@ -2201,7 +2201,7 @@ class HockeyAdminGame {
 			$border_style = '';
 		}
 		?>
-		<div id="home-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="home-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<h3><?php esc_html_e( 'Players', 'sports-bench' ); ?></h3>
 			<table id="home-player-stats" class="form-table hockey-player-stats">

@@ -1724,7 +1724,7 @@ class BaseballAdminGame {
 			$player_ids[] = $player['player_id'];
 		}
 		?>
-		<div id="away-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="away-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<h3><?php esc_html_e( 'Batting', 'sports-bench' ); ?></h3>
 			<table id="away-player-stats" class="form-table baseball-player-stats">
@@ -2172,7 +2172,7 @@ class BaseballAdminGame {
 			$player_ids[] = $player['player_id'];
 		}
 		?>
-		<div id="home-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="home-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<h3><?php esc_html_e( 'Batting', 'sports-bench' ); ?></h3>
 			<table id="home-player-stats" class="form-table baseball-player-stats">

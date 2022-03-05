@@ -53,10 +53,10 @@ class Sports_Bench_Stats_Widget extends WP_Widget {
 		$stats = new Stats();
 		extract( $args );
 
-		echo $args['before_widget'];
+		echo wp_kses_post( $args['before_widget'] );
 
 		if ( !empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		/**
@@ -69,8 +69,8 @@ class Sports_Bench_Stats_Widget extends WP_Widget {
 		 * @return string               HTML to be shown before the widget container.
 		 */
 		echo apply_filters( 'sports_bench_before_stat_widget', '', $instance['stat'] );
-		echo '<p>' . $stats->get_stat_title( $instance['stat'] ) . '</p>';
-		echo $stats->get_stats_leaders( $instance['stat'], get_option( 'sports-bench-season-year' ) );
+		echo wp_kses_post( '<p>' . $stats->get_stat_title( $instance['stat'] ) . '</p>' );
+		echo wp_kses_post( $stats->get_stats_leaders( $instance['stat'], get_option( 'sports-bench-season-year' ) ) );
 
 		/**
 		 * Adds in HTML to be shown after the stat widget container.
@@ -87,7 +87,7 @@ class Sports_Bench_Stats_Widget extends WP_Widget {
 			echo '<a class="button stats-page-button" href="' . esc_attr( get_page_link( $instance['stats_page'] ) ) . '">' . esc_html__( 'View Full Stats', 'sports-bench' ) . '</a>';
 		}
 
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['after_widget'] );
 
 	}
 

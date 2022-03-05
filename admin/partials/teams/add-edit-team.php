@@ -24,7 +24,7 @@ $screen = new TeamsScreen();
 
 ?>
 
-<?php echo $screen->display_header(); ?>
+<?php echo wp_kses_post( $screen->display_header() ); ?>
 
 <div class="wrap">
 

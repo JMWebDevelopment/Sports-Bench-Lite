@@ -164,7 +164,7 @@ class PlayersScreen extends Screen {
 					}
 					?>
 					<label for="player_first_name"><?php esc_html_e( 'First Name:', 'sports-bench' ); ?></label>
-					<input type="text" class="search-input" id="player_first_name" name="player_first_name" placeholder="<?php esc_html_e( 'First Name', 'sports-bench' ); ?>" value="<?php echo $player_first_name; ?>" />
+					<input type="text" class="search-input" id="player_first_name" name="player_first_name" placeholder="<?php esc_html_e( 'First Name', 'sports-bench' ); ?>" value="<?php echo esc_attr( $player_first_name ); ?>" />
 				</div>
 
 				<div class="search-column">
@@ -176,7 +176,7 @@ class PlayersScreen extends Screen {
 					}
 					?>
 					<label for="player_last_name"><?php esc_html_e( 'Last Name:', 'sports-bench' ); ?></label>
-					<input type="text" class="search-input" id="player_last_name" name="player_last_name" placeholder="<?php esc_html_e( 'Last Name', 'sports-bench' ); ?>" value="<?php echo $player_last_name; ?>" />
+					<input type="text" class="search-input" id="player_last_name" name="player_last_name" placeholder="<?php esc_html_e( 'Last Name', 'sports-bench' ); ?>" value="<?php echo esc_attr( $player_last_name ); ?>" />
 				</div>
 
 				<div class="search-column">

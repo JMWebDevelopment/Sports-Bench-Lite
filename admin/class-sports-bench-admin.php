@@ -1962,10 +1962,10 @@ class Sports_Bench_Admin {
 						?>
 						<tr>
 							<td><?php echo date( get_option( 'time_format' ), $date ) . '<br />' . date( get_option( 'date_format' ), $date ); ?></td>
-							<td><?php echo $away_team->get_team_photo( 'team-logo' ); ?></td>
-							<td><span class="team-name"><?php echo $away_team->get_team_location(); ?></span></td>
-							<td><?php echo $home_team->get_team_photo( 'team-logo' ); ?></td>
-							<td><span class="team-name"><?php echo $home_team->get_team_location(); ?></span></td>
+							<td><?php echo wp_kses_post( $away_team->get_team_photo( 'team-logo' ) ); ?></td>
+							<td><span class="team-name"><?php echo wp_kses_post( $away_team->get_team_location() ); ?></span></td>
+							<td><?php echo wp_kses_post( $home_team->get_team_photo( 'team-logo' ) ); ?></td>
+							<td><span class="team-name"><?php echo wp_kses_post( $home_team->get_team_location() ); ?></span></td>
 							<td><a href="<?php echo sprintf( '?page=sports-bench-edit-game-form&game_id=%s', $game->get_game_id() ); ?>" class="button edit"><?php esc_html_e( 'Edit Game', 'sports-bench' ) ?></a></td>
 						</tr>
 						<?php
@@ -2021,10 +2021,10 @@ class Sports_Bench_Admin {
 						?>
 						<tr>
 							<td><?php echo date( get_option( 'time_format' ), $date ) . '<br />' . date( get_option( 'date_format' ), $date ); ?></td>
-							<td><?php echo $away_team->get_team_photo( 'team-logo' ); ?></td>
-							<td><span class="team-name"><?php echo $away_team->get_team_location(); ?> &mdash; <?php echo $away_score; ?></span></td>
-							<td><?php echo $home_team->get_team_photo( 'team-logo' ); ?></td>
-							<td><span class="team-name"><?php echo $home_team->get_team_location(); ?></span> &mdash; <?php echo $home_score; ?></td>
+							<td><?php echo wp_kses_post( $away_team->get_team_photo( 'team-logo' ) ); ?></td>
+							<td><span class="team-name"><?php echo wp_kses_post( $away_team->get_team_location() ); ?> &mdash; <?php echo esc_html( $away_score ); ?></span></td>
+							<td><?php echo wp_kses_post( $home_team->get_team_photo( 'team-logo' ) ); ?></td>
+							<td><span class="team-name"><?php echo wp_kses_post( $home_team->get_team_location() ); ?></span> &mdash; <?php echo esc_html( $home_score ); ?></td>
 							<td><a href="<?php echo sprintf( '?page=sports-bench-edit-game-form&game_id=%s', $game->get_game_id() ); ?>" class="button edit"><?php esc_html_e( 'Edit Game', 'sports-bench' ) ?></a></td>
 						</tr>
 						<?php

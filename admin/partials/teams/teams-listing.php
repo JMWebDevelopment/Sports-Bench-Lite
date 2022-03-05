@@ -28,7 +28,7 @@ if ( isset( $_GET['action'] ) && isset( $_GET['team_id'] ) && 'delete' === $_GET
 
 ?>
 
-<?php echo $screen->display_header(); ?>
+<?php echo wp_kses_post( $screen->display_header() ); ?>
 
 <div class="wrap">
 

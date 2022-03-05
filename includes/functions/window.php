@@ -183,7 +183,7 @@ foreach ( $brackets_list as $the_bracket ) {
 			</td>
 			<td>
 				<?php foreach ( $games as $season => $game ) { ?>
-					<select id="shortcode-game-<?php echo $season; ?>" name="shortcode-game" class="games" <?php if ( $season != get_option( 'sports-bench-season-year' ) ) { ?>disabled="disabled"<?php } ?>>
+					<select id="shortcode-game-<?php echo esc_attr( $season ); ?>" name="shortcode-game" class="games" <?php if ( $season != get_option( 'sports-bench-season-year' ) ) { ?>disabled="disabled"<?php } ?>>
 						<?php
 						foreach ( $game as $key => $name ) {
 							echo '<option value="' . $key . '">' . $name . '</option>';
@@ -281,7 +281,7 @@ foreach ( $brackets_list as $the_bracket ) {
             </td>
             <td>
 				<?php foreach ( $games as $season => $game ) { ?>
-                    <select id="shortcode-game-recap-<?php echo $season; ?>" name="shortcode-game-recap" class="games" <?php if ( $season != get_option( 'sports-bench-season-year' ) ) { ?>disabled="disabled"<?php } ?>>
+                    <select id="shortcode-game-recap-<?php echo esc_attr( $season ); ?>" name="shortcode-game-recap" class="games" <?php if ( $season != get_option( 'sports-bench-season-year' ) ) { ?>disabled="disabled"<?php } ?>>
 						<?php
 						foreach ( $game as $key => $name ) {
 							echo '<option value="' . $key . '">' . $name . '</option>';

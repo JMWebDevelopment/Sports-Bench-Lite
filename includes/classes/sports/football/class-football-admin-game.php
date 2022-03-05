@@ -2885,7 +2885,7 @@ class FootballAdminGame {
 			$border_style = '';
 		}
 		?>
-		<div id="away-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="away-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<h3><?php esc_html_e( 'Passing', 'sports-bench' ); ?></h3>
 			<table id="away-passing-stats" class="form-table football-player-stats">
@@ -4085,7 +4085,7 @@ class FootballAdminGame {
 			$border_style = '';
 		}
 		?>
-		<div id="home-team-stats" class="game-details" <?php echo $border_style; ?>>
+		<div id="home-team-stats" class="game-details" <?php echo wp_kses_post( $border_style ); ?>>
 			<h2><?php echo esc_html( $title ); ?></h2>
 			<h3><?php esc_html_e( 'Passing', 'sports-bench' ); ?></h3>
 			<table id="home-passing-stats" class="form-table football-player-stats">

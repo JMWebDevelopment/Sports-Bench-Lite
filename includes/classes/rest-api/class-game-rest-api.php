@@ -808,7 +808,6 @@ class Game_REST_Controller extends WP_REST_Controller {
 
 		if ( $slug_test == [] ) {
 			$result = $wpdb->insert( $table_name, $item );
-			echo $wpdb->last_error;
 			if ( $result ) {
 				return $item;
 			} else {
