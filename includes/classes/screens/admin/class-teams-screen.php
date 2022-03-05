@@ -91,7 +91,7 @@ class TeamsScreen extends Screen {
 	private function get_teams() {
 		global $wpdb;
 		$teams      = [];
-		$team_table = SB_TABLE_PREFIX . 'teams';
+		$team_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$per_page   = 20;
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
@@ -183,7 +183,7 @@ class TeamsScreen extends Screen {
 		global $wpdb;
 		$html       = '';
 		$per_page   = 20;
-		$team_table = SB_TABLE_PREFIX . 'teams';
+		$team_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
 			$paged = ( intval( $_REQUEST['paged'] ) - 1 ) * $per_page;
@@ -288,7 +288,7 @@ class TeamsScreen extends Screen {
 	 */
 	public function get_new_team_id() {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'teams';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$default_row = Database::get_results( "SELECT * FROM $table ORDER BY team_id DESC LIMIT 1;" );
 		if ( $default_row ) {
 			return $default_row[0]->team_id + 1;
@@ -307,7 +307,7 @@ class TeamsScreen extends Screen {
 	 */
 	public function team_exists( $id ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'teams';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$check = Database::get_results( "SELECT team_id FROM $table WHERE team_id = $id;" );
 		if ( $check ) {
 			return true;
@@ -399,7 +399,7 @@ class TeamsScreen extends Screen {
 	 */
 	public function get_divisions_list() {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'divisions';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$sql        = "SELECT t1.division_id AS conference_id, t1.division_name AS conference_name, t2.division_id AS division_id, t2.division_name AS division_name, t2.division_conference_id AS division_conference_id FROM $table_name AS t1 LEFT JOIN $table_name AS t2 ON t1.division_id = t2.division_conference_id WHERE t2.division_id IS NOT NULL ORDER BY t1.division_id";
 		$divs       = Database::get_results( $sql );
 		$conference = '';
@@ -945,7 +945,7 @@ class TeamsScreen extends Screen {
 				'team_slug'              => wp_filter_nohtml_kses( sanitize_text_field( $team['team_slug'] ) ),
 			];
 
-			$table_name        = SB_TABLE_PREFIX . 'teams';
+			$table_name        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$slug              = strtolower( $team['team_name'] );
 			$team['team_slug'] = preg_replace( "/[\s_]/", "-", $slug );
 			$slug_test         = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE team_slug = %s", $team['team_slug'] ) );

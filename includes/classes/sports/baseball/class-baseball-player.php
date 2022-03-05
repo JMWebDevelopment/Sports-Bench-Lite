@@ -91,8 +91,8 @@ class BaseballPlayer extends Player {
 	 */
 	public function get_pitcher_wins( $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT COUNT( * ) AS WINS FROM $table AS gs LEFT JOIN $game_table AS g ON gs.game_id = g.game_id WHERE ( ( gs.game_player_id = %d ) AND ( gs.game_player_decision = 'W' ) AND ( g.game_season = %s ) );", $this->player_id, $season );
 		$wins       = Database::s( $querystr );
 		if ( ! empty( $wins ) ) {
@@ -111,8 +111,8 @@ class BaseballPlayer extends Player {
 	 */
 	public function get_pitcher_losses( $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT COUNT( * ) AS LOSSES FROM $table AS gs LEFT JOIN $game_table AS g ON gs.game_id = g.game_id WHERE ( ( gs.game_player_id = %d ) AND ( gs.game_player_decision = 'L' ) AND ( g.game_season = %s ) );", $this->player_id, $season );
 		$losses     = Database::get_results( $querystr );
 		if ( ! empty( $losses ) ) {
@@ -148,8 +148,8 @@ class BaseballPlayer extends Player {
 	 */
 	public function get_pitcher_saves( $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT COUNT( * ) AS SAVES FROM $table AS gs LEFT JOIN $game_table AS g ON gs.game_id = g.game_id WHERE ( ( gs.game_player_id = %d ) AND ( gs.game_player_decision = 'S' ) AND ( g.game_season = %s ) );", $this->player_id, $season );
 		$saves      = Database::get_results( $querystr );
 		if ( ! empty( $saves ) ) {
@@ -168,9 +168,9 @@ class BaseballPlayer extends Player {
 	 */
 	public function get_seasons_stats() {
 		global $wpdb;
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$player_id        = $this->player_id;
 		$querystr         = $wpdb->prepare(
 			"SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, game.game_home_id, game.game_away_id, g.game_player_id, SUM( g.game_player_at_bats ) as AB, SUM( g.game_player_hits ) as HITS, SUM( g.game_player_runs ) as RUNS, SUM( g.game_player_rbis ) as RBI, SUM( g.game_player_doubles ) as DOUBLES, SUM( g.game_player_triples ) as TRIPLES, SUM( g.game_player_homeruns ) as HOMERUNS, SUM( g.game_player_strikeouts ) as STRIKEOUTS, SUM( g.game_player_walks ) as WALKS, SUM(g.game_player_hit_by_pitch ) as HIT_BY_PITCH, SUM( g.game_player_fielders_choice ) as FC, TRUNCATE( ( ( SUM( TRUNCATE( g.game_player_innings_pitched,0 ) ) + TRUNCATE( ( ( SUM( g.game_player_innings_pitched ) - SUM( TRUNCATE( g.game_player_innings_pitched,0 ) ) ) / 0.3 ),0 ) ) + ( TRUNCATE( ( ( ( SUM( g.game_player_innings_pitched ) - SUM( TRUNCATE( g.game_player_innings_pitched,0 ) ) ) / 0.3 ) - TRUNCATE( ( ( SUM( g.game_player_innings_pitched ) - SUM( TRUNCATE( g.game_player_innings_pitched,0 ) ) ) / 0.3 ),0 ) ),1 ) / 3 ) ),1 ) as IP, SUM( g.game_player_pitcher_strikeouts ) as KS, SUM( g.game_player_pitcher_walks ) as BB, SUM( g.game_player_hit_batters ) as HPB, SUM( g.game_player_runs_allowed ) as RA, SUM( g.game_player_earned_runs ) as ER, SUM( g.game_player_hits_allowed ) as HA, SUM( g.game_player_homeruns_allowed ) as HRA, SUM( g.game_player_pitch_count ) as PC

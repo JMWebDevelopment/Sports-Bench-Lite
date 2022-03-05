@@ -156,7 +156,7 @@ class SoccerGames extends Games {
 		global $wpdb;
 		$datetime = $game->get_game_day( get_option( 'time_format' ) ) . ' ' . $game->get_game_day( get_option( 'date_format' ) );
 
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$quer            = $wpdb->prepare( "SELECT * FROM $game_info_table WHERE game_id = %d;", $game->get_game_id() );
 		$game_events     = Database::get_results( $quer );
 		$events          = [];
@@ -476,7 +476,7 @@ class SoccerGames extends Games {
 		$html      = '';
 
 		global $wpdb;
-		$table     = SB_TABLE_PREFIX . 'game_info';
+		$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $game_id );
 		if ( 'soccer' === get_option( 'sports-bench-sport' ) ) {
 			$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d AND game_info_id NOT IN ($event_ids) ORDER BY game_info_time DESC;", $game_id );

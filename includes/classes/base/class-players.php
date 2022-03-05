@@ -261,8 +261,8 @@ class Players {
 	 */
 	public function get_pitcher_wins( $player_id, $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT COUNT( * ) AS WINS FROM $table AS gs LEFT JOIN $game_table AS g ON gs.game_id = g.game_id WHERE ( ( gs.game_player_id = %d ) AND ( gs.game_player_decision = 'W' ) AND ( g.game_season = %s ) );", $player_id, $season );
 		$wins       = Database::get_results( $querystr );
 		if ( ! empty( $wins ) ) {
@@ -283,8 +283,8 @@ class Players {
 	 */
 	public function get_pitcher_losses( $player_id, $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT COUNT( * ) AS LOSSES FROM $table AS gs LEFT JOIN $game_table AS g ON gs.game_id = g.game_id WHERE ( ( gs.game_player_id = %d ) AND ( gs.game_player_decision = 'L' ) AND ( g.game_season = %s ) );", $player_id, $season );
 		$losses     = Database::get_results( $querystr );
 		if ( ! empty( $losses ) ) {
@@ -322,8 +322,8 @@ class Players {
 	 */
 	public function get_pitcher_saves( $player_id, $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT COUNT( * ) AS SAVES FROM $table AS gs LEFT JOIN $game_table AS g ON gs.game_id = g.game_id WHERE ( ( gs.game_player_id = %d ) AND ( gs.game_player_decision = 'S' ) AND ( g.game_season = %s ) );", $player_id, $season );
 		$saves      = Database::get_results( $querystr );
 		if ( ! empty( $saves ) ) {

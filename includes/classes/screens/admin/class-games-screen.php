@@ -106,7 +106,7 @@ class GamesScreen extends Screen {
 	private function get_games() {
 		global $wpdb;
 		$games       = [];
-		$games_table = SB_TABLE_PREFIX . 'games';
+		$games_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$per_page    = 20;
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
@@ -249,7 +249,7 @@ class GamesScreen extends Screen {
 		global $wpdb;
 		$html        = '';
 		$per_page    = 20;
-		$games_table = SB_TABLE_PREFIX . 'games';
+		$games_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
 			$paged = ( intval( $_REQUEST['paged'] ) - 1 ) * $per_page;
@@ -374,7 +374,7 @@ class GamesScreen extends Screen {
 	 * @return array            A list of teams.
 	 */
 	public function get_all_teams( $active = false ) {
-		$table = SB_TABLE_PREFIX . 'teams';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$teams = [];
 
 		if ( true === $active ) {
@@ -401,7 +401,7 @@ class GamesScreen extends Screen {
 	 */
 	public function get_new_game_id() {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'games';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$default_row = Database::get_results( "SELECT * FROM $table ORDER BY game_id DESC LIMIT 1;" );
 		if ( $default_row ) {
 			return $default_row[0]->game_id + 1;
@@ -420,7 +420,7 @@ class GamesScreen extends Screen {
 	 */
 	public function game_exists( $id ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'games';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$check = Database::get_results( "SELECT player_id FROM $table WHERE game_id = $id;" );
 		if ( $check ) {
 			return true;

@@ -165,7 +165,7 @@ class Player {
 	 */
 	public function __construct( $player_selector ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'players';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 
 		if ( is_string( $player_selector ) ) {
 			$player = Database::get_results( $wpdb->prepare( "SELECT * FROM  $table WHERE player_slug = %s;", $player_selector ) );
@@ -450,8 +450,8 @@ class Player {
 	public function get_seasons_played() {
 		global $wpdb;
 		$seasons_played   = [];
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare( "SELECT DISTINCT Game.game_season FROM $game_table AS Game LEFT JOIN $game_stats_table AS GameStats ON GameStats.game_player_id = %d;", $this->player_id );
 		$seasons          = Database::get_results( $querystr );
 		foreach ( $seasons as $season ) {
@@ -469,8 +469,8 @@ class Player {
 	 */
 	public function get_years() {
 		global $wpdb;
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare( "SELECT DISTINCT Game.game_season FROM $game_table AS Game LEFT JOIN $game_stats_table AS GameStats ON GameStats.game_player_id = %d ORDER BY Game.game_day ASC LIMIT 1;", $this->player_id );
 		$first_game       = $wpdb->get_row( $querystr );
 		$first_game       = $first_game->game_season;

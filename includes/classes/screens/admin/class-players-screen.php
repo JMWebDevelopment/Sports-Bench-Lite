@@ -98,7 +98,7 @@ class PlayersScreen extends Screen {
 	private function get_players() {
 		global $wpdb;
 		$players       = [];
-		$players_table = SB_TABLE_PREFIX . 'players';
+		$players_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$per_page      = 20;
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
@@ -223,7 +223,7 @@ class PlayersScreen extends Screen {
 		global $wpdb;
 		$html          = '';
 		$per_page      = 20;
-		$players_table = SB_TABLE_PREFIX . 'players';
+		$players_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
 			$paged = ( intval( $_REQUEST['paged'] ) - 1 ) * $per_page;
@@ -348,7 +348,7 @@ class PlayersScreen extends Screen {
 	 */
 	public function get_new_player_id() {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'players';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$default_row = Database::get_results( "SELECT * FROM $table ORDER BY player_id DESC LIMIT 1;" );
 		if ( $default_row ) {
 			return $default_row[0]->player_id + 1;
@@ -367,7 +367,7 @@ class PlayersScreen extends Screen {
 	 */
 	public function player_exists( $id ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'players';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$check = Database::get_results( "SELECT player_id FROM $table WHERE player_id = $id;" );
 		if ( $check ) {
 			return true;
@@ -384,7 +384,7 @@ class PlayersScreen extends Screen {
 	 * @return array      A list of all teams.
 	 */
 	public function get_all_teams() {
-		$table = SB_TABLE_PREFIX . 'teams';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$teams = [];
 
 		$teams_list = Database::get_results( "SELECT team_id FROM $table ORDER BY team_name ASC;" );
@@ -812,7 +812,7 @@ class PlayersScreen extends Screen {
 				'player_bio'        => wp_filter_nohtml_kses( sanitize_text_field( stripslashes( $player['player_bio'] ) ) ),
 			];
 
-			$table_name            = SB_TABLE_PREFIX . 'players';
+			$table_name            = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$slug                  = strtolower( $player['player_first_name'] . ' ' . $player['player_last_name'] );
 			$player['player_slug'] = preg_replace( "/[\s_]/", "-", $slug );
 			$slug_test             = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE player_slug = %s", $player['player_slug'] ) );

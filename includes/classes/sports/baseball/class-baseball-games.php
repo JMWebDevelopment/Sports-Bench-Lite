@@ -177,7 +177,7 @@ class BaseballGames extends Games {
 		global $wpdb;
 		$datetime = $game->get_game_day( get_option( 'time_format' ) ) . ' ' . $game->get_game_day( get_option( 'date_format' ) );
 
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$quer            = $wpdb->prepare( "SELECT * FROM $game_info_table WHERE game_id = %d;", $game->get_game_id() );
 		$game_events     = Database::get_results( $quer );
 		$events          = [];
@@ -438,7 +438,7 @@ class BaseballGames extends Games {
 	public function get_game_stat( $game, $home_away, $stat ) {
 		$column = 'game_' . $home_away . '_' . $stat;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT $column FROM $table WHERE game_id = %d;", $game->get_game_id() );
 		$the_stat = Database::get_results( $querystr );
 		return $the_stat;

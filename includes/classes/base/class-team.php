@@ -238,7 +238,7 @@ class Team {
 	 */
 	public function __construct( $team_selector ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'teams';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 
 		if ( is_string( $team_selector ) ) {
 			$team = Database::get_results( $wpdb->prepare( "SELECT * FROM `$table` WHERE team_slug = %s;", $team_selector ) );
@@ -571,7 +571,7 @@ class Team {
 	 */
 	public function get_games_played( $season ) {
 		global $wpdb;
-		$table        = SB_TABLE_PREFIX . 'games';
+		$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr     = $wpdb->prepare( "SELECT COUNT( * ) AS GP FROM $table WHERE ( ( game_away_id = %d OR  game_home_id = %d ) AND ( game_season = %s ) AND ( game_status = 'final' ) );", $this->team_id, $this->team_id, $season );
 		$games_played = $wpdb->get_results( $querystr );
 		return $games_played[0]->GP;
@@ -587,7 +587,7 @@ class Team {
 	public function get_division_name() {
 		if ( $this->team_division ) {
 			global $wpdb;
-			$table    = SB_TABLE_PREFIX . 'divisions';
+			$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$division = Database::get_results( $wpdb->prepare( "SELECT * FROM $table WHERE ( division_id = %s );", $this->team_division ) );
 			return $division[0]->division_name;
 		} else {
@@ -638,7 +638,7 @@ class Team {
 	 */
 	public function get_schedule( $season ) {
 		global $wpdb;
-		$table         = SB_TABLE_PREFIX . 'games';
+		$table         = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr      = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s ORDER BY game_day ASC;", $this->team_id, $this->team_id, $season );
 		$games         = Database::get_results( $querystr );
 		$team_schedule = [];
@@ -741,7 +741,7 @@ class Team {
 	 */
 	public function get_wins( $season ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT COUNT( * ) AS WINS FROM $table WHERE ( ( ( ( game_away_id = %d ) AND ( game_away_final > game_home_final ) ) OR ( ( game_home_id = %d ) AND ( game_home_final > game_away_final ) ) ) AND ( game_season = %s )  AND ( game_status = 'final' ) );", $this->team_id, $this->team_id, $season );
 		$wins     = Database::get_results( $querystr );
 		return $wins[0]->WINS;
@@ -757,7 +757,7 @@ class Team {
 	 */
 	public function get_losses( $season ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT COUNT( * ) AS LOSSES FROM $table WHERE ( ( ( ( game_away_id = %d ) AND ( game_away_final < game_home_final ) ) OR ( ( game_home_id = %d ) AND ( game_home_final < game_away_final ) ) ) AND ( game_season = %s )  AND ( game_status = 'final' ) );", $this->team_id, $this->team_id, $season );
 		$losses   = Database::get_results( $querystr );
 		return $losses[0]->LOSSES;
@@ -773,7 +773,7 @@ class Team {
 	 */
 	public function get_draws( $season ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT COUNT( * ) AS DRAWS FROM $table WHERE ( ( ( ( game_away_id = %d ) AND ( game_away_final = game_home_final ) ) OR ( ( game_home_id = %d ) AND ( game_home_final = game_away_final ) ) ) AND ( game_season = %s )  AND ( game_status = 'final' ) );", $this->team_id, $this->team_id, $season );
 		$draws    = Database::get_results( $querystr );
 		return $draws[0]->DRAWS;
@@ -789,7 +789,7 @@ class Team {
 	 */
 	public function get_overtime_losses( $season ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT COUNT( * ) AS OTLOSSES FROM $table WHERE ( ( ( ( game_away_id = %d ) AND ( game_away_final < game_home_final ) AND game_away_overtime IS NOT NULL ) OR ( ( game_home_id = %d ) AND ( game_home_final < game_away_final ) AND game_home_overtime IS NOT NULL ) ) AND ( game_season = %s )  AND ( game_status = 'final' ) );", $this->team_id, $this->team_id, $season );
 		$draws    = Database::get_results( $querystr );
 		return $draws[0]->OTLOSSES;
@@ -843,12 +843,12 @@ class Team {
 	public function get_roster( $season = '' ) {
 		global $wpdb;
 		$roster = [];
-		$table  = SB_TABLE_PREFIX . 'players';
+		$table  = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		if ( get_option( 'sports-bench-season-year' ) === $season || '' === $season ) {
 			$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE team_id = %d;", $this->team_id );
 		} else {
-			$table      = SB_TABLE_PREFIX . 'game_stats';
-			$game_table = SB_TABLE_PREFIX . 'games';
+			$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+			$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 			$querystr   = $wpdb->prepare( "SELECT DISTINCT s.game_player_id as player_id FROM $table AS s LEFT JOIN $game_table AS g ON s.game_id = g.game_id WHERE s.game_team_id = %d AND g.game_season = %s;", $this->team_id, $season );
 		}
 		$players  = Database::get_results( $querystr );
@@ -883,7 +883,7 @@ class Team {
 	 */
 	public function get_recent_results( $limit = 5, $season ) {
 		global $wpdb;
-		$table           = SB_TABLE_PREFIX . 'games';
+		$table           = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr        = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final' ORDER BY game_day DESC LIMIT %d;", $this->team_id, $this->team_id, $season, $limit );
 		$games           = Database::get_results( $querystr );
 		$recent_schedule = [];
@@ -987,7 +987,7 @@ class Team {
 	 */
 	public function get_upcoming_schedule( $limit = 5, $season ) {
 		global $wpdb;
-		$table             = SB_TABLE_PREFIX . 'games';
+		$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'scheduled' ORDER BY game_day ASC LIMIT %d;", $this->team_id, $this->team_id, $season, $limit );
 		$games             = Database::get_results( $querystr );
 		$upcoming_schedule = [];
@@ -1029,7 +1029,7 @@ class Team {
 	 */
 	public function get_points_for( $season ) {
 		global $wpdb;
-		$table           = SB_TABLE_PREFIX . 'games';
+		$table           = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr        = $wpdb->prepare( "SELECT SUM( game_away_final ) as GFOR FROM $table WHERE game_away_id = %d AND game_season = %s AND game_status = 'final';", $this->team_id, $season );
 		$points_for_away = Database::get_results( $querystr );
 		$points_for_away = $points_for_away[0]->GFOR;
@@ -1050,7 +1050,7 @@ class Team {
 	 */
 	public function get_points_against( $season ) {
 		global $wpdb;
-		$table               = SB_TABLE_PREFIX . 'games';
+		$table               = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr            = $wpdb->prepare( "SELECT SUM( game_home_final ) as AGAINST FROM $table WHERE game_away_id = %d AND game_season = %s AND game_status = 'final';", $this->team_id, $season );
 		$points_against_away = Database::get_results( $querystr );
 		$points_against_away = $points_against_away[0]->AGAINST;
@@ -1087,7 +1087,7 @@ class Team {
 	public function get_division_wins( $season ) {
 		$wins = 0;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $this->team_id, $season );
 		$games    = Database::get_results( $querystr );
 		foreach ( $games as $game ) {
@@ -1121,7 +1121,7 @@ class Team {
 	public function get_division_losses( $season ) {
 		$losses = 0;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $this->team_id, $season );
 		$games    = Database::get_results( $querystr );
 		foreach ( $games as $game ) {
@@ -1155,7 +1155,7 @@ class Team {
 	public function get_division_draws( $season ) {
 		$draws = 0;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $this->team_id, $season );
 		$games    = Database::get_results( $querystr );
 		foreach ( $games as $game ) {
@@ -1205,14 +1205,14 @@ class Team {
 	public function get_conference_wins( $season ) {
 		$wins = 0;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $this->team_id, $season );
 		$games    = Database::get_results( $querystr );
 		foreach ( $games as $game ) {
 			if ( $game->game_away_id === $this->team_id ) {
 				if ( $game->game_away_final > $game->game_home_final ) {
 					$opponent          = new Team( (int) $game->game_home_id );
-					$table             = SB_TABLE_PREFIX . 'divisions';
+					$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 					$opponent_division = $opponent->team_division;
 					$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $this->team_division );
 					$division          = Database::get_results( $querystr );
@@ -1239,7 +1239,7 @@ class Team {
 			} else {
 				if ( $game->game_home_final > $game->game_away_final ) {
 					$opponent          = new Team( (int) $game->game_away_id );
-					$table             = SB_TABLE_PREFIX . 'divisions';
+					$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 					$opponent_division = $opponent->team_division;
 					$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $this->team_division );
 					$division          = Database::get_results( $querystr );
@@ -1279,14 +1279,14 @@ class Team {
 	public function get_conference_losses( $season ) {
 		$losses = 0;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $this->team_id, $season );
 		$games    = Database::get_results( $querystr );
 		foreach ( $games as $game ) {
 			if ( $game->game_away_id == $this->team_id ) {
 				if ( $game->game_away_final < $game->game_home_final ) {
 					$opponent          = new Team( (int) $game->game_home_id );
-					$table             = SB_TABLE_PREFIX . 'divisions';
+					$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 					$opponent_division = $opponent->team_division;
 					$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $this->team_division );
 					$division          = Database::get_results( $querystr );
@@ -1313,7 +1313,7 @@ class Team {
 			} else {
 				if ( $game->game_home_final < $game->game_away_final ) {
 					$opponent          = new Team( (int) $game->game_away_id );
-					$table             = SB_TABLE_PREFIX . 'divisions';
+					$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 					$opponent_division = $opponent->team_division;
 					$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $this->team_division );
 					$division          = Database::get_results( $querystr );
@@ -1353,14 +1353,14 @@ class Team {
 	public function get_conference_draws( $season ) {
 		$draws = 0;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $this->team_id, $season );
 		$games    = Database::get_results( $querystr );
 		foreach ( $games as $game ) {
 			if ( $game->game_away_id === $this->team_id ) {
 				if ( $game->game_away_final === $game->game_home_final ) {
 					$opponent          = new Team( (int) $game->game_home_id );
-					$table             = SB_TABLE_PREFIX . 'divisions';
+					$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 					$opponent_division = $opponent->team_division;
 					$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $this->team_division );
 					$division          = Database::get_results( $querystr );
@@ -1387,7 +1387,7 @@ class Team {
 			} else {
 				if ( $game->game_home_final === $game->game_away_final ) {
 					$opponent          = new Team( (int) $game->game_away_id );
-					$table             = SB_TABLE_PREFIX . 'divisions';
+					$table             = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 					$opponent_division = $opponent->team_division;
 					$querystr          = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $this->team_division );
 					$division          = Database::get_results( $querystr );
@@ -1442,7 +1442,7 @@ class Team {
 	 */
 	public function get_home_record( $season ) {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'games';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr    = $wpdb->prepare( "SELECT COUNT( * ) AS WINS FROM $table WHERE ( ( ( ( game_home_id = %d ) AND ( game_home_final > game_away_final ) ) ) AND ( game_season = %s ) AND ( game_status = 'final' ) );", $this->team_id, $season );
 		$wins        = Database::get_results( $querystr );
 		$wins        = $wins[0]->WINS;
@@ -1466,7 +1466,7 @@ class Team {
 	 */
 	public function get_road_record ( $season ) {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'games';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr    = $wpdb->prepare( "SELECT COUNT( * ) AS WINS FROM $table WHERE ( ( ( ( game_away_id = %d ) AND ( game_away_final > game_home_final ) ) ) AND ( game_season = %s ) AND ( game_status = 'final' ) );", $this->team_id, $season );
 		$wins        = Database::get_results( $querystr );
 		$wins        = $wins[0]->WINS;
@@ -1490,7 +1490,7 @@ class Team {
 	public function get_alltime_wins() {
 		global $wpdb;
 		$alltime_wins = 0;
-		$table        = SB_TABLE_PREFIX . 'games';
+		$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr     = $wpdb->prepare( "SELECT DISTINCT game_season FROM $table WHERE ( game_away_id = %d OR game_home_id = %d );", $this->team_id, $this->team_id );
 		$seasons      = Database::get_results( $querystr );
 		foreach ( $seasons as $season ) {
@@ -1511,7 +1511,7 @@ class Team {
 	public function get_alltime_losses() {
 		global $wpdb;
 		$alltime_losses = 0;
-		$table          = SB_TABLE_PREFIX . 'games';
+		$table          = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr       = $wpdb->prepare( "SELECT DISTINCT game_season FROM $table WHERE ( game_away_id = %d OR game_home_id = %d );", $this->team_id, $this->team_id );
 		$seasons        = Database::get_results( $querystr );
 		foreach ( $seasons as $season ) {
@@ -1532,7 +1532,7 @@ class Team {
 	public function get_alltime_draws() {
 		global $wpdb;
 		$alltime_draws = 0;
-		$table         = SB_TABLE_PREFIX . 'games';
+		$table         = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr      = $wpdb->prepare( "SELECT DISTINCT game_season FROM $table WHERE ( game_away_id = %d OR game_home_id = %d );", $this->team_id, $this->team_id );
 		$seasons       = Database::get_results( $querystr );
 		foreach ( $seasons as $season ) {
@@ -1568,7 +1568,7 @@ class Team {
 	 */
 	public function get_average_attendance( $season ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$attendance = 0;
 		$home_games = 0;
 		$querystr   = $wpdb->prepare( "SELECT game_attendance FROM $table WHERE ( game_home_id = %d ) AND game_season = %s AND game_status = 'final';", $this->team_id, $season );
@@ -1590,7 +1590,7 @@ class Team {
 	 */
 	public function get_years() {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'games';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr   = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_away_id = %d or game_home_id = %d ) ORDER BY game_day ASC LIMIT 1;", $this->team_id, $this->team_id );
 		$first_game = $wpdb->get_row( $querystr );
 		$first_game = $first_game->game_season;
@@ -1641,7 +1641,7 @@ class Team {
 
 	public function get_seasons() {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'games';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$seasons     = [];
 		$seasons_qry = $wpdb->prepare( "SELECT DISTINCT game_season FROM $table WHERE game_away_id = %d OR game_home_id = %d;", $this->team_id, $this->team_id );
 		$seasons_list = Database::get_results( $seasons_qry );

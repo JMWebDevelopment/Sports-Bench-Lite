@@ -513,7 +513,7 @@ class Player_REST_Controller extends WP_REST_Controller {
 	public function add_player( $item ) {
 
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'players';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$the_id     = $item[ 'player_id' ];
 		$slug_test  = Database::get_results( "SELECT * FROM $table_name WHERE player_id = $the_id" );
 
@@ -531,7 +531,7 @@ class Player_REST_Controller extends WP_REST_Controller {
 
 	public function update_player( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'players';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 
 		$the_id    = $item[ 'player_id' ];
 		$slug_test = Database::get_results( "SELECT * FROM $table_name WHERE player_id = $the_id" );
@@ -550,7 +550,7 @@ class Player_REST_Controller extends WP_REST_Controller {
 
 	public function delete_player( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'players';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$the_id     = $item['player_id'];
 		$slug_test  = Database::get_results( "SELECT * FROM $table_name WHERE player_id = $the_id" );
 
@@ -669,7 +669,7 @@ class Player_REST_Controller extends WP_REST_Controller {
 			}
 
 			global $wpdb;
-			$table        = SB_TABLE_PREFIX . 'players';
+			$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$querystr     = "SELECT * FROM $table WHERE $search;";
 			$players      = Database::get_results( $querystr );
 			$players_list = [];
@@ -698,7 +698,7 @@ class Player_REST_Controller extends WP_REST_Controller {
 		} else {
 
 			global $wpdb;
-			$table        = SB_TABLE_PREFIX . 'players';
+			$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$querystr     = "SELECT * FROM $table;";
 			$players      = Database::get_results( $querystr );
 			$players_list = [];

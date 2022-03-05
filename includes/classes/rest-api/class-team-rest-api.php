@@ -264,7 +264,7 @@ class Team_REST_Controller extends WP_REST_Controller {
 	protected function prepare_item_for_database( $request ) {
 
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'teams';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 
 		if ( isset( $request['team_id'] ) ) {
 			$team_id = wp_filter_nohtml_kses( sanitize_text_field( $request['team_id'] ) );
@@ -564,7 +564,7 @@ class Team_REST_Controller extends WP_REST_Controller {
 	public function add_team( $item ) {
 
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'teams';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$team_name  = $item['team_name'];
 		$slug_test  = Database::get_results( "SELECT * FROM $table_name WHERE team_name LIKE $team_name" );
 
@@ -583,7 +583,7 @@ class Team_REST_Controller extends WP_REST_Controller {
 
 	public function update_team( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'teams';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 
 		$team_id = $item['team_id'];
 		$slug_test = Database::get_results( "SELECT * FROM $table_name WHERE team_id = $team_id" );
@@ -602,7 +602,7 @@ class Team_REST_Controller extends WP_REST_Controller {
 
 	public function delete_team( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'teams';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$team_id    = $item['team_id'];
 
 		$slug_test = Database::get_results( "SELECT * FROM $table_name WHERE team_id = $team_id" );
@@ -713,7 +713,7 @@ class Team_REST_Controller extends WP_REST_Controller {
 			}
 
 			global $wpdb;
-			$table     = SB_TABLE_PREFIX . 'teams';
+			$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$querystr  = "SELECT * FROM $table WHERE $search;";
 			$teams     = Database::get_results( $querystr );
 			$team_list = [];
@@ -826,7 +826,7 @@ class Team_REST_Controller extends WP_REST_Controller {
 	}
 
 	public function get_all_teams() {
-		$table      = SB_TABLE_PREFIX . 'teams';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$querystr   = "SELECT team_id FROM $table";
 		$teams      = Database::get_results( $querystr );
 		$teams_list = [];

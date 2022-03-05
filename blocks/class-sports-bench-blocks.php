@@ -674,7 +674,7 @@ class Sports_Bench_Blocks {
 			}
 
 			global $wpdb;
-			$table         = SB_TABLE_PREFIX . 'games';
+			$table         = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 			$querystr      = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_home_id = %d AND game_away_id = %d ) OR ( game_home_id = %d AND game_away_id = %d ) LIMIT %d", $team_one_id, $team_two_id, $team_two_id, $team_one_id, $recent_games );
 			$games         = Database::get_results( $querystr );
 			$team_one_wins = 0;
@@ -898,7 +898,7 @@ class Sports_Bench_Blocks {
 			}
 			$html .= '<div id="conference-tab" class="tabs-content" role="tabpanel" aria-expanded="' . esc_attr( $conference_tab_bool ) . '">';
 			global $wpdb;
-			$table       = SB_TABLE_PREFIX . 'divisions';
+			$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr    = "SELECT * FROM $table WHERE division_conference = 'Conference';";
 			$conferences = Database::get_results( $querystr );
 			foreach ( $conferences as $conference ) {
@@ -940,7 +940,7 @@ class Sports_Bench_Blocks {
 			}
 			$html .= '<div id="division-tab" class="tabs-content" role="tabpanel" aria-expanded="' . esc_attr( $division_tab_bool ) . '">';
 			global $wpdb;
-			$table_name = SB_TABLE_PREFIX . 'divisions';
+			$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$quer       = "SELECT t1.division_id AS conference_id, t1.division_name AS conference_name, t2.division_id AS division_id, t2.division_name AS division_name, t2.division_conference_id AS division_conference_id FROM $table_name AS t1 LEFT JOIN $table_name AS t2 ON t1.division_id = t2.division_conference_id WHERE t2.division_id IS NOT NULL ORDER BY t1.division_id";
 			$divisions  = Database::get_results( $quer );
 			$conference = '';

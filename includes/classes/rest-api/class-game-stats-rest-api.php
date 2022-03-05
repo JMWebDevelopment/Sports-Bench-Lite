@@ -578,7 +578,7 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 
 	public function update_game_stat( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'game_info';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$the_id     = $item['game_stats_player_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE game_stats_player_id = %d", $the_id ) );
 
@@ -596,7 +596,7 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 
 	public function delete_game_stat( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'game_info';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$the_id     = $item['game_stats_player_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE game_stats_player_id = %d", $the_id ) );
 
@@ -663,9 +663,9 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 					$and = '';
 				}
 				global $wpdb;
-				$player_table     = SB_TABLE_PREFIX . 'players';
-				$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-				$game_table       = SB_TABLE_PREFIX . 'games';
+				$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+				$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+				$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 				$team_id          = $params['game_team_id'];
 				$stats_list       = [];
 				if ( 'baseball' === get_option( 'sports-bench-sport' ) ) {
@@ -959,9 +959,9 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 					$and = '';
 				}
 				global $wpdb;
-				$player_table     = SB_TABLE_PREFIX . 'players';
-				$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-				$game_table       = SB_TABLE_PREFIX . 'games';
+				$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+				$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+				$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 				$player_id        = $params['game_player_id'];
 				$stats_list       = [];
 				if ( 'baseball' === get_option( 'sports-bench-sport' ) ) {
@@ -1283,7 +1283,7 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 				$response = $stats_list;
 			} else {
 				global $wpdb;
-				$table      = SB_TABLE_PREFIX . 'game_stats';
+				$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 				$querystr   = "SELECT * FROM $table WHERE $search;";
 				$game_stats = Database::get_results( $querystr );
 				$stats_list = [];
@@ -1467,7 +1467,7 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 
 		} else {
 			global $wpdb;
-			$table      = SB_TABLE_PREFIX . 'game_stats';
+			$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 			$querystr   = "SELECT * FROM $table;";
 			$game_stats = Database::get_results( $querystr );
 			$stats_list = [];
@@ -1662,7 +1662,7 @@ class Game_Stats_REST_Controller extends WP_REST_Controller {
 	 */
 	public function sports_bench_rest_get_game_stat( $game_stat_id ) {
 		global $wpdb;
-		$table      = SB_TABLE_PREFIX . 'game_stats';
+		$table      = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 		$querystr   = $wpdb->prepare( "SELECT * FROM $table WHERE game_stats_player_id = %d;", $game_stat_id );
 		$game_stats = Database::get_results( $querystr );
 		$stats_list = [];

@@ -1038,7 +1038,7 @@ class Sports_Bench_Admin {
 
 		$filename       = 'sb_' . $sb_export_table;
 		$generated_date = date( 'd-m-Y His' );
-		$table_name     = SB_TABLE_PREFIX . $sb_export_table;
+		$table_name     = SPORTS_BENCH_LITE_TABLE_PREFIX . $sb_export_table;
 
 		header( 'Pragma: public' );
 		header( 'Expires: 0' );
@@ -1819,7 +1819,7 @@ class Sports_Bench_Admin {
 
 		if ( 'conference' === $standings_widget_options['sports_bench_dashboard_standings'] ) {
 			global $wpdb;
-			$table       = SB_TABLE_PREFIX . 'divisions';
+			$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr    = "SELECT * FROM $table WHERE division_conference = 'Conference';";
 			$conferences = Database::get_results( $querystr );
 			foreach ( $conferences as $conference ) {
@@ -1827,7 +1827,7 @@ class Sports_Bench_Admin {
 			}
 		} elseif ( 'division' === $standings_widget_options['sports_bench_dashboard_standings'] ) {
 			global $wpdb;
-			$table_name = SB_TABLE_PREFIX . 'sb_divisions';
+			$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'sb_divisions';
 			$quer       = "SELECT t1.division_id AS conference_id, t1.division_name AS conference_name, t2.division_id AS division_id, t2.division_name AS division_name, t2.division_conference_id AS division_conference_id FROM $table_name AS t1 LEFT JOIN $table_name AS t2 ON t1.division_id = t2.division_conference_id WHERE t2.division_id IS NOT NULL ORDER BY t1.division_id";
 			$divisions  = Database::get_results( $quer );
 			$conference = '';

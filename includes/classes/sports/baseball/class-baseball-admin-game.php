@@ -753,7 +753,7 @@ class BaseballAdminGame {
 	 * @return array      A list of team objects.
 	 */
 	public function get_teams() {
-		$table   = SB_TABLE_PREFIX . 'teams';
+		$table   = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$teams   = [];
 		$results = Database::get_results( "SELECT team_id FROM $table ORDER BY team_name ASC;" );
 
@@ -792,7 +792,7 @@ class BaseballAdminGame {
 	 */
 	public function save_game_info( $game ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'games';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		$default_game = [
 			'game_id'                           => $game['game_id'],
@@ -988,7 +988,7 @@ class BaseballAdminGame {
 		}
 
 		//* Get the game events already in the database to compare the new ones to
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$game_id         = $game['game_id'];
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_events     = $wpdb->get_results( $quer );
@@ -1246,7 +1246,7 @@ class BaseballAdminGame {
 		}
 
 		//* Grab the player stats for the game already in the database to compare the new ones to
-		$game_info_table = SB_TABLE_PREFIX . 'game_stats';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 		$game_id         = $game['game_id'];
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_stats      = $wpdb->get_results( $quer );
@@ -1258,7 +1258,7 @@ class BaseballAdminGame {
 		foreach ( $stats as $stat ) {
 			if ( in_array( $stat['game_stats_player_id'], $stats_ids ) ) {
 				//* If the player's stats for the game are already in the database, update the stats
-				$wpdb->update( SB_TABLE_PREFIX . 'game_stats', $stat, array( 'game_stats_player_id' => $stat['game_stats_player_id'] ) );
+				$wpdb->update( SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats', $stat, array( 'game_stats_player_id' => $stat['game_stats_player_id'] ) );
 			} else {
 				//* If the player's stats for the game aren't already in the database, add the stats
 				$wpdb->insert( $game_info_table, $stat );
@@ -1293,7 +1293,7 @@ class BaseballAdminGame {
 	 */
 	public function get_game_info( $game_id ) {
 		global $wpdb;
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$game       = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $game_table WHERE game_id = %d", $game_id ), ARRAY_A );
 		$events     = $this->get_game_events( $game_id );
 		$stats      = $this->get_game_player_stats( $game_id );
@@ -1311,7 +1311,7 @@ class BaseballAdminGame {
 	 */
 	public function get_game_events( $game_id ) {
 		global $wpdb;
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_events     = $wpdb->get_results( $quer );
 		$events          = [];
@@ -1342,7 +1342,7 @@ class BaseballAdminGame {
 	 */
 	public function get_game_player_stats( $game_id ) {
 		global $wpdb;
-		$game_info_table = SB_TABLE_PREFIX . 'game_stats';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_stats      = Database::get_results( $quer );
 		$stats           = [];
@@ -1693,7 +1693,7 @@ class BaseballAdminGame {
 
 		if ( $game['game_away_id'] > 0 ) {
 			//* Get the away team players into an array
-			$table_name   = SB_TABLE_PREFIX . 'players';
+			$table_name   = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$team_id      = $game['game_away_id'];
 			$quer         = "SELECT * FROM $table_name WHERE team_id = $team_id;";
 			$the_players  = Database::get_results( $quer );
@@ -2141,7 +2141,7 @@ class BaseballAdminGame {
 
 		if ( $game['game_home_id'] > 0 ) {
 			//* Get the home team players into an array
-			$table_name   = SB_TABLE_PREFIX . 'players';
+			$table_name   = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$team_id      = $game['game_home_id'];
 			$quer         = "SELECT * FROM $table_name WHERE team_id = $team_id;";
 			$the_players  = Database::get_results( $quer );

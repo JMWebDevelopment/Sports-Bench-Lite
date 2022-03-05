@@ -64,7 +64,7 @@ class DivisionsScreen extends Screen {
 		];
 
 		//* Get the Divisions/Conferences into an array
-		$table_name  = SB_TABLE_PREFIX . 'divisions';
+		$table_name  = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$confs       = Database::get_results( "SELECT * FROM $table_name WHERE division_conference_id IS NULL" );
 		$this->conferences = [];
 		foreach ( $confs as $conf ) {
@@ -126,7 +126,7 @@ class DivisionsScreen extends Screen {
 	public function get_divisions_conferences() {
 		$conferences    = [];
 		$divisions      = [];
-		$table_name     = SB_TABLE_PREFIX . 'divisions';
+		$table_name     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$division_items = Database::get_results( "SELECT t1.division_id AS conference_id, t1.division_name AS conference_name, t2.division_id AS division_id, t2.division_name AS division_name, t2.division_conference_id AS division_conference_id, t2.division_conference AS division_conference FROM $table_name AS t1 LEFT JOIN $table_name AS t2 ON t1.division_id = t2.division_conference_id WHERE t2.division_id IS NOT NULL ORDER BY t1.division_id" );
 		$conference     = '';
 
@@ -366,7 +366,7 @@ class DivisionsScreen extends Screen {
 	 */
 	public function get_new_division_id() {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'divisions';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$default_row = Database::get_results( "SELECT * FROM $table ORDER BY division_id DESC LIMIT 1;" );
 		if ( $default_row ) {
 			return $default_row[0]->division_id + 1;
@@ -385,7 +385,7 @@ class DivisionsScreen extends Screen {
 	 */
 	public function division_exists( $id ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'divisions';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$check = Database::get_results( "SELECT division_id FROM $table WHERE division_id = $id;" );
 		if ( $check ) {
 			return true;

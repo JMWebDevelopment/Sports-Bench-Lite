@@ -462,7 +462,7 @@ class Game_Info_REST_Controller extends WP_REST_Controller {
 	public function add_game_info( $item ) {
 
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'game_info';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$the_id     = $item['game_info_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE game_info_id = %d", $the_id ) );
 
@@ -489,7 +489,7 @@ class Game_Info_REST_Controller extends WP_REST_Controller {
 	 */
 	public function update_game_info( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'game_info';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$the_id     = $item['game_info_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE game_info_id = %d", $the_id ) );
 
@@ -515,7 +515,7 @@ class Game_Info_REST_Controller extends WP_REST_Controller {
 	 */
 	public function delete_game_info( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'game_info';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$the_id     = $item['game_info_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE game_info_id = %d", $the_id ) );
 
@@ -602,7 +602,7 @@ class Game_Info_REST_Controller extends WP_REST_Controller {
 			}
 
 			global $wpdb;
-			$table       = SB_TABLE_PREFIX . 'game_info';
+			$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 			$querystr    = "SELECT * FROM $table WHERE $search;";
 			$game_events = Database::get_results( $querystr );
 			$events_list = [];
@@ -686,7 +686,7 @@ class Game_Info_REST_Controller extends WP_REST_Controller {
 			$response = $events_list;
 		} else {
 			global $wpdb;
-			$table       = SB_TABLE_PREFIX . 'game_info';
+			$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 			$querystr    = "SELECT * FROM $table;";
 			$game_events = Database::get_results( $querystr );
 			$events_list = [];
@@ -783,7 +783,7 @@ class Game_Info_REST_Controller extends WP_REST_Controller {
 	 */
 	public function get_game_info( $game_info_id ) {
 		global $wpdb;
-		$table       = SB_TABLE_PREFIX . 'game_info';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$querystr    = $wpdb->prepare( "SELECT * FROM $table WHERE game_info_id = %d;", $game_info_id );
 		$game_events = Database::get_results( $querystr );
 		$events_list = [];

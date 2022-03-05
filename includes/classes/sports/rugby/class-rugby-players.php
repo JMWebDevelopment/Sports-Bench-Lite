@@ -138,9 +138,9 @@ class RugbyPlayers extends Players {
 		ob_start();
 
 		global $wpdb;
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare(
 			"SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, game.game_home_id, game.game_away_id, g.game_player_id, SUM( g.game_player_tries ) as TRIES, COUNT( g.game_player_meters_run ) as GP, SUM( g.game_player_meters_run ) as METERS_RUN, SUM( g.game_player_assists ) as ASSISTS, SUM( g.game_player_conversions ) as CONVERSIONS, SUM( g.game_player_penalty_goals ) as PK_GOALS, SUM( g.game_player_drop_kicks ) as DROP_KICKS, SUM( g.game_player_points ) as POINTS, SUM( g.game_player_penalties_conceeded ) as PENALTIES_CONCEEDED, SUM( g.game_player_red_cards ) as REDS, SUM( g.game_player_yellow_cards ) as YELLOWS
 			FROM $player_table as p LEFT JOIN $game_stats_table as g

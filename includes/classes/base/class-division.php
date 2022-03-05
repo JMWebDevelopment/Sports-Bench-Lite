@@ -81,7 +81,7 @@ class Division {
 	 */
 	public function __construct( $division_id ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'divisions';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$division = Database::get_results( $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $division_id ) );
 
 		if ( $division ) {

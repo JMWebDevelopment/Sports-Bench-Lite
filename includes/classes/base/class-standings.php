@@ -288,7 +288,7 @@ class Standings {
 	 */
 	public function all_team_standings() {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'teams';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$querystr = "SELECT * FROM $table WHERE team_active LIKE 'active';";
 		$teams    = Database::get_results( $querystr );
 		$items    = get_post_meta( get_the_ID(), 'sports_bench_standings_items', true );
@@ -321,7 +321,7 @@ class Standings {
 	 */
 	public function conference_division_standings( $division_id ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'divisions';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $division_id );
 		$division = Database::get_results( $querystr );
 
@@ -335,14 +335,14 @@ class Standings {
 				$division_ids[] = $div->division_id;
 			}
 
-			$table        = SB_TABLE_PREFIX . 'teams';
+			$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$division_ids = implode( ',', $division_ids );
 			$querystr     = "SELECT * FROM $table WHERE team_division IN ($division_ids) AND team_active LIKE 'active';";
 			$teams        = Database::get_results( $querystr );
 
 		} else {
 			global $wpdb;
-			$table    = SB_TABLE_PREFIX . 'teams';
+			$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE team_division = %d AND team_active LIKE 'active';", $division_id );
 			$teams    = Database::get_results( $querystr );
 		}
@@ -378,13 +378,13 @@ class Standings {
 	public function widget_standings( $division_id = null ) {
 		global $wpdb;
 		if ( null === $division_id ) {
-			$table    = SB_TABLE_PREFIX . 'teams';
+			$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$querystr = "SELECT * FROM $table WHERE team_active = 'active';";
 			$teams    = Database::get_results( $querystr );
 			$division = 0;
 		} else {
 			global $wpdb;
-			$table    = SB_TABLE_PREFIX . 'divisions';
+			$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr = "SELECT * FROM $table WHERE division_id = $division_id;";
 			$division = Database::get_results( $querystr );
 
@@ -398,14 +398,14 @@ class Standings {
 					$division_ids[] = $div->division_id;
 				}
 
-				$table        = SB_TABLE_PREFIX . 'teams';
+				$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 				$division_ids = implode( ',', $division_ids );
 				$querystr     = $wpdb->prepare( "SELECT * FROM $table WHERE team_division IN (%s);", $division_ids );
 				$teams        = Database::get_results( $querystr );
 
 			} else {
 				global $wpdb;
-				$table    = SB_TABLE_PREFIX . 'teams';
+				$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 				$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE team_division = %d AND team_active = 'active';", $division_id );
 				$teams    = Database::get_results( $querystr );
 			}
@@ -505,7 +505,7 @@ class Standings {
 			}
 			$html .= '<div id="conference-tab" class="tabs-content" role="tabpanel" aria-expanded="' . esc_attr( $conference_tab_bool ) . '">';
 			global $wpdb;
-			$table       = SB_TABLE_PREFIX . 'divisions';
+			$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr    = "SELECT * FROM $table WHERE division_conference = 'Conference';";
 			$conferences = Database::get_results( $querystr );
 			foreach ( $conferences as $conference ) {
@@ -547,7 +547,7 @@ class Standings {
 			}
 			$html .= '<div id="division-tab" class="tabs-content" role="tabpanel" aria-expanded="' . esc_attr( $division_tab_bool ) . '">';
 			global $wpdb;
-			$table_name = SB_TABLE_PREFIX . 'divisions';
+			$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$quer       = "SELECT t1.division_id AS conference_id, t1.division_name AS conference_name, t2.division_id AS division_id, t2.division_name AS division_name, t2.division_conference_id AS division_conference_id FROM $table_name AS t1 LEFT JOIN $table_name AS t2 ON t1.division_id = t2.division_conference_id WHERE t2.division_id IS NOT NULL ORDER BY t1.division_id";
 			$divisions  = Database::get_results( $quer );
 			$conference = '';
@@ -1940,7 +1940,7 @@ class Standings {
 	 */
 	public function all_teams_standings_gutenberg( $attributes ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'teams';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$querystr = "SELECT * FROM $table WHERE team_active LIKE 'active';";
 		$teams    = Database::get_results( $querystr );
 		$items    = [];
@@ -1981,7 +1981,7 @@ class Standings {
 	 */
 	public function conference_division_standings_gutenberg( $division_id, $attributes ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'divisions';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $division_id );
 		$division = Databse::get_results( $querystr );
 		$items    = [];
@@ -2003,14 +2003,14 @@ class Standings {
 				$division_ids[] = $div->division_id;
 			}
 
-			$table        = SB_TABLE_PREFIX . 'teams';
+			$table        = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$division_ids = implode( ',', $division_ids );
 			$querystr     = $wpdb->prepare( "SELECT * FROM $table WHERE team_division IN (%s) AND team_active LIKE 'active';", $division_ids );
 			$teams        = Database::get_results( $querystr );
 
 		} else {
 			global $wpdb;
-			$table    = SB_TABLE_PREFIX . 'teams';
+			$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE team_division = %d AND team_active LIKE 'active';", $division_id );
 			$teams    = Database::get_results( $querystr );
 		}

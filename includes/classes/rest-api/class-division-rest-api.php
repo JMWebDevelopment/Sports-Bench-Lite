@@ -431,7 +431,7 @@ class Division_REST_Controller extends WP_REST_Controller {
 	public function sports_bench_rest_add_division( $item ) {
 
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'sb_divisions';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'sb_divisions';
 		$the_id     = $item['division_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE division_id = %d", $the_id ) );
 
@@ -509,7 +509,7 @@ class Division_REST_Controller extends WP_REST_Controller {
 	 */
 	public function sports_bench_rest_delete_division( $item ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'divisions';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$the_id     = $item['division_id'];
 		$slug_test  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table_name WHERE division_id = %d", $the_id ) );
 
@@ -591,7 +591,7 @@ class Division_REST_Controller extends WP_REST_Controller {
 			}
 
 			global $wpdb;
-			$table          = SB_TABLE_PREFIX . 'divisions';
+			$table          = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr       = "SELECT * FROM $table WHERE $search;";
 			$divisions      = $wpdb->get_results( $querystr );
 			$divisions_list = [];
@@ -611,7 +611,7 @@ class Division_REST_Controller extends WP_REST_Controller {
 		} else {
 
 			global $wpdb;
-			$table          = SB_TABLE_PREFIX . 'divisions';
+			$table          = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr       = "SELECT * FROM $table;";
 			$divisions      = $wpdb->get_results( $querystr );
 			$divisions_list = [];
@@ -643,7 +643,7 @@ class Division_REST_Controller extends WP_REST_Controller {
 	 */
 	public function sports_bench_rest_get_division( $division_id ) {
 		global $wpdb;
-		$table          = SB_TABLE_PREFIX . 'divisions';
+		$table          = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$querystr       = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $division_id );
 		$divisions      = Database::get_results( $querystr );
 		$divisions_list = [];

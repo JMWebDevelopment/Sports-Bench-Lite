@@ -54,7 +54,7 @@ class FootballGame extends Game {
 		$away_team       = new Team( (int) $this->game_away_id );
 		$home_team       = new Team( (int) $this->game_home_id );
 		global $wpdb;
-		$table     = SB_TABLE_PREFIX . 'games';
+		$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $this->game_id );
 		$game_info = Database::get_results( $querystr );
 
@@ -106,8 +106,8 @@ class FootballGame extends Game {
 	public function get_away_individual_stats() {
 		$team = new Team( (int) $this->game_away_id );
 		global $wpdb;
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$player_table     = SB_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_stats_table AS GAMESTATS INNER JOIN $player_table AS PLAYERS ON PLAYERS.player_id = GAMESTATS.game_player_id WHERE GAMESTATS.game_id = %d AND GAMESTATS.game_team_id = %d AND GAMESTATS.game_player_attempts > 0;", $this->get_game_id(), $team->get_team_id() );
 		$passers          = Database::get_results($querystr);
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_stats_table AS GAMESTATS INNER JOIN $player_table AS PLAYERS ON PLAYERS.player_id = GAMESTATS.game_player_id WHERE GAMESTATS.game_id = %d AND GAMESTATS.game_team_id = %d AND GAMESTATS.game_player_rushes > 0;", $this->get_game_id(), $team->get_team_id() );
@@ -168,8 +168,8 @@ class FootballGame extends Game {
 	public function get_home_individual_stats() {
 		$team = new Team( (int) $this->game_home_id );
 		global $wpdb;
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$player_table     = SB_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_stats_table AS GAMESTATS INNER JOIN $player_table AS PLAYERS ON PLAYERS.player_id = GAMESTATS.game_player_id WHERE GAMESTATS.game_id = %d AND GAMESTATS.game_team_id = %d AND GAMESTATS.game_player_attempts > 0;", $this->get_game_id(), $team->get_team_id() );
 		$passers          = Database::get_results($querystr);
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_stats_table AS GAMESTATS INNER JOIN $player_table AS PLAYERS ON PLAYERS.player_id = GAMESTATS.game_player_id WHERE GAMESTATS.game_id = %d AND GAMESTATS.game_team_id = %d AND GAMESTATS.game_player_rushes > 0;", $this->get_game_id(), $team->get_team_id() );

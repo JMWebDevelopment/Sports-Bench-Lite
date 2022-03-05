@@ -154,9 +154,9 @@ class VolleyballPlayers extends Players {
 		ob_start();
 
 		global $wpdb;
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare(
 			"SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, game.game_home_id, game.game_away_id, g.game_player_id, SUM( g.game_player_sets_played ) as SETS_PLAYED, COUNT( g.game_player_sets_played ) as GP, SUM( g.game_player_points ) as POINTS, SUM( g.game_player_kills ) as KILLS, SUM( g.game_player_hitting_errors ) as HITTING_ERRORS, SUM( g.game_player_attacks ) as ATTACKS, SUM( g.game_player_set_attempts ) as SET_ATT, SUM( g.game_player_set_errors ) as SET_ERR, SUM( g.game_player_serves ) as SERVES, SUM( g.game_player_serve_errors ) as SE, SUM( g.game_player_aces ) as SA, SUM( g.game_player_blocks ) as BLOCKS, SUM( g.game_player_block_attempts ) as BA, SUM( g.game_player_block_errors) as BE, SUM( g.game_player_digs ) as DIGS, SUM( g.game_player_receiving_errors) as RE
 			FROM $player_table as p LEFT JOIN $game_stats_table as g

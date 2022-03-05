@@ -262,7 +262,7 @@ class Game {
 	 */
 	public function __construct( $game_id ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'games';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$game  = Database::get_results( $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $game_id ) );
 
 		if ( $game ) {
@@ -846,7 +846,7 @@ class Game {
 	 */
 	public function get_score_info() {
 		global $wpdb;
-		$table     = SB_TABLE_PREFIX . 'game_info';
+		$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $this->game_id );
 		if ( 'soccer' === get_option( 'sports-bench-sport' ) ) {
 			if ( 'in_progress' === $this->game_status ) {
@@ -903,7 +903,7 @@ class Game {
 		$away_team = new Team( (int) $this->game_away_id );
 		$home_team = new Team( (int) $this->game_home_id );
 		global $wpdb;
-		$table     = SB_TABLE_PREFIX . 'games';
+		$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $this->game_id );
 		$game_info = Database::get_results( $querystr );
 
@@ -1040,7 +1040,7 @@ class Game {
 	public function get_game_stat( $home_away, $stat ) {
 		$column = 'game_' . $home_away . '_' . $stat;
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT $column FROM $table WHERE game_id = %d;", $this->game_id );
 		$the_stat = Database::get_results( $querystr );
 		return $the_stat;

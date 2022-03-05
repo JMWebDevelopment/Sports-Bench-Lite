@@ -66,9 +66,9 @@ class BasketballPlayer extends Player {
 	 */
 	public function get_seasons_stats() {
 		global $wpdb;
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$player_id        = $this->get_player_id();
 		$querystr         = $wpdb->prepare(
 			"SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, g.game_player_id, SUM( g.game_player_started ) as STARTS, COUNT( g.game_player_minutes ) as GP, SUM( g.game_player_minutes ) as MIN, SUM( g.game_player_fgm ) as FGM, SUM( g.game_player_fga ) as FGA, SUM( g.game_player_3pm ) as TPM, SUM( g.game_player_3pa ) as TPA, SUM( g.game_player_ftm ) as FTM, SUM( g.game_player_fta ) as FTA, SUM( g.game_player_points ) as PTS, SUM( g.game_player_off_rebound ) as OFF_REB, SUM( g.game_player_def_rebound ) as DEF_REB, SUM( g.game_player_assists ) as ASSISTS, SUM( g.game_player_steals) as STEALS, SUM( g.game_player_blocks ) as BLOCKS, SUM( g.game_player_to) as TURNOVERS, SUM( g.game_player_plus_minus ) as PM

@@ -52,9 +52,9 @@ class HockeyTeam extends Team {
 	public function get_team_season_stats( $season ) {
 		global $wpdb;
 		$team_id          = $this->get_team_id();
-		$team_table       = SB_TABLE_PREFIX . 'teams';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$team_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_table WHERE ( game_home_id = %d OR game_away_id = %d ) AND game_season = %s AND game_status LIKE 'final'", $team_id, $team_id, $season );
 		$team_stats       = Database::get_results( $querystr );
 
@@ -112,9 +112,9 @@ class HockeyTeam extends Team {
 	public function get_players_stats( $season ) {
 		global $wpdb;
 		$players_stats    = [];
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare( "SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, g.game_player_id, SUM( g.game_player_goals ) as GOALS, SUM( g.game_player_assists ) as ASSISTS, SUM( g.game_player_plus_minus ) as PM, SUM( g.game_player_sog ) as SOG, SUM( g.game_player_penalties ) as PEN, SUM( g.game_player_pen_minutes ) as PEN_MIN, SUM( g.game_player_hits ) as HITS, SUM( g.game_player_shifts ) as SHIFTS, SUM( g.game_player_time_on_ice ) as ICE_TIME, SUM( g.game_player_faceoffs ) as FACE, SUM( g.game_player_faceoff_wins ) as FACE_WINS, SUM( g.game_player_shots_faced ) as SHOTS_FACED, SUM( g.game_player_saves ) as SAVES, SUM( g.game_player_goals_allowed ) as GOALS_ALLOWED, COUNT( g.game_player_time_on_ice ) as GP
 			FROM $player_table as p LEFT JOIN $game_stats_table as g
 			ON p.player_id = g.game_player_id

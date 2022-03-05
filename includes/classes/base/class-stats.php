@@ -130,9 +130,9 @@ class Stats {
 	 */
 	public function get_stats_leaders( $stat, $season ) {
 		global $wpdb;
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		/**
 		 * Determines how many players to get for the stat.
@@ -1006,9 +1006,9 @@ class Stats {
 	 */
 	public function get_more_stats_leaders( $stat, $season, $offset = 0 ) {
 		global $wpdb;
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		/**
 		 * Determines how many players to get for the stat.
@@ -2298,9 +2298,9 @@ class Stats {
 		}
 
 		global $wpdb;
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		if ( 'single-game' === $stat_type ) {
 			$group = 'GROUP BY g.game_player_id, g.game_id';
 		} elseif ( 'season' === $stat_type ) {

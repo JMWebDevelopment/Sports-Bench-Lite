@@ -123,7 +123,7 @@ class Scoreboard {
 	public function get_scoreboard_bar_games() {
 		global $wpdb;
 		$games = [];
-		$table = SB_TABLE_PREFIX . 'games';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		if ( '1' === get_option( 'sports-bench-display-game' ) ) {
 			$week     = get_option( 'sports-bench-week-number' );
@@ -428,7 +428,7 @@ class Scoreboard {
 	public function get_scoreboard_widget_games() {
 		global $wpdb;
 		$games = [];
-		$table = SB_TABLE_PREFIX . 'games';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		if ( '1' === get_option( 'sports-bench-display-game' ) ) {
 			$week     = get_option( 'sports-bench-week-number' );
@@ -662,7 +662,7 @@ class Scoreboard {
 	 */
 	private function load_new_games( $weekdate, $current, $direction ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . 'games';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$games = [];
 
 		if ( 'week' === $weekdate ) {
@@ -795,7 +795,7 @@ class Scoreboard {
 	private function get_scoreboard_page_games() {
 		global $wpdb;
 		$games = [];
-		$table = SB_TABLE_PREFIX . 'games';
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		if ( '1' === get_option( 'sports-bench-display-game' ) ) {
 			$week     = get_option( 'sports-bench-week-number' );

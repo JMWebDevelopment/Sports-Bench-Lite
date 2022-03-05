@@ -66,9 +66,9 @@ class SoccerPlayer extends Player {
 	 */
 	public function get_seasons_stats() {
 		global $wpdb;
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$player_id        = $this->get_player_id();
 		$querystr         = $wpdb->prepare(
 			"SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, g.game_player_id, SUM( g.game_player_minutes ) as MINUTES, COUNT( g.game_player_minutes ) as GP, SUM( g.game_player_goals ) as GOALS, SUM( g.game_player_assists ) as ASSISTS, SUM( g.game_player_shots ) as SHOTS, SUM( g.game_player_sog ) as SOG, SUM( g.game_player_fouls ) as FOULS, SUM( g.game_player_fouls_suffered ) as FOULS_SUFFERED, SUM( g.game_player_shots_faced ) as SHOTS_FACED, SUM( g.game_player_shots_saved ) as SHOTS_SAVED, SUM( g.game_player_goals_allowed ) as GOALS_ALLOWED

@@ -52,7 +52,7 @@ class Teams {
 	public function get_teams( $alphabetical = false, $active = true, $division_id = 0 ) {
 		global $wpdb;
 		$teams_array = [];
-		$table       = SB_TABLE_PREFIX . 'teams';
+		$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		if ( true === $alphabetical ) {
 			$order = 'team_name';
 		} else {
@@ -77,7 +77,7 @@ class Teams {
 		$teams    = Database::get_results( $querystr );
 
 		if ( null === $teams && $division_id > 0 ) {
-			$table     = SB_TABLE_PREFIX . 'divisions';
+			$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE division_conference_id = %d;", $division_id );
 			$divisions = Database::get_results( $querystr );
 
@@ -93,7 +93,7 @@ class Teams {
 				$where = '';
 			}
 
-			$table    = SB_TABLE_PREFIX . 'teams';
+			$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 			$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE team_division IN (%s) $where;", implode( ',', $division_ids ) );
 			$teams    = Database::get_results( $querystr );
 		}
@@ -613,7 +613,7 @@ class Teams {
 	 */
 	public function team_division_standings( $division_id ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'teams';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE team_division = %d AND team_active LIKE 'active';", $division_id );
 		$teams    = Database::get_results( $querystr );
 
@@ -827,7 +827,7 @@ class Teams {
 
 			if ( get_option( 'sports-bench-season-year' ) === $season ) {
 				global $wpdb;
-				$table    = SB_TABLE_PREFIX . 'divisions';
+				$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 				$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $team->get_team_division() );
 				$division = Database::get_results( $querystr );
 				$html    .= '<div id="team-standings" class="team-section">';
@@ -938,7 +938,7 @@ class Teams {
 		$away_points = 0;
 
 		global $wpdb;
-		$table     = SB_TABLE_PREFIX . 'games';
+		$table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $game->get_game_id() );
 		$game_info = Database::get_results( $querystr );
 		foreach ( $game_info as $info ) {

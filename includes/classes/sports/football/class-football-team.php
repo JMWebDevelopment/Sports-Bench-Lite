@@ -52,9 +52,9 @@ class FootballTeam extends Team {
 	public function get_team_season_stats( $season ) {
 		global $wpdb;
 		$team_id          = $this->get_team_id();
-		$team_table       = SB_TABLE_PREFIX . 'teams';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$team_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_table WHERE ( game_home_id = %d OR game_away_id = %d ) AND game_season = %s AND game_status LIKE 'final'", $team_id, $team_id, $season );
 		$team_stats       = Database::get_results( $querystr );
 
@@ -157,9 +157,9 @@ class FootballTeam extends Team {
 	public function get_players_stats( $season ) {
 		global $wpdb;
 		$players_stats    = [];
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare( "SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, g.game_player_id, SUM( g.game_player_completions ) as COMP, SUM( g.game_player_attempts ) as ATT, SUM( g.game_player_pass_yards ) as PASS_YD, SUM( g.game_player_pass_tds ) as PASS_TD, SUM( g.game_player_pass_ints ) as PASS_INT, SUM( g.game_player_rushes ) as RUSHES, SUM( g.game_player_rush_yards ) as RUSH_YARDS, SUM( g.game_player_rush_tds ) as RUSH_TD, SUM( g.game_player_rush_fumbles ) as RUSH_FUM, SUM( g.game_player_catches ) as CATCHES, SUM( g.game_player_receiving_yards ) as RECEIVE_YARDS, SUM( g.game_player_receiving_tds ) as RECEIVE_TD, SUM( g.game_player_receiving_fumbles ) as RECEIVE_FUM, SUM( g.game_player_tackles ) as TACKLES, SUM( g.game_player_tfl ) as TFL, SUM( g.game_player_sacks ) as SACKS, SUM( g.game_player_pbu ) as PBU, SUM( g.game_player_ints ) as INTS,  SUM( g.game_player_tds ) as TDS, SUM( g.game_player_ff ) as FF, SUM( g.game_player_fr ) as FR,  SUM( g.game_player_blocked ) as BLOCKED, SUM( g.game_player_yards ) as YARDS, SUM( g.game_player_fga ) as FGA,  SUM( g.game_player_fgm ) as FGM, SUM( g.game_player_xpa ) as XPA, SUM( g.game_player_xpm ) as XPM, SUM( g.game_player_touchbacks ) as TB, SUM( g.game_player_returns ) as RETURNS, SUM( g.game_player_return_yards ) as RETURN_YARDS, SUM( g.game_player_return_tds ) as RETURN_TDS, SUM( g.game_player_return_fumbles ) as RETURN_FUMBLES
 			FROM $player_table as p LEFT JOIN $game_stats_table as g
 			ON p.player_id = g.game_player_id

@@ -1543,7 +1543,7 @@ class FootballAdminGame {
 	 * @return array      A list of team objects.
 	 */
 	public function get_teams() {
-		$table   = SB_TABLE_PREFIX . 'teams';
+		$table   = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$teams   = [];
 		$results = Database::get_results( "SELECT team_id FROM $table ORDER BY team_name ASC;" );
 
@@ -1582,7 +1582,7 @@ class FootballAdminGame {
 	 */
 	public function save_game_info( $game ) {
 		global $wpdb;
-		$table_name = SB_TABLE_PREFIX . 'games';
+		$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 
 		$default_game = [
 			'game_id'                       => $game['game_id'],
@@ -1834,7 +1834,7 @@ class FootballAdminGame {
 		}
 
 		//* Get the game events already in the database to compare the new ones to
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$game_id         = $_REQUEST['game_id'];
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_events     = $wpdb->get_results( $quer );
@@ -2303,7 +2303,7 @@ class FootballAdminGame {
 		}
 
 		//* Grab the player stats for the game already in the database to compare the new ones to
-		$game_info_table = SB_TABLE_PREFIX . 'game_stats';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 		$game_id         = $_REQUEST['game_id'];
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_stats      = $wpdb->get_results( $quer );
@@ -2350,7 +2350,7 @@ class FootballAdminGame {
 	 */
 	public function get_game_info( $game_id ) {
 		global $wpdb;
-		$game_table = SB_TABLE_PREFIX . 'games';
+		$game_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$game       = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $game_table WHERE game_id = %d", $game_id ), ARRAY_A );
 		$events     = $this->get_game_events( $game_id );
 		$stats      = $this->get_game_player_stats( $game_id );
@@ -2368,7 +2368,7 @@ class FootballAdminGame {
 	 */
 	public function get_game_events( $game_id ) {
 		global $wpdb;
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_events     = $wpdb->get_results( $quer );
 		$events          = [];
@@ -2403,7 +2403,7 @@ class FootballAdminGame {
 	 */
 	public function get_game_player_stats( $game_id ) {
 		global $wpdb;
-		$game_info_table = SB_TABLE_PREFIX . 'game_stats';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_stats      = Database::get_results( $quer );
 		$stats           = [];
@@ -2722,7 +2722,7 @@ class FootballAdminGame {
 					<?php
 					if ( $events ) {
 						foreach ( $events as $event ) {
-							$table_name = SB_TABLE_PREFIX . 'players';
+							$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 							$team_id    = $event['game_info_scoring_team_id'];
 							$quer       = "SELECT * FROM $table_name WHERE team_id = $team_id;";
 							$players    = Database::get_results( $quer );
@@ -2859,7 +2859,7 @@ class FootballAdminGame {
 		$player_list = [];
 		if ( $game['game_away_id'] ) {
 			//* Get the away team players into an array
-			$table_name   = SB_TABLE_PREFIX . 'players';
+			$table_name   = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$team_id      = $game['game_away_id'];
 			$quer         = "SELECT * FROM $table_name WHERE team_id = $team_id;";
 			$the_players  = Database::get_results( $quer );
@@ -4059,7 +4059,7 @@ class FootballAdminGame {
 		$player_list = [];
 		if ( $game['game_home_id'] ) {
 			//* Get the home team players into an array
-			$table_name   = SB_TABLE_PREFIX . 'players';
+			$table_name   = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
 			$team_id      = $game['game_home_id'];
 			$quer         = "SELECT * FROM $table_name WHERE team_id = $team_id;";
 			$the_players  = Database::get_results( $quer );

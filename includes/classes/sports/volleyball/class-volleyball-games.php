@@ -157,7 +157,7 @@ class VolleyballGames extends Games {
 		global $wpdb;
 		$datetime = $game->get_game_day( get_option( 'time_format' ) ) . ' ' . $game->get_game_day( get_option( 'date_format' ) );
 
-		$game_info_table = SB_TABLE_PREFIX . 'game_info';
+		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
 		$quer            = $wpdb->prepare( "SELECT * FROM $game_info_table WHERE game_id = %d;", $game->get_game_id() );
 		$game_events     = Database::get_results( $quer );
 		$events          = [];

@@ -37,7 +37,7 @@ class Database {
 	 */
 	public static function add_row( $table_name, $data = array() ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . $table_name;
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . $table_name;
 		return $wpdb->insert( $table, $data ); // db call ok.
 	}
 
@@ -53,7 +53,7 @@ class Database {
 	 */
 	public static function update_row( $table_name, $where, $data = array() ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . $table_name;
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . $table_name;
 		return $wpdb->update( $table, $data, $where ); // db call ok; no-cache ok.
 	}
 
@@ -68,7 +68,7 @@ class Database {
 	 */
 	public static function delete_row( $table_name, $where ) {
 		global $wpdb;
-		$table = SB_TABLE_PREFIX . $table_name;
+		$table = SPORTS_BENCH_LITE_TABLE_PREFIX . $table_name;
 		return $wpdb->delete( $table, $where ); // db call ok; no-cache ok.
 	}
 

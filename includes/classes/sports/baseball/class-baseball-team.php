@@ -52,9 +52,9 @@ class BaseballTeam extends Team {
 	public function get_team_season_stats( $season ) {
 		global $wpdb;
 		$team_id          = $this->get_team_id();
-		$team_table       = SB_TABLE_PREFIX . 'teams';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$team_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr         = $wpdb->prepare( "SELECT * FROM $game_table WHERE ( game_home_id = %d OR game_away_id = %d ) AND game_season = %s AND game_status LIKE 'final'", $team_id, $team_id, $season );
 		$team_stats       = Database::get_results( $querystr );
 
@@ -120,9 +120,9 @@ class BaseballTeam extends Team {
 	public function get_players_stats( $season ) {
 		global $wpdb;
 		$players_stats    = [];
-		$player_table     = SB_TABLE_PREFIX . 'players';
-		$game_stats_table = SB_TABLE_PREFIX . 'game_stats';
-		$game_table       = SB_TABLE_PREFIX . 'games';
+		$player_table     = SPORTS_BENCH_LITE_TABLE_PREFIX . 'players';
+		$game_stats_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
+		$game_table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = $wpdb->prepare(
 			"SELECT p.player_id, p.player_first_name, p.player_last_name, p.team_id, game.game_id, game.game_season, g.game_id, g.game_team_id, g.game_player_id, SUM( g.game_player_at_bats ) as AB, SUM( g.game_player_hits ) as HITS, SUM( g.game_player_runs ) as RUNS, SUM( g.game_player_rbis ) as RBI, SUM( g.game_player_doubles ) as DOUBLES, SUM( g.game_player_triples ) as TRIPLES, SUM( g.game_player_homeruns ) as HOMERUNS, SUM( g.game_player_strikeouts ) as STRIKEOUTS, SUM( g.game_player_walks ) as WALKS, SUM( g.game_player_hit_by_pitch ) as HIT_BY_PITCH, SUM( g.game_player_fielders_choice ) as FC, SUM( g.game_player_innings_pitched ) as IP, SUM( g.game_player_pitcher_strikeouts ) as KS, SUM( g.game_player_pitcher_walks ) as BB, SUM( g.game_player_hit_batters ) as HPB, SUM( g.game_player_runs_allowed ) as RA, SUM( g.game_player_earned_runs ) as ER, SUM( g.game_player_hits_allowed ) as HA, SUM( g.game_player_homeruns_allowed ) as HRA, SUM( g.game_player_pitch_count ) as PC
 			FROM $player_table as p LEFT JOIN $game_stats_table as g

@@ -69,7 +69,7 @@ class Display {
 	public function get_seasons() {
 		$seasons_array = array();
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'games';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'games';
 		$querystr = "SELECT DISTINCT game_season FROM $table;";
 		$seasons  = Database::get_results( $querystr );
 		foreach ( $seasons as $season ) {
@@ -131,7 +131,7 @@ class Display {
 	 */
 	public function division_color( $division_id ) {
 		global $wpdb;
-		$table    = SB_TABLE_PREFIX . 'divisions';
+		$table    = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE division_id = %d;", $division_id );
 		$division = Database::get_results( $querystr );
 		if ( 'Conference' === $division[0]->division_conference ) {

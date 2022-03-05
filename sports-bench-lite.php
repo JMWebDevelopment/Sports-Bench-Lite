@@ -23,9 +23,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Let's make it easy on ourselves and set the table prefix here.
-if ( ! defined( 'SB_TABLE_PREFIX' ) ) {
+if ( ! defined( 'SPORTS_BENCH_LITE_TABLE_PREFIX' ) ) {
 	global $wpdb;
-	define( 'SB_TABLE_PREFIX', $wpdb->prefix . 'sb_' );
+	define( 'SPORTS_BENCH_LITE_TABLE_PREFIX', $wpdb->prefix . 'sb_' );
 }
 
 /**

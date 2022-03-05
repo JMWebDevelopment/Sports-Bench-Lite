@@ -60,7 +60,7 @@ class Sports_Bench_Standings_Widget extends WP_Widget {
 
 		if ( 'conference' === $instance['division-conference'] ) {
 			global $wpdb;
-			$table       = SB_TABLE_PREFIX . 'divisions';
+			$table       = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$querystr    = "SELECT * FROM $table WHERE division_conference = 'Conference';";
 			$conferences = Database::get_results( $querystr );
 			foreach ( $conferences as $conference ) {
@@ -92,7 +92,7 @@ class Sports_Bench_Standings_Widget extends WP_Widget {
 			}
 		} elseif ( 'division' === $instance['division-conference'] ) {
 			global $wpdb;
-			$table_name = SB_TABLE_PREFIX . 'divisions';
+			$table_name = SPORTS_BENCH_LITE_TABLE_PREFIX . 'divisions';
 			$quer       = "SELECT t1.division_id AS conference_id, t1.division_name AS conference_name, t2.division_id AS division_id, t2.division_name AS division_name, t2.division_conference_id AS division_conference_id FROM $table_name AS t1 LEFT JOIN $table_name AS t2 ON t1.division_id = t2.division_conference_id WHERE t2.division_id IS NOT NULL ORDER BY t1.division_id";
 			$divisions  = Database::get_results( $quer );
 			$conference = '';
