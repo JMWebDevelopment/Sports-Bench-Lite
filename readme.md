@@ -21,7 +21,7 @@ Creating and keeping up with sports league stats on the internet can be a hassle
 
 **Tested up to:** 5.8
 
-**Stable tag:** 2.1.2
+**Stable tag:** 2.1.3
 
 ## Support
 If you have a question or even a feature request, you can check out [the Sports Bench forums](https://sportsbenchwp.com/forums/), or fill out a ["Report an Issue" form](https://sportsbenchwp.com/report-a-problem/) or a ["Feature Request" form](https://sportsbenchwp.com/feature-request/) to get in contact with me.

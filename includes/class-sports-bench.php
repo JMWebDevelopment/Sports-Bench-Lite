@@ -70,7 +70,7 @@ class Sports_Bench {
 	public function __construct() {
 
 		$this->plugin_slug = 'sports-bench-lite';
-		$this->version     = '2.1.1';
+		$this->version     = '2.1.3';
 
 		$this->load_dependencies();
 		$this->load_classes();
