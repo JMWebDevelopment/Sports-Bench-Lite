@@ -345,7 +345,7 @@ class DivisionsScreen extends Screen {
 	 * @return array       The information for a division.
 	 */
 	public function get_division_info() {
-		$the_division = new Division( $_GET['division_id'] );
+		$the_division = new Division( sanitize_text_field( $_GET['division_id'] ) );
 		$division = [
 			'division_id'            => $the_division->get_division_id(),
 			'division_name'          => $the_division->get_division_name(),

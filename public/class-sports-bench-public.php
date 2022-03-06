@@ -426,7 +426,7 @@ class Sports_Bench_Public {
 		}
 
 		if ( isset( $_GET['game_id'] ) && get_option( 'sports-bench-box-score-page' ) && ! is_admin() ) {
-			$game    = new Game( $_GET['game_id'] );
+			$game    = new Game( sanitize_text_field( $_GET['game_id'] ) );
 			$game_id = $game->get_game_id();
 			$args    = [
 				'id'     => 'edit_game',

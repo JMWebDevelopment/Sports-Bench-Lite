@@ -24,6 +24,8 @@ wp_enqueue_script('jquery-ui-core');
 wp_enqueue_script('jquery-ui-widget');
 wp_enqueue_script('jquery-ui-position');
 wp_enqueue_script('jquery');
+wp_enqueue_script('wp-tinymce');
+wp_enqueue_script( 'sports-bench-window', plugin_dir_url( __FILE__ ) . 'js/window.min.js', [], $this->version, 'all' );
 
 //* Load the necessary global variables
 global $wp_scripts;
@@ -139,10 +141,6 @@ foreach ( $brackets_list as $the_bracket ) {
 	<title><?php esc_html_e( 'Add Sports Bench Shortcode', 'sports-bench' ) ?></title>
 	<?php wp_print_scripts(); ?>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_option('blog_charset'); ?>" />
-	<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
-	<script language="javascript" type="text/javascript" src="<?php echo plugins_url( 'sports-bench/admin/js/window.min.js' ); ?>"></script>
-	<link rel="stylesheet" href="<?php //echo plugins_url( 'sports-bench/admin/css/post-tinymce-popup.min.css' ); ?>">
 	<base target="_self" />
 </head>
 

@@ -114,19 +114,19 @@ class PlayersScreen extends Screen {
 		}
 
 		if ( ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) && ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) && ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['player_first_name'], $_GET['player_last_name'], $_GET['team'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['player_first_name'] ), sanitize_text_field( $_GET['player_last_name'] ), sanitize_text_field( $_GET['team'] ), $per_page, $sql_paged );
 		} elseif ( ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) && ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['player_first_name'], $_GET['player_last_name'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['player_first_name'] ), sanitize_text_field( $_GET['player_last_name'] ), $per_page, $sql_paged );
 		} elseif ( ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) && ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['player_first_name'], $_GET['team'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['player_first_name'] ), sanitize_text_field( $_GET['team'] ), $per_page, $sql_paged );
 		} elseif ( ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) && ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['player_last_name'], $_GET['team'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['player_last_name'] ), sanitize_text_field( $_GET['team'] ), $per_page, $sql_paged );
 		} elseif ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['player_first_name'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['player_first_name'] ), $per_page, $sql_paged );
 		} elseif ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['player_last_name'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['player_last_name'] ), $per_page, $sql_paged );
 		} elseif ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $_GET['team'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE team_id = %d ORDER BY player_last_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team'] ), $per_page, $sql_paged );
 		} else {
 			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table ORDER BY player_last_name ASC LIMIT %d OFFSET %d", $per_page, $sql_paged );
 		}
@@ -158,7 +158,7 @@ class PlayersScreen extends Screen {
 				<div class="search-column">
 					<?php
 					if ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) {
-						$player_first_name = $_GET['player_first_name'];
+						$player_first_name = sanitize_text_field( $_GET['player_first_name'] );
 					} else {
 						$player_first_name = '';
 					}
@@ -170,7 +170,7 @@ class PlayersScreen extends Screen {
 				<div class="search-column">
 				<?php
 					if ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) {
-						$player_last_name = $_GET['player_last_name'];
+						$player_last_name = sanitize_text_field( $_GET['player_last_name'] );
 					} else {
 						$player_last_name = '';
 					}
@@ -187,7 +187,7 @@ class PlayersScreen extends Screen {
 						if ( $teams ) {
 							foreach ( $teams as $team ) {
 								if ( isset( $_GET['team'] ) ) {
-									$selected = selected( $_GET['team'], $team->get_team_id(), false );
+									$selected = selected( sanitize_text_field( $_GET['team'] ), $team->get_team_id(), false );
 								} else {
 									$selected = '';
 								}
@@ -239,26 +239,26 @@ class PlayersScreen extends Screen {
 		$url = '';
 
 		if ( ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) && ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) && ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC", $_GET['player_first_name'], $_GET['player_last_name'], $_GET['team'] );
-			$url = '&player_first_name=' . $_GET['player_first_name'] . '&player_last_name=' . $_GET['player_last_name'] . '&team=' . $_GET['team'];
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC", sanitize_text_field( $_GET['player_first_name'] ), sanitize_text_field( $_GET['player_last_name'] ), sanitize_text_field( $_GET['team'] ) );
+			$url = '&player_first_name=' . sanitize_text_field( $_GET['player_first_name'] ) . '&player_last_name=' . sanitize_text_field( $_GET['player_last_name'] ) . '&team=' . sanitize_text_field( $_GET['team'] );
 		} elseif ( ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) && ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s ORDER BY player_last_name ASC", $_GET['player_first_name'], $_GET['player_last_name'] );
-			$url = '&player_first_name=' . $_GET['player_first_name'] . '&player_last_name=' . $_GET['player_last_name'];
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND player_last_name = %s ORDER BY player_last_name ASC", sanitize_text_field( $_GET['player_first_name'] ), sanitize_text_field( $_GET['player_last_name'] ) );
+			$url = '&player_first_name=' . sanitize_text_field( $_GET['player_first_name'] ) . '&player_last_name=' . sanitize_text_field( $_GET['player_last_name'] );
 		} elseif ( ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) && ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND team_id = %d ORDER BY player_last_name ASC", $_GET['player_first_name'], $_GET['team'] );
-			$url = '&player_first_name=' . $_GET['player_first_name'] . '&team=' . $_GET['team'];
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s AND team_id = %d ORDER BY player_last_name ASC", sanitize_text_field( $_GET['player_first_name'] ), sanitize_text_field( $_GET['team'] ) );
+			$url = '&player_first_name=' . sanitize_text_field( $_GET['player_first_name'] ) . '&team=' . sanitize_text_field( $_GET['team'] );
 		} elseif ( ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) && ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC", $_GET['player_last_name'], $_GET['team'] );
-			$url = '&player_last_name=' . $_GET['player_last_name'] . '&team=' . $_GET['team'];
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s AND team_id = %d ORDER BY player_last_name ASC", sanitize_text_field( $_GET['player_last_name'] ), sanitize_text_field( $_GET['team'] ) );
+			$url = '&player_last_name=' . sanitize_text_field( $_GET['player_last_name'] ) . '&team=' . sanitize_text_field( $_GET['team'] );
 		} elseif ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s ORDER BY player_last_name ASC", $_GET['player_first_name'] );
-			$url = '&player_first_name=' . $_GET['player_first_name'];
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_first_name = %s ORDER BY player_last_name ASC", sanitize_text_field( $_GET['player_first_name'] ) );
+			$url = '&player_first_name=' . sanitize_text_field( $_GET['player_first_name'] );
 		} elseif ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s ORDER BY player_last_name ASC", $_GET['player_last_name'] );
-			$url = '&player_last_name=' . $_GET['player_last_name'];
-		} elseif ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) {
-			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE team_id = %d ORDER BY player_last_name ASC", $_GET['team'] );
-			$url = '&team=' . $_GET['team'];
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE player_last_name = %s ORDER BY player_last_name ASC", sanitize_text_field( $_GET['player_last_name'] ) );
+			$url = '&player_last_name=' . sanitize_text_field( $_GET['player_last_name'] );
+		} elseif ( isset( $_GET['team'] ) && '' !== sanitize_text_field( $_GET['team'] ) ) {
+			$sql = $wpdb->prepare( "SELECT player_id FROM $players_table WHERE team_id = %d ORDER BY player_last_name ASC", sanitize_text_field( $_GET['team'] ) );
+			$url = '&team=' . sanitize_text_field( $_GET['team'] );
 		} else {
 			$sql = "SELECT player_id FROM $players_table ORDER BY player_last_name ASC";
 		}
@@ -291,7 +291,7 @@ class PlayersScreen extends Screen {
 			<?php
 			if ( isset( $_GET['player_first_name'] ) && '' !== $_GET['player_first_name'] ) {
 				?>
-				<input type="hidden" name="player_first_name" value="<?php echo esc_attr( $_GET['player_first_name'] ); ?>" />
+				<input type="hidden" name="player_first_name" value="<?php echo esc_attr( sanitize_text_field( $_GET['player_first_name'] ) ); ?>" />
 				<?php
 			}
 			?>
@@ -299,7 +299,7 @@ class PlayersScreen extends Screen {
 			<?php
 			if ( isset( $_GET['player_last_name'] ) && '' !== $_GET['player_last_name'] ) {
 				?>
-				<input type="hidden" name="player_last_name" value="<?php echo esc_attr( $_GET['player_last_name'] ); ?>" />
+				<input type="hidden" name="player_last_name" value="<?php echo esc_attr( sanitize_text_field( $_GET['player_last_name'] ) ); ?>" />
 				<?php
 			}
 			?>
@@ -307,7 +307,7 @@ class PlayersScreen extends Screen {
 			<?php
 			if ( isset( $_GET['team'] ) && '' !== $_GET['team'] ) {
 				?>
-				<input type="hidden" name="team" value="<?php echo esc_attr( $_GET['team'] ); ?>" />
+				<input type="hidden" name="team" value="<?php echo esc_attr( sanitize_text_field( $_GET['team'] ) ); ?>" />
 				<?php
 			}
 			?>

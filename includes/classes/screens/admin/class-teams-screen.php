@@ -107,11 +107,11 @@ class TeamsScreen extends Screen {
 		}
 
 		if ( ( isset( $_GET['team_search'] ) && '' !== $_GET['team_search'] ) && ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) ) {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s AND team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", $_GET['team_search'], $_GET['team_active'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s AND team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_search'] ), sanitize_text_field( $_GET['team_active'] ), $per_page, $sql_paged );
 		} elseif ( isset( $_GET['team_search'] )  && '' !== $_GET['team_search'] ) {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", $_GET['team_search'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_search'] ), $per_page, $sql_paged );
 		} elseif ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", $_GET['team_active'], $per_page, $sql_paged );
+			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_active'] ), $per_page, $sql_paged );
 		} else {
 			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table ORDER BY team_name ASC LIMIT %d OFFSET %d", $per_page, $sql_paged );
 		}
@@ -142,7 +142,7 @@ class TeamsScreen extends Screen {
 				<div class="search-column">
 					<?php
 					if ( isset( $_GET['team_search'] ) && '' !== $_GET['team_search'] ) {
-						$team_search = $_GET['team_search'];
+						$team_search = sanitize_text_field( $_GET['team_search'] );
 					} else {
 						$team_search = '';
 					}
@@ -199,14 +199,14 @@ class TeamsScreen extends Screen {
 		$url = '';
 
 		if ( ( isset( $_GET['team_search'] ) && '' !== $_GET['team_search'] ) && ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) ) {
-			$sql = $wpdb->prepare( "SELECT team_id AS num_teams FROM $team_table WHERE team_name = %s AND team_active = %s ORDER BY team_name ASC", $_GET['team_search'], $_GET['team_active'] );
-			$url .= '&team_search=' . $_GET['team_search'] . '&team_active=' . $_GET['team_active'];
+			$sql = $wpdb->prepare( "SELECT team_id AS num_teams FROM $team_table WHERE team_name = %s AND team_active = %s ORDER BY team_name ASC", sanitize_text_field( $_GET['team_search'] ), sanitize_text_field( $_GET['team_active'] ) );
+			$url .= '&team_search=' . sanitize_text_field( $_GET['team_search'] ) . '&team_active=' . sanitize_text_field( $_GET['team_active'] );
 		} elseif ( isset( $_GET['team_search'] )  && '' !== $_GET['team_search'] ) {
-			$sql = $wpdb->prepare( "SELECT team_id AS num_teams FROM $team_table WHERE team_name = %s ORDER BY team_name ASC", $_GET['team_search'] );
-			$url .= '&team_search=' . $_GET['team_search'];
+			$sql = $wpdb->prepare( "SELECT team_id AS num_teams FROM $team_table WHERE team_name = %s ORDER BY team_name ASC", sanitize_text_field( $_GET['team_search'] ) );
+			$url .= '&team_search=' . sanitize_text_field( $_GET['team_search'] );
 		} elseif ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) {
-			$sql = $wpdb->prepare( "SELECT team_id AS num_teams FROM $team_table WHERE team_active = %s ORDER BY team_name ASC", $_GET['team_active'] );
-			$url .= '&team_active=' . $_GET['team_active'];
+			$sql = $wpdb->prepare( "SELECT team_id AS num_teams FROM $team_table WHERE team_active = %s ORDER BY team_name ASC", sanitize_text_field( $_GET['team_active'] ) );
+			$url .= '&team_active=' . sanitize_text_field( $_GET['team_active'] );
 		} else {
 			$sql = "SELECT team_id FROM $team_table ORDER BY team_name ASC";
 		}
@@ -239,7 +239,7 @@ class TeamsScreen extends Screen {
 			<?php
 			if ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) {
 				?>
-				<input type="hidden" name="team_active" value="<?php echo esc_attr( $_GET['team_active'] ); ?>" />
+				<input type="hidden" name="team_active" value="<?php echo esc_attr( sanitize_text_field( $_GET['team_active'] ) ); ?>" />
 				<?php
 			}
 			?>
@@ -247,7 +247,7 @@ class TeamsScreen extends Screen {
 			<?php
 			if ( isset( $_GET['team_search'] ) && '' !== $_GET['team_search'] ) {
 				?>
-				<input type="hidden" name="team_search" value="<?php echo esc_attr( $_GET['team_search'] ); ?>" />
+				<input type="hidden" name="team_search" value="<?php echo esc_attr( sanitize_text_field( $_GET['team_search'] ) ); ?>" />
 				<?php
 			}
 			?>

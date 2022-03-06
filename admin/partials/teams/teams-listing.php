@@ -23,7 +23,7 @@ use Sports_Bench\Classes\Base\Team;
 $screen = new TeamsScreen();
 
 if ( isset( $_GET['action'] ) && isset( $_GET['team_id'] ) && 'delete' === $_GET['action'] ) {
-	$screen->delete_team( $_GET['team_id'] );
+	$screen->delete_team( sanitize_text_field( $_GET['team_id'] ) );
 }
 
 ?>

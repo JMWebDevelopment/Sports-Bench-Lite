@@ -50,7 +50,7 @@ $screen = new GamesScreen();
 			if ( isset( $_GET['game_id'] ) && 0 < $_GET['game_id'] ) {
 				$game = $screen->save_game( $_REQUEST );
 
-				$screen->display_game_fields( $_GET['game_id'], $game[0], $game[1], $game[2] );
+				$screen->display_game_fields( sanitize_text_field( $_GET['game_id'] ), $game[0], $game[1], $game[2] );
 			} else {
 				$screen->display_new_game_fields();
 			}

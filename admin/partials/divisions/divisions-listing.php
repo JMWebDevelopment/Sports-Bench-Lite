@@ -23,7 +23,7 @@ use Sports_Bench\Classes\Base\Team;
 $screen = new DivisionsScreen();
 
 if ( isset( $_GET['action'] ) && isset( $_GET['division_id'] ) && 'delete' === $_GET['action'] ) {
-	$screen->delete_division( $_GET['division_id'] );
+	$screen->delete_division( sanitize_text_field( $_GET['division_id'] ) );
 }
 
 ?>

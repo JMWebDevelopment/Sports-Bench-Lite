@@ -23,7 +23,7 @@ use Sports_Bench\Classes\Base\Game;
 $screen = new GamesScreen();
 
 if ( isset( $_GET['action'] ) && isset( $_GET['game_id'] ) && 'delete' === $_GET['action'] ) {
-	$screen->delete_game( $_GET['game_id'] );
+	$screen->delete_game( sanitize_text_field( $_GET['game_id'] ) );
 }
 
 ?>

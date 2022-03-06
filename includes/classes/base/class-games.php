@@ -434,7 +434,7 @@ class Games {
 		if ( ! isset( $_GET['game_id'] ) ) {
 			return '<p>' . esc_html__( 'Please select a game in order to see the box score for it.', 'sports-bench' ) . '</p>';
 		}
-		$game_id   = $_GET['game_id'];
+		$game_id   = sanitize_text_field( $_GET['game_id'] );
 		$game      = new Game( (int) $game_id );
 		$home_team = new Team( (int) $game->get_game_home_id() );
 		$away_team = new Team( (int) $game->get_game_away_id() );
