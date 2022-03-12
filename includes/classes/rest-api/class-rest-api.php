@@ -52,10 +52,6 @@ class Sports_Bench_REST_API {
 	 */
 	public function register_endpoints() {
 
-		// Register the playoff bracket route.
-		$brackets_route = new Bracket_REST_Controller();
-		$brackets_route->register_routes();
-
 		// Register the division route.
 		$division_route = new Division_REST_Controller();
 		$division_route->register_routes();
@@ -75,10 +71,6 @@ class Sports_Bench_REST_API {
 		// Register the players route.
 		$players_route = new Player_REST_Controller();
 		$players_route->register_routes();
-
-		// Register the playoff series route.
-		$series_route = new Series_REST_Controller();
-		$series_route->register_routes();
 
 		// Register the teams route.
 		$teams_route = new Team_REST_Controller();

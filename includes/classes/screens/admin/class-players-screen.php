@@ -267,7 +267,7 @@ class PlayersScreen extends Screen {
 		$total_pages = ceil( $num_teams / $per_page );
 
 		if ( isset( $_REQUEST['paged'] ) ) {
-			$current_page = $_REQUEST['paged'];
+			$current_page = intval( $_REQUEST['paged'] );
 		} else {
 			$current_page = 1;
 		}
@@ -488,7 +488,7 @@ class PlayersScreen extends Screen {
 	 * @return array      The array of information for the player.
 	 */
 	public function get_player_info() {
-		$the_player = new Player( (int) $_GET['player_id'] );
+		$the_player = new Player( (int) intval( $_GET['player_id'] ) );
 
 		/**
 		 * Gets the information for a player.

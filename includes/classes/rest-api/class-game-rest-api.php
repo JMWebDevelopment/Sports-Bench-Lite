@@ -169,7 +169,6 @@ class Game_REST_Controller extends WP_REST_Controller {
 		if ( is_array( $data ) ) {
 			return new WP_REST_Response( $data, 201 );
 		} else {
-			echo 'not created';
 			return $data;
 		}
 

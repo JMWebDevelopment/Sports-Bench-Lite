@@ -699,11 +699,11 @@ class Sports_Bench_Blocks {
 				}
 			}
 			if ( $team_one_wins > $team_two_wins ) {
-				$series_score = $team_one->team_name . ' ' . __( 'lead the all-time series', 'sports-bench' ) . ' ' . $team_one_wins . '-' . $team_two_wins . '-' . $draws;
+				$series_score = $team_one->team_name . ' ' . esc_html__( 'lead the all-time series', 'sports-bench' ) . ' ' . $team_one_wins . '-' . $team_two_wins . '-' . $draws;
 			} elseif ( $team_two_wins > $team_one_wins ) {
-				$series_score = $team_two->team_name . ' ' . __( 'lead the all-time series', 'sports-bench' ) . ' ' . $team_two_wins . '-' . $team_one_wins . '-' . $draws;
+				$series_score = $team_two->team_name . ' ' . esc_html__( 'lead the all-time series', 'sports-bench' ) . ' ' . $team_two_wins . '-' . $team_one_wins . '-' . $draws;
 			} else {
-				$series_score = __( 'The all-time series is tied', 'sports-bench' ) . ' ' . $team_one_wins . '-' . $team_two_wins . '-' . $draws;
+				$series_score = esc_html__( 'The all-time series is tied', 'sports-bench' ) . ' ' . $team_one_wins . '-' . $team_two_wins . '-' . $draws;
 			}
 
 			$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE ( game_home_id = %d AND game_away_id = %d ) OR ( game_home_id = %d AND game_away_id = %d ) AND game_status = 'final' ORDER BY game_day DESC LIMIT %d", $team_one_id, $team_two_id, $team_two_id, $team_one_id, $recent_games );

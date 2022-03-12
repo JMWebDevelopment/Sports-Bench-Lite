@@ -177,7 +177,7 @@ if ( $items ) {
 			} else {
 				$selected = '';
 			}
-			echo '<option value="' . esc_attr( $key ) . '" ' . $selected . '>' . esc_html( $name ) . '</option>';
+			echo '<option value="' . esc_attr( $key ) . '" ' . wp_kses_post( $selected ) . '>' . esc_html( $name ) . '</option>';
 		}
 		echo '</select><a class="button sports-bench-remove-stat" href="#">' . esc_html__( 'Remove Item', 'sports-bench' ) . '</a></td>';
 		echo '</tr>';

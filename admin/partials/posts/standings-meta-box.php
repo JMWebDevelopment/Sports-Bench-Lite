@@ -90,7 +90,7 @@ if ( $items ) {
 			} else {
 				$selected = '';
 			}
-			echo '<option value="' . esc_attr( $key ) . '" ' . $selected . '>' . $name . '</option>';
+			echo '<option value="' . esc_attr( $key ) . '" ' . esc_attr( $selected ) . '>' . wp_kses_post( $name ) . '</option>';
 		}
 		echo '</select><br /><a class="button sports-bench-remove-item" href="#">' . esc_html__( 'Remove Item', 'sports-bench' ) . '</a></div>';
 	}

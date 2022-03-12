@@ -141,7 +141,7 @@ class Sports_Bench_Stats_Widget extends WP_Widget {
 			} else {
 				$selected = '';
 			}
-			echo '<option value="' . esc_attr( $key ) . '"' . $selected . '>' . esc_html( $label ) . '</option>';
+			echo '<option value="' . esc_attr( $key ) . '"' . wp_kses_post( $selected ) . '>' . esc_html( $label ) . '</option>';
 		}
 		echo '</select>';
 		echo '</p>';

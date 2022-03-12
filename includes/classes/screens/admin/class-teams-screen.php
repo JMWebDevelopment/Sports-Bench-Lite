@@ -215,7 +215,7 @@ class TeamsScreen extends Screen {
 		$total_pages = ceil( $num_teams / $per_page );
 
 		if ( isset( $_REQUEST['paged'] ) ) {
-			$current_page = $_REQUEST['paged'];
+			$current_page = intval( $_REQUEST['paged'] );
 		} else {
 			$current_page = 1;
 		}
@@ -468,7 +468,7 @@ class TeamsScreen extends Screen {
 	 * @return array      The array of information for the team.
 	 */
 	public function get_team_info() {
-		$the_team = new Team( (int) $_GET['team_id'] );
+		$the_team = new Team( (int) intval( $_GET['team_id'] ) );
 
 		/**
 		 * Gets the information for a team.

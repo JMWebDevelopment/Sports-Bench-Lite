@@ -1836,7 +1836,7 @@ class Sports_Bench_Admin {
 					continue;
 				}
 				if ( $division->conference_name !== $conference ) {
-					echo '<h3 class="conference-name">' . $division->conference_name .'</h3>';
+					echo '<h3 class="conference-name">' . wp_kses_post( $division->conference_name ) .'</h3>';
 					$conference = $division->conference_name;
 				}
 				echo sports_bench_widget_standings( $division->division_id );
@@ -1883,7 +1883,7 @@ class Sports_Bench_Admin {
 			} else {
 				$selected = '';
 			}
-			echo '<option value="' . $key . '"' . $selected . '>' . $label . '</option>';
+			echo '<option value="' . esc_attr( $key ) . '"' . wp_kses_post( $selected ) . '>' . wp_kses_post( $label ) . '</option>';
 		}
 		echo '</select>';
 		echo '</div>';
@@ -2068,11 +2068,11 @@ class Sports_Bench_Admin {
 		echo '<table class="game-options">';
 		echo '<tr>';
 		echo '<td><label for="sports_bench_dashboard_upcoming_games">' . esc_html__( 'Number of upcoming games to show:', 'sports-bench' ) . '</label></td>';
-		echo '<td><input type="number" min="1" max="100" step="1" id="sports_bench_dashboard_upcoming_games" name="sports_bench_dashboard_widget_options[sports_bench_dashboard_upcoming_games]" value="' . $games_widget_options['sports_bench_dashboard_upcoming_games'] . '" /></td>';
+		echo '<td><input type="number" min="1" max="100" step="1" id="sports_bench_dashboard_upcoming_games" name="sports_bench_dashboard_widget_options[sports_bench_dashboard_upcoming_games]" value="' . wp_kses_post( $games_widget_options['sports_bench_dashboard_upcoming_games'] ) . '" /></td>';
 		echo '</tr>';
 		echo '<tr>';
 		echo '<td><label for="sports_bench_dashboard_recent_games">' . esc_html__( 'Number of recent games to show:', 'sports-bench' ) . '</label></td>';
-		echo '<td><input type="number" min="1" max="100" step="1" id="sports_bench_dashboard_recent_games" name="sports_bench_dashboard_widget_options[sports_bench_dashboard_recent_games]" value="' . $games_widget_options['sports_bench_dashboard_recent_games'] . '" /></td>';
+		echo '<td><input type="number" min="1" max="100" step="1" id="sports_bench_dashboard_recent_games" name="sports_bench_dashboard_widget_options[sports_bench_dashboard_recent_games]" value="' . wp_kses_post( $games_widget_options['sports_bench_dashboard_recent_games'] ) . '" /></td>';
 		echo '</tr>';
 		echo '</table>';
 		echo '</div>';

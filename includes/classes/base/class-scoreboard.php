@@ -131,7 +131,6 @@ class Scoreboard {
 			$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE game_week = %d AND game_season = %s ORDER BY game_day ASC;", $week, $season );
 			$games    = Database::get_results( $querystr );
 		} else {
-			echo 'days';
 			$today      = strtotime( 'today' );
 			$lower_date = strtotime( '-3 days', $today );
 			$lower_date = date( 'Y-m-d H:i:s', $lower_date );

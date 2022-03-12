@@ -219,7 +219,7 @@ class Sports_Bench_Public {
 		if ( isset( $_REQUEST['team_slug'] ) && get_option( 'sports-bench-team-page' ) ) {
 			global $wp_query;
 			global $post;
-			$team                              = new Team( $_REQUEST['team_slug'] );
+			$team                              = new Team( wp_filter_nohtml_kses( sanitize_text_field( $_REQUEST['team_slug'] ) ) );
 			$team_slug                         = $team->get_team_slug();
 			$wp_query->query_vars['team_slug'] = $team_slug;
 			$myurl                             = esc_url( get_home_url() );
@@ -227,7 +227,7 @@ class Sports_Bench_Public {
 			$myurl                            .= trim( sanitize_title_for_query( $team_slug ) ) . "/";
 
 			if ( isset( $_REQUEST['team_year'] ) ) {
-				$wp_query->query_vars['team_year'] = $_REQUEST['team_year'];
+				$wp_query->query_vars['team_year'] = wp_filter_nohtml_kses( sanitize_text_field( $_REQUEST['team_year'] ) );
 				$myurl                            .= trim( sanitize_title_for_query( $_REQUEST['team_year'] ) ) . "/";
 			}
 
@@ -237,7 +237,7 @@ class Sports_Bench_Public {
 		if ( isset( $_REQUEST['player_slug'] ) && get_option( 'sports-bench-player-page' ) ) {
 			global $wp_query;
 			global $post;
-			$player = new Player( $_REQUEST['player_slug'] );
+			$player = new Player( wp_filter_nohtml_kses( sanitize_text_field( $_REQUEST['player_slug'] ) ) );
 			$player_slug = $player->get_player_slug();
 			$wp_query->query_vars['player_slug'] = $player_slug;
 			$wp_query->query_vars['page'] = get_option( 'sports-bench-player-page' );

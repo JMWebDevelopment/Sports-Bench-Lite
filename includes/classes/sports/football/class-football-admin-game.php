@@ -1835,7 +1835,7 @@ class FootballAdminGame {
 
 		//* Get the game events already in the database to compare the new ones to
 		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
-		$game_id         = $_REQUEST['game_id'];
+		$game_id         = intval( $_REQUEST['game_id'] );
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_events     = $wpdb->get_results( $quer );
 		$info_ids        = [];
@@ -2304,7 +2304,7 @@ class FootballAdminGame {
 
 		//* Grab the player stats for the game already in the database to compare the new ones to
 		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_stats';
-		$game_id         = $_REQUEST['game_id'];
+		$game_id         = intval( $_REQUEST['game_id'] );
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_stats      = $wpdb->get_results( $quer );
 		$stats_ids       = [];
@@ -4125,7 +4125,7 @@ class FootballAdminGame {
 										} else {
 											$selected = '';
 										}
-										echo '<option ' . $selected . ' value="' . esc_attr( $single_player['player_id'] ) . '">' . esc_html( $single_player['player_name'] ) . '</option>';
+										echo '<option ' . wp_kses_post( $selected ) . ' value="' . esc_attr( $single_player['player_id'] ) . '">' . esc_html( $single_player['player_name'] ) . '</option>';
 									}
 									?>
 									</select>

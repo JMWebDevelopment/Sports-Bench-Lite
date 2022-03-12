@@ -1128,7 +1128,7 @@ class HockeyAdminGame {
 
 		//* Grab the player stats for the game already in the database to compare the new ones to
 		$game_info_table = $wpdb->prefix . 'sb_game_stats';
-		$game_id = $_REQUEST['game_id'];
+		$game_id = intval( $_REQUEST['game_id'] );
 		$quer = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_stats = $wpdb->get_results( $quer );
 		$stats_ids = [];

@@ -140,7 +140,7 @@ foreach ( $brackets_list as $the_bracket ) {
 <head>
 	<title><?php esc_html_e( 'Add Sports Bench Shortcode', 'sports-bench' ) ?></title>
 	<?php wp_print_scripts(); ?>
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_option('blog_charset'); ?>" />
+	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo wp_kses_post( get_option('blog_charset') ); ?>" />
 	<base target="_self" />
 </head>
 
@@ -174,7 +174,7 @@ foreach ( $brackets_list as $the_bracket ) {
 			<td><select id="shortcode-season" name="shortcode-season">
 					<?php
 					foreach ( $seasons as $key => $name ) {
-						echo '<option value="' . $key . '">' . $name . '</option>';
+						echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 					}
 					?>
 				</select>
@@ -184,7 +184,7 @@ foreach ( $brackets_list as $the_bracket ) {
 					<select id="shortcode-game-<?php echo esc_attr( $season ); ?>" name="shortcode-game" class="games" <?php if ( $season != get_option( 'sports-bench-season-year' ) ) { ?>disabled="disabled"<?php } ?>>
 						<?php
 						foreach ( $game as $key => $name ) {
-							echo '<option value="' . $key . '">' . $name . '</option>';
+							echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 						}
 						?>
 					</select>
@@ -196,7 +196,7 @@ foreach ( $brackets_list as $the_bracket ) {
 			<td><select id="shortcode-player" name="shortcode-player">
 					<?php
 					foreach ( $players as $key => $name ) {
-						echo '<option value="' . $key . '">' . $name . '</option>';
+						echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 					}
 					?>
 				</select>
@@ -207,7 +207,7 @@ foreach ( $brackets_list as $the_bracket ) {
 			<td><select id="shortcode-team" name="shortcode-team">
 					<?php
 					foreach ( $teams as $key => $name ) {
-						echo '<option value="' . $key . '">' . $name . '</option>';
+						echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 					}
 					?>
 				</select>
@@ -217,14 +217,14 @@ foreach ( $brackets_list as $the_bracket ) {
             <td><?php esc_html_e( 'Select Conference/Division', 'sports-bench' ); ?></td>
             <td><select id="shortcode-division" name="shortcode-division">
 					<?php
-					echo '<option value="">' . __( 'Select a Conference or Division', 'sports-bench' ) . '</option>';
+					echo '<option value="">' . esc_html__( 'Select a Conference or Division', 'sports-bench' ) . '</option>';
 					foreach ( $divisions as $division ) {
 					    if ( null !== $division[ 'division_conference_id' ] ) {
 					        $prefix = '&mdash; ';
                         } else {
 					        $prefix = '';
                         }
-						echo '<option value="' . $division[ 'division_id' ] . '">' . $prefix . $division[ 'division_name' ] . '</option>';
+						echo '<option value="' . esc_attr( $division[ 'division_id' ] ) . '">' . wp_kses_post( $prefix . $division[ 'division_name' ] ) . '</option>';
 					}
 					?>
                 </select>
@@ -235,7 +235,7 @@ foreach ( $brackets_list as $the_bracket ) {
             <td><select id="shortcode-bracket" name="shortcode-bracket">
 					<?php
 					foreach ( $brackets as $key => $name ) {
-						echo '<option value="' . $key . '">' . $name . '</option>';
+						echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 					}
 					?>
                 </select>
@@ -246,7 +246,7 @@ foreach ( $brackets_list as $the_bracket ) {
             <td><select id="shortcode-rivalry-team-one" name="shortcode-rivalry-team-one">
 					<?php
 					foreach ( $teams as $key => $name ) {
-						echo '<option value="' . $key . '">' . $name . '</option>';
+						echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 					}
 					?>
                 </select>
@@ -255,7 +255,7 @@ foreach ( $brackets_list as $the_bracket ) {
             <td><select id="shortcode-rivalry-team-two" name="shortcode-rivalry-team-two">
 			        <?php
 			        foreach ( $teams as $key => $name ) {
-				        echo '<option value="' . $key . '">' . $name . '</option>';
+				        echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 			        }
 			        ?>
                 </select>
@@ -272,7 +272,7 @@ foreach ( $brackets_list as $the_bracket ) {
             <td><select id="shortcode-recap-season" name="shortcode-recap-season">
 					<?php
 					foreach ( $seasons as $key => $name ) {
-						echo '<option value="' . $key . '">' . $name . '</option>';
+						echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 					}
 					?>
                 </select>
@@ -282,7 +282,7 @@ foreach ( $brackets_list as $the_bracket ) {
                     <select id="shortcode-game-recap-<?php echo esc_attr( $season ); ?>" name="shortcode-game-recap" class="games" <?php if ( $season != get_option( 'sports-bench-season-year' ) ) { ?>disabled="disabled"<?php } ?>>
 						<?php
 						foreach ( $game as $key => $name ) {
-							echo '<option value="' . $key . '">' . $name . '</option>';
+							echo '<option value="' . esc_attr( $key ) . '">' . wp_kses_post( $name ) . '</option>';
 						}
 						?>
                     </select>

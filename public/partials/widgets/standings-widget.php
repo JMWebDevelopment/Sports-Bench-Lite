@@ -101,7 +101,7 @@ class Sports_Bench_Standings_Widget extends WP_Widget {
 					continue;
 				}
 				if ( $division->conference_name !== $conference ) {
-					echo '<h3 class="conference-name">' . $division->conference_name .'</h3>';
+					echo '<h3 class="conference-name">' . wp_kses_post( $division->conference_name ) .'</h3>';
 					$conference = $division->conference_name;
 				}
 
@@ -218,7 +218,7 @@ class Sports_Bench_Standings_Widget extends WP_Widget {
 			} else {
 				$selected = '';
 			}
-			echo '<option value="' . esc_attr( $key ) . '"' . $selected . '>' . esc_html( $label ) . '</option>';
+			echo '<option value="' . esc_attr( $key ) . '"' . wp_kses_post( $selected ) . '>' . esc_html( $label ) . '</option>';
 		}
 		echo '</select>';
 		echo '</p>';

@@ -51,7 +51,7 @@ class Display {
 		$key = get_option( 'sports-bench-week-maps-api-key' );
 
 		if ( $key ) {
-			$map = '<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=' . $key . ' &q=' . $game->get_game_location_line_one() . ' + ' . $game->get_game_location_line_two() . ',' . $game->get_game_location_city() . '+' . $game->get_game_location_state() . '+' . $game->get_game_location_country() . '+' . $game->get_game_location_zip_code() . '" allowfullscreen></iframe>';
+			$map = '<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=' . wp_kses_post( $key ) . ' &q=' . wp_kses_post( $game->get_game_location_line_one() ) . ' + ' . wp_kses_post( $game->get_game_location_line_two() ) . ',' . wp_kses_post( $game->get_game_location_city() ) . '+' . wp_kses_post( $game->get_game_location_state() ) . '+' . wp_kses_post( $game->get_game_location_country() ) . '+' . wp_kses_post( $game->get_game_location_zip_code() ) . '" allowfullscreen></iframe>';
 		} else {
 			$map = '';
 		}
