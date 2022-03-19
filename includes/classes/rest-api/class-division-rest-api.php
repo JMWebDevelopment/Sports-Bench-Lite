@@ -6,7 +6,7 @@
  *
  * @link       https://sportsbenchwp.com
  * @since      2.0.0
- * @version    2.1.1
+ * @version    2.1.4
  *
  * @package    Sports_Bench_Lite
  * @subpackage Sports_Bench_Lite/includes/classes/base

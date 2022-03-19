@@ -7,7 +7,7 @@
  *
  * @link       https://sportsbenchwp.com
  * @since      2.0.0
- * @version    2.1.1
+ * @version    2.1.4
  *
  * @package    Sports_Bench_Lite
  * @subpackage Sports_Bench_Lite/includes
@@ -70,7 +70,7 @@ class Sports_Bench {
 	public function __construct() {
 
 		$this->plugin_slug = 'sports-bench-lite';
-		$this->version     = '2.1.3';
+		$this->version     = '2.1.4';
 
 		$this->load_dependencies();
 		$this->load_classes();

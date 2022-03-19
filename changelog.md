@@ -2,6 +2,10 @@
 
 All of the changes for Sports Bench Lite are stored here.
 
+## [2.1.4] - March 19, 2022
+- Added more sanitization for inputs.
+- Made sure the variables are escaped correctly.
+
 ## [2.1.3] - March 6, 2022
 - Added sanitization for inputs.
 - Made sure the variables are escaped correctly.
