@@ -963,7 +963,11 @@ class BaseballAdminGame {
 		$game_info_score_plays = $game['game_info_score_play'];
 		unset( $game['game_info_score_play'] );
 
-		$len = count( $game_info_innings );
+		if ( $game_info_innings ) {
+			$len = count( $game_info_innings );
+		} else {
+			$len = 0;
+		}
 
 		$events = [];
 		for ( $i = 0; $i < $len; $i++ ) {

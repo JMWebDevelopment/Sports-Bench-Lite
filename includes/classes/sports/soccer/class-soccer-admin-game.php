@@ -870,7 +870,12 @@ class SoccerAdminGame {
 		$game_info_assists = $game['secondary_player_id'];
 		unset( $game['secondary_player_id'] );
 
-		$len    = count( $team_ids );
+		if ( $team_ids ) {
+			$len = count( $team_ids );
+		} else {
+			$len = 0;
+		}
+
 		$events = [];
 		for ( $i = 0; $i < $len; $i++ ) {
 			if ( isset( $player_ids[ $i ] ) ) {

@@ -48,7 +48,7 @@ $screen = new GamesScreen();
 
 			<?php
 			if ( isset( $_GET['game_id'] ) && 0 < $_GET['game_id'] ) {
-				$game = $screen->save_game( array_map_r('strip_tags', $_REQUEST ) );
+				$game = $screen->save_game( $screen->sanitize_array( $_REQUEST ) );
 
 				$screen->display_game_fields( sanitize_text_field( $_GET['game_id'] ), $game[0], $game[1], $game[2] );
 			} else {

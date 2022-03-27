@@ -47,7 +47,7 @@ $screen = new PlayersScreen();
 
 			<?php
 			if ( isset( $_GET['player_id'] ) && 0 < $_GET['player_id'] ) {
-				$player = $screen->save_player( array_map_r('strip_tags', $_REQUEST ) );
+				$player = $screen->save_player( $screen->sanitize_array( $_REQUEST ) );
 
 				if ( null === $player['player_id'] || 0 === $player['player_id'] || '' === $player['player_id'] ) {
 					$player = $screen->get_player_info();

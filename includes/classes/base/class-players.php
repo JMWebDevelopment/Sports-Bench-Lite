@@ -537,4 +537,30 @@ class Players {
 		return $html;
 	}
 
+	/**
+	 * Sanitizies the input for an array.
+	 *
+	 * @since 2.1.5
+	 *
+	 * @param array $input      The array of incoming information to sanitize.
+	 * @return array            The array of sanitized data.
+	 */
+	public function sanitize_array( $input ) {
+
+		// Initialize the new array that will hold the sanitize values
+		$new_input = array();
+
+		// Loop through the input and sanitize each of the values
+		foreach ( $input as $key => $val ) {
+			if ( is_array( $val ) ) {
+				$new_input[ $key ] = $this->sanitize_array( $val );
+			} else {
+				$new_input[ $key ] = sanitize_text_field( $val );
+			}
+		}
+
+		return $new_input;
+
+	}
+
 }

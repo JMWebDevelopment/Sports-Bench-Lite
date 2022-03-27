@@ -46,7 +46,7 @@ $screen = new TeamsScreen();
 
 			<?php
 			if ( isset( $_GET['team_id'] ) && 0 < $_GET['team_id'] ) {
-				$team = $screen->save_team( $_REQUEST );
+				$team = $screen->save_team( $screen->sanitize_array( $_REQUEST ) );
 
 				if ( null === $team['team_id'] || 0 === $team['team_id'] || '' === $team['team_id'] ) {
 					$team = $screen->get_team_info();

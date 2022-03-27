@@ -50,7 +50,7 @@ if ( isset( $_GET['action'] ) && isset( $_GET['division_id'] ) && 'delete' === $
 
 				<?php
 				if ( isset( $_GET['division_id'] ) && 0 < $_GET['division_id'] ) {
-					$division = $screen->save_division_conference( array_map_r('strip_tags', $_REQUEST ) );
+					$division = $screen->save_division_conference( $screen->sanitize_array( $_REQUEST ) );
 
 					if ( null === $division['division_id'] || 0 === $division['division_id'] || '' === $division['division_id'] ) {
 						$division = $screen->get_division_info();

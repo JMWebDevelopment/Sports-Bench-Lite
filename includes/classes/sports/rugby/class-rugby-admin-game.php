@@ -800,7 +800,12 @@ class RugbyAdminGame {
 		$player_ids = $game['player_id'];
 		unset( $game['player_id'] );
 
-		$len = count( $team_ids );
+		if ( $team_ids ) {
+			$len = count( $team_ids );
+		} else {
+			$len = 0;
+		}
+
 		$events = [];
 		for ( $i = 0; $i < $len; $i++ ) {
 			if ( isset( $player_ids[ $i ] ) ) {

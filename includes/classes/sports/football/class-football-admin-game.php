@@ -1810,7 +1810,12 @@ class FootballAdminGame {
 		$game_info_plays = $game['game_info_play'];
 		unset( $game['game_info_play'] );
 
-		$len = count( $game_info_quarters );
+		if ( $game_info_quarters ) {
+			$len = count( $game_info_quarters );
+		} else {
+			$len = 0;
+		}
+
 		$events = [];
 		for ( $i = 0; $i < $len; $i++ ) {
 			if ( isset( $game_info_ids[ $i ] ) ) {

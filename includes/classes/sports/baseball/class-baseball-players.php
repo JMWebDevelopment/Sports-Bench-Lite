@@ -246,7 +246,7 @@ class BaseballPlayers extends Players {
 			 * @param array  $POST         The incoming information from the AJAX call.
 			 * @return string              The HTML for the table.
 			 */
-			echo apply_filters( 'sports_bench_player_game_stats_table', '', $season, $team_id, 'baseball', array_map_r('strip_tags', $_POST ) );
+			echo apply_filters( 'sports_bench_player_game_stats_table', '', $season, $team_id, 'baseball', $screen->sanitize_array( $_POST ) );
 		}
 
 		$data = ob_get_clean();

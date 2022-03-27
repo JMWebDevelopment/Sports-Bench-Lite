@@ -471,8 +471,8 @@ class SoccerGames extends Games {
 
 	public function load_live_game_events() {
 		check_ajax_referer( 'sports-bench-box-score', 'nonce' );
-		$game_id   = wp_filter_nohtml_kses( $_POST['game_id' );
-		$event_ids = implode(',', array_map_r('strip_tags', $_POST['event_ids'] ) );
+		$game_id   = wp_filter_nohtml_kses( $_POST['game_id'] );
+		$event_ids = implode(',', $this->sanitize_array( $_POST['event_ids'] ) );
 		$html      = '';
 
 		global $wpdb;
