@@ -293,7 +293,7 @@ class GamesScreen extends Screen {
 		$total_pages = ceil( $num_games / $per_page );
 
 		if ( isset( $_REQUEST['paged'] ) ) {
-			$current_page = $_REQUEST['paged'];
+			$current_page = intval( $_REQUEST['paged'] );
 		} else {
 			$current_page = 1;
 		}

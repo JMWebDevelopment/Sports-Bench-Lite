@@ -240,7 +240,7 @@ class Sports_Bench_Setup {
 	public function load_season_games() {
 		global $wpdb;
 		check_ajax_referer( 'sports-bench-load-season-games', 'nonce' );
-		$season = $_POST['season'];
+		$season = wp_filter_nohtml_kses( $_POST['season'] );
 		$season = '"' . $season . '"';
 
 		$games      = [];

@@ -614,7 +614,7 @@ class Sports_Bench_Admin {
 		$old = get_post_meta( $post_id, 'sports_bench_standings_items', true );
 		$new = [];
 
-		$lines = $_POST['sports_bench_standings_items'];
+		$lines = $this->sanitize_array( $_POST['sports_bench_standings_items'] );
 
 		$num = count( $lines );
 
@@ -823,7 +823,7 @@ class Sports_Bench_Admin {
 		$old = get_post_meta( $post_id, 'sports_bench_stats', true );
 		$new = [];
 
-		$lines = $_POST['sports_bench_stats'];
+		$lines = $this->sanitize_array( $_POST['sports_bench_stats'] );
 
 		$num = count( $lines );
 
@@ -1034,7 +1034,7 @@ class Sports_Bench_Admin {
 
 		global $wpdb;
 
-		$sb_export_table = $_POST['sb_export_table'];
+		$sb_export_table = sanitize_text_field( $_POST['sb_export_table'] );
 
 		$filename       = 'sb_' . $sb_export_table;
 		$generated_date = date( 'd-m-Y His' );
@@ -1865,7 +1865,7 @@ class Sports_Bench_Admin {
 		}
 
 		if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['sports_bench_dashboard_widget_options'] ) ) {
-			$standings_widget_options['sports_bench_dashboard_standings'] = $_POST['sports_bench_dashboard_widget_options']['sports_bench_dashboard_standings'];
+			$standings_widget_options['sports_bench_dashboard_standings'] = sanitize_text_field( $_POST['sports_bench_dashboard_widget_options']['sports_bench_dashboard_standings'] );
 			update_option( 'sports_bench_dashboard_widget_options', $standings_widget_options );
 		}
 
@@ -2105,6 +2105,13 @@ class Sports_Bench_Admin {
 		}
 	}
 
+	/**
+	 * Adds in an upgrade notice for Sports Bench.
+	 *
+	 * @since 2.1.2
+	 *
+	 * @return void
+	 */
 	public function add_upgrade_admin_notice() {
 		if ( get_option( 'sports-bench-lite-upgrade-notice' ) ) {
 			return;
@@ -2117,8 +2124,40 @@ class Sports_Bench_Admin {
 		<?php
 	}
 
+	/**
+	 * Hides the upgrade notice when the user dismisses it.
+	 *
+	 * @since 2.1.2
+	 *
+	 * @return void
+	 */
 	public function dismiss_upgrade_notice() {
-		error_log( 'creating dismissed option' );
 		update_option( 'sports-bench-lite-upgrade-notice', true );
+	}
+
+	/**
+	 * Sanitizies the input for an array.
+	 *
+	 * @since 2.1.5
+	 *
+	 * @param array $input      The array of incoming information to sanitize.
+	 * @return array            The array of sanitized data.
+	 */
+	public function sanitize_array( $input ) {
+
+		// Initialize the new array that will hold the sanitize values
+		$new_input = array();
+
+		// Loop through the input and sanitize each of the values
+		foreach ( $input as $key => $val ) {
+			if ( is_array( $val ) ) {
+				$new_input[ $key ] = $this->sanitize_array( $val );
+			} else {
+				$new_input[ $key ] = sanitize_text_field( $val );
+			}
+		}
+
+		return $new_input;
+
 	}
 }
