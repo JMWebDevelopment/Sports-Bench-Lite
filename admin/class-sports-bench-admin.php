@@ -2160,4 +2160,86 @@ class Sports_Bench_Admin {
 		return $new_input;
 
 	}
+
+	/**
+	 * Adds in the team manager role for Sports Bench.
+	 *
+	 * @since 2.2
+	 */
+	public function add_team_manager_role() {
+		add_role(
+			'team_manager',
+			__( 'Team Manager', 'sports-bench' ),
+			array(
+				'upload_files' => true,
+				'edit_posts'   => true,
+				'edit_published_posts' => true,
+				'publish_posts'   => true,
+				'read' => true,
+				'level_2'   => true,
+				'level_1' => true,
+				'level_0'   => true,
+				'delete_posts' => true,
+				'delete_published_posts'   => true,
+			)
+		);
+	}
+
+	/**
+	 * Adds the user field to give a team manager a team.
+	 *
+	 * @since 2.2
+	 *
+	 * @param WP_User $user      The user object for the current user.
+	 */
+	public function add_user_fields( $user ) {
+		$teams = sports_bench_get_teams();
+		if ( get_the_author_meta( 'sports_bench_team', $user->ID ) ) {
+			$team = get_the_author_meta( 'sports_bench_team', $user->ID );
+		} else {
+			$team = '';
+		}
+		?>
+		<h3><?php esc_html_e( 'Sports Bench Information', 'sports-bench' ); ?></h3>
+		<table class="form-table">
+			<tr>
+				<th><label for="sports-bench-team"><?php esc_html_e( 'Team', 'sports-bench' ); ?></label></th>
+				<td>
+					<select id="sports-bench-team" name="sports_bench_team">
+						<option value=""><?php esc_html_e( 'Select a Team', 'sports-bench' ); ?></option>
+						<?php
+						if ( $teams ) {
+							foreach ( $teams as $key => $label ) {
+								$the_team = new Team( (int)$key );
+								?>
+								<option value="<?php echo $the_team->get_team_id(); ?>" <?php selected( $team, $the_team->get_team_id() ); ?>><?php echo $the_team->get_team_name(); ?></option>
+								<?php
+							}
+						}
+						?>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<?php
+	}
+
+	/**
+	 * Saves the team for a team manager.
+	 *
+	 * @since 2.2
+	 *
+	 * @param int $user_id      The current user id.
+	 */
+	public function save_user_fields( $user_id ) {
+		if ( ! current_user_can( 'edit_user', $user_id ) ) {
+			return false;
+		}
+
+		if ( empty( intval( $_POST['sports_bench_team'] ) ) ) {
+			return false;
+		}
+
+		update_usermeta( $user_id, 'sports_bench_team', intval( $_POST['sports_bench_team'] ) );
+	}
 }

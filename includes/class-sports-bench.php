@@ -300,6 +300,11 @@ class Sports_Bench {
 		$this->loader->add_action( 'admin_notices', $admin, 'add_upgrade_admin_notice' );
 		$this->loader->add_action( 'wp_ajax_sports_bench_lite_dismiss_upgrade_notice', $admin, 'dismiss_upgrade_notice' );
 		$this->loader->add_action( 'wp_ajax_nopriv_sports_bench_lite_dismiss_upgrade_notice', $admin, 'dismiss_upgrade_notice' );
+		$this->loader->add_action( 'init', $admin, 'add_team_manager_role' );
+		$this->loader->add_action( 'show_user_profile', $admin, 'add_user_fields' );
+		$this->loader->add_action( 'edit_user_profile', $admin, 'add_user_fields' );
+		$this->loader->add_action( 'personal_options_update', $admin, 'save_user_fields' );
+		$this->loader->add_action( 'edit_user_profile_update', $admin, 'save_user_fields' );
 
 		$team = new Classes\Screens\Admin\TeamsScreen();
 		$this->loader->add_action( 'sports_bench_new_team_fields', $team, 'sports_bench_do_default_new_team_fields' );
