@@ -94,4 +94,22 @@ class Screen {
 
 	}
 
+	/**
+	 * Checks to see if the current user is a team manager.
+	 *
+	 * @since 2.2
+	 *
+	 * @return boolean      Whether the current user is a team manager.
+	 */
+	public function is_team_manager() {
+		$user       = wp_get_current_user();
+		$roles      = ( array ) $user->roles;
+
+		if ( in_array( 'team_manager', $roles ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
 }

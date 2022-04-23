@@ -121,22 +121,27 @@ class GamesScreen extends Screen {
 			$sql_paged = $paged;
 		}
 
-		if ( ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) && ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) && ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_away_id = %d AND game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['game_away_id'] ), sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
-		} elseif ( ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) && ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) AND pgame_away_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['game_away_id'] ), $per_page, $sql_paged );
-		} elseif ( ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) && ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
-		} elseif ( ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) && ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE game_away_id = %d AND game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['game_away_id'] ), sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
-		} elseif ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), $per_page, $sql_paged );
-		} elseif ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE game_away_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['game_away_id'] ), $per_page, $sql_paged );
-		} elseif ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
+		if ( $this->is_team_manager() ) {
+			$team  = new Team( (int)get_the_author_meta( 'sports_bench_team', $user->ID ) );
+			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) ORDER BY game_day DESC LIMIT %d OFFSET %d", $team->get_team_id(), $team->get_team_id(), $per_page, $sql_paged );
 		} else {
-			$sql = $wpdb->prepare( "SELECT game_id FROM $games_table ORDER BY game_day DESC LIMIT %d OFFSET %d", $per_page, $sql_paged );
+			if ( ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) && ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) && ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_away_id = %d AND game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['game_away_id'] ), sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
+			} elseif ( ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) && ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) AND pgame_away_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['game_away_id'] ), $per_page, $sql_paged );
+			} elseif ( ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) && ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) AND game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
+			} elseif ( ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) && ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE game_away_id = %d AND game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['game_away_id'] ), sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
+			} elseif ( isset( $_GET['team_id'] ) && '' !== $_GET['team_id'] ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE ( game_away_id = %d OR game_home_id = %d ) ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_id'] ), sanitize_text_field( $_GET['team_id'] ), $per_page, $sql_paged );
+			} elseif ( isset( $_GET['game_away_id'] ) && '' !== $_GET['game_away_id'] ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE game_away_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['game_away_id'] ), $per_page, $sql_paged );
+			} elseif ( isset( $_GET['game_home_id'] ) && '' !== $_GET['game_home_id'] ) {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table WHERE game_home_id = %d ORDER BY game_day DESC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['game_home_id'] ), $per_page, $sql_paged );
+			} else {
+				$sql = $wpdb->prepare( "SELECT game_id FROM $games_table ORDER BY game_day DESC LIMIT %d OFFSET %d", $per_page, $sql_paged );
+			}
 		}
 
 		$games_data = Database::get_results( $sql );
@@ -725,5 +730,31 @@ class GamesScreen extends Screen {
 			<input type="submit" value="<?php esc_html_e( 'Save', 'sports-bench' ); ?>" id="submit" class="button-primary" name="submit">
 		</div>
 		<?php
+	}
+
+	/**
+	 * Checks to see if a user can edit the current game.
+	 *
+	 * @since 2.2
+	 *
+	 * @param int $game      The game id for the current game.
+	 * @return boolean       Whether the user can edit the current game.
+	 */
+	public function user_can_edit_game( $game ) {
+		$user      = wp_get_current_user();
+		$game      = new Game( $game );
+		$home_team = $game->get_game_home_id();
+		$away_team = $game->get_game_away_id();
+		if ( $this->is_team_manager() ) {
+			$team = new Team( (int)get_the_author_meta( 'sports_bench_team', $user->ID ) );
+
+			if ( $away_team === $team->get_team_id() || $home_team === $team->get_team_id() ) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return true;
+		}
 	}
 }

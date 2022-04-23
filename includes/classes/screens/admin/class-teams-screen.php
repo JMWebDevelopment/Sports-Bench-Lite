@@ -106,14 +106,19 @@ class TeamsScreen extends Screen {
 			$sql_paged = $paged;
 		}
 
-		if ( ( isset( $_GET['team_search'] ) && '' !== $_GET['team_search'] ) && ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) ) {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s AND team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_search'] ), sanitize_text_field( $_GET['team_active'] ), $per_page, $sql_paged );
-		} elseif ( isset( $_GET['team_search'] )  && '' !== $_GET['team_search'] ) {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_search'] ), $per_page, $sql_paged );
-		} elseif ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_active'] ), $per_page, $sql_paged );
+		if ( $this->is_team_manager() ) {
+			$team  = new Team( (int)get_the_author_meta( 'sports_bench_team', $user->ID ) );
+			$sql   = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_id = %d ORDER BY team_name ASC LIMIT %d OFFSET %d", $team->get_team_id(), $per_page, $sql_paged );
 		} else {
-			$sql = $wpdb->prepare( "SELECT team_id FROM $team_table ORDER BY team_name ASC LIMIT %d OFFSET %d", $per_page, $sql_paged );
+			if ( ( isset( $_GET['team_search'] ) && '' !== $_GET['team_search'] ) && ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) ) {
+				$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s AND team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_search'] ), sanitize_text_field( $_GET['team_active'] ), $per_page, $sql_paged );
+			} elseif ( isset( $_GET['team_search'] )  && '' !== $_GET['team_search'] ) {
+				$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_name = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_search'] ), $per_page, $sql_paged );
+			} elseif ( isset( $_GET['team_active'] ) && '' !== $_GET['team_active'] ) {
+				$sql = $wpdb->prepare( "SELECT team_id FROM $team_table WHERE team_active = %s ORDER BY team_name ASC LIMIT %d OFFSET %d", sanitize_text_field( $_GET['team_active'] ), $per_page, $sql_paged );
+			} else {
+				$sql = $wpdb->prepare( "SELECT team_id FROM $team_table ORDER BY team_name ASC LIMIT %d OFFSET %d", $per_page, $sql_paged );
+			}
 		}
 
 		$teams_data = Database::get_results( $sql );
@@ -970,6 +975,29 @@ class TeamsScreen extends Screen {
 			}
 
 			return $team;
+		}
+	}
+
+	/**
+	 * Checks to see if a user can edit the current team.
+	 *
+	 * @since 2.2
+	 *
+	 * @param int $current_team      The team id for the current team.
+	 * @return boolean               Whether the user can edit the current team.
+	 */
+	public function user_can_edit_team( $current_team ) {
+		$user = wp_get_current_user();
+		if ( $this->is_team_manager() ) {
+			$team = new Team( (int)get_the_author_meta( 'sports_bench_team', $user->ID ) );
+
+			if ( $current_team === $team->get_team_id() ) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return true;
 		}
 	}
 
