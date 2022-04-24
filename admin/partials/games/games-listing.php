@@ -43,7 +43,13 @@ if ( isset( $_GET['action'] ) && isset( $_GET['game_id'] ) && 'delete' === $_GET
 				</div>
 
 				<div class="right">
-					<a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-add-game-form' ) ); ?>" class="button"><?php esc_html_e( 'Add New Game', 'sports-bench' ); ?> <span class="fal fa-plus"></span></a>
+					<?php
+					if ( ! $screen->is_team_manager() ) {
+						?>
+						<a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-add-game-form' ) ); ?>" class="button"><?php esc_html_e( 'Add New Game', 'sports-bench' ); ?> <span class="fal fa-plus"></span></a>
+						<?php
+					}
+					?>
 				</div>
 
 			</div>

@@ -39,22 +39,40 @@ $screen = new TeamsScreen();
 				</div>
 
 				<div class="right">
-					<a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-add-team-form' ) ); ?>" class="button"><?php esc_html_e( 'Add New Team', 'sports-bench' ); ?> <span class="fal fa-plus"></span></a>
+					<?php
+					if ( ! $screen->is_team_manager() ) {
+						?>
+						<a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-add-team-form' ) ); ?>" class="button"><?php esc_html_e( 'Add New Team', 'sports-bench' ); ?> <span class="fal fa-plus"></span></a>
+						<?php
+					}
+					?>
 				</div>
 
 			</div>
 
 			<?php
 			if ( isset( $_GET['team_id'] ) && 0 < $_GET['team_id'] ) {
-				$team = $screen->save_team( $screen->sanitize_array( $_REQUEST ) );
+				if ( $screen->user_can_edit_team( sanitize_text_field( $_GET['team_id'] ) ) ) {
+					$team = $screen->save_team( $screen->sanitize_array( $_REQUEST ) );
 
-				if ( null === $team['team_id'] || 0 === $team['team_id'] || '' === $team['team_id'] ) {
-					$team = $screen->get_team_info();
+					if ( null === $team['team_id'] || 0 === $team['team_id'] || '' === $team['team_id'] ) {
+						$team = $screen->get_team_info();
+					}
+
+					$screen->display_team_fields( $team );
+				} else {
+					?>
+					<p><?php esc_html_e( 'You are not allowed to edit this team.', 'sports-bench' ); ?></p>
+					<?php
 				}
-
-				$screen->display_team_fields( $team );
 			} else {
-				$screen->display_new_team_fields();
+				if ( $screen->is_team_manager() ) {
+					?>
+					<p><?php esc_html_e( 'You are not allowed to add a new team.', 'sports-bench' ); ?></p>
+					<?php
+				} else {
+					$screen->display_new_team_fields();
+				}
 			}
 			?>
 

@@ -41,18 +41,36 @@ $screen = new GamesScreen();
 				</div>
 
 				<div class="right">
-					<a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-add-game-form' ) ); ?>" class="button"><?php esc_html_e( 'Add New Game', 'sports-bench' ); ?> <span class="fal fa-plus"></span></a>
+					<?php
+					if ( ! $screen->is_team_manager() ) {
+						?>
+						<a href="<?php echo esc_attr( $screen->get_admin_page_link( 'sports-bench-add-game-form' ) ); ?>" class="button"><?php esc_html_e( 'Add New Game', 'sports-bench' ); ?> <span class="fal fa-plus"></span></a>
+						<?php
+					}
+					?>
 				</div>
 
 			</div>
 
 			<?php
 			if ( isset( $_GET['game_id'] ) && 0 < $_GET['game_id'] ) {
-				$game = $screen->save_game( $screen->sanitize_array( $_REQUEST ) );
+				if ( $screen->user_can_edit_game( sanitize_text_field( $_GET['game_id'] ) ) ) {
+					$game = $screen->save_game( $screen->sanitize_array( $_REQUEST ) );
 
-				$screen->display_game_fields( sanitize_text_field( $_GET['game_id'] ), $game[0], $game[1], $game[2] );
+					$screen->display_game_fields( $_GET['game_id'], $game[0], $game[1], $game[2] );
+				} else {
+					?>
+					<p><?php esc_html_e( 'You are not allowed to edit this game.', 'sports-bench' ); ?></p>
+					<?php
+				}
 			} else {
-				$screen->display_new_game_fields();
+				if ( ! $screen->is_team_manager() ) {
+					$screen->display_new_game_fields();
+				} else {
+					?>
+					<p><?php esc_html_e( 'You are not allowed to add a new game.', 'sports-bench' ); ?></p>
+					<?php
+				}
 			}
 			?>
 
