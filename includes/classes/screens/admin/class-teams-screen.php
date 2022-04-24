@@ -93,6 +93,7 @@ class TeamsScreen extends Screen {
 		$teams      = [];
 		$team_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'teams';
 		$per_page   = 20;
+		$user       = wp_get_current_user();
 
 		if ( isset( $_REQUEST['paged'] ) && $_REQUEST['paged'] > 1 ) {
 			$paged = ( intval( $_REQUEST['paged'] ) - 1 ) * $per_page;
