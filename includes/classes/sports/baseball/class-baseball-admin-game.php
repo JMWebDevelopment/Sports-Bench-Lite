@@ -228,7 +228,7 @@ class BaseballAdminGame {
 		$teams = $this->get_teams();
 		?>
 		<div class="game-details">
-			<h2><?php esc_html_e( 'Scoring Plays', 'sports-bench' ); ?></h2>
+			<h2><?php esc_html_e( 'Plays', 'sports-bench' ); ?></h2>
 			<table id="match-events" class="form-table">
 				<thead>
 					<tr>
@@ -236,15 +236,18 @@ class BaseballAdminGame {
 						<th class="center"><?php esc_html_e( 'Top/Bottom', 'sports-bench' ); ?></th>
 						<th class="center"><?php esc_html_e( 'Home Score', 'sports-bench' ); ?></th>
 						<th class="center"><?php esc_html_e( 'Away Score', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Outs', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Count', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Type', 'sports-bench' ); ?></th>
 						<th class="center"><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></th>
-						<th class="center"><?php esc_html_e( 'Scoring Play', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Play', 'sports-bench' ); ?></th>
 						<th class="remove"></th>
 					</tr>
 				</thead>
 
 				<tbody>
 					<tr class="game-event-row">
-					<input type="hidden" name="game_info_id" />
+						<input type="hidden" name="game_info_id" />
 						<input type="hidden" id="match-event-home-score" name="game_info_id[]" />
 						<td><label for="game-event-inning" class="screen-reader-text"><?php esc_html_e( 'Inning ', 'sports-bench' ); ?></label><input type="number" id="game-event-inning" name="game_info_inning[]" /></td>
 						<td><label for="game-event-top-bottom" class="screen-reader-text"><?php esc_html_e( 'Top/Bottom of Inning ', 'sports-bench' ); ?></label>
@@ -256,8 +259,18 @@ class BaseballAdminGame {
 						</td>
 						<td><label for="game-event-home-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Home Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-home-score" name="game_info_home_score[]" /></td>
 						<td><label for="game-event-away-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Away Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-away-score" name="game_info_away_score[]" /></td>
+						<td><label for="game-event-outs" class="screen-reader-text"><?php esc_html_e( 'Game Event Outs ', 'sports-bench' ); ?></label><input type="number" id="game-event-outs" name="game_info_outs[]" /></td>
+						<td><label for="game-event-count" class="screen-reader-text"><?php esc_html_e( 'Game Event Count ', 'sports-bench' ); ?></label><input type="text" id="game-event-away-count" name="game_info_count[]" /></td>
+						<td><label for="game-event-type" class="screen-reader-text"><?php esc_html_e( 'Game Event Type ', 'sports-bench' ); ?></label>
+							<select id="game-event-type" name="game_info_type[]">
+								<option value=""><?php esc_html_e( 'Select Type', 'sports-bench' ); ?></option>
+								<option value="runs-scored"><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></option>
+								<option value="runs-position-change"><?php esc_html_e( 'Position Changed', 'sports-bench' ); ?></option>
+								<option value="outs-walk"><?php esc_html_e( 'Outs/Walk/Other', 'sports-bench' ); ?></option>
+							</select>
+						</td>
 						<td><label for="game-event-runs-scored" class="screen-reader-text"><?php esc_html_e( 'Game Event Runs Scores ', 'sports-bench' ); ?></label><input type="number" id="game-event-runs-scored" name="game_info_runs_scored[]" /></td>
-						<td><label for="game-event-score-play" class="screen-reader-text"><?php esc_html_e( 'Scoring Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-score-played" name="game_info_score_play[]" /></td>
+						<td><label for="game-event-play" class="screen-reader-text"><?php esc_html_e( 'Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-played" name="game_info_play[]" /></td>
 						<td><button class="remove-game-event"><span class="fal fa-minus-circle"></span> <span class="screen-reader-text"><?php esc_html_e( 'Remove Event', 'sports-bench' ); ?></span></button></td>
 					</tr>
 					<tr class="game-event-empty-row screen-reader-text">
@@ -273,8 +286,18 @@ class BaseballAdminGame {
 						</td>
 						<td><label for="game-event-home-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Home Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-home-score" name="game_info_home_score[]"  class="new-field team" disabled="disabled"/></td>
 						<td><label for="game-event-away-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Away Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-away-score" name="game_info_away_score[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-outs" class="screen-reader-text"><?php esc_html_e( 'Game Event Outs ', 'sports-bench' ); ?></label><input type="number" id="game-event-outs" name="game_info_outs[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-count" class="screen-reader-text"><?php esc_html_e( 'Game Event Count ', 'sports-bench' ); ?></label><input type="text" id="game-event-away-count" name="game_info_count[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-type" class="screen-reader-text"><?php esc_html_e( 'Game Event Type ', 'sports-bench' ); ?></label>
+							<select id="game-event-type" name="game_info_type[]" class="new-field team" disabled="disabled">
+								<option value=""><?php esc_html_e( 'Select Type', 'sports-bench' ); ?></option>
+								<option value="runs-scored"><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></option>
+								<option value="runs-position-change"><?php esc_html_e( 'Position Changed', 'sports-bench' ); ?></option>
+								<option value="outs-walk"><?php esc_html_e( 'Outs/Walk/Other', 'sports-bench' ); ?></option>
+							</select>
+						</td>
 						<td><label for="game-event-runs-scored" class="screen-reader-text"><?php esc_html_e( 'Game Event Runs Scores ', 'sports-bench' ); ?></label><input type="number" id="game-event-runs-scored" name="game_info_runs_scored[]" class="new-field team" disabled="disabled" /></td>
-						<td><label for="game-event-score-play" class="screen-reader-text"><?php esc_html_e( 'Scoring Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-score-play" name="game_info_score_play[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-play" class="screen-reader-text"><?php esc_html_e( 'Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-play" name="game_info_play[]" class="new-field team" disabled="disabled" /></td>
 						<td><button class="remove-game-event"><span class="fal fa-minus-circle"></span> <span class="screen-reader-text"><?php esc_html_e( 'Remove Event', 'sports-bench' ); ?></span></button></td>
 					</tr>
 				</tbody>
@@ -835,7 +858,10 @@ class BaseballAdminGame {
 			'game_info_home_score'              => array(),
 			'game_info_away_score'              => array(),
 			'game_info_runs_scored'             => array(),
-			'game_info_score_play'              => array(),
+			'game_info_play'                    => array(),
+			'game_info_outs'                    => array(),
+			'game_info_count'                   => array(),
+			'game_info_type'                    => array(),
 			'game_stats_player_id'              => array(),
 			'game_stats_pitch_field'            => array(),
 			'game_team_id'                      => array(),
@@ -960,14 +986,19 @@ class BaseballAdminGame {
 		$game_info_runs_scoreds = $game['game_info_runs_scored'];
 		unset( $game['game_info_runs_scored'] );
 
-		$game_info_score_plays = $game['game_info_score_play'];
-		unset( $game['game_info_score_play'] );
+		$game_info_plays = $game['game_info_play'];
+		unset( $game['game_info_play'] );
 
-		if ( $game_info_innings ) {
-			$len = count( $game_info_innings );
-		} else {
-			$len = 0;
-		}
+		$game_info_outs = $game['game_info_outs'];
+		unset( $game['game_info_outs'] );
+
+		$game_info_count = $game['game_info_count'];
+		unset( $game['game_info_count'] );
+
+		$game_info_type = $game['game_info_type'];
+		unset( $game['game_info_type'] );
+
+		$len = count( $game_info_innings );
 
 		$events = [];
 		for ( $i = 0; $i < $len; $i++ ) {
@@ -985,14 +1016,17 @@ class BaseballAdminGame {
 					'game_info_home_score'  => intval( $game_info_home_scores[ $i ] ),
 					'game_info_away_score'  => intval( $game_info_away_scores[ $i ] ),
 					'game_info_runs_scored' => intval( $game_info_runs_scoreds[ $i ] ),
-					'game_info_score_play'  => wp_filter_nohtml_kses( sanitize_text_field( $game_info_score_plays[ $i ] ) )
+					'game_info_play'        => wp_filter_nohtml_kses( sanitize_text_field( $game_info_plays[ $i ] ) ),
+					'game_info_outs'        => wp_filter_nohtml_kses( sanitize_text_field( $game_info_outs[ $i ] ) ),
+					'game_info_count'       => wp_filter_nohtml_kses( sanitize_text_field( $game_info_count[ $i ] ) ),
+					'game_info_type'        => wp_filter_nohtml_kses( sanitize_text_field( $game_info_type[ $i ] ) )
 				);
 				array_push( $events, $event );
 			}
 		}
 
 		//* Get the game events already in the database to compare the new ones to
-		$game_info_table = SPORTS_BENCH_LITE_TABLE_PREFIX . 'game_info';
+		$game_info_table = SB_TABLE_PREFIX . 'game_info';
 		$game_id         = $game['game_id'];
 		$quer            = "SELECT * FROM $game_info_table WHERE game_id = $game_id;";
 		$game_events     = $wpdb->get_results( $quer );
@@ -1587,8 +1621,11 @@ class BaseballAdminGame {
 						<th class="center"><?php esc_html_e( 'Top/Bottom', 'sports-bench' ); ?></th>
 						<th class="center"><?php esc_html_e( 'Home Score', 'sports-bench' ); ?></th>
 						<th class="center"><?php esc_html_e( 'Away Score', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Outs', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Count', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Type', 'sports-bench' ); ?></th>
 						<th class="center"><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></th>
-						<th class="center"><?php esc_html_e( 'Scoring Play', 'sports-bench' ); ?></th>
+						<th class="center"><?php esc_html_e( 'Play', 'sports-bench' ); ?></th>
 						<th class="remove"></th>
 					</tr>
 				</thead>
@@ -1610,8 +1647,18 @@ class BaseballAdminGame {
 								</td>
 								<td><label for="game-event-home-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Home Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-home-score" name="game_info_home_score[]" value="<?php echo esc_attr( $event['game_info_home_score'] ); ?>" /></td>
 								<td><label for="game-event-away-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Away Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-away-score" name="game_info_away_score[]" value="<?php echo esc_attr( $event['game_info_away_score'] ); ?>" /></td>
+								<td><label for="game-event-outs" class="screen-reader-text"><?php esc_html_e( 'Game Event Outs ', 'sports-bench' ); ?></label><input type="number" id="game-event-outs" name="game_info_outs[]" value="<?php echo esc_attr( $event['game_info_outs'] ); ?>" /></td>
+								<td><label for="game-event-count" class="screen-reader-text"><?php esc_html_e( 'Game Event Count ', 'sports-bench' ); ?></label><input type="text" id="game-event-away-count" name="game_info_count[]" value="<?php echo esc_attr( $event['game_info_count'] ); ?>" /></td>
+								<td><label for="game-event-type" class="screen-reader-text"><?php esc_html_e( 'Game Event Type ', 'sports-bench' ); ?></label>
+									<select id="game-event-type" name="game_info_type[]">
+										<option value=""><?php esc_html_e( 'Select Type', 'sports-bench' ); ?></option>
+										<option value="runs-scored" <?php selected( $event['game_info_type'], 'runs-scored' ); ?>><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></option>
+										<option value="runs-position-change" <?php selected( $event['game_info_type'], 'runs-position-change' ); ?>><?php esc_html_e( 'Position Changed', 'sports-bench' ); ?></option>
+										<option value="outs-walk" <?php selected( $event['game_info_type'], 'outs-walk' ); ?>><?php esc_html_e( 'Outs/Walk/Other', 'sports-bench' ); ?></option>
+									</select>
+								</td>
 								<td><label for="game-event-runs-scored" class="screen-reader-text"><?php esc_html_e( 'Game Event Runs Scores ', 'sports-bench' ); ?></label><input type="number" id="game-event-runs-scored" name="game_info_runs_scored[]" value="<?php echo esc_attr( $event['game_info_runs_scored'] ); ?>" /></td>
-								<td><label for="game-event-score-play" class="screen-reader-text"><?php esc_html_e( 'Scoring Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-score-play" name="game_info_score_play[]" value="<?php echo esc_attr( $event['game_info_score_play'] ); ?>" /></td>
+								<td><label for="game-event-play" class="screen-reader-text"><?php esc_html_e( 'Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-play" name="game_info_play[]" value="<?php echo esc_attr( $event['game_info_play'] ); ?>" /></td>
 								<td><button class="remove-game-event"><span class="fal fa-minus-circle"></span> <span class="screen-reader-text"><?php esc_html_e( 'Remove Event', 'sports-bench' ); ?></span></button></td>
 							</tr>
 							<?php
@@ -1630,8 +1677,18 @@ class BaseballAdminGame {
 							</td>
 							<td><label for="game-event-home-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Home Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-home-score" name="game_info_home_score[]" /></td>
 							<td><label for="game-event-away-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Away Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-away-score" name="game_info_away_score[]" /></td>
+							<td><label for="game-event-outs" class="screen-reader-text"><?php esc_html_e( 'Game Event Outs ', 'sports-bench' ); ?></label><input type="number" id="game-event-outs" name="game_info_outs[]" /></td>
+							<td><label for="game-event-count" class="screen-reader-text"><?php esc_html_e( 'Game Event Count ', 'sports-bench' ); ?></label><input type="text" id="game-event-away-count" name="game_info_count[]" /></td>
+							<td><label for="game-event-type" class="screen-reader-text"><?php esc_html_e( 'Game Event Type ', 'sports-bench' ); ?></label>
+								<select id="game-event-type" name="game_info_type[]">
+									<option value=""><?php esc_html_e( 'Select Type', 'sports-bench' ); ?></option>
+									<option value="runs-scored"><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></option>
+									<option value="runs-position-change"><?php esc_html_e( 'Position Changed', 'sports-bench' ); ?></option>
+									<option value="outs-walk"><?php esc_html_e( 'Outs/Walk/Other', 'sports-bench' ); ?></option>
+								</select>
+							</td>
 							<td><label for="game-event-runs-scored" class="screen-reader-text"><?php esc_html_e( 'Game Event Runs Scores ', 'sports-bench' ); ?></label><input type="number" id="game-event-runs-scored" name="game_info_runs_scored[]" /></td>
-							<td><label for="game-event-score-play" class="screen-reader-text"><?php esc_html_e( 'Scoring Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-score-played" name="game_info_score_play[]" /></td>
+							<td><label for="game-event-play" class="screen-reader-text"><?php esc_html_e( 'Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-played" name="game_info_play[]" /></td>
 						</tr>
 						<?php
 					}
@@ -1648,8 +1705,18 @@ class BaseballAdminGame {
 						</td>
 						<td><label for="game-event-home-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Home Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-home-score" name="game_info_home_score[]"  class="new-field team" disabled="disabled"/></td>
 						<td><label for="game-event-away-score" class="screen-reader-text"><?php esc_html_e( 'Game Event Away Score ', 'sports-bench' ); ?></label><input type="number" id="game-event-away-score" name="game_info_away_score[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-outs" class="screen-reader-text"><?php esc_html_e( 'Game Event Outs ', 'sports-bench' ); ?></label><input type="number" id="game-event-outs" name="game_info_outs[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-count" class="screen-reader-text"><?php esc_html_e( 'Game Event Count ', 'sports-bench' ); ?></label><input type="text" id="game-event-away-count" name="game_info_count[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-type" class="screen-reader-text"><?php esc_html_e( 'Game Event Type ', 'sports-bench' ); ?></label>
+							<select id="game-event-type" name="game_info_type[]" class="new-field team" disabled="disabled">
+								<option value=""><?php esc_html_e( 'Select Type', 'sports-bench' ); ?></option>
+								<option value="runs-scored"><?php esc_html_e( 'Runs Scored', 'sports-bench' ); ?></option>
+								<option value="runs-position-change"><?php esc_html_e( 'Position Changed', 'sports-bench' ); ?></option>
+								<option value="outs-walk"><?php esc_html_e( 'Outs/Walk/Other', 'sports-bench' ); ?></option>
+							</select>
+						</td>
 						<td><label for="game-event-runs-scored" class="screen-reader-text"><?php esc_html_e( 'Game Event Runs Scores ', 'sports-bench' ); ?></label><input type="number" id="game-event-runs-scored" name="game_info_runs_scored[]" class="new-field team" disabled="disabled" /></td>
-						<td><label for="game-event-score-play" class="screen-reader-text"><?php esc_html_e( 'Scoring Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-score-play" name="game_info_score_play[]" class="new-field team" disabled="disabled" /></td>
+						<td><label for="game-event-play" class="screen-reader-text"><?php esc_html_e( 'Play ', 'sports-bench' ); ?></label><input type="text" id="game-event-play" name="game_info_play[]" class="new-field team" disabled="disabled" /></td>
 						<td><button class="remove-game-event"><span class="fal fa-minus-circle"></span> <span class="screen-reader-text"><?php esc_html_e( 'Remove Event', 'sports-bench' ); ?></span></button></td>
 					</tr>
 				</tbody>

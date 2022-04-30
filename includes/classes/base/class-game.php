@@ -854,6 +854,12 @@ class Game {
 			} else {
 				$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d ORDER BY game_info_time ASC;", $this->game_id );
 			}
+		} elseif ( 'baseball' === get_option( 'sports-bench-sport' ) ) {
+			if ( 'in_progress' === $this->game_status ) {
+				$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d ORDER BY game_info_id DESC;", $this->game_id );
+			} else {
+				$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d ORDER BY game_info_id ASC;", $this->game_id );
+			}
 		}
 		$events    = Database::get_results( $querystr );
 		$away_team = new Team( (int) $this->game_away_id );
