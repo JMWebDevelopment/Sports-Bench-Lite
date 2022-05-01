@@ -19,6 +19,7 @@ use Sports_Bench\Classes\Base\Database;
 use Sports_Bench\Classes\Base\Games;
 use Sports_Bench\Classes\Base\Player;
 use Sports_Bench\Classes\Base\Team;
+use Sports_Bench\Classes\Base\Game;
 
 /**
  * The baseball games class.
@@ -219,7 +220,25 @@ class BaseballGames extends Games {
 	 * @return string                The HTML for the game events section.
 	 */
 	public function sports_bench_do_game_events( $html, $events, $away_team, $home_team, $sport ) {
-		$html  = '<table class="game-events baseball">';
+		$runs_played = [];
+
+		if ( $events ) {
+			foreach ( $events as $event ) {
+				if ( 'runs-scored' === $event->game_info_type ) {
+					$runs_played[] = $event;
+				}
+			}
+		}
+
+		$html = '<div id="box-score-events">';
+		$html .= '<ul aria-controls="box-score-events" role="tablist">';
+		$html .= '<li role="tab" aria-controls="all-tab" tabindex="0" aria-selected="true">' . esc_html__( 'All Events', 'sports-bench' ) . '</li>';
+		$html .= '<li role="tab" aria-controls="runs-tab" tabindex="0" aria-selected="false">' . esc_html__( 'Runs Scoring Events', 'sports-bench' ) . '</li>';
+		$html .= '</ul>';
+
+		$html .= '<div class="tabs-container">';
+		$html .= '<div id="all-tab" class="tabs-content" role="tabpanel" aria-expanded="true">';
+		$html .= '<table class="game-events baseball">';
 		$html .= '<thead>';
 		$html .= '<tr>';
 		$html .= '<th></th>';
@@ -230,6 +249,54 @@ class BaseballGames extends Games {
 		$html .= '</thead>';
 		$html .= '<tbody>';
 		foreach ( $events as $event ) {
+			if ( 'top' === $event->game_info_top_bottom || 'Top' === $event->game_info_top_bottom ) {
+				$logo = $away_team->get_team_photo( 'team-logo' );
+				$team = $away_team;
+				$half = __( 'Top', 'sports-bench' );
+			} else {
+				$logo = $home_team->get_team_photo( 'team-logo' );
+				$team = $home_team;
+				$half = __( 'Bottom', 'sports-bench' );
+			}
+
+			/**
+			 * Adds styles for the row of the game events table.
+			 *
+			 * @since 2.0.0
+			 *
+			 * @param string $styles      The incoming styles for the row.
+			 * @param Team   $team        The team object for the team.
+			 * @return string             The styles for the row.
+			 */
+			$table_row_styles = apply_filters( 'sports_bench_game_event_row', '', $team );
+
+			$html .= '<tr style="' . $table_row_styles . '">';
+			$html .= '<td class="score">' . $logo . '<br />' . $half . ' ' . $event->game_info_inning . '<span class="event-id">' . $event->game_info_id . '</span></td>';
+			$html .= '<td class="score">' . $event->game_info_away_score . '</td>';
+			$html .= '<td class="score">' . $event->game_info_home_score . '</td>';
+			if ( 'runs-scored' === $event->game_info_type ) {
+				$html .= '<td><strong>' . $event->game_info_play . '(' . $event->game_info_count . ')</strong></td>';
+			} else {
+				$html .= '<td>' . $event->game_info_play . '(' . $event->game_info_count . ' - ' . $event->game_info_outs . ' ' . esc_html__( 'Outs', 'sports-bench' ) . ')</td>';
+			}
+			$html .= '</tr>';
+		}
+		$html .= '</tbody>';
+		$html .= '</table>';
+		$html .= '</div>';
+
+		$html .= '<div id="runs-tab" class="tabs-content" role="tabpanel" aria-expanded="false">';
+		$html .= '<table class="game-events baseball runs-scored">';
+		$html .= '<thead>';
+		$html .= '<tr>';
+		$html .= '<th></th>';
+		$html .= '<th class="score">' . $away_team->get_team_photo( 'team-logo' ) . '<br />' . $away_team->get_team_abbreviation() . '</th>';
+		$html .= '<th class="score">' . $home_team->get_team_photo( 'team-logo' ) . '<br />' . $home_team->get_team_abbreviation() . '</th>';
+		$html .= '<th></th>';
+		$html .= '</tr>';
+		$html .= '</thead>';
+		$html .= '<tbody>';
+		foreach ( $runs_played as $event ) {
 			if ( 'Top' === $event->game_info_top_bottom ) {
 				$logo = $away_team->get_team_photo( 'team-logo' );
 				$team = $away_team;
@@ -250,14 +317,17 @@ class BaseballGames extends Games {
 			$table_row_styles = apply_filters( 'sports_bench_game_event_row', '', $team );
 
 			$html .= '<tr style="' . $table_row_styles . '">';
-			$html .= '<td class="score">' . $logo . '<br />' . $event->game_info_top_bottom . ' ' . $event->game_info_inning . '</td>';
+			$html .= '<td class="score">' . $logo . '<br />' . $event->game_info_top_bottom . ' ' . $event->game_info_inning . '<span class="event-id">' . $event->game_info_id . '</span></td>';
 			$html .= '<td class="score">' . $event->game_info_away_score . '</td>';
 			$html .= '<td class="score">' . $event->game_info_home_score . '</td>';
-			$html .= '<td>' . $event->game_info_score_play . '</td>';
+			$html .= '<td>' . $event->game_info_play . '</td>';
 			$html .= '</tr>';
 		}
 		$html .= '</tbody>';
 		$html .= '</table>';
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '</div>';
 
 		return $html;
 	}
@@ -442,5 +512,83 @@ class BaseballGames extends Games {
 		$querystr = $wpdb->prepare( "SELECT $column FROM $table WHERE game_id = %d;", $game->get_game_id() );
 		$the_stat = Database::get_results( $querystr );
 		return $the_stat;
+	}
+
+	/**
+	 * Runs the AJAX to load the game events in real time.
+	 *
+	 * @since 2.2
+	 *
+	 * @return array      The data for the game events table.
+	 */
+	public function load_live_game_events() {
+		check_ajax_referer( 'sports-bench-box-score', 'nonce' );
+		$game_id    = $_POST['game_id'];
+		$event_ids  = implode(',', $_POST['event_ids'] );
+		$all_html   = '';
+		$score_html = '';
+		$game       = new Game( $game_id );
+		$away_team  = new Team( (int)$game->get_game_away_id() );
+		$home_team  = new Team( (int)$game->get_game_home_id() );
+
+		global $wpdb;
+		$table     = SB_TABLE_PREFIX . 'game_info';
+		$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $game_id );
+		if ( 'baseball' === get_option( 'sports-bench-sport' ) ) {
+			$querystr  = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d AND game_info_id NOT IN ($event_ids) ORDER BY game_info_id ASC;", $game_id );
+		}
+		$events    = Database::get_results( $querystr );
+		$event_ids = explode(',', $event_ids );
+
+		if ( $events ) {
+			foreach ( $events as $event ) {
+				$event_ids[] = $event->game_info_id;
+				if ( 'Top' === $event->game_info_top_bottom || 'top' === $event->game_info_top_bottom) {
+					$logo = $away_team->get_team_photo( 'team-logo' );
+					$team = $away_team;
+					$half = __( 'Top', 'sports-bench' );
+				} else {
+					$logo = $home_team->get_team_photo( 'team-logo' );
+					$team = $home_team;
+					$half = __( 'Bottom', 'sports-bench' );
+				}
+
+				/**
+				 * Adds styles for the row of the game events table.
+				 *
+				 * @since 2.0.0
+				 *
+				 * @param string $styles      The incoming styles for the row.
+				 * @param Team   $team        The team object for the team.
+				 * @return string             The styles for the row.
+				 */
+				$table_row_styles = apply_filters( 'sports_bench_game_event_row', '', $team );
+
+				$all_html .= '<tr style="' . $table_row_styles . '">';
+				$all_html .= '<td class="score">' . $logo . '<br />' . $half . ' ' . $event->game_info_inning . '<span class="event-id">' . $event->game_info_id . '</span></td>';
+				$all_html .= '<td class="score">' . $event->game_info_away_score . '</td>';
+				$all_html .= '<td class="score">' . $event->game_info_home_score . '</td>';
+				if ( 'runs-scored' === $event->game_info_type ) {
+					$all_html .= '<td><strong>' . $event->game_info_play . '(' . $event->game_info_count . ')</strong></td>';
+				} else {
+					$all_html .= '<td>' . $event->game_info_play . '(' . $event->game_info_count . ' - ' . $event->game_info_outs . ' ' . esc_html__( 'Outs', 'sports-bench' ) . ')</td>';
+				}
+				$all_html .= '</tr>';
+
+				if ( 'runs-scored' === $event->game_info_type ) {
+					$score_html .= '<tr style="' . $table_row_styles . '">';
+					$score_html .= '<td class="score">' . $logo . '<br />' . $event->game_info_top_bottom . ' ' . $event->game_info_inning . '<span class="event-id">' . $event->game_info_id . '</span></td>';
+					$score_html .= '<td class="score">' . $event->game_info_away_score . '</td>';
+					$score_html .= '<td class="score">' . $event->game_info_home_score . '</td>';
+					$score_html .= '<td>' . $event->game_info_play . '(' . $event->game_info_count . ')</td>';
+					$score_html .= '</tr>';
+				}
+			}
+		}
+
+		$data = [ $all_html, $event_ids, $score_html ];
+
+		wp_send_json_success( $data );
+		wp_die();
 	}
 }
