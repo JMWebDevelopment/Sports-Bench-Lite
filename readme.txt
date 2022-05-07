@@ -3,7 +3,7 @@ Contributors: ArenaPigskin
 Requires at least: 4.7
 Tested up to: 5.9
 Requires PHP: 7.3
-Stable tag: 2.1.6
+Stable tag: 2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -65,6 +65,10 @@ Sports Bench currently supports baseball, basketball, football, hockey, rugby, s
 2. Once the plugin has been activated, you can click on "Sports Bench" in the left hand menu in the dashboard to set up the settings. Please note that when you set the sport for your website, you should not change it as it will rewrite the game tables and wipe out that data.
 
 == Changelog ==
+= 2.2 - May 10, 2022 =
+- Added in the team manager role from the premium plugin.
+- Added in the baseball play-by-play feature from the premium plugin.
+
 = 2.1.6 - March 29, 2022 =
 - Added more sanitization for inputs.
 
