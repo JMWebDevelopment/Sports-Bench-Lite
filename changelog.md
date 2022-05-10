@@ -2,6 +2,10 @@
 
 All of the changes for Sports Bench Lite are stored here.
 
+## [2.2] - May 10, 2022
+- Added in the team manager role from the premium plugin.
+- Added in the baseball play-by-play feature from the premium plugin.
+
 ## [2.1.5] - March 29, 2022
 - Added more sanitization for inputs.
 

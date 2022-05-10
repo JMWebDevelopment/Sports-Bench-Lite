@@ -7,7 +7,7 @@
  *
  * @link       https://sportsbenchwp.com
  * @since      2.0.0
- * @version    2.1.6
+ * @version    2.2
  *
  * @package    Sports_Bench_Lite
  * @subpackage Sports_Bench_Lite/includes
@@ -70,7 +70,7 @@ class Sports_Bench {
 	public function __construct() {
 
 		$this->plugin_slug = 'sports-bench-lite';
-		$this->version     = '2.1.6';
+		$this->version     = '2.2';
 
 		$this->load_dependencies();
 		$this->load_classes();
@@ -300,6 +300,11 @@ class Sports_Bench {
 		$this->loader->add_action( 'admin_notices', $admin, 'add_upgrade_admin_notice' );
 		$this->loader->add_action( 'wp_ajax_sports_bench_lite_dismiss_upgrade_notice', $admin, 'dismiss_upgrade_notice' );
 		$this->loader->add_action( 'wp_ajax_nopriv_sports_bench_lite_dismiss_upgrade_notice', $admin, 'dismiss_upgrade_notice' );
+		$this->loader->add_action( 'init', $admin, 'add_team_manager_role' );
+		$this->loader->add_action( 'show_user_profile', $admin, 'add_user_fields' );
+		$this->loader->add_action( 'edit_user_profile', $admin, 'add_user_fields' );
+		$this->loader->add_action( 'personal_options_update', $admin, 'save_user_fields' );
+		$this->loader->add_action( 'edit_user_profile_update', $admin, 'save_user_fields' );
 
 		$team = new Classes\Screens\Admin\TeamsScreen();
 		$this->loader->add_action( 'sports_bench_new_team_fields', $team, 'sports_bench_do_default_new_team_fields' );

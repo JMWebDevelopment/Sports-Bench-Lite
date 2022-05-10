@@ -69,6 +69,9 @@ class TabController {
 		}
 		}
 	}
-	}
-  
-const tabController = new TabController( '#sports-bench-standings' );
+}
+
+var standingsContainer = document.getElementById('sports-bench-standings');
+if ( null !== standingsContainer ) {
+	const tabController = new TabController( '#sports-bench-standings' );
+}

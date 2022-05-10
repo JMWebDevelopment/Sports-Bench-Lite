@@ -6,7 +6,7 @@
  *
  * @link       https://sportsbenchwp.com
  * @since      2.0.0
- * @version    2.1.6
+ * @version    2.2
  *
  * @package    Sports_Bench_Lite
  * @subpackage Sports_Bench_Lite/includes/classes/sports/baseball
@@ -134,6 +134,9 @@ class Baseball {
 		$this->loader->add_filter( 'sports_bench_game_events', $games, 'sports_bench_do_game_events', 10, 5 );
 		$this->loader->add_filter( 'sports_bench_team_stats', $games, 'sports_bench_do_team_stats', 10, 6 );
 		$this->loader->add_filter( 'sports_bench_individual_game_stats', $games, 'sports_bench_do_individual_game_stats', 10, 5 );
+		$this->loader->add_action( 'wp_ajax_sports_bench_box_score_ajax', $games, 'load_live_game_events' );
+		$this->loader->add_action( 'wp_ajax_nopriv_sports_bench_box_score_ajax', $games, 'load_live_game_events' );
+
 	}
 
 	/**

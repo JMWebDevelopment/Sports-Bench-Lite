@@ -6,7 +6,7 @@
  *
  * @link       https://sportsbenchwp.com
  * @since      2.0.0
- * @version    2.1.6
+ * @version    2.2
  *
  * @package    Sports_Bench_Lite
  * @subpackage Sports_Bench_Lite/admin/partials/options

@@ -6,7 +6,7 @@
  *
  * @link       https://sportsbenchwp.com
  * @since      2.0.0
- * @version    2.1.6
+ * @version    2.2
  *
  * @package    Sports_Bench_Lite
  * @subpackage Sports_Bench_Lite/includes/classes/sports/baseball
@@ -60,7 +60,7 @@ class BaseballGame extends Game {
 		$querystr = $wpdb->prepare( "SELECT * FROM $table WHERE game_id = %d;", $this->game_id );
 		$events   = Database::get_results( $querystr );
 		foreach ( $events as $event ) {
-			if ( 'Top' === $event->game_info_top_bottom ) {
+			if ( 'Top' === $event->game_info_top_bottom || 'top' === $event->game_info_top_bottom ) {
 				if ( in_array( $event->game_info_inning, $away_innings ) ) {
 					$index = array_search( $event->game_info_inning, $away_innings );
 					$away_linescore[ $index ]['runs_scored'] += $event->game_info_runs_scored;

@@ -159,6 +159,7 @@ class Sports_Bench_Public {
 			'nonce'    => wp_create_nonce( 'sports-bench-box-score' ),
 			'url'      => admin_url( 'admin-ajax.php' ),
 			'rest_url' => get_home_url() . '/wp-json/',
+			'sport'    => get_option( 'sports-bench-sport' ),
 		];
 		wp_localize_script( 'sports-bench-box-score', 'sbboxscore', $args );
 	}
